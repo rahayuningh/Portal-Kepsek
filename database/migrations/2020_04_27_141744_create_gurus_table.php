@@ -15,6 +15,8 @@ class CreateGurusTable extends Migration
     {
         Schema::create('gurus', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('kbm_diampu');
+            $table->unsignedBigInteger('kelas_perwalian');
             $table->timestamps();
         });
     }

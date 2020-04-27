@@ -17,6 +17,8 @@ class CreatePegawaisTable extends Migration
             $table->id();
             $table->string('nik');
             $table->binary('status_pegawai');
+            $table->integer('pegawaiable_id');
+            $table->string('pegawaiable_type');
             $table->timestamps();
         });
     }
