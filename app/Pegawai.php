@@ -3,12 +3,16 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\MorphMany;
 
-class Siswa extends Model
+class Pegawai extends Model
 {
     public function civitas()
     {
         return $this->morphMany('App\Civitas', 'civitasable');
+    }
+
+    public function pegawaiable()
+    {
+        return $this->morphTo();
     }
 }
