@@ -1,8 +1,9 @@
 <?php
 
+use App\Civitas;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-
+use Carbon\Carbon;
 
 class CivitasTableSeeder extends Seeder
 {
@@ -13,29 +14,46 @@ class CivitasTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('civitas')->insert([
+        DB::table('civitas')->delete();
+        Civitas::create([
+            'id' => '1',
+            'nama' => 'Mary Jane',
+            'jenis_kelamin' => False,
+            'tempat_lahir' => 'Bogor, Jawa Barat',
+            'tanggal_lahir' => Carbon::today(),
+            'agama' => 1,
+            'civitasable_id' => 1,
+            'civitasable_type' => 'App\Siswa'
+        ]);
+        Civitas::create([
+            'id' => '2',
             'nama' => 'John Doe',
-            'nisn' => '9991234567',
-            'asal_wilayah' => 'Dramaga',
-            'id_kelas_1' => '11',
-            'id_kelas_2' => '21',
-            'id_kelas_3' => '31',
-            'tempat_lahir' => 'Dramaga',
-            'tanggal_lahir' => '1 Januari 2002',
-            'agama' => 'Islam',
-            'jenis_kelamin' => 'Laki-laki',
-        ],[
-            'nama_siswa' => 'Jane Doe',
-            'nisn' => '0001234567',
-            'asal_wilayah' => 'Jakarta',
-            'id_kelas_1' => '12',
-            'id_kelas_2' => '22',
-            'id_kelas_3' => '32',
-            'tempat_lahir' => 'Jakarta',
-            'tanggal_lahir' => '31 Januari 2002',
-            'agama' => 'Kristen',
-            'jenis_kelamin' => 'Perempuan',
-        ]
-    );
+            'jenis_kelamin' => True,
+            'tempat_lahir' => 'Malang, Jawa Timur',
+            'tanggal_lahir' => Carbon::today(),
+            'agama' => 2,
+            'civitasable_id' => 1,
+            'civitasable_type' => 'App\Pegawai'
+        ]);
+        Civitas::create([
+            'id' => '3',
+            'nama' => 'Jimmy Neutron',
+            'jenis_kelamin' => True,
+            'tempat_lahir' => 'Jambi, Bangka Belitung',
+            'tanggal_lahir' => Carbon::today(),
+            'agama' => 1,
+            'civitasable_id' => 2,
+            'civitasable_type' => 'App\Siswa'
+        ]);
+        Civitas::create([
+            'id' => '4',
+            'nama' => 'Julia Herbe',
+            'jenis_kelamin' => False,
+            'tempat_lahir' => 'DKI Jakarta',
+            'tanggal_lahir' => Carbon::today(),
+            'agama' => 3,
+            'civitasable_id' => 2,
+            'civitasable_type' => 'App\Pegawai'
+        ]);
     }
 }
