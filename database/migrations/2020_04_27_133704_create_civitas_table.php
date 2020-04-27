@@ -19,7 +19,7 @@ class CreateCivitasTable extends Migration
             $table->binary('jenis_kelamin');
             $table->string('tempat_lahir', 50);
             $table->date('tanggal_lahir');
-            $table->string('photo');
+            $table->string('photo')->nullable();
             $table->tinyInteger('agama');
             $table->integer('civitasable_id');
             $table->string('civitasable_type');
