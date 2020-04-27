@@ -1,6 +1,8 @@
 <?php
 
+use App\Guru;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class GuruTableSeeder extends Seeder
 {
@@ -11,6 +13,13 @@ class GuruTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('gurus')->delete();
+        Guru::create(
+            [
+                'id' => '1',
+                'kbm_diampu' => 1,
+                'kelas_perwalian' => 1
+            ]
+        );
     }
 }

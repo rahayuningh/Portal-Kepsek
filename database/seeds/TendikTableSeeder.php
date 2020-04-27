@@ -1,6 +1,9 @@
 <?php
 
+use App\Tendik;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class TendikTableSeeder extends Seeder
 {
@@ -11,6 +14,16 @@ class TendikTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('tendiks')->delete();
+        Tendik::create(
+            [
+                'id' => '1',
+                'email' => 'johndoe@example.id',
+                'password' => Hash::make('password'),
+                'level_akses' => 1,
+                'jabatan' => 'Staff',
+                'bagian_pekerjaan' => 'Kurikulum'
+            ]
+        );
     }
 }
