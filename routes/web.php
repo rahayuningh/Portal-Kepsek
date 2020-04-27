@@ -17,9 +17,8 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/civitas', 'BackendController@createCivitas');
+Route::get('/siswa/{id}', 'BackendController@seeSiswa');
 
 Auth::routes();
 
