@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNilaiUASSTable extends Migration
+class CreateNilaiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateNilaiUASSTable extends Migration
      */
     public function up()
     {
-        Schema::create('nilai_u_a_s_s', function (Blueprint $table) {
+        Schema::create('nilai', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_nilai');
             $table->unsignedBigInteger('id_kbm');
             $table->unsignedBigInteger('id_murid');
             $table->smallInteger('nilai');
+            $table->unsginedBigInt('tipe');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateNilaiUASSTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nilai_u_a_s_s');
+        Schema::dropIfExists('nilai');
     }
 }
