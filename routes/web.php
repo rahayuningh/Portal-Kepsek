@@ -17,8 +17,11 @@ Route::get('/', function () {
     return view('index');
 });
 
+// Route made by Fakhri
+// If you want to know what is it for, ask Fakhri :)
 Route::get('/civitas', 'BackendController@createCivitas');
 Route::get('/siswa/{id}', 'BackendController@seeSiswa');
+// -----------------
 
 Auth::routes();
 
