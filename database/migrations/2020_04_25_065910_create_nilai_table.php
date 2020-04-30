@@ -19,7 +19,7 @@ class CreateNilaiTable extends Migration
             $table->unsignedBigInteger('id_kbm');
             $table->unsignedBigInteger('id_murid');
             $table->smallInteger('nilai');
-            $table->unsginedBigInt('tipe');
+            $table->unsignedBigInteger('tipe');
             $table->timestamps();
         });
     }
