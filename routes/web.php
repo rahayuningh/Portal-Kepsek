@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('Beranda');
 });
 
+<<<<<<< HEAD
 // BERANDA
 Route::get('/home', function () {
     return view('Beranda');
@@ -73,6 +74,14 @@ Route::get('/reset', function () {
 Route::get('/confirm-reset', function () {
     return view('auth/passwords/confirm');
 });
+=======
+// Route made by Fakhri
+// If you want to know what is it for, ask Fakhri :)
+Route::get('/civitas', 'BackendController@createCivitas');
+Route::get('/siswa/{id}', 'BackendController@seeSiswa');
+// -----------------
+
+>>>>>>> 132fd931b675af71f0fed91ecb98873e44777187
 Auth::routes();
 
 

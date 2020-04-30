@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePekerjaanGuruTable extends Migration
+class CreateTendiksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,13 @@ class CreatePekerjaanGuruTable extends Migration
      */
     public function up()
     {
-        Schema::create('pekerjaan_guru', function (Blueprint $table) {
+        Schema::create('tendiks', function (Blueprint $table) {
             $table->id();
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->tinyInteger('level_akses');
+            $table->string('jabatan');
+            $table->string('bagian_pekerjaan');
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ class CreatePekerjaanGuruTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pekerjaan_guru');
+        Schema::dropIfExists('tendiks');
     }
 }
