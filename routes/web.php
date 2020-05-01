@@ -78,6 +78,8 @@ Route::get('/confirm-reset', function () {
 // If you want to know what is it for, ask Fakhri :)
 Route::get('/civitas', 'BackendController@createCivitas');
 Route::get('/siswa/{id}', 'BackendController@seeSiswa');
+Route::get('/pesan', 'BackendController@seeAllMessage');
+Route::get('/pesan/receiver', 'BackendController@getMessageReceiver');
 // -----------------
 
 Auth::routes();
