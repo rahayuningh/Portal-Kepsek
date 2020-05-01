@@ -15,12 +15,12 @@ class CreateKebutuhanBarangsTable extends Migration
     {
         Schema::create('kebutuhan_barang', function (Blueprint $table) {
             $table->id();
-            $table->integer('jenis_inventaris_id');
-            $table->integer('ruangan_id');
+            $table->unsignedBigInteger('jenis_inventaris_id');
+            $table->unsignedBigInteger('ruangan_id');
             $table->integer('jml_barang_shrsny');
-            $table->integer('jml_barang_dibutuhk');
             $table->integer('jml_barang_opr');
             $table->integer('jml_barang_rsk');
+            $table->integer('jml_barang_dibutuhkan');
             $table->timestamps();
         });
     }

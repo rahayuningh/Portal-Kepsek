@@ -23,7 +23,7 @@ class kbms extends Seeder
             'id_stasuses' => '1',
             'id_guru' => '54321',
             'semester' => '2'
-        ],
+        ]
     );
     }
 }
