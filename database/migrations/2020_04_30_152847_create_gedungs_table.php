@@ -15,8 +15,8 @@ class CreateGedungsTable extends Migration
     {
         Schema::create('gedung', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_gedung',25);
-            $table->string('kode_gedung',25)->unique();
+            $table->string('nama_gedung',50);
+            $table->string('kode_gedung',50)->unique();
             $table->timestamps();
         });
     }
