@@ -1,0 +1,70 @@
+{{-- ######################################################################## --}}
+{{-- SIDEBAR --}}
+{{-- ######################################################################## --}}
+
+<nav class="sidebar sidebar-offcanvas" id="sidebar" >
+    <div class="left-fixed-sidebar" >
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <ul class="nav">
+                {{-- BERANDA --}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        <span class="menu-title">Beranda</span>
+                        <i class="mdi mdi-home menu-icon"></i>
+                    </a>
+                </li>
+                {{-- INFO GURU --}}
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#info-guru" aria-expanded="false" aria-controls="info-guru">
+                        <span class="menu-title">Info Pegawai</span>
+                        <i class="menu-arrow"></i>
+                        <i class="mdi mdi-account-card-details menu-icon"></i>
+                    </a>
+                    <div class="collapse" id="info-guru">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="/status-pekerjaan-guru">Status Pekerjaan Guru</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="/KBM">KBM</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="/bio-pegawai">Biodata Pegawai</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                {{-- INFO SISWA --}}
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#info-siswa" aria-expanded="false" aria-controls="info-siswa">
+                        <span class="menu-title">Info Siswa</span>
+                        <i class="menu-arrow"></i>
+                        <i class="mdi mdi-account-multiple menu-icon"></i>
+                    </a>
+                    <div class="collapse" id="info-siswa">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="/data-siswa">Data Siswa</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="/detail-kelas">Detail Kelas</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="/bio-siswa">Biodata Siswa</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                {{-- INVENTARIS --}}
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#inventaris" aria-expanded="false" aria-controls="inventaris">
+                        <span class="menu-title">Inventaris</span>
+                        <i class="menu-arrow"></i>
+                        <i class="mdi mdi-account-multiple menu-icon"></i>
+                    </a>
+                    <div class="collapse" id="inventaris">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href=""></a></li>
+                            <li class="nav-item"> <a class="nav-link" href=""></a></li>
+                            <li class="nav-item"> <a class="nav-link" href=""></a></li>
+                            <li class="nav-item"> <a class="nav-link" href=""></a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                {{-- PESAN --}}
+                
+            </ul>
+        </nav>
+    </div>
+</nav>

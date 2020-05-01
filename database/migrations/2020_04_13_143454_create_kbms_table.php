@@ -15,6 +15,7 @@ class CreateKbmsTable extends Migration
     {
         Schema::create('kbms', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_kbm');
             $table->unsignedBigInteger('id_mapel');
             $table->unsignedBigInteger('id_kelas');
             $table->unsignedBigInteger('id_status');

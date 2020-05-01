@@ -3089,6 +3089,16 @@ pre {
   .table tbody + tbody {
     border-top: 2px solid #ebedf2; }
 
+.pagination li:hover{
+    cursor: pointer;
+}
+    table tbody tr {
+      display: none;
+    }
+
+
+
+
 .table-sm th,
 .table-sm td {
   padding: 0.3rem; }
@@ -3286,7 +3296,9 @@ pre {
   .table-dark.table-hover tbody tr:hover {
     color: #fff;
     background-color: rgba(255, 255, 255, 0.075); }
-
+@media (max-width: 1200px) {
+  .table-responsive{display: table;}
+}
 @media (max-width: 575.98px) {
   .table-responsive-sm {
     display: block;
@@ -4012,6 +4024,11 @@ fieldset:disabled a.btn {
       -webkit-box-shadow: 0 0 0 0.2rem rgba(91, 102, 116, 0.5);
       box-shadow: 0 0 0 0.2rem rgba(91, 102, 116, 0.5); }
 
+.btn-outline-blue {
+  color: #198ae3;
+  border-color: #198ae3; 
+}
+
 .btn-outline-primary {
   color: #b66dff;
   border-color: #b66dff; }
@@ -4081,16 +4098,20 @@ fieldset:disabled a.btn {
       -webkit-box-shadow: 0 0 0 0.2rem rgba(27, 207, 180, 0.5);
       box-shadow: 0 0 0 0.2rem rgba(27, 207, 180, 0.5); }
 
+
 .btn-outline-info {
   color: #198ae3;
-  border-color: #198ae3; }
+  border-color: #198ae3; 
+}
   .btn-outline-info:hover {
     color: #fff;
     background-color: #198ae3;
-    border-color: #198ae3; }
+    border-color: #198ae3; 
+  }
   .btn-outline-info:focus, .btn-outline-info.focus {
     -webkit-box-shadow: 0 0 0 0.2rem rgba(25, 138, 227, 0.5);
-    box-shadow: 0 0 0 0.2rem rgba(25, 138, 227, 0.5); }
+    box-shadow: 0 0 0 0.2rem rgba(25, 138, 227, 0.5); 
+  }
   .btn-outline-info.disabled, .btn-outline-info:disabled {
     color: #198ae3;
     background-color: transparent; }
@@ -4098,11 +4119,13 @@ fieldset:disabled a.btn {
   .show > .btn-outline-info.dropdown-toggle {
     color: #fff;
     background-color: #198ae3;
-    border-color: #198ae3; }
+    border-color: #198ae3; 
+  }
     .btn-outline-info:not(:disabled):not(.disabled):active:focus, .btn-outline-info:not(:disabled):not(.disabled).active:focus,
     .show > .btn-outline-info.dropdown-toggle:focus {
       -webkit-box-shadow: 0 0 0 0.2rem rgba(25, 138, 227, 0.5);
-      box-shadow: 0 0 0 0.2rem rgba(25, 138, 227, 0.5); }
+      box-shadow: 0 0 0 0.2rem rgba(25, 138, 227, 0.5); 
+    }
 
 .btn-outline-warning {
   color: #fed713;
