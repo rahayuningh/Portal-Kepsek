@@ -15,7 +15,7 @@ class CreateMataPelajaransTable extends Migration
     {
         Schema::create('mata_pelajarans', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_mapel');
+            $table->unsignedBigInteger('id_mata_pelajaran');
             $table->char('kode_mapel', 3);
             $table->string('nama_mapel', 50);
             $table->timestamps();
