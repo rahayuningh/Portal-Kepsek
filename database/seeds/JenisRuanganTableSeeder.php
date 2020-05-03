@@ -1,6 +1,8 @@
 <?php
 
+use App\JenisRuangan;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class JenisRuanganTableSeeder extends Seeder
 {
@@ -14,17 +16,17 @@ class JenisRuanganTableSeeder extends Seeder
         DB::table('jenis_ruangan')->delete();
         JenisRuangan::create([
             'id' => '1',
-            'nama_jenis_ruangan'=>'ruangan_kelas'
+            'nama_jenis_ruangan' => 'ruangan_kelas'
         ]);
         DB::table('jenis_ruangan')->delete();
         JenisRuangan::create([
             'id' => '2',
-            'nama_jenis_ruangan'=>'ruangan_kantin'
+            'nama_jenis_ruangan' => 'ruangan_kantin'
         ]);
         DB::table('jenis_ruangan')->delete();
         JenisRuangan::create([
             'id' => '3',
-            'nama_jenis_ruangan'=>'ruangan_tendik'
+            'nama_jenis_ruangan' => 'ruangan_tendik'
         ]);
     }
 }

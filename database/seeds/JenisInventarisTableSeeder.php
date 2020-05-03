@@ -1,6 +1,8 @@
 <?php
 
+use App\JenisInventaris;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class JenisInventarisTableSeeder extends Seeder
 {
@@ -14,7 +16,7 @@ class JenisInventarisTableSeeder extends Seeder
         DB::table('jenis_inventaris')->delete();
         JenisInventaris::create([
             'id' => '1',
-            'nama_jenis_inventaris'=>'Meja'
+            'nama_jenis_inventaris' => 'Meja'
         ]);
     }
 }
