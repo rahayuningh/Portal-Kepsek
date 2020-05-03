@@ -16,6 +16,21 @@ class Siswa extends Model
         'status_keaktifan'
     ];
 
+    public function nilaiUTS(Type $var = null)
+    {
+        return $this->belongsTo('App\NilaiUTS');
+    }
+
+    public function nilaiUAS(Type $var = null)
+    {
+        return $this->belongsTo('App\NilaiUAS');
+    }
+
+    public function kelas(Type $var = null)
+    {
+        return $this->hasMany('App\Kelas');
+    }
+
     public function civitas()
     {
         return $this->morphMany('App\Civitas', 'civitasable');
