@@ -12,16 +12,16 @@ class kbms extends Seeder
     public function run()
     {
         DB::table('kbms')->insert([
-            'id_mapel' => '101',
-            'id_kelas' => '11',
-            'id_stasuses' => '1',
-            'id_guru' => '12345',
+            'mata_pelajaran' => '101',
+            'kelas' => '11',
+            'stasuses' => '1',
+            'guru_pengajar' => '12345',
             'semester' => '1'
         ],[
-            'id_mapel' => '202',
-            'id_kelas' => '21',
-            'id_stasuses' => '1',
-            'id_guru' => '54321',
+            'mata_pelajaran' => '202',
+            'kelas' => '21',
+            'stasuses' => '1',
+            'guru_pengajar' => '54321',
             'semester' => '2'
         ]
     );

@@ -16,8 +16,8 @@ class CreateNilaiTable extends Migration
         Schema::create('nilai', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_nilai');
-            $table->unsignedBigInteger('id_kbm');
-            $table->unsignedBigInteger('id_murid');
+            $table->unsignedBigInteger('kbm');
+            $table->unsignedBigInteger('siswa');
             $table->smallInteger('nilai');
             $table->unsignedBigInteger('tipe');
             $table->timestamps();
