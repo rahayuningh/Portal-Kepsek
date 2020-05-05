@@ -16,17 +16,17 @@ class Siswa extends Model
         'status_keaktifan'
     ];
 
-    public function nilaiUTS(Type $var = null)
+    public function nilaiUTS()
     {
         return $this->belongsTo('App\NilaiUTS');
     }
 
-    public function nilaiUAS(Type $var = null)
+    public function nilaiUAS()
     {
         return $this->belongsTo('App\NilaiUAS');
     }
 
-    public function kelas(Type $var = null)
+    public function kelas()
     {
         return $this->hasMany('App\Kelas');
     }

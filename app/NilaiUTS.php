@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class NilaiUTS extends Model
 {
-    public function kbm(Type $var = null)
+    public function kbm()
     {
         return $this->belongsTo('App\kbm');
     }
-    public function siswa(Type $var = null)
+    public function siswa()
     {
         return $this->hasOne('App\Siswa');
     }
