@@ -13,17 +13,30 @@
                         <i class="mdi mdi-home menu-icon"></i>
                     </a>
                 </li>
-                {{-- INFO GURU --}}
+                {{-- PEKERJAAN GURU --}}
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#info-guru" aria-expanded="false" aria-controls="info-guru">
+                    <a class="nav-link" data-toggle="collapse" href="#pekerjaan" aria-expanded="false" aria-controls="pekerjaan">
+                        <span class="menu-title">Aktivitas/Pekerjaan</span>
+                        <i class="menu-arrow"></i>
+                        <i class="mdi mdi-account-card-details menu-icon"></i>
+                    </a>
+                    <div class="collapse" id="pekerjaan">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="/status-pekerjaan-guru">Status Pekerjaan Guru</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="/kbm">KBM</a></li>
+                        </ul>
+                    </div>
+                </li>                
+                {{-- INFO PEGAWAI --}}
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#info-pegawai" aria-expanded="false" aria-controls="info-pegawai">
                         <span class="menu-title">Info Pegawai</span>
                         <i class="menu-arrow"></i>
                         <i class="mdi mdi-account-card-details menu-icon"></i>
                     </a>
-                    <div class="collapse" id="info-guru">
+                    <div class="collapse" id="info-pegawai">
                         <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="/status-pekerjaan-guru">Status Pekerjaan Guru</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="/KBM">KBM</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="">Data Pegawai</a></li>
                             <li class="nav-item"> <a class="nav-link" href="/bio-pegawai">Biodata Pegawai</a></li>
                         </ul>
                     </div>
@@ -54,7 +67,7 @@
                     </a>
                     <div class="collapse" id="inventaris">
                         <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href=""></a></li>
+                            <li class="nav-item"> <a class="nav-link" href="/data-inventaris">Data Iventaris</a></li>
                             <li class="nav-item"> <a class="nav-link" href=""></a></li>
                             <li class="nav-item"> <a class="nav-link" href=""></a></li>
                             <li class="nav-item"> <a class="nav-link" href=""></a></li>

@@ -61,11 +61,20 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">@yield('page-name')</a></li>
-                                <li class="breadcrumb-item"><a href="#">@yield('page-name')</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Page Aktif</li>
                             </ol>
                         </nav>
                     </div>
+
+                    {{-- ######################################################################## --}}
+                    {{-- PESAN SUKSES --}}
+                    {{-- ######################################################################## --}}
+                    {{-- @if() --}}
+                        <div class="alert alert-success" role="alert"> 
+                            {{"Data berhasil ditambahkan/diubah/dihapus"}} 
+                        </div>
+                    {{-- @endif --}}
+
 
                     {{-- ######################################################################## --}}
                     {{-- CONTENT --}}

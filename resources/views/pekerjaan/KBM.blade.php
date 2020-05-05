@@ -2,9 +2,8 @@
 @section('page-name') KBM @endsection
 @section('content')
 
-
 {{-- CONTENT 1--}}
-{{-- TABEL RINGKASAN --}}
+{{-- TABEL UTAMA--}}
 <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
@@ -23,7 +22,6 @@
 
             	{{-- TABEL UTAMA --}}
                 <div class="table">
-	                {{-- <table id="" class="table table-bordered table-responsive"> --}}
 	                <table id="summary" class="table table-bordered table-responsive">
 	                    <thead>
 	                        <tr class="text-center">
@@ -36,22 +34,18 @@
 	                    </thead>
 	                    <tbody>
 	                        <tr>
-	                            <td>Matematika</td>
-	                            <td>
-	                                <a href="">Kelas 1A</a>
-	                            </td>
-	                            <td>
-	                                <a href="">Morgan Mendel</a>
-	                            </td>
-	                            <td>1</td>
-	                            <td class="p-0 text-center">
-	                            	<a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal" align="center" title="Edit" href="#Edit">
-			        					<i class="mdi mdi-pencil"></i>
-			    					</a>
-	                            	<a href="" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus" onclick="return confirm('Yakin hapus data?')">
-			                            <i class="mdi mdi-delete"></i>
-			                        </a>
-	                            </td>
+	                        	<td>Matematika</td>
+	                        	<td><a href="">Kelas 1A</a></td>
+	                        	<td><a href="">Morgan Mendel</a></td>
+	                        	<td class="text-center">1</td>
+	                        	<td class="p-0 text-center">
+	                        		<a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal" align="center" title="Edit" href="#Edit">
+	                        			<i class="mdi mdi-pencil"></i>
+	                        		</a>
+	                        		<a href="" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus" onclick="return confirm('Yakin hapus data?')">
+	                        			<i class="mdi mdi-delete"></i>
+	                        		</a>
+	                        	</td>
 	                        </tr>
 	                    </tbody>
 	                </table>
@@ -73,7 +67,7 @@
 				</button>
 			</div>
 
-			<form action="/KBM" method="POST">
+			<form action="" method="">
 				{{ csrf_field() }}
 				{{-- FIELD --}}
 				<div class="modal-body">
@@ -96,10 +90,10 @@
 						<div class="col-md-6">
 							<select id="kelas" type="kelas" name="kelas" class="form-control" required="required" data-validation-required-message="Pilih kelas.">
 								<option disabled selected> --Pilih-- </option>
-								<option>1A</option>
-								<option>1B</option>
-								<option>1C</option>
-								<option>2A</option>
+								<option>1A (2019/2020)</option>
+								<option>1B (2019/2020)</option>
+								<option>1C (2019/2020)</option>
+								<option>2A (2019/2020)</option>
 							</select>
 							<p class="help-block text-danger"></p>
 						</div>
@@ -133,7 +127,7 @@
 				</div>
 				{{-- BUTTON --}}
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
 					<button type="submit" class="btn btn-primary">Simpan</button>
 				</div>
 			</form>
@@ -152,7 +146,7 @@
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
-			<form action="/database-iphone/update_iphone" method="POST">
+			<form action="" method="">
 				{{ csrf_field() }}
 				{{-- FIELD --}}
 				<div class="modal-body">
@@ -175,10 +169,10 @@
 						<div class="col-md-6">
 							<select id="kelas" type="kelas" name="kelas" class="form-control" required="required" data-validation-required-message="Pilih kelas.">
 								<option disabled selected> --Pilih-- </option>
-								<option>1A</option>
-								<option>1B</option>
-								<option>1C</option>
-								<option>2A</option>
+								<option>1A (2019/2020)</option>
+								<option>1B (2019/2020)</option>
+								<option>1C (2019/2020)</option>
+								<option>2A (2019/2020)</option>
 							</select>
 							<p class="help-block text-danger"></p>
 						</div>
@@ -212,7 +206,7 @@
 				</div>
 				{{-- BUTTON --}}
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
 					<button type="submit" class="btn btn-primary">Simpan Perubahan</button>
 				</div>
 			</form>

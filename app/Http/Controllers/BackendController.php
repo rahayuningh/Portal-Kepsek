@@ -43,4 +43,5 @@ class BackendController extends Controller
         // echo($civitas);
         echo($siswa);
     }
+
 }

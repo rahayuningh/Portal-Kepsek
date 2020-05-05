@@ -41,7 +41,7 @@
                                     <tr>
                                         <td> Wali Kelas </td>
                                         <td> : </td>
-                                        <td> Lorem Ipsum </td>
+                                        <td> <a href="/bio-pegawai">Lorem Ipsum</a></td>
                                     </tr>
                                 </tbody>
                             </table>

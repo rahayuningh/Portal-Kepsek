@@ -3837,10 +3837,10 @@ fieldset:disabled a.btn {
   border-color: #00593B; }
   .btn-primary:hover {
     color: #fff;
-    background-color: #8CBA51;
-    border-color: #8CBA51; 
+    background-color: #014830;
+    border-color: #014830; 
 /*    background-color: #a347ff;
-    border-color: #9d3aff; */
+    border-color: #00593B; */
   }
   .btn-primary:focus, .btn-primary.focus {
     -webkit-box-shadow: 0 0 0 0.2rem rgba(193, 131, 255, 0.5);
@@ -3852,7 +3852,7 @@ fieldset:disabled a.btn {
   .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
   .show > .btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #9d3aff;
+    background-color: #00593B;
     border-color: #962dff; }
     .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
     .show > .btn-primary.dropdown-toggle:focus {
@@ -5865,7 +5865,7 @@ input[type="button"].btn-block {
   background-color: #00593B; }
   a.badge-primary:hover, a.badge-primary:focus {
     color: #fff;
-    background-color: #9d3aff; }
+    background-color: #00593B; }
   a.badge-primary:focus, a.badge-primary.focus {
     outline: 0;
     -webkit-box-shadow: 0 0 0 0.2rem rgba(182, 109, 255, 0.5);
@@ -7083,7 +7083,7 @@ a.close.disabled {
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
-  background-color: #9d3aff !important; }
+  background-color: #00593B !important; }
 
 .bg-secondary {
   background-color: #c3bdbd !important; }
@@ -7143,7 +7143,7 @@ button.bg-dark:focus {
 
 .bg-white {
   background-color: #ffffff !important; }
-.bg-low-green{background-color: #8CBA51 !important;}
+.bg-low-green{background-color: #014830 !important;}
 .bg-transparent {
   background-color: transparent !important; }
 
@@ -10539,8 +10539,8 @@ code {
     height: 6px; }
 
 .bg-gradient-primary {
-  background: -webkit-gradient(linear, left top, right top, from(#8CBA51), to(#00593B)) !important;
-  background: linear-gradient(to right, #8CBA51, #00593B) !important; }
+  background: -webkit-gradient(linear, left top, right top, from(#014830), to(#00593B)) !important;
+  background: linear-gradient(to right, #014830, #00593B) !important; }
 
 .bg-gradient-secondary {
   background: -webkit-gradient(linear, left top, right top, from(#e7ebf0), to(#868e96)) !important;
@@ -10835,9 +10835,9 @@ code {
       border: 1px solid #d7d7d7; }
     .purchase-popup .btn.purchase-button {
       background-color: rgba(172, 50, 228, 0.9);
-      background-image: -owg-linear-gradient(to right, #8CBA51, #00593B);
-      background-image: -webkit-gradient(linear, left top, right top, from(#8CBA51), to(#00593B));
-      background-image: linear-gradient(to right, #8CBA51, #00593B);
+      background-image: -owg-linear-gradient(to right, #014830, #00593B);
+      background-image: -webkit-gradient(linear, left top, right top, from(#014830), to(#00593B));
+      background-image: linear-gradient(to right, #014830, #00593B);
       color: #ffffff;
       border: none;
       line-height: 1;
@@ -10903,8 +10903,8 @@ code {
 
 /*Badge gradient variations*/
 .badge-gradient-primary {
-  background: -webkit-gradient(linear, left top, right top, from(#8CBA51), to(#00593B));
-  background: linear-gradient(to right, #8CBA51, #00593B);
+  background: -webkit-gradient(linear, left top, right top, from(#014830), to(#00593B));
+  background: linear-gradient(to right, #014830, #00593B);
   color: #ffffff; }
 
 .badge-gradient-secondary {
@@ -11279,8 +11279,8 @@ code {
     border-color: #00593B; }
 
 .btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active {
-  background: -webkit-gradient(linear, left top, right top, from(#8CBA51), to(#00593B));
-  background: linear-gradient(to right, #8CBA51, #00593B);
+  background: -webkit-gradient(linear, left top, right top, from(#014830), to(#00593B));
+  background: linear-gradient(to right, #014830, #00593B);
   color: #000; }
 
 .btn-inverse-secondary {
@@ -11531,15 +11531,15 @@ code {
 
 /* gradient buttons */
 .btn-gradient-primary {
-  background: -webkit-gradient(linear, left top, right top, from(#8CBA51), to(#00593B));
-  background: linear-gradient(to right, #8CBA51, #00593B);
+  background: -webkit-gradient(linear, left top, right top, from(#014830), to(#00593B));
+  background: linear-gradient(to right, #014830, #00593B);
   border: 0;
   -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease; }
   .btn-gradient-primary:not([disabled]):not(.disabled):active, .btn-gradient-primary:not([disabled]):not(.disabled).active,
   .show > .btn-gradient-primary.dropdown-toggle {
-    background: -webkit-gradient(linear, left top, right top, from(#8CBA51), to(#00593B));
-    background: linear-gradient(to right, #8CBA51, #00593B); }
+    background: -webkit-gradient(linear, left top, right top, from(#014830), to(#00593B));
+    background: linear-gradient(to right, #014830, #00593B); }
   .btn-gradient-primary:hover {
     opacity: .8; }
   .btn-gradient-primary:not(.btn-gradient-light) {
@@ -12074,8 +12074,8 @@ code {
       font-weight: bold;
       color: #ffffff; }
     .form-check .form-check-label input[type="checkbox"]:checked + .input-helper:before {
-      background: -webkit-gradient(linear, left top, right top, from(#8CBA51), to(#00593B));
-      background: linear-gradient(to right, #8CBA51, #00593B);
+      background: -webkit-gradient(linear, left top, right top, from(#014830), to(#00593B));
+      background: linear-gradient(to right, #014830, #00593B);
       border-width: 0; }
     .form-check .form-check-label input[type="checkbox"]:checked + .input-helper:after {
       width: 18px;
@@ -12129,8 +12129,8 @@ code {
         left: auto;
         right: 6px; }
     .form-check .form-check-label input[type="radio"]:checked + .input-helper:before {
-      background: -webkit-gradient(linear, left top, right top, from(#8CBA51), to(#00593B));
-      background: linear-gradient(to right, #8CBA51, #00593B);
+      background: -webkit-gradient(linear, left top, right top, from(#014830), to(#00593B));
+      background: linear-gradient(to right, #014830, #00593B);
       border-width: 0; }
     .form-check .form-check-label input[type="radio"]:checked + .input-helper:after {
       opacity: 1;
@@ -12151,8 +12151,8 @@ code {
 
 .form-check-primary.form-check label input[type="checkbox"]:checked + .input-helper:before,
 .form-check-primary.form-check label input[type="radio"]:checked + .input-helper:before {
-  background: -webkit-gradient(linear, left top, right top, from(#8CBA51), to(#00593B));
-  background: linear-gradient(to right, #8CBA51, #00593B); }
+  background: -webkit-gradient(linear, left top, right top, from(#014830), to(#00593B));
+  background: linear-gradient(to right, #014830, #00593B); }
 
 .form-check-secondary.form-check label input[type="checkbox"] + .input-helper:before,
 .form-check-secondary.form-check label input[type="radio"] + .input-helper:before {
@@ -12431,8 +12431,8 @@ dl {
       background: -webkit-gradient(linear, left top, right top, from(#84d9d2), to(#07cdae));
       background: linear-gradient(to right, #84d9d2, #07cdae); }
     .gradient-bullet-list li:nth-child(5):before {
-      background: -webkit-gradient(linear, left top, right top, from(#8CBA51), to(#00593B));
-      background: linear-gradient(to right, #8CBA51, #00593B); }
+      background: -webkit-gradient(linear, left top, right top, from(#014830), to(#00593B));
+      background: linear-gradient(to right, #014830, #00593B); }
 
 .bullet-line-list {
   padding-left: 30px;
@@ -12953,8 +12953,8 @@ dl {
 
 /* Navbar color variations */
 .navbar.navbar-primary .navbar-menu-wrapper {
-  background: -webkit-gradient(linear, left top, right top, from(#8CBA51), to(#00593B));
-  background: linear-gradient(to right, #8CBA51, #00593B);
+  background: -webkit-gradient(linear, left top, right top, from(#014830), to(#00593B));
+  background: linear-gradient(to right, #014830, #00593B);
   color: #ffffff; }
   .navbar.navbar-primary .navbar-menu-wrapper .search-field .input-group input:-ms-input-placeholder {
     color: #ffffff; }
@@ -13167,14 +13167,14 @@ dl {
         .sidebar .nav .nav-item .nav-link[aria-expanded="true"] .menu-arrow:before {
           content: "\f140"; }
       .sidebar .nav .nav-item.active {
-        background: #8CBA51; }
+        background: #014830; }
         .sidebar .nav .nav-item.active > .nav-link .menu-title {
           color: #FDD100;
           font-family: "ubuntu-medium", sans-serif; }
         .sidebar .nav .nav-item.active > .nav-link i {
           color: #FDD100; }
       .sidebar .nav .nav-item:hover {
-        background: #8CBA51; }
+        background: #014830; }
       .sidebar .nav .nav-item.nav-profile .nav-link {
         height: auto;
         line-height: 1;
@@ -13225,7 +13225,7 @@ dl {
           height: auto;
           border-top: 0; }
           .sidebar .nav.sub-menu .nav-item .nav-link:before {
-            content: "\F054";
+            /*content: "\F054";*/
             font-family: "Material Design Icons";
             display: block;
             position: absolute;
@@ -13239,10 +13239,11 @@ dl {
               left: auto;
               right: 0; }
           .sidebar .nav.sub-menu .nav-item .nav-link.active {
-            color: #00593B;
+            font-weight: bold;
+            color: #ffffff;
             background: transparent; }
           .sidebar .nav.sub-menu .nav-item .nav-link:hover {
-            color: #555555; }
+            color: #ffffff; }
         .sidebar .nav.sub-menu .nav-item:hover {
           background: transparent; }
 

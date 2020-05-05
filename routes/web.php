@@ -24,15 +24,17 @@ Route::get('/home', function () {
 // Route::get('/home', 'HomeController@index')->name('home');
 
 // -----------------------------------------------------
-// PEGAWAI (GURU & TENDIK)
 // STATUS PEKERJAAN GURU
 Route::get('/status-pekerjaan-guru', function () {
-    return view('pegawai/StatusPekerjaanGuru');
+    return view('pekerjaan/StatusPekerjaanGuru');
 });
 // KBM
-Route::get('/KBM', function () {
-    return view('pegawai/KBM');
+Route::get('/kbm', function () {
+    return view('pekerjaan/KBM');
 });
+
+// -----------------------------------------------------
+// PEGAWAI (GURU & TENDIK)
 // BIODATA PEGAWAI
 Route::get('/bio-pegawai', function () {
     return view('pegawai/BiodataPegawai');
@@ -55,6 +57,12 @@ Route::get('/bio-siswa', function () {
     return view('siswa/BiodataSiswa');
 });
 
+// -----------------------------------------------------
+// INVENTARIS
+Route::get('/data-inventaris', function () {
+    return view('inventaris/DataInventaris');
+});
+
 
 
 // -----------------------------------------------------
@@ -74,6 +82,10 @@ Route::get('/confirm-reset', function () {
     return view('auth/passwords/confirm');
 });
 
+
+
+
+
 // Route made by Fakhri
 // If you want to know what is it for, ask Fakhri :)
 Route::get('/civitas', 'BackendController@createCivitas');
@@ -84,8 +96,10 @@ Auth::routes();
 
 
 
+// -----------------------------------------------------
+// TESTING
 
-// TESTING, COBA TEMPLATE
+//COBA TEMPLATE
 Route::get('/template', function () {
     return view('CobaTemplate/CobaTemplate');
 });
@@ -93,3 +107,5 @@ Route::get('/template', function () {
 Route::get('/tabelsiswa', function () {
     return view('TabelSiswa-TabMode');
 });
+
+
