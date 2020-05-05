@@ -15,4 +15,9 @@ class Guru extends Model
     {
         return $this->morphMany('App\Pegawai', 'pegawaiable');
     }
+
+    public function messages()
+    {
+        return $this->hasMany('App\Pesan', 'penerima');
+    }
 }

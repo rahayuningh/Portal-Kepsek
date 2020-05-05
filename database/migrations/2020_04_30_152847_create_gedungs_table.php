@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMataPelajaransTable extends Migration
+class CreateGedungsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateMataPelajaransTable extends Migration
      */
     public function up()
     {
-        Schema::create('mata_pelajarans', function (Blueprint $table) {
+        Schema::create('gedung', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_mata_pelajaran');
-            $table->char('kode_mapel', 3);
-            $table->string('nama_mapel', 50);
+            $table->string('nama_gedung',50);
+            $table->string('kode_gedung',50)->unique();
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateMataPelajaransTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mata_pelajarans');
+        Schema::dropIfExists('gedung');
     }
 }
