@@ -103,9 +103,15 @@ Route::get('/tabelsiswa', function () {
 
 // Semua route dibawah ini bisa diakses setelah login
 // jadi bikin routenya di atas aja, jangan dibawah
+
 Auth::routes();
 
 Route::get('/home', function () {
     return view('beranda');
 });
+
 // Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
