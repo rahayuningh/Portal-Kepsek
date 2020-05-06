@@ -70,7 +70,7 @@
             {{-- HEADER --}}
             <h2 class="text-center" style="background-color: green; color: white">Ringkasan Pekerjaan Guru</h2>
             <div class="table">
-                <table id="searchTable" class="table table-hover table-bordered">
+                <table id="summary" class="table table-hover table-bordered">
                     <thead>
                         <tr>
                             <th>Kelas</th>
