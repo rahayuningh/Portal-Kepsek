@@ -26,6 +26,7 @@
                             <li class="nav-item"> <a class="nav-link" href="/status-pekerjaan-guru">Status Pekerjaan
                                     Guru</a></li>
                             <li class="nav-item"> <a class="nav-link" href="/kbm">KBM</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="">Mata Pelajaran</a></li>
                         </ul>
                     </div>
                 </li>
@@ -73,10 +74,10 @@
                     </a>
                     <div class="collapse" id="inventaris">
                         <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="">Kebutuhan Barang</a></li>
                             <li class="nav-item"> <a class="nav-link" href="/data-inventaris">Data Inventaris</a></li>
                             <li class="nav-item"> <a class="nav-link" href="">Gedung</a></li>
                             <li class="nav-item"> <a class="nav-link" href="">Ruangan</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="">Kebutuhan Barang</a></li>
                         </ul>
                     </div>
                 </li>
