@@ -3104,11 +3104,11 @@ pre {
 .table-border {
   width: 100%;
   border-collapse: collapse;
-  border: 1px solid #ebedf2; 
+  border: 1px solid #ebedf2;
 }
   .table-border th,
   .table-border td {
-    border: 1px solid #ebedf2; 
+    border: 1px solid #ebedf2;
   }
 
 .table-bordered {
@@ -3221,7 +3221,7 @@ pre {
 .table-danger,
 .table-danger > th,
 .table-danger > td {
-  background-color: #ff0000; 
+  background-color: #ff0000;
 }
 
 .table-danger th,
@@ -3838,7 +3838,7 @@ fieldset:disabled a.btn {
   .btn-primary:hover {
     color: #fff;
     background-color: #014830;
-    border-color: #014830; 
+    border-color: #014830;
 /*    background-color: #a347ff;
     border-color: #00593B; */
   }
@@ -10539,8 +10539,8 @@ code {
     height: 6px; }
 
 .bg-gradient-primary {
-  background: -webkit-gradient(linear, left top, right top, from(#014830), to(#00593B)) !important;
-  background: linear-gradient(to right, #014830, #00593B) !important; }
+  background: -webkit-gradient(linear, left top, right top, from(#008c5d), to(#00593B)) !important;
+  background: linear-gradient(to right, #008c5d, #00593B) !important; }
 
 .bg-gradient-secondary {
   background: -webkit-gradient(linear, left top, right top, from(#e7ebf0), to(#868e96)) !important;
@@ -11012,7 +11012,7 @@ code {
   .btn.btn-icon {
     width: 40px;
     height: 40px;
-    padding: 0; 
+    padding: 0;
   }
   .btn.btn-icon-text .btn-icon-prepend {
     margin-right: .5rem; }
@@ -11428,7 +11428,7 @@ code {
   background-image: none;
   border-color: rgba(254, 124, 150, 0); }
   .btn-inverse-danger:not(.btn-inverse-light) {
-    color: #ff0000; 
+    color: #ff0000;
     /*color: #fe7c96; */
   }
   .btn-inverse-danger:hover {
@@ -12278,7 +12278,7 @@ select.form-control {
   }*/
   select:invalid{color: gray}
   select.form-control:focus {
-    outline: 1px solid #ebedf2; 
+    outline: 1px solid #ebedf2;
   }
   select.form-control.border-primary {
     outline: 1px solid #00593B; }

@@ -12,49 +12,49 @@
                 <div class="row">
                     {{-- KOLOM TAHUN AJARAN --}}
                     <div class="col-md-4">
-                      <div class="form-group row">
-                        <div class="text-center col-sm-12">
-                          <label class="" for="tahun">Tahun Ajaran</label>
-                          <select class="form-control" required>
-                            <option disabled selected> --Pilih-- </option>
-                             <option>2019/2020 Semester Genap</option>
-                             <option>2019/2020 Semester Ganjil</option>
-                             <option>2018/2019 Semester Genap</option>
-                             <option>2018/2019 Semester Ganjil</option>
-                          </select>
+                        <div class="form-group row">
+                            <div class="text-center col-sm-12">
+                                <label class="" for="tahun">Tahun Ajaran</label>
+                                <select class="form-control" required>
+                                    <option disabled selected> --Pilih-- </option>
+                                    <option>2019/2020 Semester Genap</option>
+                                    <option>2019/2020 Semester Ganjil</option>
+                                    <option>2018/2019 Semester Genap</option>
+                                    <option>2018/2019 Semester Ganjil</option>
+                                </select>
+                            </div>
                         </div>
-                      </div>
                     </div>
                     {{-- MATA PELAJARAN --}}
                     <div class="col-md-4">
-                      <div class="form-group row">
-                        <div class="text-center col-sm-12">
-                          <label class="" for="tahun">Wilayah</label>
-                          <select class="form-control" required>
-                             <option disabled selected> --Pilih-- </option>
-                             <option>Bogor</option>
-                             <option>Jambi</option>
-                             <option>NTT</option>
-                             <option>Riau</option>
-                             <option>Kalimantan</option>
-                          </select>
+                        <div class="form-group row">
+                            <div class="text-center col-sm-12">
+                                <label class="" for="tahun">Wilayah</label>
+                                <select class="form-control" required>
+                                    <option disabled selected> --Pilih-- </option>
+                                    <option>Bogor</option>
+                                    <option>Jambi</option>
+                                    <option>NTT</option>
+                                    <option>Riau</option>
+                                    <option>Kalimantan</option>
+                                </select>
+                            </div>
                         </div>
-                      </div>
                     </div>
                     {{-- KELAS --}}
                     <div class="col-md-4">
-                      <div class="form-group row">
-                        <div class="text-center col-sm-12">
-                          <label class="" for="tahun">Kelas</label>
-                          <select class="form-control" required>
-                             <option disabled selected> --Pilih-- </option>
-                             <option>1A</option>
-                             <option>1B</option>
-                             <option>1C</option>
-                             <option>2A</option>
-                          </select>
+                        <div class="form-group row">
+                            <div class="text-center col-sm-12">
+                                <label class="" for="tahun">Kelas</label>
+                                <select class="form-control" required>
+                                    <option disabled selected> --Pilih-- </option>
+                                    <option>1A</option>
+                                    <option>1B</option>
+                                    <option>1C</option>
+                                    <option>2A</option>
+                                </select>
+                            </div>
                         </div>
-                      </div>
                     </div>
                 </div>
                 {{-- TOMBOL SEARCH --}}
@@ -78,7 +78,7 @@
             <div class="card-body">
                 <h5 class="card-title text-center">TABEL {TAHUN AJARAN {2019/2020} SEMESTER {GANJIL}}</h5>
                 <h5 class="card-title text-center">{HASIL PENCARIAN}</h5>
-                <div class="table" >
+                <div class="table">
                     <table id="searchTable" class="table table-bordered table-responsive">
                         <thead>
                             <tr>
