@@ -13,15 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// BERANDA
 Route::get('/', function () {
     return view('beranda');
 });
-
-// BERANDA
-Route::get('/home', function () {
-    return view('beranda');
-});
-// Route::get('/home', 'HomeController@index')->name('home');
 
 // -----------------------------------------------------
 // STATUS PEKERJAAN GURU
@@ -94,10 +89,6 @@ Route::get('/pesan', 'BackendController@seeAllMessage');
 Route::get('/pesan/receiver', 'BackendController@getMessageReceiver');
 // -----------------
 
-Auth::routes();
-
-
-
 // -----------------------------------------------------
 // TESTING
 
@@ -109,3 +100,12 @@ Route::get('/template', function () {
 Route::get('/tabelsiswa', function () {
     return view('CobaTemplate/tabel_siswa_tabmode');
 });
+
+// Semua route dibawah ini bisa diakses setelah login
+// jadi bikin routenya di atas aja, jangan dibawah
+Auth::routes();
+
+Route::get('/home', function () {
+    return view('beranda');
+});
+// Route::get('/home', 'HomeController@index')->name('home');
