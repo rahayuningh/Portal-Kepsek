@@ -101,17 +101,13 @@ Route::get('/tabelsiswa', function () {
     return view('CobaTemplate/tabel_siswa_tabmode');
 });
 
-// Semua route dibawah ini bisa diakses setelah login
+// Semua route dibawah ini baru bisa diakses setelah login
 // jadi bikin routenya di atas aja, jangan dibawah
 
 Auth::routes();
 
 Route::get('/home', function () {
     return view('beranda');
-});
+})->middleware('auth');
 
 // Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
