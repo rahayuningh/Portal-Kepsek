@@ -76,6 +76,9 @@
                         {{"Data berhasil ditambahkan/diubah/dihapus"}}
                     </div>
                     {{-- @endif --}}
+                    <div class="alert alert-danger" role="alert">
+                        {{"Data gagal ditambahkan/diubah/dihapus"}}
+                    </div>
 
 
                     {{-- ######################################################################## --}}
