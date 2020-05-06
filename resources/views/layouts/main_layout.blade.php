@@ -17,12 +17,12 @@
     <!-- Layout styles -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="{{ asset('assets/imagesSCB/Logo-SCB_mini.png" ') }}/>
+    <link rel="shortcut icon" href="{{ asset('assets/imagesSCB/Logo-SCB_mini.png') }}" />
 
     {{-- Table --}}
-    <link href=" {{ asset('assets/css/datatables/dataTables.bootstrap4.css" rel="stylesheet') }}">
+    <link href="{{ asset('assets/css/datatables/dataTables.bootstrap4.css') }}" rel="stylesheet">
     {{-- <link href="{{ asset('') }}../../assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css"
-    rel="stylesheet"> --}}
+        rel="stylesheet"> --}}
 </head>
 
 <body>
