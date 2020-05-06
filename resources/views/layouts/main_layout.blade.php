@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -28,12 +29,12 @@
         {{-- ######################################################################## --}}
         {{-- TOP NAVBAR --}}
         {{-- ######################################################################## --}}
-        @include('layouts.top-navbar')
+        @include('layouts.topbar')
 
 
 
         <!-- partial -->
-        <div class="container-fluid page-body-wrapper" >
+        <div class="container-fluid page-body-wrapper">
             {{-- ######################################################################## --}}
             {{-- SIDEBAR --}}
             {{-- ######################################################################## --}}
@@ -55,7 +56,7 @@
                         <h3 class="page-title">
                             <span class="page-title-icon bg-gradient-primary text-white mr-2">
                                 <i class="mdi mdi-home"></i>
-                            </span> @yield('page-name') 
+                            </span> @yield('page-name')
                         </h3>
                         {{--LINK PATH--}}
                         <nav aria-label="breadcrumb">
@@ -70,9 +71,9 @@
                     {{-- PESAN SUKSES --}}
                     {{-- ######################################################################## --}}
                     {{-- @if() --}}
-                        <div class="alert alert-success" role="alert"> 
-                            {{"Data berhasil ditambahkan/diubah/dihapus"}} 
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{"Data berhasil ditambahkan/diubah/dihapus"}}
+                    </div>
                     {{-- @endif --}}
 
 
@@ -89,8 +90,11 @@
                 <!-- partial:partials/_footer.html -->
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2017 <a href="https://www.bootstrapdash.com/" target="_blank">BootstrapDash</a>. All rights reserved.</span>
-                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2017 <a
+                                href="https://www.bootstrapdash.com/" target="_blank">BootstrapDash</a>. All rights
+                            reserved.</span>
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made
+                            with <i class="mdi mdi-heart text-danger"></i></span>
                     </div>
                 </footer>
 
@@ -124,4 +128,5 @@
     <script src="assets/js/datatables/table.js"></script>
 
 </body>
+
 </html>

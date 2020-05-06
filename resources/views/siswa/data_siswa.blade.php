@@ -1,4 +1,4 @@
-@extends('layouts.main-layout')
+@extends('layouts.main_layout')
 @section('page-name') Data Siswa @endsection
 @section('content')
 
@@ -135,7 +135,7 @@
             </div>
         </div>
     </div>
-</div>                    
+</div>
 
 
 @endsection

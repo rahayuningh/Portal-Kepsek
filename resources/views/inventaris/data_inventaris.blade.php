@@ -1,4 +1,4 @@
-@extends('layouts.main-layout')
+@extends('layouts.main_layout')
 @section('page-name') Data Inventaris @endsection
 @section('content')
 

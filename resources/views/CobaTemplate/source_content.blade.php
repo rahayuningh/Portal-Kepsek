@@ -7,7 +7,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title text-center">TABEL {TAHUN AJARAN {2019/2020} SEMESTER {GANJIL}}</h5>
                                     <h5 class="card-title text-center">{HASIL PENCARIAN}</h5>
-                                    <div class="table" >
+                                                <div class="table" >
                                         <table id="searchTable" class="table table-bordered table-responsive">
                                         </table>
                                     </div>
@@ -811,5 +811,5 @@
 								</div>
 							</div>
 						</div>
-						
+
 					</div>

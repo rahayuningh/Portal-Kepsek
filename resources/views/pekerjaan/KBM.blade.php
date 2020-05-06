@@ -1,4 +1,4 @@
-@extends('layouts.main-layout')
+@extends('layouts.main_layout')
 @section('page-name') KBM @endsection
 @section('content')
 

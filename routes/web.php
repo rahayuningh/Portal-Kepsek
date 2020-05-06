@@ -14,30 +14,30 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('Beranda');
+    return view('beranda');
 });
 
 // BERANDA
 Route::get('/home', function () {
-    return view('Beranda');
+    return view('beranda');
 });
 // Route::get('/home', 'HomeController@index')->name('home');
 
 // -----------------------------------------------------
 // STATUS PEKERJAAN GURU
 Route::get('/status-pekerjaan-guru', function () {
-    return view('pekerjaan/StatusPekerjaanGuru');
+    return view('pekerjaan/status_pekerjaan_guru');
 });
 // KBM
 Route::get('/kbm', function () {
-    return view('pekerjaan/KBM');
+    return view('pekerjaan/kbm');
 });
 
 // -----------------------------------------------------
 // PEGAWAI (GURU & TENDIK)
 // BIODATA PEGAWAI
 Route::get('/bio-pegawai', function () {
-    return view('pegawai/BiodataPegawai');
+    return view('pegawai/biodata_pegawai');
 });
 
 
@@ -46,21 +46,21 @@ Route::get('/bio-pegawai', function () {
 // SISWA
 // TABEL SISWA
 Route::get('/data-siswa', function () {
-    return view('siswa/DataSiswa');
+    return view('siswa/data_siswa');
 });
 // TabelSiswaPerKelas
 Route::get('/detail-kelas', function () {
-    return view('siswa/DetailKelas');
+    return view('siswa/detail_kelas');
 });
 // BIODATA SISWA
 Route::get('/bio-siswa', function () {
-    return view('siswa/BiodataSiswa');
+    return view('siswa/biodata_siswa');
 });
 
 // -----------------------------------------------------
 // INVENTARIS
 Route::get('/data-inventaris', function () {
-    return view('inventaris/DataInventaris');
+    return view('inventaris/data_inventaris');
 });
 
 
@@ -103,9 +103,9 @@ Auth::routes();
 
 //COBA TEMPLATE
 Route::get('/template', function () {
-    return view('CobaTemplate/CobaTemplate');
+    return view('CobaTemplate/coba_template');
 });
 // TABEL SISWA TAB MODE
 Route::get('/tabelsiswa', function () {
-    return view('TabelSiswa-TabMode');
+    return view('CobaTemplate/tabel_siswa_tabmode');
 });

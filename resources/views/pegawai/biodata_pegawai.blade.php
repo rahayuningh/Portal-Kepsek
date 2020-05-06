@@ -1,4 +1,4 @@
-@extends('layouts.main-layout')
+@extends('layouts.main_layout')
 @section('page-name') Biodata Pegawai @endsection
 @section('content')
 
@@ -46,7 +46,7 @@
                                 <div class="form-group">
                                     <label>Tanggal Lahir</label>
                                     <p>1 JANUARI 2000</p>
-                                </div>              
+                                </div>
                                 <div class="form-group">
                                     <label>Jenis Kelamin</label>
                                     <p>LAKI-LAKI</p>
@@ -76,7 +76,7 @@
                                 <div class="form-group">
                                     <label>Wali Kelas</label>
                                     <p><a href="/detail-kelas">1A</a></p>
-                                    
+
                                 </div>
                                 <div class="form-group">
                                     <label>Mengajar KBM</label>
@@ -120,11 +120,11 @@
                                 <div class="form-group">
                                     <label>Kabupaten/Kota</label>
                                     <p>NAMA KABUPATEN/DESA</p>
-                                </div>              
+                                </div>
                                 <div class="form-group">
                                     <label>PROVINSI</label>
                                     <p>NAMA PROVINSI</p>
-                                </div>              
+                                </div>
                             </div>
                         </div>
 
@@ -174,7 +174,7 @@
                                 <div class="form-group">
                                     <label>Tanggal Lahir</label>
                                     <p>1 JANUARI 2000</p>
-                                </div>              
+                                </div>
                                 <div class="form-group">
                                     <label>Jenis Kelamin</label>
                                     <p>LAKI-LAKI</p>
@@ -240,11 +240,11 @@
                                 <div class="form-group">
                                     <label>Kabupaten/Kota</label>
                                     <p>NAMA KABUPATEN/DESA</p>
-                                </div>              
+                                </div>
                                 <div class="form-group">
                                     <label>PROVINSI</label>
                                     <p>NAMA PROVINSI</p>
-                                </div>              
+                                </div>
                             </div>
                         </div>
 

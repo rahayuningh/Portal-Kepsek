@@ -1,4 +1,4 @@
-@extends('layouts.main-layout')
+@extends('layouts.main_layout')
 @section('page-name') Status Pekerjaan Guru @endsection
 @section('content')
 
@@ -108,7 +108,7 @@
             </div>
         </div>
     </div>
-</div>                    
+</div>
 
 {{-- CONTENT 2--}}
 {{-- TABEL RINGKASAN --}}
@@ -120,9 +120,9 @@
             <div class="row">
                     <div class="card-body">
                         <h4 class="card-title">Pencarian</h4>
-                        
+
                         <form class="form-sample">
-                        
+
                         <div class="row">
                             {{-- KOLOM TAHUN AJARAN --}}
                             <div class="col-md-4">
@@ -176,7 +176,7 @@
                         </div>
 
                         </form>
-                    </div>                                    
+                    </div>
             </div>
 
             {{-- TABEL HASIL PENCARIAN --}}
@@ -286,7 +286,7 @@
                 </div>
 
                 </div>
-            </div>                    
+            </div>
         </div>
     </div>
 </div>
