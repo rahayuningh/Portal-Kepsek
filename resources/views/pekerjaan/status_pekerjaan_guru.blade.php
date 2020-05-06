@@ -42,8 +42,8 @@
                             <td>
                                 <a href="">Rahayuning</a>
                             </td>
-                            <td class="bg-info">PROGRESS</td>
-                            <td class="bg-info">PROGRESS</td>
+                            <td class="bg-warning">PROGRESS</td>
+                            <td class="bg-warning">PROGRESS</td>
                         </tr>
                         <tr>
                             <td> 3 </td>
@@ -78,8 +78,8 @@
                             <td>
                                 <a href="">Jovano</a>
                             </td>
-                            <td class="bg-info">PROGRESS</td>
-                            <td class="bg-info">PROGRESS</td>
+                            <td class="bg-warning">PROGRESS</td>
+                            <td class="bg-warning">PROGRESS</td>
                         </tr>
                         <tr>
                             <td> 6 </td>
