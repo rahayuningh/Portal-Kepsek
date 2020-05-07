@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKbmsTable extends Migration
+class CreatePekerjaanGurusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateKbmsTable extends Migration
      */
     public function up()
     {
-        Schema::create('kbms', function (Blueprint $table) {
+        Schema::create('pekerjaan_gurus', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id');
-            $table->unsignedBigInteger('mata_pelajaran_id');
-            $table->unsignedBigInteger('kelas_id');
-            $table->unsignedBigInteger('guru_id');
-            $table->tinyInteger('semester');
+            $table->unsignedBigInteger('kbm_id');
+            $table->unsignedBigInteger('tipe_id');
+            $table->unsignedBigInteger('status_id');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateKbmsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kbms');
+        Schema::dropIfExists('pekerjaan_gurus');
     }
 }
