@@ -1,5 +1,5 @@
 @extends('layouts.main_layout')
-@section('page-name') Data Inventaris @endsection
+@section('page-name') Kebutuhan Barang @endsection
 @section('content')
 
 {{-- CONTENT 1--}}
@@ -67,20 +67,22 @@
                     <thead>
                         <tr class="text-center">
                             <th>Jenis Inventaris</th>
-                            <th> Kode Inventaris </th>
-                            <th> Tanggal Mulai Pakai </th>
-                            <th> Status Kelayakan </th>
-                            <th> Ruangan </th>
+                            <th>Ruangan</th>
+                            <th> Jml Seharusnya </th>
+                            <th> Jml Beroperasi </th>
+                            <th> Jml Rusak </th>
+                            <th> Jml Dibutuhkan </th>
                             <th> Aksi </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Meja</td>
-                            <td>021A</td>
-                            <td>23/04/2020</td>
-                            <td>Layak</td>
-                            <td>Ruang Kantin</td>
+                            <td>Kelas 021A</td>
+                            <td>20</td>
+                            <td>15</td>
+                            <td>5</td>
+                            <td>5</td>
                             <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
                                     align="center" title="Edit" href="#Edit">
@@ -93,11 +95,12 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Meja Lipat</td>
-                            <td>021B</td>
-                            <td>23/04/2020</td>
-                            <td>Tidak Layak</td>
-                            <td>Ruang Kelas 1A</td>
+                            <td>Meja</td>
+                            <td>Kelas 021A</td>
+                            <td>20</td>
+                            <td>15</td>
+                            <td>5</td>
+                            <td>5</td>
                             <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
                                     align="center" title="Edit" href="#Edit">
@@ -132,6 +135,28 @@
                 {{ csrf_field() }}
                 {{-- FIELD --}}
                 <div class="modal-body">
+                    <div class="form-group row">
+                        <label for="jenis_inventaris" class="col-md-4 col-form-label text-md-right">Gedung</label>
+                        <div class="col-md-6">
+                            <select id="jenis_inventaris" type="jenis_inventaris" name="jenis_inventaris"
+                                class="form-control" required data-val="true"
+                                data-val-required="Pilih Jenis Inventaris.">
+                                <option disabled selected> --Pilih-- </option>
+                                <option>Gedung A</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="semester" class="col-md-4 col-form-label text-md-right">Ruangan</label>
+                        <div class="col-md-6">
+                            <select id="semester" type="semester" name="semester" class="form-control"
+                                required="required" data-validation-required-message="Pilih semester.">
+                                <option disabled selected> --Pilih-- </option>
+                                <option>Ruang A</option>
+                                <option>Ruang B</option>
+                            </select>
+                        </div>
+                    </div>
                     {{-- Jenis Inventaris --}}
                     <div class="form-group row">
                         <label for="jenis_inventaris" class="col-md-4 col-form-label text-md-right">Jenis
@@ -148,39 +173,10 @@
                             </select>
                         </div>
                     </div>
-                    {{-- Kode Inventaris --}}
                     <div class="form-group row">
-                        <label for="kelas" class="col-md-4 col-form-label text-md-right">Kode Inventaris</label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="namaguru" class="col-md-4 col-form-label text-md-right">Tanggal Mulai Pakai</label>
+                        <label for="namaguru" class="col-md-4 col-form-label text-md-right">Jumlah Seharusnya</label>
                         <div class="col-md-6">
                             <input type="text" name="" id="" class="form-control">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="semester" class="col-md-4 col-form-label text-md-right">Status Kelayakan</label>
-                        <div class="col-md-6">
-                            <select id="semester" type="semester" name="semester" class="form-control"
-                                required="required" data-validation-required-message="Pilih semester.">
-                                <option disabled selected> --Pilih-- </option>
-                                <option>Layak</option>
-                                <option>Rusak</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="semester" class="col-md-4 col-form-label text-md-right">Ruangan</label>
-                        <div class="col-md-6">
-                            <select id="semester" type="semester" name="semester" class="form-control"
-                                required="required" data-validation-required-message="Pilih semester.">
-                                <option disabled selected> --Pilih-- </option>
-                                <option>Ruang A</option>
-                                <option>Ruang B</option>
-                            </select>
                         </div>
                     </div>
                 </div>
