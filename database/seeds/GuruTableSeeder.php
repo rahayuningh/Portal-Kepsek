@@ -17,7 +17,6 @@ class GuruTableSeeder extends Seeder
         Guru::create(
             [
                 'id' => '1',
-                'kbm_diampu' => 1,
                 'kelas_perwalian' => 1
             ]
         );
