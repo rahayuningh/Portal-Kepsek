@@ -7,7 +7,7 @@
 <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
-            <h2 class="text-center" style="background-color: green; color: white">KEGIATAN BELAJAR MENGAJAR</h2>
+            <h2 class="text-center" style="background-color: green; color: white">DATA INVENTARIS</h2>
             <div class="card-body pt-0">
 
             	{{-- ADD RECORD BUTTON --}}
@@ -104,7 +104,7 @@
 					</div>
 					{{-- Kode Inventaris --}}
 					<div class="form-group row">
-						<label for="kelas" class="col-md-4 col-form-label text-md-right">Kelas</label>
+						<label for="kelas" class="col-md-4 col-form-label text-md-right">Kode Inventaris</label>
 						<div class="col-md-6">
 							<select id="kelas" type="kelas" name="kelas" class="form-control" required="required" data-validation-required-message="Pilih kelas.">
 								<option disabled selected> --Pilih-- </option>
