@@ -60,6 +60,14 @@ Route::get('/kebutuhan-barang', function () {
     return view('inventaris/kebutuhan');
 })->name('inventory.needs');
 
+Route::get('/gedung', function () {
+    return view('inventaris/gedung');
+})->name('inventory.building');
+
+Route::get('/ruang', function () {
+    return view('inventaris/ruang');
+})->name('inventory.room');
+
 
 
 // -----------------------------------------------------

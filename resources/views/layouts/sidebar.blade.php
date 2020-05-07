@@ -74,10 +74,14 @@
                     </a>
                     <div class="collapse" id="inventaris">
                         <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="{{ route('inventory.needs') }}">Kebutuhan Barang</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="{{ route('inventory') }}">Data Inventaris</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="">Gedung</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="">Ruangan</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="{{ route('inventory.needs') }}">Kebutuhan
+                                    Barang</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="{{ route('inventory') }}">Data
+                                    Inventaris</a></li>
+                            <li class="nav-item"> <a class="nav-link"
+                                    href="{{ route('inventory.building') }}">Gedung</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="{{ route('inventory.room') }}">Ruangan</a>
+                            </li>
                         </ul>
                     </div>
                 </li>

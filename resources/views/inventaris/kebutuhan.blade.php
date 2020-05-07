@@ -205,43 +205,14 @@
                 {{ csrf_field() }}
                 {{-- FIELD --}}
                 <div class="modal-body">
-                    {{-- Jenis Inventaris --}}
                     <div class="form-group row">
-                        <label for="jenis_inventaris" class="col-md-4 col-form-label text-md-right">Jenis
-                            Inventaris</label>
+                        <label for="jenis_inventaris" class="col-md-4 col-form-label text-md-right">Gedung</label>
                         <div class="col-md-6">
                             <select id="jenis_inventaris" type="jenis_inventaris" name="jenis_inventaris"
                                 class="form-control" required data-val="true"
                                 data-val-required="Pilih Jenis Inventaris.">
-                                <option disabled selected> --Pilih-- </option>
-                                <option>Meja</option>
-                                <option>Kursi</option>
-                                <option>Papan Tulis</option>
-                                <option>Proyektor</option>
-                            </select>
-                        </div>
-                    </div>
-                    {{-- Kode Inventaris --}}
-                    <div class="form-group row">
-                        <label for="kelas" class="col-md-4 col-form-label text-md-right">Kode Inventaris</label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="namaguru" class="col-md-4 col-form-label text-md-right">Tanggal Mulai Pakai</label>
-                        <div class="col-md-6">
-                            <input type="text" name="" id="" class="form-control">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="semester" class="col-md-4 col-form-label text-md-right">Status Kelayakan</label>
-                        <div class="col-md-6">
-                            <select id="semester" type="semester" name="semester" class="form-control"
-                                required="required" data-validation-required-message="Pilih semester.">
-                                <option disabled selected> --Pilih-- </option>
-                                <option>Layak</option>
-                                <option>Rusak</option>
+                                <option disabled> --Pilih-- </option>
+                                <option selected>Gedung A</option>
                             </select>
                         </div>
                     </div>
@@ -250,10 +221,32 @@
                         <div class="col-md-6">
                             <select id="semester" type="semester" name="semester" class="form-control"
                                 required="required" data-validation-required-message="Pilih semester.">
-                                <option disabled selected> --Pilih-- </option>
-                                <option>Ruang A</option>
+                                <option disabled> --Pilih-- </option>
+                                <option selected>Ruang A</option>
                                 <option>Ruang B</option>
                             </select>
+                        </div>
+                    </div>
+                    {{-- Jenis Inventaris --}}
+                    <div class="form-group row">
+                        <label for="jenis_inventaris" class="col-md-4 col-form-label text-md-right">Jenis
+                            Inventaris</label>
+                        <div class="col-md-6">
+                            <select id="jenis_inventaris" type="jenis_inventaris" name="jenis_inventaris"
+                                class="form-control" required data-val="true"
+                                data-val-required="Pilih Jenis Inventaris.">
+                                <option disabled> --Pilih-- </option>
+                                <option selected>Meja</option>
+                                <option>Kursi</option>
+                                <option>Papan Tulis</option>
+                                <option>Proyektor</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="namaguru" class="col-md-4 col-form-label text-md-right">Jumlah Seharusnya</label>
+                        <div class="col-md-6">
+                            <input type="text" name="" id="" class="form-control" value="20">
                         </div>
                     </div>
                 </div>
