@@ -33,10 +33,10 @@
                                     <label class="" for="tahun">Kelas</label>
                                 </div>
                                 <div>
-                                    <button class="btn btn-outline-info btn-icon" href="">1A</button>
-                                    <button class="btn btn-outline-info btn-icon" href="">1B</button>
-                                    <button class="btn btn-outline-info btn-icon" href="">1C</button>
-                                    <button class="btn btn-outline-info btn-icon" href="">1D</button>
+                                    <button class="btn btn-inverse-info btn-icon" href="">1A</button>
+                                    <button class="btn btn-inverse-info btn-icon" href="">1B</button>
+                                    <button class="btn btn-inverse-info btn-icon" href="">1C</button>
+                                    <button class="btn btn-inverse-info btn-icon" href="">1D</button>
                                 </div>
                             </div>
                         </div>                        
