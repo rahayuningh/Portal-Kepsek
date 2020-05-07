@@ -113,22 +113,34 @@
                     <form class="form-sample">
                         <div class="row">
                             {{-- KOLOM TAHUN AJARAN --}}
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group row">
                                     <div class="text-center col-sm-12">
                                         <label class="" for="tahun">Tahun Ajaran</label>
                                         <select class="form-control" required>
                                             <option disabled selected> --Pilih-- </option>
-                                            <option>2019/2020 Semester Genap</option>
-                                            <option>2019/2020 Semester Ganjil</option>
-                                            <option>2018/2019 Semester Genap</option>
-                                            <option>2018/2019 Semester Ganjil</option>
+                                            <option>2020/2021</option>
+                                            <option>2019/2020</option>
+                                            <option>2018/2019</option>
+                                            <option>2017/2018</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group row">
+                                    <div class="text-center col-sm-12">
+                                        <label class="" for="tahun">Semester</label>
+                                        <select class="form-control" required>
+                                            <option disabled selected> --Pilih-- </option>
+                                            <option>Ganjil</option>
+                                            <option>Genap</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                             {{-- MATA PELAJARAN --}}
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group row">
                                     <div class="text-center col-sm-12">
                                         <label class="" for="tahun">Mata Pelajaran</label>
@@ -143,7 +155,7 @@
                                 </div>
                             </div>
                             {{-- KELAS --}}
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group row">
                                     <div class="text-center col-sm-12">
                                         <label class="" for="tahun">Kelas</label>

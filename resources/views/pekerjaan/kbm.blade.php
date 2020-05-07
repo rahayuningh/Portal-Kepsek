@@ -214,8 +214,8 @@
                         <div class="col-md-6">
                             <select id="mapel" type="mapel" name="mapel" class="form-control" required="required"
                                 data-validation-required-message="Pilih Mata Pelajaran.">
-                                <option disabled selected> --Pilih-- </option>
-                                <option>Matematika</option>
+                                <option disabled> --Pilih-- </option>
+                                <option selected>Matematika</option>
                                 <option>Fisika</option>
                                 <option>Biologi</option>
                                 <option>Bahasa Indonesia</option>
@@ -228,8 +228,8 @@
                         <div class="col-md-6">
                             <select id="kelas" type="kelas" name="kelas" class="form-control" required="required"
                                 data-validation-required-message="Pilih kelas.">
-                                <option disabled selected> --Pilih-- </option>
-                                <option>1A (2019/2020)</option>
+                                <option disabled> --Pilih-- </option>
+                                <option selected>1A (2019/2020)</option>
                                 <option>1B (2019/2020)</option>
                                 <option>1C (2019/2020)</option>
                                 <option>2A (2019/2020)</option>
@@ -242,8 +242,8 @@
                         <div class="col-md-6">
                             <select id="namaguru" type="namaguru" name="namaguru" class="form-control"
                                 required="required" data-validation-required-message="Pilih Nama Guru.">
-                                <option disabled selected> --Pilih-- </option>
-                                <option>Pak Budi</option>
+                                <option disabled> --Pilih-- </option>
+                                <option selected>Pak Budi</option>
                                 <option>Bu Budi</option>
                                 <option>Pak Kapang</option>
                                 <option>Bu semlehoy</option>
@@ -256,8 +256,8 @@
                         <div class="col-md-6">
                             <select id="semester" type="semester" name="semester" class="form-control"
                                 required="required" data-validation-required-message="Pilih semester.">
-                                <option disabled selected> --Pilih-- </option>
-                                <option>Ganjil</option>
+                                <option disabled> --Pilih-- </option>
+                                <option selected>Ganjil</option>
                                 <option>Genap</option>
                             </select>
                             <p class="help-block text-danger"></p>

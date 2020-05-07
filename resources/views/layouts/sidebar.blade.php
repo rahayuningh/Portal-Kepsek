@@ -23,10 +23,11 @@
                     </a>
                     <div class="collapse" id="pekerjaan">
                         <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="/status-pekerjaan-guru">Status Pekerjaan
+                            <li class="nav-item"> <a class="nav-link" href="{{ route('job.status') }}">Status Pekerjaan
                                     Guru</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="/kbm">KBM</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="">Mata Pelajaran</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="{{ route('kbm') }}">KBM</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="{{ route('subject') }}">Mata Pelajaran</a>
+                            </li>
                         </ul>
                     </div>
                 </li>

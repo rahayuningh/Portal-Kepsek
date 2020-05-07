@@ -22,11 +22,15 @@ Route::get('/', function () {
 // STATUS PEKERJAAN GURU
 Route::get('/status-pekerjaan-guru', function () {
     return view('pekerjaan/status_pekerjaan_guru');
-});
+})->name('job.status');
 // KBM
 Route::get('/kbm', function () {
     return view('pekerjaan/kbm');
-});
+})->name('kbm');
+// Mata Pelajaran
+Route::get('/mata-pelajaran', function () {
+    return view('pekerjaan/mata_pelajaran');
+})->name('subject');
 
 // -----------------------------------------------------
 // PEGAWAI (GURU & TENDIK)
