@@ -1,7 +1,7 @@
 const searchBuilding = document.getElementById('search-building');
 
 const updateOption = (responseJson) => {
-    
+
 }
 
 const getRoom = () => {
@@ -27,6 +27,7 @@ const getRoom = () => {
         })
         .then(responseJson => {
             console.log(responseJson);
+            updateOption(responseJson);
         })
         .catch(error => {
             console.log(error);

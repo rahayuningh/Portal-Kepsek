@@ -47,9 +47,6 @@
                                     <label class="" for="tahun">Ruangan</label>
                                     <select class="form-control col-sm-12" required id="search-room">
                                         <option disabled selected> --Pilih-- </option>
-                                        <option>Ruang A</option>
-                                        <option>Ruang B</option>
-                                        <option>Ruang C</option>
                                     </select>
                                 </div>
                             </div>
