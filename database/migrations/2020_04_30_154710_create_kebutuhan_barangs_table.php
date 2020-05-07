@@ -13,7 +13,7 @@ class CreateKebutuhanBarangsTable extends Migration
      */
     public function up()
     {
-        Schema::create('kebutuhan_barang', function (Blueprint $table) {
+        Schema::create('kebutuhan_barangs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('jenis_inventaris_id');
             $table->unsignedBigInteger('ruangan_id');
@@ -32,6 +32,6 @@ class CreateKebutuhanBarangsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kebutuhan_barang');
+        Schema::dropIfExists('kebutuhan_barangs');
     }
 }

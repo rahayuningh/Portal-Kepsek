@@ -13,7 +13,7 @@ class JenisRuanganTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('jenis_ruangan')->delete();
+        DB::table('jenis_ruangans')->delete();
         JenisRuangan::create([
             'id' => '1',
             'nama_jenis_ruangan' => 'ruangan_kelas'

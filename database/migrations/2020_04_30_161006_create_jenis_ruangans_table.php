@@ -13,7 +13,7 @@ class CreateJenisRuangansTable extends Migration
      */
     public function up()
     {
-        Schema::create('jenis_ruangan', function (Blueprint $table) {
+        Schema::create('jenis_ruangans', function (Blueprint $table) {
             $table->id();
             $table->string('nama_jenis_ruangan',50)->unique();
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateJenisRuangansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jenis_ruangan');
+        Schema::dropIfExists('jenis_ruangans');
     }
 }
