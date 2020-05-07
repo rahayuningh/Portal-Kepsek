@@ -17,8 +17,8 @@ class CreateKbmsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('mata_pelajaran_id');
             $table->unsignedBigInteger('kelas_id');
-            $table->unsignedBigInteger('guru_id');
-            $table->tinyInteger('semester');
+            $table->unsignedBigInteger('guru_pengajar');
+            $table->binary('semester');
             $table->timestamps();
         });
     }
