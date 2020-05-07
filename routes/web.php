@@ -76,7 +76,7 @@ Route::get('/bio-siswa', function () {
 // -----------------------------------------------------
 // INVENTARIS
 Route::prefix('inventaris')->group(function () {
-    Route::get('/', 'InventoryController@seeInventory')->name('inventory');
+    Route::get('/list', 'InventoryController@seeInventory')->name('inventory');
 
     // inventaris/kebutuhan-barang
     Route::get('/kebutuhan-barang', function () {
