@@ -13,7 +13,7 @@ class GedungTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('gedung')->delete();
+        DB::table('gedungs')->delete();
         Gedung::create([
             'id' => '1',
             'nama_gedung' => 'Gedung_Keuangan',

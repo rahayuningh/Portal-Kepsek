@@ -13,7 +13,7 @@ class CreateJenisInventarissTable extends Migration
      */
     public function up()
     {
-        Schema::create('jenis_inventaris', function (Blueprint $table) {
+        Schema::create('jenis_inventariss', function (Blueprint $table) {
             $table->id();
             $table->string('nama_jenis_inventaris',50)->unique();
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateJenisInventarissTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jenis_inventaris');
+        Schema::dropIfExists('jenis_inventariss');
     }
 }

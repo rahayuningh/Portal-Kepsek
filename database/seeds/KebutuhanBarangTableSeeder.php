@@ -13,7 +13,7 @@ class KebutuhanBarangTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('kebutuhan_barang')->delete();
+        DB::table('kebutuhan_barangs')->delete();
         KebutuhanBarang::create([
             'id' => '1',
             'jenis_inventaris_id' => 1,

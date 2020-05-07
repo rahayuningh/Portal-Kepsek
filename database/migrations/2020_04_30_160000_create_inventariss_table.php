@@ -13,7 +13,7 @@ class CreateInventarissTable extends Migration
      */
     public function up()
     {
-        Schema::create('inventaris', function (Blueprint $table) {
+        Schema::create('inventariss', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('jenis_inventaris_id');
             $table->string('kode_inventaris',50)->unique();
@@ -31,6 +31,6 @@ class CreateInventarissTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('inventaris');
+        Schema::dropIfExists('inventariss');
     }
 }

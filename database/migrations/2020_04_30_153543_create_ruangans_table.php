@@ -13,7 +13,7 @@ class CreateRuangansTable extends Migration
      */
     public function up()
     {
-        Schema::create('ruangan', function (Blueprint $table) {
+        Schema::create('ruangans', function (Blueprint $table) {
             $table->id();
             $table->string('nama_ruangan',50)->unique();
             $table->unsignedBigInteger('jenis_ruangan_id');
@@ -32,6 +32,6 @@ class CreateRuangansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ruangan');
+        Schema::dropIfExists('ruangans');
     }
 }

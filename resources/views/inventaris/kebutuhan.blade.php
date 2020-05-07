@@ -1,5 +1,5 @@
 @extends('layouts.main_layout')
-@section('page-name') KBM @endsection
+@section('page-name') Kebutuhan Barang @endsection
 @section('content')
 
 {{-- CONTENT 1--}}
@@ -7,14 +7,14 @@
 <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
-            <h2 class="text-center" style="background-color: green; color: white">KEGIATAN BELAJAR MENGAJAR</h2>
+            <h2 class="text-center" style="background-color: green; color: white">Kebutuhan Barang</h2>
             {{-- ADD RECORD BUTTON --}}
             <div class="row pl-3 pb-2">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <a type="button" class="btn btn-block btn-inverse-primary btn-icon-text pl-0 p-2"
                         data-toggle="modal" href="#TambahData">
                         <i class="mdi mdi-plus-circle-outline btn-icon-prepend"></i>
-                        Tambahkan Data KBM
+                        Tambah Kebutuhan Barang
                     </a>
                 </div>
             </div>
@@ -23,30 +23,31 @@
                 <h4 class="card-title text-center">Pencarian</h4>
                 <form class="form-sample">
                     <div class="row">
-                        {{-- KOLOM TAHUN AJARAN --}}
+                        {{-- KOLOM Gedung --}}
                         <div class="col-md-6">
                             <div class="form-group row">
                                 <div class="text-center col-sm-12">
-                                    <label class="" for="tahun">Tahun Ajaran</label>
+                                    <label class="" for="tahun">Gedung</label>
                                     <select class="form-control" required>
                                         <option disabled selected> --Pilih-- </option>
-                                        <option>2020/2021</option>
-                                        <option>2019/2020</option>
-                                        <option>2018/2019</option>
-                                        <option>2017/2018</option>
+                                        <option>Gedung A</option>
+                                        <option>Gedung B</option>
+                                        <option>Gedung C</option>
+                                        <option>Gedung D</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
-                        {{-- SEMESTER --}}
+                        {{-- RUANGAN --}}
                         <div class="col-md-6">
                             <div class="form-group row">
                                 <div class="text-center col-sm-12">
-                                    <label class="" for="tahun">Semester</label>
+                                    <label class="" for="tahun">Ruangan</label>
                                     <select class="form-control col-sm-12" required>
                                         <option disabled selected> --Pilih-- </option>
-                                        <option>Ganjil</option>
-                                        <option>Genap</option>
+                                        <option>Ruang A</option>
+                                        <option>Ruang B</option>
+                                        <option>Ruang C</option>
                                     </select>
                                 </div>
                             </div>
@@ -65,19 +66,23 @@
                 <table id="summary" class="table table-bordered table-responsive">
                     <thead>
                         <tr class="text-center">
-                            <th>No</th>
-                            <th> Mata Pelajaran </th>
-                            <th> Kelas </th>
-                            <th> Nama Guru </th>
+                            <th>Jenis Inventaris</th>
+                            <th>Ruangan</th>
+                            <th> Jml Seharusnya </th>
+                            <th> Jml Beroperasi </th>
+                            <th> Jml Rusak </th>
+                            <th> Jml Dibutuhkan </th>
                             <th> Aksi </th>
                         </tr>
                     </thead>
-                    <tbody class="text-center">
+                    <tbody>
                         <tr>
-                            <td>1</td>
-                            <td>Matematika</td>
-                            <td><a href="">Kelas 1A</a></td>
-                            <td><a href="">Morgan Mendel</a></td>
+                            <td>Meja</td>
+                            <td>Kelas 021A</td>
+                            <td>20</td>
+                            <td>15</td>
+                            <td>5</td>
+                            <td>5</td>
                             <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
                                     align="center" title="Edit" href="#Edit">
@@ -90,10 +95,12 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>2</td>
-                            <td>Biologi</td>
-                            <td><a href="">Kelas 1A</a></td>
-                            <td><a href="">Morgan Mendel</a></td>
+                            <td>Meja</td>
+                            <td>Kelas 021A</td>
+                            <td>20</td>
+                            <td>15</td>
+                            <td>5</td>
+                            <td>5</td>
                             <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
                                     align="center" title="Edit" href="#Edit">
@@ -108,6 +115,7 @@
                     </tbody>
                 </table>
             </div>
+
         </div>
     </div>
 </div>
@@ -127,59 +135,48 @@
                 {{ csrf_field() }}
                 {{-- FIELD --}}
                 <div class="modal-body">
-                    {{-- MAPEL --}}
                     <div class="form-group row">
-                        <label for="mapel" class="col-md-4 col-form-label text-md-right">Mata Pelajaran</label>
+                        <label for="jenis_inventaris" class="col-md-4 col-form-label text-md-right">Gedung</label>
                         <div class="col-md-6">
-                            <select id="mapel" type="mapel" name="mapel" class="form-control" required="required"
-                                data-validation-required-message="Pilih Mata Pelajaran.">
+                            <select id="jenis_inventaris" type="jenis_inventaris" name="jenis_inventaris"
+                                class="form-control" required data-val="true"
+                                data-val-required="Pilih Jenis Inventaris.">
                                 <option disabled selected> --Pilih-- </option>
-                                <option>Matematika</option>
-                                <option>Fisika</option>
-                                <option>Biologi</option>
-                                <option>Bahasa Indonesia</option>
+                                <option>Gedung A</option>
                             </select>
-                            <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="kelas" class="col-md-4 col-form-label text-md-right">Kelas</label>
-                        <div class="col-md-6">
-                            <select id="kelas" type="kelas" name="kelas" class="form-control" required="required"
-                                data-validation-required-message="Pilih kelas.">
-                                <option disabled selected> --Pilih-- </option>
-                                <option>1A (2019/2020)</option>
-                                <option>1B (2019/2020)</option>
-                                <option>1C (2019/2020)</option>
-                                <option>2A (2019/2020)</option>
-                            </select>
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="namaguru" class="col-md-4 col-form-label text-md-right">Guru Pengampu</label>
-                        <div class="col-md-6">
-                            <select id="namaguru" type="namaguru" name="namaguru" class="form-control"
-                                required="required" data-validation-required-message="Pilih Nama Guru.">
-                                <option disabled selected> --Pilih-- </option>
-                                <option>Pak Budi</option>
-                                <option>Bu Budi</option>
-                                <option>Pak Kapang</option>
-                                <option>Bu semlehoy</option>
-                            </select>
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="semester" class="col-md-4 col-form-label text-md-right">Semester</label>
+                        <label for="semester" class="col-md-4 col-form-label text-md-right">Ruangan</label>
                         <div class="col-md-6">
                             <select id="semester" type="semester" name="semester" class="form-control"
                                 required="required" data-validation-required-message="Pilih semester.">
                                 <option disabled selected> --Pilih-- </option>
-                                <option>Ganjil</option>
-                                <option>Genap</option>
+                                <option>Ruang A</option>
+                                <option>Ruang B</option>
                             </select>
-                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    {{-- Jenis Inventaris --}}
+                    <div class="form-group row">
+                        <label for="jenis_inventaris" class="col-md-4 col-form-label text-md-right">Jenis
+                            Inventaris</label>
+                        <div class="col-md-6">
+                            <select id="jenis_inventaris" type="jenis_inventaris" name="jenis_inventaris"
+                                class="form-control" required data-val="true"
+                                data-val-required="Pilih Jenis Inventaris.">
+                                <option disabled selected> --Pilih-- </option>
+                                <option>Meja</option>
+                                <option>Kursi</option>
+                                <option>Papan Tulis</option>
+                                <option>Proyektor</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="namaguru" class="col-md-4 col-form-label text-md-right">Jumlah Seharusnya</label>
+                        <div class="col-md-6">
+                            <input type="text" name="" id="" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -208,59 +205,48 @@
                 {{ csrf_field() }}
                 {{-- FIELD --}}
                 <div class="modal-body">
-                    {{-- MAPEL --}}
                     <div class="form-group row">
-                        <label for="mapel" class="col-md-4 col-form-label text-md-right">Mata Pelajaran</label>
+                        <label for="jenis_inventaris" class="col-md-4 col-form-label text-md-right">Gedung</label>
                         <div class="col-md-6">
-                            <select id="mapel" type="mapel" name="mapel" class="form-control" required="required"
-                                data-validation-required-message="Pilih Mata Pelajaran.">
-                                <option disabled selected> --Pilih-- </option>
-                                <option>Matematika</option>
-                                <option>Fisika</option>
-                                <option>Biologi</option>
-                                <option>Bahasa Indonesia</option>
+                            <select id="jenis_inventaris" type="jenis_inventaris" name="jenis_inventaris"
+                                class="form-control" required data-val="true"
+                                data-val-required="Pilih Jenis Inventaris.">
+                                <option disabled> --Pilih-- </option>
+                                <option selected>Gedung A</option>
                             </select>
-                            <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="kelas" class="col-md-4 col-form-label text-md-right">Kelas</label>
-                        <div class="col-md-6">
-                            <select id="kelas" type="kelas" name="kelas" class="form-control" required="required"
-                                data-validation-required-message="Pilih kelas.">
-                                <option disabled selected> --Pilih-- </option>
-                                <option>1A (2019/2020)</option>
-                                <option>1B (2019/2020)</option>
-                                <option>1C (2019/2020)</option>
-                                <option>2A (2019/2020)</option>
-                            </select>
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="namaguru" class="col-md-4 col-form-label text-md-right">Guru Pengampu</label>
-                        <div class="col-md-6">
-                            <select id="namaguru" type="namaguru" name="namaguru" class="form-control"
-                                required="required" data-validation-required-message="Pilih Nama Guru.">
-                                <option disabled selected> --Pilih-- </option>
-                                <option>Pak Budi</option>
-                                <option>Bu Budi</option>
-                                <option>Pak Kapang</option>
-                                <option>Bu semlehoy</option>
-                            </select>
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="semester" class="col-md-4 col-form-label text-md-right">Semester</label>
+                        <label for="semester" class="col-md-4 col-form-label text-md-right">Ruangan</label>
                         <div class="col-md-6">
                             <select id="semester" type="semester" name="semester" class="form-control"
                                 required="required" data-validation-required-message="Pilih semester.">
-                                <option disabled selected> --Pilih-- </option>
-                                <option>Ganjil</option>
-                                <option>Genap</option>
+                                <option disabled> --Pilih-- </option>
+                                <option selected>Ruang A</option>
+                                <option>Ruang B</option>
                             </select>
-                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    {{-- Jenis Inventaris --}}
+                    <div class="form-group row">
+                        <label for="jenis_inventaris" class="col-md-4 col-form-label text-md-right">Jenis
+                            Inventaris</label>
+                        <div class="col-md-6">
+                            <select id="jenis_inventaris" type="jenis_inventaris" name="jenis_inventaris"
+                                class="form-control" required data-val="true"
+                                data-val-required="Pilih Jenis Inventaris.">
+                                <option disabled> --Pilih-- </option>
+                                <option selected>Meja</option>
+                                <option>Kursi</option>
+                                <option>Papan Tulis</option>
+                                <option>Proyektor</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="namaguru" class="col-md-4 col-form-label text-md-right">Jumlah Seharusnya</label>
+                        <div class="col-md-6">
+                            <input type="text" name="" id="" class="form-control" value="20">
                         </div>
                     </div>
                 </div>

@@ -13,7 +13,7 @@ class CreateGedungsTable extends Migration
      */
     public function up()
     {
-        Schema::create('gedung', function (Blueprint $table) {
+        Schema::create('gedungs', function (Blueprint $table) {
             $table->id();
             $table->string('nama_gedung',50);
             $table->string('kode_gedung',50)->unique();
@@ -28,6 +28,6 @@ class CreateGedungsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gedung');
+        Schema::dropIfExists('gedungs');
     }
 }

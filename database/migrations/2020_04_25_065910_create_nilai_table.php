@@ -15,11 +15,10 @@ class CreateNilaiTable extends Migration
     {
         Schema::create('nilai', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_nilai');
-            $table->unsignedBigInteger('kbm');
-            $table->unsignedBigInteger('siswa');
+            $table->unsignedBigInteger('id');
+            $table->unsignedBigInteger('pekerjaan_guru_id');
+            $table->unsignedBigInteger('siswa_id');
             $table->smallInteger('nilai');
-            $table->unsignedBigInteger('tipe');
             $table->timestamps();
         });
     }

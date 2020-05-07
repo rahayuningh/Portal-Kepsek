@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateJenisRuangansTable extends Migration
+class CreatePekerjaanGurusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateJenisRuangansTable extends Migration
      */
     public function up()
     {
-        Schema::create('jenis_ruangans', function (Blueprint $table) {
+        Schema::create('pekerjaan_gurus', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_jenis_ruangan',50)->unique();
+            $table->unsignedBigInteger('kbm_id');
+            $table->unsignedBigInteger('tipe_id');
+            $table->unsignedBigInteger('status_id');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateJenisRuangansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jenis_ruangans');
+        Schema::dropIfExists('pekerjaan_gurus');
     }
 }

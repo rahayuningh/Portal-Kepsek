@@ -54,9 +54,19 @@ Route::get('/bio-siswa', function () {
 
 // -----------------------------------------------------
 // INVENTARIS
-Route::get('/data-inventaris', function () {
-    return view('inventaris/data_inventaris');
-});
+Route::get('/data-inventaris', 'InventoryController@seeInventory')->name('inventory');
+
+Route::get('/kebutuhan-barang', function () {
+    return view('inventaris/kebutuhan');
+})->name('inventory.needs');
+
+Route::get('/gedung', function () {
+    return view('inventaris/gedung');
+})->name('inventory.building');
+
+Route::get('/ruang', function () {
+    return view('inventaris/ruang');
+})->name('inventory.room');
 
 
 
