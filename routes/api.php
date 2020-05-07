@@ -18,5 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/api-test', 'BackendController@sendData');
-Route::get('/api-test', 'BackendController@seeData');
+Route::post('/get-rooms', 'RuanganController@getRooms');

@@ -6,6 +6,7 @@ use App\Civitas;
 use App\Gedung;
 use App\Guru;
 use App\Pesan;
+use App\Ruangan;
 use App\Siswa;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -56,24 +57,6 @@ class BackendController extends Controller
     public function getMessageReceiver()
     {
         dd(Pesan::find(1)->guru);
-    }
-
-    public function sendData(Request $request)
-    {
-        $data = $request->all();
-        $building = Gedung::all();
-        if ($data != null) {
-            return response()->json([
-                'parameter' => $data,
-                'building' => $building,
-                'message' => 'ada kok'
-            ]);
-        } else {
-            return response()->json([
-                'parameter' => $data,
-                'message' => 'kosong'
-            ]);
-        }
     }
 
     public function seeData()

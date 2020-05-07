@@ -1,7 +1,7 @@
 @extends('layouts.main_layout')
 @section('page-name') Data Inventaris @endsection
 @section('script')
-<script src="{{ asset('assets/js/send-data.js') }}"></script>
+<script src="{{ asset('assets/js/inventory-data.js') }}"></script>
 @endsection
 @section('content')
 {{-- CONTENT 1--}}
@@ -32,10 +32,9 @@
                                     <label class="" for="tahun">Gedung</label>
                                     <select class="form-control" required id="search-building">
                                         <option disabled selected> --Pilih-- </option>
-                                        <option value="A">Gedung A</option>
-                                        <option value="B">Gedung B</option>
-                                        <option value="C">Gedung C</option>
-                                        <option value="D">Gedung D</option>
+                                        @foreach ($buildings as $building)
+                                        <option value="{{ $building->id }}">{{ $building->nama_gedung }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>

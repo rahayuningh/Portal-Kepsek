@@ -1,11 +1,17 @@
-const searchBuilding = document.getElementById('search-building');
+const searchBuildingElement = document.getElementById('search-building');
+const serchRoomElement = document.getElementById('search-room');
 
-const updateOption = (responseJson) => {
-
+const updateOption = (rooms) => {
+    serchRoomElement.innerHTML = "<option disabled selected> --Pilih--</option>";
+    rooms.forEach(room => {
+        serchRoomElement.innerHTML += `<option value="${room.id}">${room.nama_ruangan}</option>`;
+    });
 }
 
 const getRoom = () => {
-    const url = "http://localhost:8000/api/api-test";
+    serchRoomElement.innerHTML = "<option disabled selected>Loading ...</option>";
+
+    const url = "/api/get-rooms";
     let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
     let option = {
         method: "POST",
@@ -17,7 +23,7 @@ const getRoom = () => {
             "X-CSRF-Token": token
         },
         body: JSON.stringify({
-            "building": searchBuilding.value,
+            "building": searchBuildingElement.value,
         })
     };
 
@@ -26,8 +32,7 @@ const getRoom = () => {
             return response.json();
         })
         .then(responseJson => {
-            console.log(responseJson);
-            updateOption(responseJson);
+            updateOption(responseJson.rooms);
         })
         .catch(error => {
             console.log(error);
@@ -35,5 +40,5 @@ const getRoom = () => {
 };
 
 document.addEventListener('DOMContentLoaded', function () {
-    searchBuilding.addEventListener('change', getRoom);
+    searchBuildingElement.addEventListener('change', getRoom);
 });
