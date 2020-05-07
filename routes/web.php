@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 // BERANDA
 Route::get('/', function () {
     return view('beranda');
-});
+})->name('dashboard');
 
 // -----------------------------------------------------
 // STATUS PEKERJAAN GURU
@@ -34,22 +34,27 @@ Route::get('/mata-pelajaran', function () {
 
 // -----------------------------------------------------
 // PEGAWAI (GURU & TENDIK)
-// BIODATA Guru
-Route::get('/bio-guru', function () {
-    return view('pegawai/biodata_guru', ['page' => 'Guru']);
-})->name('teacher.detail');
-// BIODATA Tendik
-Route::get('/bio-tendik', function () {
-    return view('pegawai/biodata_tendik', ['page' => 'Tenaga Pendidik']);
-})->name('tendik.detail');
-// Data Guru
-Route::get('/guru', function () {
-    return view('pegawai/guru');
-})->name('teacher');
-// Data Tendik
-Route::get('/tendik', function () {
-    return view('pegawai/tendik');
-})->name('tendik');
+Route::prefix('pegawai')->group(function () {
+    // BIODATA Guru
+    Route::get('/bio-guru', function () {
+        return view('pegawai/biodata_guru', ['page' => 'Guru']);
+    })->name('teacher.detail');
+
+    // BIODATA Tendik
+    Route::get('/bio-tendik', function () {
+        return view('pegawai/biodata_tendik', ['page' => 'Tenaga Pendidik']);
+    })->name('tendik.detail');
+
+    // Data Guru
+    Route::get('/guru', function () {
+        return view('pegawai/guru');
+    })->name('teacher');
+
+    // Data Tendik
+    Route::get('/tendik', function () {
+        return view('pegawai/tendik');
+    })->name('tendik');
+});
 
 
 
@@ -70,19 +75,29 @@ Route::get('/bio-siswa', function () {
 
 // -----------------------------------------------------
 // INVENTARIS
-Route::get('/data-inventaris', 'InventoryController@seeInventory')->name('inventory');
+Route::prefix('inventaris')->group(function () {
+    Route::get('/', 'InventoryController@seeInventory')->name('inventory');
 
-Route::get('/kebutuhan-barang', function () {
-    return view('inventaris/kebutuhan');
-})->name('inventory.needs');
+    // inventaris/kebutuhan-barang
+    Route::get('/kebutuhan-barang', function () {
+        return view('inventaris/kebutuhan');
+    })->name('inventory.needs');
 
-Route::get('/gedung', function () {
-    return view('inventaris/gedung');
-})->name('inventory.building');
+    Route::get('/gedung', function () {
+        return view('inventaris/gedung');
+    })->name('inventory.building');
 
-Route::get('/ruang', function () {
-    return view('inventaris/ruang');
-})->name('inventory.room');
+    Route::get('/ruang', function () {
+        return view('inventaris/ruang');
+    })->name('inventory.room');
+});
+
+// PESAN
+Route::prefix('pesan')->group(function () {
+    Route::get('/inbox', function () {
+        echo "Ini halaman pesan";
+    })->name('message.inbox');
+});
 
 
 

@@ -4,15 +4,6 @@
 {{-- ######################################################################## --}}
 {{-- ANNOUNCEMENT --}}
 {{-- ######################################################################## --}}
-{{-- <div class="row" id="proBanner">
-                        <div class="col-12">
-                            <span class="d-flex align-items-center purchase-popup">
-                                <p>Like what you see?</p>
-                                <a href="https://github.com/BootstrapDash/PurpleAdmin-Free-Admin-Template" target="_blank" class="btn ml-auto purchase-button">Go to?</a>
-                                <i class="mdi mdi-close" id="bannerClose"></i>
-                            </span>
-                        </div>
-                    </div> --}}
 <div class="row" id="proBanner">
     <div class="col-12 grid-margin">
         <div class="card">
@@ -26,40 +17,50 @@
 <div class="row">
     <div class="col-md-3 stretch-card grid-margin">
         <div class="card bg-gradient-primary card-img-holder text-white">
-            <div class="card-body">
-                <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                <h4 class="font-weight-normal mb-3">Data Siswa <i
-                        class="mdi mdi-account-card-details mdi-24px float-right"></i>
-                </h4>
-            </div>
+            <a href="/data-siswa" class="text-decoration-none text-white">
+                <div class="card-body">
+                    <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">Data Siswa <i
+                            class="mdi mdi-account-card-details mdi-24px float-right"></i>
+                    </h4>
+                </div>
+            </a>
         </div>
     </div>
     <div class="col-md-3 stretch-card grid-margin">
         <div class="card bg-gradient-primary card-img-holder text-white">
-            <div class="card-body">
-                <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                <h4 class="font-weight-normal mb-3">List KBM <i class="mdi mdi-library-books mdi-24px float-right"></i>
-                </h4>
-            </div>
+            <a href="{{ route('kbm') }}" class="text-decoration-none text-white">
+                <div class="card-body">
+                    <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">KBM <i
+                            class="mdi mdi-library-books mdi-24px float-right"></i>
+                    </h4>
+                </div>
+            </a>
         </div>
     </div>
     <div class="col-md-3 stretch-card grid-margin">
         <div class="card bg-gradient-primary card-img-holder text-white">
-            <div class="card-body">
-                <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                <h4 class="font-weight-normal mb-3">Data Barang <i class="mdi mdi-archive mdi-24px float-right"></i>
-                </h4>
-            </div>
+            <a href="{{ route('inventory') }}" class="text-decoration-none text-white">
+                <div class="card-body">
+                    <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">Inventaris
+                        <i class="mdi mdi-archive mdi-24px float-right"></i>
+                    </h4>
+                </div>
+            </a>
         </div>
     </div>
     <div class="col-md-3 stretch-card grid-margin">
         <div class="card bg-gradient-primary card-img-holder text-white">
-            <div class="card-body">
-                <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                <h4 class="font-weight-normal mb-3">Data Guru <i
-                        class="mdi mdi-account-card-details mdi-24px float-right"></i>
-                </h4>
-            </div>
+            <a href="{{ route('teacher') }}" class="text-decoration-none text-white">
+                <div class="card-body">
+                    <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">Data Guru <i
+                            class="mdi mdi-account-card-details mdi-24px float-right"></i>
+                    </h4>
+                </div>
+            </a>
         </div>
     </div>
 </div>
