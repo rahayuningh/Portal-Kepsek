@@ -34,10 +34,14 @@ Route::get('/mata-pelajaran', function () {
 
 // -----------------------------------------------------
 // PEGAWAI (GURU & TENDIK)
-// BIODATA PEGAWAI
-Route::get('/bio-pegawai', function () {
-    return view('pegawai/biodata_pegawai');
-});
+// BIODATA Guru
+Route::get('/bio-guru', function () {
+    return view('pegawai/biodata_guru', ['page' => 'Guru']);
+})->name('teacher.detail');
+// BIODATA Tendik
+Route::get('/bio-tendik', function () {
+    return view('pegawai/biodata_tendik', ['page' => 'Tenaga Pendidik']);
+})->name('tendik.detail');
 // Data Guru
 Route::get('/guru', function () {
     return view('pegawai/guru');

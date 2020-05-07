@@ -21,8 +21,8 @@
                     <tbody>
                         <tr>
                             <td> 1 </td>
-                            <td><a href="">Pak Jokowi </a></td>
-                            <td><a href="">321238123873913</a></td>
+                            <td><a href="{{ route('tendik.detail') }}">Pak Jokowi </a></td>
+                            <td>321238123873913</td>
                             <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
                                     align="center" title="Edit" href="#Edit">
@@ -36,8 +36,8 @@
                         </tr>
                         <tr>
                             <td> 2 </td>
-                            <td><a href="">Pak Agus </a></td>
-                            <td><a href="">1231383712738312</a></td>
+                            <td><a href="{{ route('tendik.detail') }}">Pak Agus </a></td>
+                            <td>1231383712738312</td>
                             <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
                                     align="center" title="Edit" href="#Edit">
@@ -51,8 +51,8 @@
                         </tr>
                         <tr>
                             <td> 3 </td>
-                            <td><a href="">Pak Budi </a></td>
-                            <td><a href="">1231383712738312</a></td>
+                            <td><a href="{{ route('tendik.detail') }}">Pak Budi </a></td>
+                            <td>1231383712738312</td>
                             <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
                                     align="center" title="Edit" href="#Edit">
@@ -66,8 +66,8 @@
                         </tr>
                         <tr>
                             <td> 4 </td>
-                            <td><a href="">Pak Mujih </a></td>
-                            <td><a href="">1231383712738312</a></td>
+                            <td><a href="{{ route('tendik.detail') }}">Pak Mujih </a></td>
+                            <td>1231383712738312</td>
                             <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
                                     align="center" title="Edit" href="#Edit">
@@ -81,8 +81,8 @@
                         </tr>
                         <tr>
                             <td> 5 </td>
-                            <td><a href="">Pak Hinder </a></td>
-                            <td><a href="">1231383712738312</a></td>
+                            <td><a href="{{ route('tendik.detail') }}">Pak Hinder </a></td>
+                            <td>1231383712738312</td>
                             <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
                                     align="center" title="Edit" href="#Edit">
@@ -96,8 +96,8 @@
                         </tr>
                         <tr>
                             <td> 6 </td>
-                            <td><a href="">Pak Denny </a></td>
-                            <td><a href="">1231383712738312</a></td>
+                            <td><a href="{{ route('tendik.detail') }}">Pak Denny </a></td>
+                            <td>1231383712738312</td>
                             <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
                                     align="center" title="Edit" href="#Edit">

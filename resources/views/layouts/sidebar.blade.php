@@ -42,8 +42,8 @@
                     <div class="collapse" id="info-pegawai">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item"> <a class="nav-link" href="{{ route('teacher') }}">Data Guru</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="{{ route('tendik') }}">Data Tenaga Pendidik</a></li>
-                            {{-- <li class="nav-item"> <a class="nav-link" href="/bio-pegawai">Biodata Pegawai</a></li> --}}
+                            <li class="nav-item"> <a class="nav-link" href="{{ route('tendik') }}">Data Tenaga
+                                    Pendidik</a></li>
                         </ul>
                     </div>
                 </li>
@@ -60,7 +60,6 @@
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item"> <a class="nav-link" href="/data-siswa">Data Siswa</a></li>
                             <li class="nav-item"> <a class="nav-link" href="/detail-kelas">Data Kelas</a></li>
-                            {{-- <li class="nav-item"> <a class="nav-link" href="/bio-siswa">Biodata Siswa</a></li> --}}
                         </ul>
                     </div>
                 </li>
