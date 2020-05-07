@@ -15,11 +15,10 @@ class CreateKbmsTable extends Migration
     {
         Schema::create('kbms', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id');
             $table->unsignedBigInteger('mata_pelajaran_id');
             $table->unsignedBigInteger('kelas_id');
-            $table->unsignedBigInteger('guru_id');
-            $table->tinyInteger('semester');
+            $table->unsignedBigInteger('guru_pengajar');
+            $table->binary('semester');
             $table->timestamps();
         });
     }

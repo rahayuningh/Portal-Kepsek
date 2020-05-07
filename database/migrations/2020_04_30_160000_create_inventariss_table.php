@@ -19,7 +19,7 @@ class CreateInventarissTable extends Migration
             $table->string('kode_inventaris',50)->unique();
             $table->date('tgl_mulai_pakai');
             $table->string('status_kelayakan',50);
-            $table->unsignedBigInteger('ruangan_pemilik_id');
+            $table->unsignedBigInteger('ruangan_id');
             $table->timestamps();
         });
     }

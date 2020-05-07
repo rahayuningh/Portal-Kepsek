@@ -18,7 +18,7 @@ class CreateRuangansTable extends Migration
             $table->string('nama_ruangan',50)->unique();
             $table->unsignedBigInteger('jenis_ruangan_id');
             $table->string('kode_ruangan',50)->unique();
-            $table->unsignedBigInteger('penanggung_jawab_id');
+            $table->unsignedBigInteger('penanggung_jawab');
             $table->unsignedBigInteger('gedung_id');
             $table->integer('kapasitas_orang');
             $table->timestamps();
