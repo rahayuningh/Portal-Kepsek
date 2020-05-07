@@ -1,22 +1,20 @@
 @extends('layouts.main_layout')
 @section('page-name') Data Inventaris @endsection
-@section('script')
-<script src="{{ asset('assets/js/send-data.js') }}"></script>
-@endsection
 @section('content')
+
 {{-- CONTENT 1--}}
 {{-- TABEL UTAMA--}}
 <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
-            <h2 class="text-center" style="background-color: green; color: white">Data Inventaris</h2>
+            <h2 class="text-center" style="background-color: green; color: white">Kebutuhan Barang</h2>
             {{-- ADD RECORD BUTTON --}}
             <div class="row pl-3 pb-2">
                 <div class="col-md-3">
                     <a type="button" class="btn btn-block btn-inverse-primary btn-icon-text pl-0 p-2"
                         data-toggle="modal" href="#TambahData">
                         <i class="mdi mdi-plus-circle-outline btn-icon-prepend"></i>
-                        Tambah Data Inventaris
+                        Tambah Kebutuhan Barang
                     </a>
                 </div>
             </div>
@@ -30,12 +28,12 @@
                             <div class="form-group row">
                                 <div class="text-center col-sm-12">
                                     <label class="" for="tahun">Gedung</label>
-                                    <select class="form-control" required id="search-building">
+                                    <select class="form-control" required>
                                         <option disabled selected> --Pilih-- </option>
-                                        <option value="A">Gedung A</option>
-                                        <option value="B">Gedung B</option>
-                                        <option value="C">Gedung C</option>
-                                        <option value="D">Gedung D</option>
+                                        <option>Gedung A</option>
+                                        <option>Gedung B</option>
+                                        <option>Gedung C</option>
+                                        <option>Gedung D</option>
                                     </select>
                                 </div>
                             </div>
@@ -45,7 +43,7 @@
                             <div class="form-group row">
                                 <div class="text-center col-sm-12">
                                     <label class="" for="tahun">Ruangan</label>
-                                    <select class="form-control col-sm-12" required id="search-room">
+                                    <select class="form-control col-sm-12" required>
                                         <option disabled selected> --Pilih-- </option>
                                         <option>Ruang A</option>
                                         <option>Ruang B</option>
@@ -273,4 +271,5 @@
         </div>
     </div>
 </div>
+
 @endsection

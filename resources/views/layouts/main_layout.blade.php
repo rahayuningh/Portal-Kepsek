@@ -4,6 +4,7 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>@yield('page-name') | IMS SCB</title>
     <!-- plugins:css -->
@@ -127,6 +128,9 @@
     {{-- Table Pagination --}}
     <script src="{{ asset('assets/js/datatables/datatables.min.js') }}"></script>
     <script src="{{ asset('assets/js/datatables/table.js') }}"></script>
+
+    {{-- for add custom js scripts --}}
+    @yield('script')
 
 </body>
 

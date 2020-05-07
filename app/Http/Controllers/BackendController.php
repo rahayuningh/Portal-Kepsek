@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Civitas;
+use App\Gedung;
 use App\Guru;
 use App\Pesan;
 use App\Siswa;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Symfony\Component\Console\Input\Input;
 
 class BackendController extends Controller
 {
@@ -48,7 +50,7 @@ class BackendController extends Controller
 
     public function seeAllMessage()
     {
-        dd  (Guru::find(1)->messages);
+        dd(Guru::find(1)->messages);
     }
 
     public function getMessageReceiver()
@@ -56,4 +58,29 @@ class BackendController extends Controller
         dd(Pesan::find(1)->guru);
     }
 
+    public function sendData(Request $request)
+    {
+        $data = $request->all();
+        $building = Gedung::all();
+        if ($data != null) {
+            return response()->json([
+                'parameter' => $data,
+                'building' => $building,
+                'message' => 'ada kok'
+            ]);
+        } else {
+            return response()->json([
+                'parameter' => $data,
+                'message' => 'kosong'
+            ]);
+        }
+    }
+
+    public function seeData()
+    {
+        return response()->json([
+            'name' => 'Abigail',
+            'state' => 'CA'
+        ]);
+    }
 }
