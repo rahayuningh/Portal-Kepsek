@@ -41,8 +41,8 @@
                     </a>
                     <div class="collapse" id="info-pegawai">
                         <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="">Data Guru</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="">Data Tenaga Pendidik</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="{{ route('teacher') }}">Data Guru</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="{{ route('tendik') }}">Data Tenaga Pendidik</a></li>
                             {{-- <li class="nav-item"> <a class="nav-link" href="/bio-pegawai">Biodata Pegawai</a></li> --}}
                         </ul>
                     </div>

@@ -38,6 +38,14 @@ Route::get('/mata-pelajaran', function () {
 Route::get('/bio-pegawai', function () {
     return view('pegawai/biodata_pegawai');
 });
+// Data Guru
+Route::get('/guru', function () {
+    return view('pegawai/guru');
+})->name('teacher');
+// Data Tendik
+Route::get('/tendik', function () {
+    return view('pegawai/tendik');
+})->name('tendik');
 
 
 
