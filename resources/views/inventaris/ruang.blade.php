@@ -49,6 +49,8 @@
                 </form>
             </div>
 
+            <h5 class="card-title text-center"> Hasil Pencarian <br> Gedung {A} </h5>
+
             {{-- TABEL UTAMA --}}
             <div class="table">
                 <table id="summary" class="table table-bordered table-responsive">
