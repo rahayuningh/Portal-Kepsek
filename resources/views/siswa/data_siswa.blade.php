@@ -45,13 +45,8 @@
                         <div class="form-group row">
                             <div class="text-center col-sm-12">
                                 <label class="" for="tahun">Wilayah</label>
-                                <select class="form-control" required>
+                                <select class="form-control" id="search-region" required>
                                     <option disabled selected> --Pilih-- </option>
-                                    <option>Bogor</option>
-                                    <option>Jambi</option>
-                                    <option>NTT</option>
-                                    <option>Riau</option>
-                                    <option>Kalimantan</option>
                                 </select>
                             </div>
                         </div>
@@ -131,6 +126,7 @@
 </div>
 @endsection
 @section('script')
+<script src="{{ asset('assets/js/region-data.js') }}"></script>
 <script>
     $(document).ready( function () {
         $('#student-table').DataTable();
