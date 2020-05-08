@@ -63,11 +63,13 @@ Route::prefix('pegawai')->group(function () {
 // TABEL SISWA
 Route::get('/data-siswa', function () {
     return view('siswa/data_siswa');
-});
+})->name('student');
+
 // TabelSiswaPerKelas
 Route::get('/detail-kelas', function () {
     return view('siswa/detail_kelas');
-});
+})->name('class');
+
 // BIODATA SISWA
 Route::get('/bio-siswa', function () {
     return view('siswa/biodata_siswa');

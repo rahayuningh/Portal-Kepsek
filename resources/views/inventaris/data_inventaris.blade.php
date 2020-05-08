@@ -1,8 +1,5 @@
 @extends('layouts.main_layout')
 @section('page-name') Data Inventaris @endsection
-@section('script')
-<script src="{{ asset('assets/js/inventory-data.js') }}"></script>
-@endsection
 @section('content')
 {{-- CONTENT 1--}}
 {{-- TABEL UTAMA--}}
@@ -281,4 +278,7 @@
 		</div>
 	</div>
 </div>
+@endsection
+@section('script')
+<script src="{{ asset('assets/js/inventory-data.js') }}"></script>
 @endsection
