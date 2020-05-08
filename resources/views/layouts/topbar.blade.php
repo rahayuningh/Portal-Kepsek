@@ -5,9 +5,9 @@
 <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     {{-- LOGO --}}
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo" href="index.html"><img src="assets/imagesSCB/Logo-SCB_Putih.png"
+        <a class="navbar-brand brand-logo" href="index.html"><img src="{{asset('assets/imagesSCB/Logo-SCB_Putih.png')}}"
                 alt="logo" /></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/imagesSCB/Logo-SCB_mini.png"
+        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{asset('assets/imagesSCB/Logo-SCB_mini.png')}}"
                 alt="logo" /></a>
     </div>
 
@@ -133,7 +133,7 @@
                 <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                     {{-- <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false"> --}}
                     <div class="nav-profile-img">
-                        <img src="assets/images/faces/face1.jpg" alt="image">
+                        <img src="{{asset('assets/images/faces/face1.jpg')}}" alt="image">
                         <span class="availability-status online"></span>
                     </div>
                     {{-- <div class="nav-profile-text">
