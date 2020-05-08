@@ -17,10 +17,25 @@
                                 <label class="" for="tahun">Tahun Ajaran</label>
                                 <select class="form-control" required>
                                     <option disabled selected> --Pilih-- </option>
-                                    <option>2019/2020 Semester Genap</option>
-                                    <option>2019/2020 Semester Ganjil</option>
-                                    <option>2018/2019 Semester Genap</option>
-                                    <option>2018/2019 Semester Ganjil</option>
+                                    <option>2020/2021</option>
+                                    <option>2019/2020</option>
+                                    <option>2018/2019</option>
+                                    <option>2017/2018</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- KELAS --}}
+                    <div class="col-md-4">
+                        <div class="form-group row">
+                            <div class="text-center col-sm-12">
+                                <label class="" for="tahun">Kelas</label>
+                                <select class="form-control" required>
+                                    <option disabled selected> --Pilih-- </option>
+                                    <option>1A</option>
+                                    <option>1B</option>
+                                    <option>1C</option>
+                                    <option>2A</option>
                                 </select>
                             </div>
                         </div>
@@ -37,21 +52,6 @@
                                     <option>NTT</option>
                                     <option>Riau</option>
                                     <option>Kalimantan</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    {{-- KELAS --}}
-                    <div class="col-md-4">
-                        <div class="form-group row">
-                            <div class="text-center col-sm-12">
-                                <label class="" for="tahun">Kelas</label>
-                                <select class="form-control" required>
-                                    <option disabled selected> --Pilih-- </option>
-                                    <option>1A</option>
-                                    <option>1B</option>
-                                    <option>1C</option>
-                                    <option>2A</option>
                                 </select>
                             </div>
                         </div>
@@ -79,52 +79,45 @@
                 <h5 class="card-title text-center">TABEL {TAHUN AJARAN {2019/2020} SEMESTER {GANJIL}}</h5>
                 <h5 class="card-title text-center">{HASIL PENCARIAN}</h5>
                 <div class="table">
-                    <table id="searchTable" class="table table-bordered table-responsive">
+                    <table id="student-table" class="table table-bordered table-responsive">
                         <thead>
                             <tr>
-                                <th> Tahun Ajaran </th>
-                                <th> Asal Wilayah </th>
-                                <th> Kelas </th>
+                                <th> NISN </th>
                                 <th> Nama Siswa </th>
+                                <th> Asal Wilayah </th>
                             </tr>
                         </thead>
 
                         <tbody>
                             <tr>
-                                <td> 2019/2020 </td>
+                                <td> 9027310723 </td>
+                                <td><a href="{{ route('student.detail') }}">Morgan Mendel</a></td>
                                 <td> Jambi </td>
-                                <td><a href="">Kelas 1A</a></td>
-                                <td><a href="">Morgan Mendel</a></td>
                             </tr>
                             <tr>
                                 <td> 2019/2020 </td>
+                                <td><a href="{{ route('student.detail') }}">Morgan Mendel</a></td>
                                 <td> Jambi </td>
-                                <td><a href="">Kelas 1A</a></td>
-                                <td><a href="">Morgan Mendel</a></td>
                             </tr>
                             <tr>
                                 <td> 2019/2020 </td>
+                                <td><a href="{{ route('student.detail') }}">Morgan Mendel</a></td>
                                 <td> Jambi </td>
-                                <td><a href="">Kelas 1A</a></td>
-                                <td><a href="">Morgan Mendel</a></td>
                             </tr>
                             <tr>
                                 <td> 2019/2020 </td>
+                                <td><a href="{{ route('student.detail') }}">Morgan Mendel</a></td>
                                 <td> Jambi </td>
-                                <td><a href="">Kelas 1A</a></td>
-                                <td><a href="">Morgan Mendel</a></td>
                             </tr>
                             <tr>
                                 <td> 2019/2020 </td>
+                                <td><a href="{{ route('student.detail') }}">Morgan Mendel</a></td>
                                 <td> Jambi </td>
-                                <td><a href="">Kelas 1A</a></td>
-                                <td><a href="">Morgan Mendel</a></td>
                             </tr>
                             <tr>
                                 <td> 2019/2020 </td>
+                                <td><a href="{{ route('student.detail') }}">Morgan Mendel</a></td>
                                 <td> Jambi </td>
-                                <td><a href="">Kelas 1A</a></td>
-                                <td><a href="">Morgan Mendel</a></td>
                             </tr>
                         </tbody>
 
@@ -136,6 +129,11 @@
         </div>
     </div>
 </div>
-
-
+@endsection
+@section('script')
+<script>
+    $(document).ready( function () {
+        $('#student-table').DataTable();
+    } );
+</script>
 @endsection

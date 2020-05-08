@@ -71,7 +71,7 @@ Route::get('/detail-kelas', function () {
 // BIODATA SISWA
 Route::get('/bio-siswa', function () {
     return view('siswa/biodata_siswa');
-});
+})->name('student.detail');
 
 // -----------------------------------------------------
 // INVENTARIS
