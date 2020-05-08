@@ -58,8 +58,8 @@
                     </a>
                     <div class="collapse" id="info-siswa">
                         <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="/data-siswa">Data Siswa</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="/detail-kelas">Data Kelas</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="{{ route('student') }}">Data Siswa</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="{{ route('class') }}">Data Kelas</a></li>
                         </ul>
                     </div>
                 </li>
