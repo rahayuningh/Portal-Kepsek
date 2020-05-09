@@ -126,7 +126,7 @@
 </div>
 @endsection
 @section('script')
-<script src="{{ asset('assets/js/region-data.js') }}"></script>
+<script src="{{ asset('assets/js/data/region-data.js') }}"></script>
 <script>
     $(document).ready( function () {
         $('#student-table').DataTable({

@@ -280,5 +280,5 @@
 </div>
 @endsection
 @section('script')
-<script src="{{ asset('assets/js/inventory-data.js') }}"></script>
+<script src="{{ asset('assets/js/data/inventory-data.js') }}"></script>
 @endsection
