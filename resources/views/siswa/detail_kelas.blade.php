@@ -18,12 +18,11 @@
                         <div class="form-group row">
                             <div class="text-center col-sm-12">
                                 <label class="" for="tahun">Tahun Ajaran</label>
-                                <select class="form-control" required>
+                                <select class="form-control" id="search-year" required>
                                     <option disabled selected> --Pilih-- </option>
-                                    <option>2019/2020</option>
-                                    <option>2018/2019</option>
-                                    <option>2017/2018</option>
-                                    <option>2016/2017</option>
+                                    @foreach ($schoolYears as $year)
+                                    <option value="{{ $year->id }}">{{ $year->tahun_ajaran }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -36,12 +35,11 @@
                 <div>
                     <label class="" for="kelas">Kelas</label>
                 </div>
-                <div>
-                    {{-- #198ae3 --}}
-                    <button class="tab-link btn btn-inverse-info btn-icon">1A</button>
-                    <button class="tab-link btn btn-inverse-info btn-icon">1B</button>
-                    <button class="tab-link btn btn-inverse-info btn-icon">1C</button>
-                    <button class="tab-link btn btn-inverse-info btn-icon">1D</button>
+                <div class="row text-center">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8" id="search-class">
+                    </div>
+                    <div class="col-sm-2"></div>
                 </div>
             </div>
         </div>
@@ -86,21 +84,24 @@
                                 <tr>
                                     <td>1</td>
                                     <td>
-                                        <a href="{{ route('student.detail') }}">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</a>
+                                        <a href="{{ route('student.detail') }}">Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                                            Lorem Ipsum</a>
                                     </td>
                                     <td>000XXXXXXXXXX</td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
                                     <td>
-                                        <a href="{{ route('student.detail') }}">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum>
+                                        <a href="{{ route('student.detail') }}">Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                                            Lorem Ipsum>
                                     </td>
                                     <td>000XXXXXXXXXX</td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
                                     <td>
-                                        <a href="{{ route('student.detail') }}">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</a>
+                                        <a href="{{ route('student.detail') }}">Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                                            Lorem Ipsum</a>
                                     </td>
                                     <td>000XXXXXXXXXX</td>
                                 </tr>
@@ -114,6 +115,7 @@
 </div>
 @endsection
 @section('script')
+<script src="{{ asset('assets/js/data/class-data-button.js') }}"></script>
 <script>
     $(document).ready( function () {
         $('#class-table').DataTable();

@@ -15,12 +15,11 @@
                         <div class="form-group row">
                             <div class="text-center col-sm-12">
                                 <label class="" for="tahun">Tahun Ajaran</label>
-                                <select class="form-control" required>
+                                <select class="form-control" id="search-year" required>
                                     <option disabled selected> --Pilih-- </option>
-                                    <option>2020/2021</option>
-                                    <option>2019/2020</option>
-                                    <option>2018/2019</option>
-                                    <option>2017/2018</option>
+                                    @foreach ($schoolYears as $year)
+                                    <option value="{{ $year->id }}">{{ $year->tahun_ajaran }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -30,12 +29,8 @@
                         <div class="form-group row">
                             <div class="text-center col-sm-12">
                                 <label class="" for="tahun">Kelas</label>
-                                <select class="form-control" required>
+                                <select class="form-control" id="search-class" required>
                                     <option disabled selected> --Pilih-- </option>
-                                    <option>1A</option>
-                                    <option>1B</option>
-                                    <option>1C</option>
-                                    <option>2A</option>
                                 </select>
                             </div>
                         </div>
@@ -127,6 +122,7 @@
 @endsection
 @section('script')
 <script src="{{ asset('assets/js/data/region-data.js') }}"></script>
+<script src="{{ asset('assets/js/data/class-data.js') }}"></script>
 <script>
     $(document).ready( function () {
         $('#student-table').DataTable({

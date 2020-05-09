@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 // -----------------------------------------------------
 // STATUS PEKERJAAN GURU
-Route::get('/status-pekerjaan-guru', function () {
+Route::get('/status-pekerjaan', function () {
     return view('pekerjaan/status_pekerjaan_guru', [
         'schoolYears' => TahunAjaran::all(),
         'subjects' => MataPelajaran::all()
@@ -67,12 +67,12 @@ Route::prefix('pegawai')->group(function () {
 // SISWA
 // TABEL SISWA
 Route::get('/data-siswa', function () {
-    return view('siswa/data_siswa');
+    return view('siswa/data_siswa', ['schoolYears' => TahunAjaran::all()]);
 })->name('student');
 
 // TabelSiswaPerKelas
 Route::get('/detail-kelas', function () {
-    return view('siswa/detail_kelas');
+    return view('siswa/detail_kelas',['schoolYears' => TahunAjaran::all()]);
 })->name('class');
 
 // BIODATA SISWA

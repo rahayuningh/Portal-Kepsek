@@ -2,14 +2,14 @@ const searchYearElement = document.getElementById('search-year');
 const serchClassElement = document.getElementById('search-class');
 
 const updateClassOption = (classes) => {
-    serchClassElement.innerHTML = "<option disabled selected> --Pilih--</option>";
+    serchClassElement.innerHTML = "";
     classes.forEach(item => {
-        serchClassElement.innerHTML += `<option value="${item.id}">${item.kode_kelas}</option>`;
+        serchClassElement.innerHTML += `<button class="tab-link btn btn-inverse-info btn-icon mb-1 mr-1">${item.kode_kelas}</button>`;
     });
 }
 
 const getClass = () => {
-    serchClassElement.innerHTML = "<option disabled selected>Loading ...</option>";
+    serchClassElement.innerHTML = "Loading ...";
 
     const url = "/api/get-classes";
     let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');

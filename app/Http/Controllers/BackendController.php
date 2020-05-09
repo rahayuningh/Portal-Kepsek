@@ -18,41 +18,56 @@ class BackendController extends Controller
 {
     public function getRooms(Request $request)
     {
-        $data = $request->building;
-        $room = Ruangan::where('gedung_id', $data)->get();
-        if ($data != null) {
-            return response()->json([
-                'buildingId' => $data,
-                'rooms' => $room,
-                'message' => 'Success'
-            ]);
+        if (!$request->has('building')) {
+            $error = "Tidak ada id gedung yang diberikan";
+            $fail = true;
+        } else if (!is_numeric($request->building)) {
+            $error = "Id gedung yang diberikan bukanlah angka";
+            $fail = true;
         } else {
-            return response()->json([
-                'message' => 'Fail'
-            ]);
+            $fail = false;
         }
+
+        if ($fail) {
+            $content = json_encode([
+                'message' => $error,
+            ]);
+            $status = 400;
+        } else {
+            $content = json_encode([
+                'message' => 'Success',
+                'rooms' => Ruangan::where('gedung_id', $request->building)->get()
+            ]);
+            $status = 200;
+        }
+        return response($content, $status);
     }
 
     public function getClass(Request $request)
     {
-        $request->validate([
-            'year' => 'required|numeric'
-        ]);
-
-        $yearId = $request->year;
-
-        if ($yearId != null) {
-            $classes = TahunAjaran::find($yearId)->classes;
-            return response()->json([
-                'yearId' => $yearId,
-                'classes' => $classes,
-                'message' => 'Success'
-            ]);
+        if (!$request->has('year')) {
+            $error = "Tidak ada id tahun ajaran yang diberikan";
+            $fail = true;
+        } else if (!is_numeric($request->year)) {
+            $error = "Id tahun ajaran yang diberikan bukanlah angka";
+            $fail = true;
         } else {
-            return response()->json([
-                'message' => 'Fail'
-            ]);
+            $fail = false;
         }
+
+        if ($fail) {
+            $content = json_encode([
+                'message' => $error,
+            ]);
+            $status = 400;
+        } else {
+            $content = json_encode([
+                'message' => 'Success',
+                'classes' => TahunAjaran::find($request->year)->classes
+            ]);
+            $status = 200;
+        }
+        return response($content);
     }
 
     public function createCivitas()
