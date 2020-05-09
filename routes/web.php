@@ -1,5 +1,7 @@
 <?php
 
+use App\MataPelajaran;
+use App\TahunAjaran;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,7 +23,10 @@ Route::get('/', function () {
 // -----------------------------------------------------
 // STATUS PEKERJAAN GURU
 Route::get('/status-pekerjaan-guru', function () {
-    return view('pekerjaan/status_pekerjaan_guru');
+    return view('pekerjaan/status_pekerjaan_guru', [
+        'schoolYears' => TahunAjaran::all(),
+        'subjects' => MataPelajaran::all()
+    ]);
 })->name('job.status');
 // KBM
 Route::get('/kbm', function () {

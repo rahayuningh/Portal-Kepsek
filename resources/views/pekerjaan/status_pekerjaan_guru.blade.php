@@ -117,12 +117,11 @@
                                 <div class="form-group row">
                                     <div class="text-center col-sm-12">
                                         <label class="" for="tahun">Tahun Ajaran</label>
-                                        <select class="form-control" required>
+                                        <select class="form-control" id="search-year" required>
                                             <option disabled selected> --Pilih-- </option>
-                                            <option>2020/2021</option>
-                                            <option>2019/2020</option>
-                                            <option>2018/2019</option>
-                                            <option>2017/2018</option>
+                                            @foreach ($schoolYears as $year)
+                                            <option value="{{ $year->id }}">{{ $year->tahun_ajaran }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -133,8 +132,8 @@
                                         <label class="" for="tahun">Semester</label>
                                         <select class="form-control" required>
                                             <option disabled selected> --Pilih-- </option>
-                                            <option>Ganjil</option>
-                                            <option>Genap</option>
+                                            <option value="0">Ganjil</option>
+                                            <option value="1">Genap</option>
                                         </select>
                                     </div>
                                 </div>
@@ -146,10 +145,9 @@
                                         <label class="" for="tahun">Mata Pelajaran</label>
                                         <select class="form-control col-sm-12" required>
                                             <option disabled selected> --Pilih-- </option>
-                                            <option>Matematika</option>
-                                            <option>Fisika</option>
-                                            <option>Kimia</option>
-                                            <option>Biologi</option>
+                                            @foreach ($subjects as $subject)
+                                            <option value="{{ $subject->id }}">{{$subject->nama_mapel}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -159,12 +157,9 @@
                                 <div class="form-group row">
                                     <div class="text-center col-sm-12">
                                         <label class="" for="tahun">Kelas</label>
-                                        <select class="form-control" required>
+                                        <select class="form-control" id="search-class" required>
                                             <option disabled selected> --Pilih-- </option>
-                                            <option>1A</option>
-                                            <option>1B</option>
-                                            <option>1C</option>
-                                            <option>2A</option>
+                                            <option disabled>Pilih tahun ajaran dahulu ...</option>
                                         </select>
                                     </div>
                                 </div>
@@ -284,6 +279,7 @@
 
 @endsection
 @section('script')
+<script src="{{ asset('assets/js/data/class-data.js') }}"></script>
 <script>
     $(document).ready( function () {
         $('#job-summary-table').DataTable({

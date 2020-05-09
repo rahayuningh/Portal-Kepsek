@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Civitas;
 use App\Gedung;
 use App\Guru;
+use App\Kelas;
 use App\Pesan;
 use App\Ruangan;
 use App\Siswa;
+use App\TahunAjaran;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Symfony\Component\Console\Input\Input;
@@ -22,6 +24,28 @@ class BackendController extends Controller
             return response()->json([
                 'buildingId' => $data,
                 'rooms' => $room,
+                'message' => 'Success'
+            ]);
+        } else {
+            return response()->json([
+                'message' => 'Fail'
+            ]);
+        }
+    }
+
+    public function getClass(Request $request)
+    {
+        $request->validate([
+            'year' => 'required|numeric'
+        ]);
+
+        $yearId = $request->year;
+
+        if ($yearId != null) {
+            $classes = TahunAjaran::find($yearId)->classes;
+            return response()->json([
+                'yearId' => $yearId,
+                'classes' => $classes,
                 'message' => 'Success'
             ]);
         } else {

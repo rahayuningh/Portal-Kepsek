@@ -18,4 +18,9 @@ class Kelas extends Model
     {
         return $this->hasOne('App\Guru');
     }
+
+    public function tahun()
+    {
+        return $this->belongsTo('App\TahunAjaran');
+    }
 }
