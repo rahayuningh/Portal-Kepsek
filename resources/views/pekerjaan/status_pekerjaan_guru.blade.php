@@ -9,7 +9,7 @@
         <div class="card">
             <h2 class="text-center" style="background-color: green; color: white">TABEL RINGKASAN</h2>
             <div class="table">
-                <table id="summary" class="table table-bordered">
+                <table id="job-summary-table" class="table table-bordered">
                     <thead>
                         <tr>
                             <th class="text-left"> No </th>
@@ -101,7 +101,7 @@
 </div>
 
 {{-- CONTENT 2--}}
-{{-- TABEL RINGKASAN --}}
+{{-- TABEL UTAMA --}}
 <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
@@ -182,7 +182,7 @@
                     <h5 class="card-title text-center">TABEL {TAHUN AJARAN {2019/2020} SEMESTER {GANJIL}}</h5>
                     <h5 class="card-title text-center">{HASIL PENCARIAN}</h5>
                     <div class="table">
-                        <table id="summary2" class="table table-bordered table-responsive">
+                        <table id="job-table" class="table table-bordered table-responsive">
                             <thead>
                                 <tr>
                                     <th class="text-left"> No </th>
@@ -282,5 +282,18 @@
     </div>
 </div>
 
-
+@endsection
+@section('script')
+<script>
+    $(document).ready( function () {
+        $('#job-summary-table').DataTable({
+          "searching": false
+      });
+    } );
+        $(document).ready( function () {
+        $('#job-table').DataTable({
+          "searching": false
+      });
+    } );
+</script>
 @endsection

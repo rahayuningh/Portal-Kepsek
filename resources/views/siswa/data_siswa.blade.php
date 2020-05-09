@@ -129,7 +129,9 @@
 <script src="{{ asset('assets/js/region-data.js') }}"></script>
 <script>
     $(document).ready( function () {
-        $('#student-table').DataTable();
+        $('#student-table').DataTable({
+          "searching": false
+      });
     } );
 </script>
 @endsection

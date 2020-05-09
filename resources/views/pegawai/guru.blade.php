@@ -8,7 +8,7 @@
             {{-- HEADER --}}
             <h2 class="text-center" style="background-color: green; color: white">Data Guru</h2>
             <div class="table">
-                <table id="summary" class="table table-bordered table-responsive">
+                <table id="#teacher-table" class="table table-bordered table-responsive">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -115,4 +115,13 @@
         </div>
     </div>
 </div>
+@endsection
+@section('script')
+<script>
+    $(document).ready( function () {
+        $('#teacher-table').DataTable({
+          "searching": false
+      });
+    } );
+</script>
 @endsection
