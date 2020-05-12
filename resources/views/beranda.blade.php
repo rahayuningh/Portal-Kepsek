@@ -10,6 +10,16 @@
             <div class="card-body">
                 <h4 class="card-title">Pengumuman</h4>
                 <p>Sistem ini masih dalam tahap pengembangan</p>
+                @if (Auth::check())
+                <p>Data User</p>
+                <ul>
+                    <li>Email : {{ Auth::user()->email }}</li>
+                    <li>Level : {{ Auth::user()->level_akses }}</li>
+                    <li>Jabat : {{ Auth::user()->jabatan }}</li>
+                    <li>Kerja : {{ Auth::user()->bagian_pekerjaan }}</li>
+                </ul>
+                {{-- {{ Auth::user() }} --}}
+                @endif
             </div>
         </div>
     </div>
@@ -32,8 +42,7 @@
             <a href="{{ route('kbm') }}" class="text-decoration-none text-white">
                 <div class="card-body">
                     <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                    <h4 class="font-weight-normal mb-3">KBM <i
-                            class="mdi mdi-library-books mdi-24px float-right"></i>
+                    <h4 class="font-weight-normal mb-3">KBM <i class="mdi mdi-library-books mdi-24px float-right"></i>
                     </h4>
                 </div>
             </a>

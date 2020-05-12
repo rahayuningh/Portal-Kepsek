@@ -132,11 +132,14 @@
                     <p class="text-center">Kepala Sekolah</p>
 
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
                         <i class="mdi mdi-logout mr-2 text-primary"></i>
                         Signout
                     </a>
-
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                 </div>
             </li>
         </ul>

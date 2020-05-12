@@ -16,147 +16,143 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// BERANDA
-Route::get('/', function () {
-    return view('beranda');
-})->name('dashboard');
+// Semua route jadinya harus login dulu
 
-// -----------------------------------------------------
-// STATUS PEKERJAAN GURU
-Route::get('/status-pekerjaan', function () {
-    return view('pekerjaan/status_pekerjaan_guru', [
-        'schoolYears' => TahunAjaran::all(),
-        'subjects' => MataPelajaran::all()
-    ]);
-})->name('job.status');
-// KBM
-Route::get('/kbm', function () {
-    return view('pekerjaan/kbm');
-})->name('kbm');
-// Mata Pelajaran
-Route::get('/mata-pelajaran', function () {
-    return view('pekerjaan/mata_pelajaran');
-})->name('subject');
+Auth::routes([
+    'register' => false, // matiin register
+    'verify' => false // matiin verifikasi email
+]);
 
-// -----------------------------------------------------
-// PEGAWAI (GURU & TENDIK)
-Route::prefix('pegawai')->group(function () {
-    // BIODATA Guru
-    Route::get('/bio-guru', function () {
-        return view('pegawai/biodata_guru', ['page' => 'Guru']);
-    })->name('teacher.detail');
+Route::middleware(['auth'])->group(function () {
 
-    // BIODATA Tendik
-    Route::get('/bio-tendik', function () {
-        return view('pegawai/biodata_tendik', ['page' => 'Tenaga Pendidik']);
-    })->name('tendik.detail');
+    // BERANDA
+    Route::get('/', function () {
+        return view('beranda');
+    })->name('dashboard');
 
-    // Data Guru
-    Route::get('/guru', function () {
-        return view('pegawai/guru');
-    })->name('teacher');
+    // -----------------------------------------------------
+    // STATUS PEKERJAAN GURU
+    Route::get('/status-pekerjaan', function () {
+        return view('pekerjaan/status_pekerjaan_guru', [
+            'schoolYears' => TahunAjaran::all(),
+            'subjects' => MataPelajaran::all()
+        ]);
+    })->name('job.status');
+    // KBM
+    Route::get('/kbm', function () {
+        return view('pekerjaan/kbm');
+    })->name('kbm');
+    // Mata Pelajaran
+    Route::get('/mata-pelajaran', function () {
+        return view('pekerjaan/mata_pelajaran');
+    })->name('subject');
 
-    // Data Tendik
-    Route::get('/tendik', function () {
-        return view('pegawai/tendik');
-    })->name('tendik');
+    // -----------------------------------------------------
+    // PEGAWAI (GURU & TENDIK)
+    Route::prefix('pegawai')->group(function () {
+        // BIODATA Guru
+        Route::get('/bio-guru', function () {
+            return view('pegawai/biodata_guru', ['page' => 'Guru']);
+        })->name('teacher.detail');
+
+        // BIODATA Tendik
+        Route::get('/bio-tendik', function () {
+            return view('pegawai/biodata_tendik', ['page' => 'Tenaga Pendidik']);
+        })->name('tendik.detail');
+
+        // Data Guru
+        Route::get('/guru', function () {
+            return view('pegawai/guru');
+        })->name('teacher');
+
+        // Data Tendik
+        Route::get('/tendik', function () {
+            return view('pegawai/tendik');
+        })->name('tendik');
+    });
+
+
+
+    // -----------------------------------------------------
+    // SISWA
+    // TABEL SISWA
+    Route::get('/data-siswa', function () {
+        return view('siswa/data_siswa', ['schoolYears' => TahunAjaran::all()]);
+    })->name('student');
+
+    // TabelSiswaPerKelas
+    Route::get('/detail-kelas', function () {
+        return view('siswa/detail_kelas', ['schoolYears' => TahunAjaran::all()]);
+    })->name('class');
+
+    // BIODATA SISWA
+    Route::get('/bio-siswa', function () {
+        return view('siswa/biodata_siswa');
+    })->name('student.detail');
+
+    // -----------------------------------------------------
+    // INVENTARIS
+    Route::prefix('inventaris')->group(function () {
+        Route::get('/list', 'InventoryController@seeInventory')->name('inventory');
+
+        // inventaris/kebutuhan-barang
+        Route::get('/kebutuhan-barang', function () {
+            return view('inventaris/kebutuhan', ['buildings' => Gedung::all()]);
+        })->name('inventory.needs');
+
+        Route::get('/gedung', function () {
+            return view('inventaris/gedung');
+        })->name('inventory.building');
+
+        Route::get('/ruang', function () {
+            return view('inventaris/ruang');
+        })->name('inventory.room');
+    });
+
+    // PESAN
+    Route::prefix('pesan')->group(function () {
+        Route::get('/inbox', function () {
+            echo "Ini halaman pesan";
+        })->name('message.inbox');
+    });
+
+
+
+    // -----------------------------------------------------
+    // AUTH
+    // /login ---> default
+    //custome
+    // Route::get('/verification', function () {
+    //     return view('auth/verify');
+    // });
+    // Route::get('/email-reset', function () {
+    //     return view('auth/passwords/email');
+    // });
+    // Route::get('/reset', function () {
+    //     return view('auth/passwords/reset');
+    // });
+    // Route::get('/confirm-reset', function () {
+    //     return view('auth/passwords/confirm');
+    // });
+
+
+    // Route made by Fakhri
+    // If you want to know what is it for, ask Fakhri :)
+    Route::get('/civitas', 'BackendController@createCivitas');
+    Route::get('/siswa/{id}', 'BackendController@seeSiswa');
+    Route::get('/pesan', 'BackendController@seeAllMessage');
+    Route::get('/pesan/receiver', 'BackendController@getMessageReceiver');
+    // -----------------
+
+    // -----------------------------------------------------
+    // TESTING
+
+    //COBA TEMPLATE
+    Route::get('/template', function () {
+        return view('CobaTemplate/coba_template');
+    });
+    // TABEL SISWA TAB MODE
+    Route::get('/tabelsiswa', function () {
+        return view('CobaTemplate/tabel_siswa_tabmode');
+    });
 });
-
-
-
-// -----------------------------------------------------
-// SISWA
-// TABEL SISWA
-Route::get('/data-siswa', function () {
-    return view('siswa/data_siswa', ['schoolYears' => TahunAjaran::all()]);
-})->name('student');
-
-// TabelSiswaPerKelas
-Route::get('/detail-kelas', function () {
-    return view('siswa/detail_kelas', ['schoolYears' => TahunAjaran::all()]);
-})->name('class');
-
-// BIODATA SISWA
-Route::get('/bio-siswa', function () {
-    return view('siswa/biodata_siswa');
-})->name('student.detail');
-
-// -----------------------------------------------------
-// INVENTARIS
-Route::prefix('inventaris')->group(function () {
-    Route::get('/list', 'InventoryController@seeInventory')->name('inventory');
-
-    // inventaris/kebutuhan-barang
-    Route::get('/kebutuhan-barang', function () {
-        return view('inventaris/kebutuhan', ['buildings' => Gedung::all()]);
-    })->name('inventory.needs');
-
-    Route::get('/gedung', function () {
-        return view('inventaris/gedung');
-    })->name('inventory.building');
-
-    Route::get('/ruang', function () {
-        return view('inventaris/ruang');
-    })->name('inventory.room');
-});
-
-// PESAN
-Route::prefix('pesan')->group(function () {
-    Route::get('/inbox', function () {
-        echo "Ini halaman pesan";
-    })->name('message.inbox');
-});
-
-
-
-// -----------------------------------------------------
-// AUTH
-// /login ---> default
-//custome
-Route::get('/verification', function () {
-    return view('auth/verify');
-});
-Route::get('/email-reset', function () {
-    return view('auth/passwords/email');
-});
-Route::get('/reset', function () {
-    return view('auth/passwords/reset');
-});
-Route::get('/confirm-reset', function () {
-    return view('auth/passwords/confirm');
-});
-
-
-
-
-
-// Route made by Fakhri
-// If you want to know what is it for, ask Fakhri :)
-Route::get('/civitas', 'BackendController@createCivitas');
-Route::get('/siswa/{id}', 'BackendController@seeSiswa');
-Route::get('/pesan', 'BackendController@seeAllMessage');
-Route::get('/pesan/receiver', 'BackendController@getMessageReceiver');
-// -----------------
-
-// -----------------------------------------------------
-// TESTING
-
-//COBA TEMPLATE
-Route::get('/template', function () {
-    return view('CobaTemplate/coba_template');
-});
-// TABEL SISWA TAB MODE
-Route::get('/tabelsiswa', function () {
-    return view('CobaTemplate/tabel_siswa_tabmode');
-});
-
-// Semua route dibawah ini baru bisa diakses setelah login
-// jadi bikin routenya di atas aja, jangan dibawah
-
-Auth::routes();
-
-Route::get('/home', function () {
-    return view('beranda');
-})->middleware('auth');
-
-// Route::get('/home', 'HomeController@index')->name('home');
