@@ -28,12 +28,11 @@
                             <div class="form-group row">
                                 <div class="text-center col-sm-12">
                                     <label class="" for="tahun">Gedung</label>
-                                    <select class="form-control" required>
+                                    <select class="form-control" id="search-building" required>
                                         <option disabled selected> --Pilih-- </option>
-                                        <option>Gedung A</option>
-                                        <option>Gedung B</option>
-                                        <option>Gedung C</option>
-                                        <option>Gedung D</option>
+                                        @foreach ($buildings as $building)
+										<option value="{{ $building->id }}">{{ $building->nama_gedung }}</option>
+										@endforeach
                                     </select>
                                 </div>
                             </div>
@@ -43,11 +42,8 @@
                             <div class="form-group row">
                                 <div class="text-center col-sm-12">
                                     <label class="" for="tahun">Ruangan</label>
-                                    <select class="form-control col-sm-12" required>
+                                    <select class="form-control col-sm-12" id="search-room" required>
                                         <option disabled selected> --Pilih-- </option>
-                                        <option>Ruang A</option>
-                                        <option>Ruang B</option>
-                                        <option>Ruang C</option>
                                     </select>
                                 </div>
                             </div>
@@ -262,5 +258,7 @@
         </div>
     </div>
 </div>
-
+@endsection
+@section('script')
+<script src="{{ asset('assets/js/data/inventory-data.js') }}"></script>
 @endsection

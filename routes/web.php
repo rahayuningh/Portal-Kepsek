@@ -1,5 +1,6 @@
 <?php
 
+use App\Gedung;
 use App\MataPelajaran;
 use App\TahunAjaran;
 use Illuminate\Support\Facades\Route;
@@ -72,7 +73,7 @@ Route::get('/data-siswa', function () {
 
 // TabelSiswaPerKelas
 Route::get('/detail-kelas', function () {
-    return view('siswa/detail_kelas',['schoolYears' => TahunAjaran::all()]);
+    return view('siswa/detail_kelas', ['schoolYears' => TahunAjaran::all()]);
 })->name('class');
 
 // BIODATA SISWA
@@ -87,7 +88,7 @@ Route::prefix('inventaris')->group(function () {
 
     // inventaris/kebutuhan-barang
     Route::get('/kebutuhan-barang', function () {
-        return view('inventaris/kebutuhan');
+        return view('inventaris/kebutuhan', ['buildings' => Gedung::all()]);
     })->name('inventory.needs');
 
     Route::get('/gedung', function () {

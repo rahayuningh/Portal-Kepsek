@@ -115,7 +115,7 @@
 </div>
 @endsection
 @section('script')
-<script src="{{ asset('assets/js/data/class-data-button.js') }}"></script>
+<script src="{{ asset('assets/js/data/class-detail-option.js') }}"></script>
 <script>
     $(document).ready( function () {
         $('#class-table').DataTable();

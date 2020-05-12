@@ -8,14 +8,13 @@ const updateRegionOption = (regions) => {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    searchRegionElement.innerHTML = "<option disabled selected>Loading ...</option>";
-
     const url = "http://dev.farizdotid.com/api/daerahindonesia/provinsi";
     fetch(url)
         .then(response => {
             return response.json();
         })
         .then(responseJson => {
+            console.log(responseJson);
             updateRegionOption(responseJson.semuaprovinsi);
         })
         .catch(error => {
