@@ -18,11 +18,13 @@ class PesanTableSeeder extends Seeder
         Pesan::create([
             'id' => '1',
             'penerima' => '1',
+            'subject' => 'Ini Subjectnya 1',
             'konten' => 'Lorem ipsum dolor sit amet nicnedjan'
         ]);
         Pesan::create([
             'id' => '2',
             'penerima' => '1',
+            'subject' => 'Ini Subjectnya 2',
             'konten' => 'Lorem ipsum dolor sit amet nicnedjan kedu ajadasnda'
         ]);
     }

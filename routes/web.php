@@ -51,7 +51,7 @@ Route::middleware(['auth'])->group(function () {
     // PEGAWAI (GURU & TENDIK)
     Route::prefix('pegawai')->group(function () {
         // BIODATA Guru
-        Route::get('/bio-guru', function () {
+        Route::get('/bio-guru/{id}', function () {
             return view('pegawai/biodata_guru', ['page' => 'Guru']);
         })->name('teacher.detail');
 
@@ -113,6 +113,8 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('message')->group(function () {
         Route::get('/sentbox', 'PesanController@sentbox')->name('message.outbox');
         Route::get('/{id}', 'PesanController@detail')->name('message.detail');
+        Route::post('/create', 'PesanController@createMessage')->name('message.create');
+        Route::get('/delete/{id}', 'PesanController@deleteMessage')->name('message.delete');
     });
 
 

@@ -71,14 +71,23 @@
                     {{-- ######################################################################## --}}
                     {{-- PESAN SUKSES --}}
                     {{-- ######################################################################## --}}
-                    {{-- @if() --}}
+                    @if (session('success'))
                     <div class="alert alert-success" role="alert">
-                        {{"Data berhasil ditambahkan/diubah/dihapus"}}
+                        {{ session('success') }}
                     </div>
-                    {{-- @endif --}}
+                    @endif
+                    @if (session('fail'))
                     <div class="alert alert-danger" role="alert">
-                        {{"Data gagal ditambahkan/diubah/dihapus"}}
+                        {{ session('fail') }}
                     </div>
+                    @endif
+                    @if($errors->any())
+                    @foreach ($errors->all() as $error)
+                    <div class="alert alert-danger" role="alert">
+                        {{$error}}
+                    </div>
+                    @endforeach
+                    @endif
 
 
                     {{-- ######################################################################## --}}
@@ -94,45 +103,47 @@
                 <!-- partial:partials/_footer.html -->
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2020 Integrated Monitoring System. All rights
-                        reserved.</span>
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2020
+                            Integrated Monitoring System. All rights
+                            reserved.</span>
                         <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made
                             with <i class="mdi mdi-heart text-danger"></i></span>
-                        </div>
-                    </footer>
+                    </div>
+                </footer>
 
-                    <!-- partial -->
-                </div>
-                <!-- main-panel ends -->
+                <!-- partial -->
             </div>
-            <!-- page-body-wrapper ends -->
+            <!-- main-panel ends -->
         </div>
-        <!-- container-scroller -->
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
 
 
-        <!-- plugins:js -->
-        <script src="{{ asset('assets/vendors/js/vendor.bundle.base.js') }}"></script>
-        <!-- endinject -->
-        <!-- Plugin js for this page -->
-        <script src="{{ asset('assets/vendors/chart.js/Chart.min.js') }}"></script>
-        <!-- End plugin js for this page -->
-        <!-- inject:js -->
-        <script src="{{ asset('assets/js/off-canvas.js') }}"></script>
-        <script src="{{ asset('assets/js/hoverable-collapse.js') }}"></script>
-        <script src="{{ asset('assets/js/misc.js') }}"></script>
-        <!-- endinject -->
-        <!-- Custom js for this page -->
-        <script src="{{ asset('assets/js/dashboard.js') }}"></script>
-        <script src="{{ asset('assets/js/todolist.js') }}"></script>
-        <!-- End custom js for this page -->
+    <!-- plugins:js -->
+    <script src="{{ asset('assets/vendors/js/vendor.bundle.base.js') }}"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="{{ asset('assets/vendors/chart.js/Chart.min.js') }}"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="{{ asset('assets/js/off-canvas.js') }}"></script>
+    <script src="{{ asset('assets/js/hoverable-collapse.js') }}"></script>
+    <script src="{{ asset('assets/js/misc.js') }}"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="{{ asset('assets/js/dashboard.js') }}"></script>
+    <script src="{{ asset('assets/js/todolist.js') }}"></script>
+    <!-- End custom js for this page -->
 
-        {{-- Table Pagination --}}
-        <script src="{{ asset('assets/js/datatables/datatables.min.js') }}"></script>
-        <script src="{{ asset('assets/js/datatables/table.js') }}"></script>
+    {{-- Table Pagination --}}
+    <script src="{{ asset('assets/js/datatables/datatables.min.js') }}"></script>
+    <script src="{{ asset('assets/js/datatables/table.js') }}"></script>
+    <script src="{{ asset('assets/js/data/message-data.js') }}"></script>
 
-        {{-- for add custom js scripts --}}
-        @yield('script')
+    {{-- for add custom js scripts --}}
+    @yield('script')
 
-    </body>
+</body>
 
-    </html>
+</html>

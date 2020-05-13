@@ -16,6 +16,7 @@ class CreatePesansTable extends Migration
         Schema::create('pesans', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('penerima');
+            $table->string('subject', 150);
             $table->text('konten');
             $table->timestamps();
         });

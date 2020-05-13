@@ -14,38 +14,41 @@
                             <th>Penerima</th>
                             <th>Perihal</th>
                             <th>Tanggal</th>
+                            <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
 
                     <tbody>
+                        @php
+                        $no=1;
+                        @endphp
+                        @foreach ($messages as $message)
                         <tr>
-                            <td> 1 </td>
-                            <td>Guru A </a></td>
-                            <td><a href="{{ route('message.detail', ['id'=>1]) }}">Negara dalam
-                                    bahasaya</a></td>
-                            <td>2 Mei 2020</td>
+                            <td> {{ $no }} </td>
+                            <td><a href="{{ route('teacher.detail', ['id'=>$message['penerima_id']]) }}">
+                                    {{ $message['penerima_nama'] }}
+                                </a>
+                            </td>
+                            <td>
+                                {{ $message['subject'] }}
+                            </td>
+                            <td>{{ $message['created_at']->format('d F Y H:i') }}</td>
+                            <td class="p-0 text-center">
+                                <a href="{{ route('message.detail', ['id'=>$message['id']]) }}"
+                                    class="btn btn-inverse-info btn-icon p-2" title="Detail">
+                                    <i class="mdi mdi-eye"></i>
+                                </a>
+                                <a href="{{ route('message.delete', ['id'=>$message['id']]) }}" type="button"
+                                    class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
+                                    onclick="return confirm('Yakin hapus pesan ini?')">
+                                    <i class="mdi mdi-delete"></i>
+                                </a>
+                            </td>
                         </tr>
-                        <tr>
-                            <td> 2 </td>
-                            <td>Guru B </a></td>
-                            <td><a href="{{ route('message.detail', ['id'=>1]) }}">Negara dalam
-                                    bahasaya</a></td>
-                            <td>2 Mei 2020</td>
-                        </tr>
-                        <tr>
-                            <td> 3 </td>
-                            <td>Guru C </a></td>
-                            <td><a href="{{ route('message.detail', ['id'=>1]) }}">Negara dalam
-                                    bahasaya</a></td>
-                            <td>2 Mei 2020</td>
-                        </tr>
-                        <tr>
-                            <td> 4 </td>
-                            <td>Guru D </a></td>
-                            <td><a href="{{ route('message.detail', ['id'=>1]) }}">Negara dalam
-                                    bahasaya</a></td>
-                            <td>2 Mei 2020</td>
-                        </tr>
+                        @php
+                        $no++;
+                        @endphp
+                        @endforeach
                     </tbody>
                 </table>
             </div>

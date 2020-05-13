@@ -55,5 +55,15 @@ class CivitasTableSeeder extends Seeder
             'civitasable_id' => 2,
             'civitasable_type' => 'App\Pegawai'
         ]);
+        Civitas::create([
+            'id' => '5',
+            'nama' => 'Maximus Nice',
+            'jenis_kelamin' => True,
+            'tempat_lahir' => 'Bogor',
+            'tanggal_lahir' => Carbon::today(),
+            'agama' => 1,
+            'civitasable_id' => 3,
+            'civitasable_type' => 'App\Pegawai'
+        ]);
     }
 }
