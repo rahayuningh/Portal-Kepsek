@@ -1,3 +1,50 @@
+{{-- WINDOW BUAT PESAN --}}
+<div id="BuatPesan" class="modal" tabindex="1" role="dialog" aria-hidden="true" style="">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Tulis Pesan</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <form action="" method="">
+                {{ csrf_field() }}
+                {{-- FIELD --}}
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <label for="penerima_pesan" class="col-md-4 col-form-label text-md-right">Untuk</label>
+                        <div class="col-md-6">
+                            <select id="penerima_pesan" type="penerima_pesan" name="penerima_pesan" class="form-control" required data-val="true" data-val-required="">
+                                {{-- <option disabled selected> --Pilih-- </option> --}}
+                                <option>Penerima 1</option>
+                                <option>Penerima 2</option>
+                                <option>Penerima 3</option>
+                                <option>Penerima 4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="perihal" class="col-md-4 col-form-label text-md-right">Perihal</label>
+                        <div class="col-md-6">
+                            <input type="text" name="" id="" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="kolom_pesan">Pesan</label>
+                        <textarea class="form-control" id="kolom_pesan" rows="10"></textarea>
+                    </div>
+                </div>
+                {{-- BUTTON --}}
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary">Kirim</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 {{-- ######################################################################## --}}
 {{-- TOP NAVBAR --}}
 {{-- ######################################################################## --}}
@@ -27,7 +74,14 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
                     aria-labelledby="messageDropdown">
-                    <h6 class="p-3 mb-0">Messages</h6>
+                    <div class="row">
+                        <div class="col p-3 text-center">
+                            <h6 class="pl-3">Messages</h6>
+                        </div>
+                        <div class="col p-3 text-center">
+                            <h6 class=""><a data-toggle="modal" href="#BuatPesan">Buat Pesan</a></h6>
+                        </div>
+                    </div>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item preview-item">
                         <div class="preview-thumbnail">
@@ -62,6 +116,7 @@
                     <h6 class="p-3 mb-0 text-center"><a href="{{ route('message.inbox') }}">Open Inbox</a></h6>
                 </div>
             </li>
+
 
             {{-- NOTIFCATION --}}
             {{-- <li class="nav-item dropdown">

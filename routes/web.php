@@ -112,7 +112,8 @@ Route::middleware(['auth'])->group(function () {
     // PESAN
     Route::prefix('pesan')->group(function () {
         Route::get('/inbox', function () {
-            echo "Ini halaman pesan";
+            // echo "Ini halaman pesan";
+            return view('pesan/pesan');
         })->name('message.inbox');
     });
 
