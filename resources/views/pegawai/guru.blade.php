@@ -1,7 +1,6 @@
 @extends('layouts.main_layout')
 @section('page-name') Data Guru @endsection
 @section('content')
-
 <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
