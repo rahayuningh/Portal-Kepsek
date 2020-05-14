@@ -82,8 +82,8 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
                     aria-labelledby="profileDropdown">
-                    <h6 class="text-center p-3 mb-0">David Greymaax</h6>
-                    <p class="text-center">Kepala Sekolah</p>
+                    <h6 class="text-center p-3 mb-0">{{ Auth::user()->email }}</h6>
+                    <p class="text-center">{{ Auth::user()->jabatan }} {{ Auth::user()->bagian_pekerjaan }}</p>
 
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();

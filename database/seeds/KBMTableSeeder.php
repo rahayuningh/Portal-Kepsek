@@ -4,7 +4,7 @@ use App\kbm;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class kbms extends Seeder
+class KBMTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,20 +16,18 @@ class kbms extends Seeder
         DB::table('kbms')->delete();
         kbm::create(
             [
-                'mata_pelajaran_id' => '101',
-                'kelas_id' => '11',
-                // 'stasuses' => '1',
-                'guru_pengajar' => '12345',
-                'semester' => '1'
+                'mata_pelajaran_id' => '1',
+                'kelas_id' => '1',
+                'guru_pengajar' => '1',
+                'semester' => true
             ]
         );
         kbm::create(
             [
-                'mata_pelajaran_id' => '202',
-                'kelas_id' => '21',
-                // 'stasuses' => '1',
-                'guru_pengajar' => '54321',
-                'semester' => '2'
+                'mata_pelajaran_id' => '2',
+                'kelas_id' => '2',
+                'guru_pengajar' => '2',
+                'semester' => false
             ]
         );
     }

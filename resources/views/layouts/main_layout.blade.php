@@ -25,6 +25,8 @@
     {{-- Datepicker --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap-datepicker.min.css') }}">
 
+    <link rel="shortcut icon" href="{{ asset('assets/imagesSCB/Logo-SCB_mini.png') }}" />
+
 </head>
 
 <body>

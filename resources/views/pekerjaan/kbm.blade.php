@@ -21,7 +21,8 @@
 
             <div class="card-body">
                 <h4 class="card-title text-center">Pencarian</h4>
-                <form class="form-sample">
+                <form class="form-sample" method="POST" action="#">
+                    @csrf
                     <div class="row">
                         {{-- KOLOM TAHUN AJARAN --}}
                         <div class="col-md-6">
@@ -30,10 +31,9 @@
                                     <label class="" for="tahun">Tahun Ajaran</label>
                                     <select class="form-control" required>
                                         <option disabled selected> --Pilih-- </option>
-                                        <option>2020/2021</option>
-                                        <option>2019/2020</option>
-                                        <option>2018/2019</option>
-                                        <option>2017/2018</option>
+                                        @foreach ($years as $year)
+                                        <option value="{{ $year->id }}">{{ $year->tahun_ajaran }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -45,8 +45,8 @@
                                     <label class="" for="tahun">Semester</label>
                                     <select class="form-control col-sm-12" required>
                                         <option disabled selected> --Pilih-- </option>
-                                        <option>Ganjil</option>
-                                        <option>Genap</option>
+                                        <option value="0">Ganjil</option>
+                                        <option value="1">Genap</option>
                                     </select>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
             </div>
 
             {{-- TABEL UTAMA --}}
-            <div class="table">
+            <div class="table pb-3">
                 <table id="summary" class="table table-bordered table-responsive">
                     <thead>
                         <tr class="text-center">
@@ -73,11 +73,19 @@
                         </tr>
                     </thead>
                     <tbody class="text-center">
+                        @php
+                        $no=1;
+                        @endphp
+                        @foreach ($kbms as $kbm)
                         <tr>
-                            <td>1</td>
-                            <td>Matematika</td>
-                            <td><a href="">Kelas 1A</a></td>
-                            <td><a href="">Morgan Mendel</a></td>
+                            <td>{{ $no }}</td>
+                            <td>{{ $kbm['subject'] }}</td>
+                            <td><a href="#">{{ $kbm['class']->kode_kelas }}</a></td>
+                            <td>
+                                <a href="{{ route('teacher.detail', ['id'=>$kbm['teacher_id']]) }}">
+                                    {{ $kbm['teacher_name'] }}
+                                </a>
+                            </td>
                             <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
                                     align="center" title="Edit" href="#Edit">
@@ -89,22 +97,10 @@
                                 </a>
                             </td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Biologi</td>
-                            <td><a href="">Kelas 1A</a></td>
-                            <td><a href="">Morgan Mendel</a></td>
-                            <td class="p-0 text-center">
-                                <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
-                                    align="center" title="Edit" href="#Edit">
-                                    <i class="mdi mdi-pencil"></i>
-                                </a>
-                                <a href="" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
-                                    onclick="return confirm('Yakin hapus data?')">
-                                    <i class="mdi mdi-delete"></i>
-                                </a>
-                            </td>
-                        </tr>
+                        @php
+                        $no++;
+                        @endphp
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -123,7 +119,7 @@
                 </button>
             </div>
 
-            <form action="/kbm/create" method="POST">
+            <form action="{{ route('kbm.create') }}" method="POST">
                 {{ csrf_field() }}
                 {{-- FIELD --}}
                 <div class="modal-body">
@@ -131,13 +127,12 @@
                     <div class="form-group row">
                         <label for="mapel" class="col-md-4 col-form-label text-md-right">Mata Pelajaran</label>
                         <div class="col-md-6">
-                            <select id="mapel" type="mapel" name="mata_pelajaran_id" class="form-control" required="required"
-                                data-validation-required-message="Pilih Mata Pelajaran.">
+                            <select id="mapel" type="mapel" name="mata_pelajaran_id" class="form-control"
+                                required="required" data-validation-required-message="Pilih Mata Pelajaran.">
                                 <option disabled selected> --Pilih-- </option>
-                                <option>Matematika</option>
-                                <option>Fisika</option>
-                                <option>Biologi</option>
-                                <option>Bahasa Indonesia</option>
+                                @foreach ($subjects as $subject)
+                                <option value="{{ $subject->id }}">{{ $subject->nama_mapel }}</option>
+                                @endforeach
                             </select>
                             <p class="help-block text-danger"></p>
                         </div>
@@ -148,10 +143,9 @@
                             <select id="kelas" type="kelas" name="kelas_id" class="form-control" required="required"
                                 data-validation-required-message="Pilih kelas.">
                                 <option disabled selected> --Pilih-- </option>
-                                <option>1A (2019/2020)</option>
-                                <option>1B (2019/2020)</option>
-                                <option>1C (2019/2020)</option>
-                                <option>2A (2019/2020)</option>
+                                @foreach ($classes as $class)
+                                <option value="{{ $class->id }}">{{ $class->kode_kelas }}</option>
+                                @endforeach
                             </select>
                             <p class="help-block text-danger"></p>
                         </div>
@@ -162,10 +156,9 @@
                             <select id="namaguru" type="namaguru" name="guru_pengajar" class="form-control"
                                 required="required" data-validation-required-message="Pilih Nama Guru.">
                                 <option disabled selected> --Pilih-- </option>
-                                <option>Pak Budi</option>
-                                <option>Bu Budi</option>
-                                <option>Pak Kapang</option>
-                                <option>Bu semlehoy</option>
+                                @foreach ($teachers as $teacher)
+                                <option value="{{ $teacher['id'] }}">{{ $teacher['name'] }}</option>
+                                @endforeach
                             </select>
                             <p class="help-block text-danger"></p>
                         </div>
@@ -176,8 +169,8 @@
                             <select id="semester" type="semester" name="semester" class="form-control"
                                 required="required" data-validation-required-message="Pilih semester.">
                                 <option disabled selected> --Pilih-- </option>
-                                <option>Ganjil</option>
-                                <option>Genap</option>
+                                <option value="0">Ganjil</option>
+                                <option value="1">Genap</option>
                             </select>
                             <p class="help-block text-danger"></p>
                         </div>

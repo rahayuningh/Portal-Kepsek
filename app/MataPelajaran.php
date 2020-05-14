@@ -8,7 +8,7 @@ class MataPelajaran extends Model
 {
     public function kbm()
     {
-        return $this->belongsTo('App\kbm');
+        return $this->hasOne('App\KBM');
     }
 
 }
