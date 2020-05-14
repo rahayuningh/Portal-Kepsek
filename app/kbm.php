@@ -28,4 +28,5 @@ class kbm extends Model
     {
         return $this->hasOne('App\Status');
     }
+    protected $fillable = ['mata_pelajaran_id', 'kelas_id', 'guru_pengajar', 'semester'];
 }

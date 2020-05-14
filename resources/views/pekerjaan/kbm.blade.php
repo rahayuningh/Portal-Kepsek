@@ -123,7 +123,7 @@
                 </button>
             </div>
 
-            <form action="" method="">
+            <form action="/kbm/create" method="POST">
                 {{ csrf_field() }}
                 {{-- FIELD --}}
                 <div class="modal-body">
@@ -131,7 +131,7 @@
                     <div class="form-group row">
                         <label for="mapel" class="col-md-4 col-form-label text-md-right">Mata Pelajaran</label>
                         <div class="col-md-6">
-                            <select id="mapel" type="mapel" name="mapel" class="form-control" required="required"
+                            <select id="mapel" type="mapel" name="mata_pelajaran_id" class="form-control" required="required"
                                 data-validation-required-message="Pilih Mata Pelajaran.">
                                 <option disabled selected> --Pilih-- </option>
                                 <option>Matematika</option>
@@ -145,7 +145,7 @@
                     <div class="form-group row">
                         <label for="kelas" class="col-md-4 col-form-label text-md-right">Kelas</label>
                         <div class="col-md-6">
-                            <select id="kelas" type="kelas" name="kelas" class="form-control" required="required"
+                            <select id="kelas" type="kelas" name="kelas_id" class="form-control" required="required"
                                 data-validation-required-message="Pilih kelas.">
                                 <option disabled selected> --Pilih-- </option>
                                 <option>1A (2019/2020)</option>
@@ -159,7 +159,7 @@
                     <div class="form-group row">
                         <label for="namaguru" class="col-md-4 col-form-label text-md-right">Guru Pengampu</label>
                         <div class="col-md-6">
-                            <select id="namaguru" type="namaguru" name="namaguru" class="form-control"
+                            <select id="namaguru" type="namaguru" name="guru_pengajar" class="form-control"
                                 required="required" data-validation-required-message="Pilih Nama Guru.">
                                 <option disabled selected> --Pilih-- </option>
                                 <option>Pak Budi</option>
