@@ -6,7 +6,7 @@ const updateReceiverOption = (teachers) => {
     teachers.forEach(teacher => {
         receiverElement.innerHTML += `<option value="${teacher.id}">${teacher.name}</option>`;
     });
-}
+};
 
 const getReceiver = () => {
     receiverElement.innerHTML = "<option disabled selected>Loading ...</option>";
@@ -36,4 +36,4 @@ const getReceiver = () => {
         });
 };
 
-createMessageLink.addEventListener('click', getReceiver());
+createMessageLink.addEventListener('click', getReceiver);

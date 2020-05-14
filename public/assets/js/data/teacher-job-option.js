@@ -4,7 +4,7 @@ const searchClassElement = document.getElementById('search-class');
 const updateClassOption = (classes) => {
     searchClassElement.innerHTML = "";
     classes.forEach(item => {
-        searchClassElement.innerHTML += `<button class="tab-link btn btn-inverse-info btn-icon mb-1 mr-1">${item.kode_kelas}</button>`;
+        searchClassElement.innerHTML += `<option value="${item.id}">${item.kode_kelas}</option>`;
     });
 }
 

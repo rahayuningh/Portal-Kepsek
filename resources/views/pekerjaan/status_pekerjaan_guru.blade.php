@@ -269,14 +269,14 @@
                     </tbody>
                 </table>
             </div>
-            
+
         </div>
     </div>
 </div>
 
 @endsection
 @section('script')
-<script src="{{ asset('assets/js/data/class-detail-option.js') }}"></script>
+<script src="{{ asset('assets/js/data/teacher-job-option.js') }}"></script>
 <script>
     $(document).ready( function () {
         $('#job-summary-table').DataTable({
