@@ -27,7 +27,8 @@
             <div class="col-lg-4 mx-auto">
               <div class="auth-form-light text-left p-5">
                 <div class="brand-logo">
-                  <img src="../../assets/imagesSCB/Logo-SCB_Hitam.png">
+                  <img src="{{asset('assets/imagesSCB/Logo IMoSy [5]_svg.svg')}}" style="width: 90%">
+                  <h4 class="text-center">Integrated Monitoring System</h4>
                 </div>
 
                 <!-- ############################################################################### -->

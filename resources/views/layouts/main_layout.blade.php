@@ -22,8 +22,9 @@
 
     {{-- Table --}}
     <link rel="stylesheet" href=" {{ asset('assets/css/datatables/dataTables.bootstrap4.css') }}">
-    {{-- <link href="{{ asset('') }}../../assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css"
-    rel="stylesheet"> --}}
+    {{-- Datepicker --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap-datepicker.min.css') }}">
+
 </head>
 
 <body>
@@ -140,6 +141,14 @@
     <script src="{{ asset('assets/js/datatables/datatables.min.js') }}"></script>
     <script src="{{ asset('assets/js/datatables/table.js') }}"></script>
     <script src="{{ asset('assets/js/data/message-data.js') }}"></script>
+
+    {{-- Datepicker --}}
+    <script src="{{ asset('assets/js/bootstrap-datepicker.min.js')}}"></script>
+    <script>
+        jQuery('.datepicker').datepicker({
+            format: "dd/mm/yyyy"
+        });
+    </script>
 
     {{-- for add custom js scripts --}}
     @yield('script')

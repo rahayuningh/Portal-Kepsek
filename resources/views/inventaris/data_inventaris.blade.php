@@ -82,7 +82,7 @@
 								<a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal" 								align="center" title="Edit" href="#Edit">
 									<i class="mdi mdi-pencil"></i>
 								</a>
-								<a href="" type="button" class="btn tn-inverse-danger btn-icon p-2" title="Hapus" X								onclick="return confirm('Yakin hapus data?')">
+								<a href="" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus" 							onclick="return confirm('Yakin hapus data?')">
 									<i class="mdi mdi-delete"></i>
 								</a>
 							</td>
@@ -149,7 +149,12 @@
 					<div class="form-group row">
 						<label for="namaguru" class="col-md-4 col-form-label text-md-right">Tanggal Mulai Pakai</label>
 						<div class="col-md-6">
-							<input type="text" name="" id="" class="form-control">
+							<div class="input-group">
+								<input type="text" name="" id="" class="form-control datepicker" placeholder="dd/mm/yyyy">
+								<div class="input-group-append">
+									<span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+								</div>
+							</div>
 						</div>
 					</div>
 					{{-- Status Kelayakan --}}
@@ -235,7 +240,7 @@
 						<label for="namaguru" class="col-md-4 col-form-label text-md-right">Tanggal Mulai Pakai</label>
 						<div class="col-md-6">
 							<div class="input-group">
-								<input input type="text" name="" id="" class="form-control mydatepicker" value="11-2-2020">
+								<input type="text" name="" id="" class="form-control datepicker" placeholder="dd/mm/yyyy" value="23-04-2020">
 								<div class="input-group-append">
 									<span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
 								</div>
