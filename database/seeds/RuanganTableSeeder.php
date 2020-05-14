@@ -18,8 +18,8 @@ class RuanganTableSeeder extends Seeder
             'id' => '1',
             'nama_ruangan' => 'kelas_1A',
             'jenis_ruangan_id' => 1,
-            'kode_ruangan' => '2014/001/Kelas1A',
-            'penanggung_jawab' => 1,
+            'kode_ruangan' => '001A',
+            'penanggung_jawab_id'=> 1,
             'gedung_id' => 3,
             'kapasitas_orang' => 25
         ]);
@@ -27,8 +27,8 @@ class RuanganTableSeeder extends Seeder
             'id' => '2',
             'nama_ruangan' => 'kelas_2A',
             'jenis_ruangan_id' => 1,
-            'kode_ruangan' => '2014/001/Kelas2A',
-            'penanggung_jawab' => 1,
+            'kode_ruangan' => '002A',
+            'penanggung_jawab_id'=> 1,
             'gedung_id' => 3,
             'kapasitas_orang' => 25
         ]);
@@ -36,8 +36,8 @@ class RuanganTableSeeder extends Seeder
             'id' => '3',
             'nama_ruangan' => 'kelas_3A',
             'jenis_ruangan_id' => 1,
-            'kode_ruangan' => '2014/001/Kelas3A',
-            'penanggung_jawab' => 1,
+            'kode_ruangan' => '003A',
+            'penanggung_jawab_id'=> 1,
             'gedung_id' => 2,
             'kapasitas_orang' => 25
         ]);
@@ -45,8 +45,8 @@ class RuanganTableSeeder extends Seeder
             'id' => '4',
             'nama_ruangan' => 'kelas_4A',
             'jenis_ruangan_id' => 1,
-            'kode_ruangan' => '2014/001/Kelas4A',
-            'penanggung_jawab' => 1,
+            'kode_ruangan' => '004A',
+            'penanggung_jawab_id'=> 1,
             'gedung_id' => 2,
             'kapasitas_orang' => 25
         ]);
@@ -54,8 +54,8 @@ class RuanganTableSeeder extends Seeder
             'id' => '5',
             'nama_ruangan' => 'kelas_3B',
             'jenis_ruangan_id' => 1,
-            'kode_ruangan' => '2014/001/Kelas3B',
-            'penanggung_jawab' => 1,
+            'kode_ruangan' => '003B',
+            'penanggung_jawab_id'=> 1,
             'gedung_id' => 1,
             'kapasitas_orang' => 25
         ]);
@@ -63,8 +63,8 @@ class RuanganTableSeeder extends Seeder
             'id' => '6',
             'nama_ruangan' => 'kelas_4B',
             'jenis_ruangan_id' => 1,
-            'kode_ruangan' => '2014/001/Kelas4B',
-            'penanggung_jawab' => 1,
+            'kode_ruangan' => '004B',
+            'penanggung_jawab_id'=> 1,
             'gedung_id' => 1,
             'kapasitas_orang' => 25
         ]);

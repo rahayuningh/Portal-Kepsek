@@ -43,6 +43,9 @@
 									<label class="" for="tahun">Ruangan</label>
 									<select class="form-control col-sm-12" required id="search-room">
 										<option disabled selected> --Pilih-- </option>
+											@foreach ($ruangan as $r)
+										<option value="{{$r->id}}"> {{$r->nama_ruangan}}</option>
+											@endforeach
 									</select>
 								</div>
 							</div>

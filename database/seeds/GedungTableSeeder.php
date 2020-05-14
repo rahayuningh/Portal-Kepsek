@@ -17,17 +17,17 @@ class GedungTableSeeder extends Seeder
         Gedung::create([
             'id' => '1',
             'nama_gedung' => 'Gedung_Keuangan',
-            'kode_gedung' => 'Keu/001'
+            'kode_gedung' => '001'
         ]);
         Gedung::create([
             'id' => '2',
             'nama_gedung' => 'Gedung_Tendik',
-            'kode_gedung' => 'Tendik/002'
+            'kode_gedung' => '002'
         ]);
         Gedung::create([
             'id' => '3',
             'nama_gedung' => 'Gedung_KBM',
-            'kode_gedung' => 'KBM/003'
+            'kode_gedung' => '003'
         ]);
     }
 }
