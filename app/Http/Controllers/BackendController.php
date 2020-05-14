@@ -67,7 +67,35 @@ class BackendController extends Controller
             ]);
             $status = 200;
         }
-        return response($content);
+        return response($content, $status);
+    }
+
+    public function getTeacher()
+    {
+        $data = array();
+        $teachers = Guru::all();
+        foreach ($teachers as $teacher) {
+            $pegawai = $teacher->pegawai;
+            $civitas = $pegawai->civitas;
+            array_push($data, array(
+                'id' => $teacher->id,
+                'name' => $civitas->nama
+            ));
+        }
+        // dd($data);
+        if (false) {
+            $content = json_encode([
+                'message' => 'Ada Error'
+            ]);
+            $status = 400;
+        } else {
+            $content = json_encode([
+                'message' => 'Success',
+                'teachers' => $data
+            ]);
+            $status = 200;
+        }
+        return response($content, $status);
     }
 
     public function createCivitas()

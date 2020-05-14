@@ -1,7 +1,6 @@
 @extends('layouts.main_layout')
 @section('page-name') Data Guru @endsection
 @section('content')
-
 <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
@@ -21,7 +20,7 @@
                     <tbody>
                         <tr>
                             <td> 1 </td>
-                            <td><a href="{{ route('teacher.detail') }}">Pak Jokowi </a></td>
+                            <td><a href="{{ route('teacher.detail',['id'=>1]) }}">Pak Jokowi </a></td>
                             <td>321238123873913</td>
                             <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
@@ -36,7 +35,7 @@
                         </tr>
                         <tr>
                             <td> 2 </td>
-                            <td><a href="{{ route('teacher.detail') }}">Pak Agus </a></td>
+                            <td><a href="{{ route('teacher.detail',['id'=>1]) }}">Pak Agus </a></td>
                             <td>1231383712738312</td>
                             <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
@@ -51,7 +50,7 @@
                         </tr>
                         <tr>
                             <td> 3 </td>
-                            <td><a href="{{ route('teacher.detail') }}">Pak Budi </a></td>
+                            <td><a href="{{ route('teacher.detail',['id'=>1]) }}">Pak Budi </a></td>
                             <td>1231383712738312</td>
                             <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
@@ -66,7 +65,7 @@
                         </tr>
                         <tr>
                             <td> 4 </td>
-                            <td><a href="{{ route('teacher.detail') }}">Pak Mujih </a></td>
+                            <td><a href="{{ route('teacher.detail',['id'=>1]) }}">Pak Mujih </a></td>
                             <td>1231383712738312</td>
                             <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
@@ -81,7 +80,7 @@
                         </tr>
                         <tr>
                             <td> 5 </td>
-                            <td><a href="{{ route('teacher.detail') }}">Pak Hinder </a></td>
+                            <td><a href="{{ route('teacher.detail',['id'=>1]) }}">Pak Hinder </a></td>
                             <td>1231383712738312</td>
                             <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
@@ -96,7 +95,7 @@
                         </tr>
                         <tr>
                             <td> 6 </td>
-                            <td><a href="{{ route('teacher.detail') }}">Pak Denny </a></td>
+                            <td><a href="{{ route('teacher.detail',['id'=>1]) }}">Pak Denny </a></td>
                             <td>1231383712738312</td>
                             <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"

@@ -20,5 +20,11 @@ class GuruTableSeeder extends Seeder
                 'kelas_perwalian' => 1
             ]
         );
+        Guru::create(
+            [
+                'id' => '2',
+                'kelas_perwalian' => 2
+            ]
+        );
     }
 }

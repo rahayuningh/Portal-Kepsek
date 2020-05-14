@@ -16,6 +16,7 @@ class CreatePegawaisTable extends Migration
         Schema::create('pegawais', function (Blueprint $table) {
             $table->id();
             $table->string('nik');
+            $table->string('email')->unique();
             $table->binary('status_pegawai');
             $table->integer('pegawaiable_id');
             $table->string('pegawaiable_type');

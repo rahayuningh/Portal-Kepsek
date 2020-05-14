@@ -12,6 +12,8 @@ const getClass = () => {
     serchClassElement.innerHTML = "Loading ...";
 
     const url = "/api/get-classes";
+    console.log("masuk ke getclass");
+    console.log(url);
     let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
     let option = {
         method: "POST",
@@ -39,6 +41,6 @@ const getClass = () => {
         });
 };
 
-document.addEventListener('DOMContentLoaded', function () {
+// document.addEventListener('DOMContentLoaded', function () {
     searchYearElement.addEventListener('change', getClass);
-});
+// });

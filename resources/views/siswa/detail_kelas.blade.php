@@ -67,7 +67,7 @@
                                 <tr>
                                     <td> Wali Kelas </td>
                                     <td> : </td>
-                                    <td> <a href="{{ route('teacher.detail') }}">Lorem Ipsum</a></td>
+                                    <td> <a href="{{ route('teacher.detail',['id'=>1]) }}">Lorem Ipsum</a></td>
                                 </tr>
                             </tbody>
                         </table>

@@ -15,7 +15,7 @@ class Pegawai extends Model
 
     public function civitas()
     {
-        return $this->morphMany('App\Civitas', 'civitasable');
+        return $this->morphOne('App\Civitas', 'civitasable');
     }
 
     public function pegawaiable()
