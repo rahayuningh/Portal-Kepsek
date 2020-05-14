@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2019 (64-Bit) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="24.8164in" height="6.36001in" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 35981.46 9221.4"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <font id="FontID2" horiz-adv-x="723" font-variant="normal" style="fill-rule:nonzero" font-style="normal" font-weight="900">
+	<font-face 
+		font-family="Aspira Wide Black">
+		<font-face-src>
+			<font-face-name name="AspiraWide-Black"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="A" horiz-adv-x="723" d="M521.666 0l206.334 0 -258.5 695.001 -216.334 0 -255.165 -695.001 196.165 0 44.667 138.166 237.5 0 45.3334 -138.166zm-233.666 290.834l68.3344 212.5 69.6649 -212.5 -137.999 0z"/>
+   <glyph unicode="B" horiz-adv-x="659" d="M71.1665 695.001l0 -695.001 304 0c153.335,0 255.668,91.4997 255.668,204.332 0,87.1683 -61.333,144.834 -132.999,165.834 58.9985,32.6679 91.1666,77.5015 91.1666,147.5 0,113.834 -84.0008,177.335 -253,177.335l-264.835 0zm276.501 -411.001c54.6671,0 92.4993,-20.3333 92.4993,-63.1655 0,-43.3343 -37.9988,-62.8346 -85.9999,-62.8346l-98.3323 0 0 126 91.8329 0zm-24.0006 253c44.1672,0 77.3326,-14.3337 77.3326,-50.9998 0,-37.1659 -33.4986,-55.0002 -73.1656,-55.0002l-71.9994 0 0 106 67.8324 0z"/>
+   <glyph unicode="C" horiz-adv-x="686" d="M593.834 214.166c-49.0007,-33.332 -106.502,-56.333 -171,-56.333 -130.001,0 -199.834,92.5015 -199.834,191.334 0,101.333 72.8346,191 200.334,191 58.4987,0 115.833,-19.0005 170.501,-56.9994l80.3313 121.833c-69.6649,62.4992 -174.332,98.8321 -275.166,98.8321 -208.999,0 -368,-155.831 -368,-359.166 0,-200.332 154.168,-353.5 364.833,-353.5 103.668,0 213.835,37.1681 279.335,97.5016l-81.3331 125.498z"/>
+   <glyph unicode="D" horiz-adv-x="735" d="M339.833 0c232.167,0 362.001,149.001 362.001,347.5 0,195.332 -125.667,347.5 -360.666,347.5l-270.168 0 0 -695.001 268.833 0zm-80.8333 161l0 373 67.668 0c124.998,0 184.499,-45.5 184.499,-188.335 0,-135.498 -53.4987,-184.665 -186,-184.665l-66.1664 0z"/>
+   <glyph unicode="E" horiz-adv-x="614" d="M70.9999 0.166592l503.834 0 0 160.667 -315.834 0 0 110.167 267.5 0 0 159.998 -267.5 0 0 103.168 309 0 0 160.667 -496.999 0 0 -694.668z"/>
+   <glyph unicode="I" horiz-adv-x="332" d="M70.9999 0l191 0 0 695.001 -191 0 0 -695.001z"/>
+   <glyph unicode="K" horiz-adv-x="715" d="M298.5 283.999l212.5 -283.999 225.834 0 -279.333 372.501 245.499 322.5 -213.666 0 -189.334 -245.001 -38.1654 0 0 245.001 -190.667 0 0 -695.001 190.667 0 0 283.999 36.6661 0z"/>
+   <glyph unicode="N" horiz-adv-x="773" d="M248.166 393.667l255.668 -393.667 199.166 0 0 695.001 -180.667 0 3.50069 -401.501 -260.166 401.501 -194.668 0 0 -695.001 180.667 0 -3.50069 393.667z"/>
+   <glyph unicode="S" horiz-adv-x="623" d="M104.001 224.332l-82.1683 -124.998c75.0003,-60.8332 174.001,-108.335 296.167,-108.335 153.666,0 275.834,74.8337 275.834,227.333 0,262.833 -363,164.501 -363,272.833 0,33.5008 35.3333,51.835 94.3318,51.835 52.5014,0 113.501,-14.6669 177.669,-49.667l80.4979 120.667c-70.8333,53.6653 -166.667,89.9982 -268.999,89.9982 -146.667,0 -271.165,-74.3317 -271.165,-224.666 0,-255.668 356.998,-166.167 356.998,-272.833 0,-31.6661 -31.6661,-49.5004 -90.8334,-49.5004 -65.0003,0 -132.666,21.3328 -205.332,67.3326z"/>
+   <glyph unicode="Z" horiz-adv-x="641" d="M602.999 157.999l-328 0 323.669 409.833 0 127.169 -553.168 0 0 -155.001 307.5 0 -319 -414.333 0 -125.667 568.999 0 0 157.999z"/>
+  </font>
+  <font id="FontID1" horiz-adv-x="666" font-variant="normal" style="fill-rule:nonzero" font-style="normal" font-weight="400">
+	<font-face 
+		font-family="Arial">
+		<font-face-src>
+			<font-face-name name="Arial"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+  </font>
+  <font id="FontID0" horiz-adv-x="692" font-variant="normal" style="fill-rule:nonzero" font-style="normal" font-weight="400">
+	<font-face 
+		font-family="Aspira Wide">
+		<font-face-src>
+			<font-face-name name="AspiraWide-Regular"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="A" horiz-adv-x="692" d="M592.333 0l84.6672 0 -285.499 695.001 -91.6686 0 -281.832 -695.001 80.3313 0 77.3349 193.999 338.5 0 78.1656 -193.999zm-390.499 259.999l142 354.668 144.001 -354.668 -286.001 0z"/>
+   <glyph unicode="E" horiz-adv-x="599" d="M100 0l455.999 0 0 67.999 -378 0 0 249.002 321.001 0 0 67.999 -321.001 0 0 242 368.333 0 0 68.0012 -446.332 0 0 -695.001z"/>
+   <glyph unicode="H" horiz-adv-x="775" d="M100.167 0l78.6654 0 0 317.167 418.334 0 0 -317.167 78.6676 0 0 695.001 -78.6676 0 0 -310.168 -418.334 0 0 310.168 -78.6654 0 0 -695.001z"/>
+   <glyph unicode="K" horiz-adv-x="623" d="M200.667 333l330.666 -333 104.834 0 -369.166 371.834 334.833 323.167 -100.833 0 -299.333 -289.002 -22.8344 0 0 289.002 -78.6654 0 0 -695.001 78.6654 0 0 333 21.8349 0z"/>
+   <glyph unicode="L" horiz-adv-x="548" d="M100.167 0l435.166 0 0 67.999 -356.501 0 0 627.002 -78.6654 0 0 -695.001z"/>
+   <glyph unicode="O" horiz-adv-x="826" d="M413.001 -9.00049c208.999,0 365.832,154.168 365.832,357.667 0,203.833 -157.166,355.333 -364,355.333 -206.833,0 -366.832,-151.167 -366.832,-356.165 0,-202.333 156.165,-356.834 364.999,-356.834zm0 69.0008c-164.501,0 -286.001,123.332 -286.001,287.5 0,164.166 121.833,287.5 286.334,287.5 164.166,0 285.832,-122.835 285.832,-287.167 0,-164.168 -121,-287.833 -286.165,-287.833z"/>
+   <glyph unicode="S" horiz-adv-x="591" d="M73.501 127l-36.3351 -55.9998c66.6685,-47.4991 151.667,-80.0004 251.334,-80.0004 139.834,0 259.333,64.1673 259.333,198 0,247.667 -410.999,145.167 -410.999,326.501 0,77.166 74.8337,120.5 169.001,120.5 60.9998,0 134.165,-18.5008 191.331,-56.1664l36.002 55.0002c-64.3339,44.3316 -149.001,69.1651 -230.834,69.1651 -140.5,0 -243.166,-72.4992 -243.166,-194.499 0,-244.332 410,-144.834 410,-326.501 0,-76.6663 -72.6658,-122.999 -182.167,-122.999 -81.6663,0 -152.833,25.6665 -213.499,66.9994z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Aspira Wide Black";font-variant:normal;font-style:normal;font-weight:900;src:url("#FontID2") format(svg)}
+    @font-face { font-family:"Arial";font-variant:normal;font-style:normal;font-weight:normal;src:url("#FontID1") format(svg)}
+    @font-face { font-family:"Aspira Wide";font-variant:normal;font-style:normal;font-weight:normal;src:url("#FontID0") format(svg)}
+    .str0 {stroke:black;stroke-width:57.08;stroke-miterlimit:2.61313}
+    .fil0 {fill:none}
+    .fil1 {fill:black}
+    .fnt1 {font-weight:normal;font-size:2535.61px;font-family:'Arial'}
+    .fnt0 {font-weight:normal;font-size:2535.61px;font-family:'Aspira Wide'}
+    .fnt2 {font-weight:900;font-size:2535.61px;font-family:'Aspira Wide Black'}
+   ]]>
+  </style>
+   <clipPath id="id0">
+    <rect width="8269.3" height="9221.4"/>
+   </clipPath>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g style="clip-path:url(#id0)">
+   <image x="-0" y="0" width="8269.3" height="9221.4" xlink:href="LOGO SCB WEB_Images\LOGO SCB WEB_ImgID1.png"/>
+  </g>
+  <line class="fil0 str0" x1="9420.28" y1="1824.13" x2="9420.28" y2= "7698.68" />
+  <text x="10397.58" y="3877.09"  class="fil1 fnt0">SEKOLAH</text>
+  <text x="22087.59" y="3877.09"  class="fil1 fnt1"> </text>
+  <text x="22792.06" y="3877.09"  class="fil1 fnt2">CENDEKIA</text>
+  <text x="10397.58" y="7254.99"  class="fil1 fnt2">BAZNAS</text>
+ </g>
+</svg>

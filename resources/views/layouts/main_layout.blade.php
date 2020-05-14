@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>@yield('page-name') | IMS SCB</title>
+    <title>@yield('page-name') | IMoSy SCB</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('assets/vendors/mdi/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/css/vendor.bundle.base.css') }}">
@@ -22,9 +22,11 @@
 
     {{-- Table --}}
     <link rel="stylesheet" href=" {{ asset('assets/css/datatables/dataTables.bootstrap4.css') }}">
-    {{-- <link href="{{ asset('') }}../../assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css"
-    rel="stylesheet"> --}}
+    {{-- Datepicker --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap-datepicker.min.css') }}">
+
     <link rel="shortcut icon" href="{{ asset('assets/imagesSCB/Logo-SCB_mini.png') }}" />
+
 </head>
 
 <body>
@@ -140,6 +142,14 @@
     {{-- Table Pagination --}}
     <script src="{{ asset('assets/js/datatables/datatables.min.js') }}"></script>
     <script src="{{ asset('assets/js/data/message-data.js') }}"></script>
+
+    {{-- Datepicker --}}
+    <script src="{{ asset('assets/js/bootstrap-datepicker.min.js')}}"></script>
+    <script>
+        jQuery('.datepicker').datepicker({
+            format: "dd/mm/yyyy"
+        });
+    </script>
 
     {{-- for add custom js scripts --}}
     @yield('script')

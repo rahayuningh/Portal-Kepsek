@@ -60,8 +60,8 @@
             <h5 class="card-title text-center"> Hasil Pencarian <br> Gedung {A} Ruang {Kelas 1B} </h5>
 
             {{-- TABEL UTAMA --}}
-            <div class="table">
-                <table id="summary" class="table table-bordered table-responsive">
+            <div class="table pb-3 pt-3">
+                <table id="needs-inventory-table" class="table table-bordered table-responsive">
                     <thead>
                         <tr class="text-center">
                             <th>Jenis Inventaris</th>
@@ -261,4 +261,11 @@
 @endsection
 @section('script')
 <script src="{{ asset('assets/js/data/inventory-data.js') }}"></script>
+<script>
+    $(document).ready( function () {
+        $('#needs-inventory-table').DataTable({
+          "searching": false
+      });
+    } );
+</script>
 @endsection

@@ -19,7 +19,7 @@
             </div>
             {{-- TABEL UTAMA --}}
             <div class="table pb-3 pt-3">
-                <table id="subject-table" class="table table-bordered table-responsive">
+                <table id="course-table" class="table table-bordered table-responsive">
                     <thead>
                         <tr class="text-center">
                             <th>No</th>
@@ -144,12 +144,11 @@
     </div>
 </div>
 @endsection
-
 @section('script')
 <script src="{{ asset('assets/js/inventory-data.js') }}"></script>
 <script>
     $(document).ready( function () {
-        $('#subject-table').DataTable({
+        $('#course-table').DataTable({
           "searching": false
       });
     } );

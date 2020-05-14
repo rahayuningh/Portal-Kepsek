@@ -12697,7 +12697,8 @@ dl {
   -moz-transition: background 0.25s ease;
   -ms-transition: background 0.25s ease; }
   .navbar .navbar-brand {
-    width: 110px; }
+    width: 110px; 
+  }
   .navbar .navbar-brand-wrapper {
     transition: width 0.25s ease, background 0.25s ease;
     -webkit-transition: width 0.25s ease, background 0.25s ease;
@@ -12721,10 +12722,7 @@ dl {
         color: #1b2658; }
       .navbar .navbar-brand-wrapper .navbar-brand img {
         /*width: calc(260px - 120px);*/
-        width: 240px;
         max-width: 100%;
-        /*height: 28px;*/
-        height: 50px;
         margin: auto;
         vertical-align: middle; }
       .navbar .navbar-brand-wrapper .navbar-brand.brand-logo-mini {

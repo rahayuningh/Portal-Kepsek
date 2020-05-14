@@ -74,10 +74,10 @@
                     </div>
                     {{-- DAFTAR SISWA --}}
                     <div class="table">
-                        <table id="class-table" class="table table-hover table-border">
+                        <table id="class-table" class="table table-bordered table-responsive">
                             <thead>
                                 <th>No</th>
-                                <th width="500">Nama</th>
+                                <th width="">Nama</th>
                                 <th>NIS</th>
                             </thead>
                             <tbody>
@@ -118,7 +118,12 @@
 <script src="{{ asset('assets/js/data/class-detail-option.js') }}"></script>
 <script>
     $(document).ready( function () {
-        $('#class-table').DataTable();
+        $('#class-table').DataTable({
+          "searching": false,
+          "paging": false,
+          "info": false,
+          "ordering":false
+      });
     } );
 </script>
 @endsection
