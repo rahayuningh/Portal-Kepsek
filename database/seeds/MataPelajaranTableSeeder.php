@@ -4,7 +4,7 @@ use App\MataPelajaran;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class mata_pelajarans extends Seeder
+class MataPelajaranTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

@@ -8,6 +8,6 @@ class Status extends Model
 {
     public function kbm()
     {
-        return $this->hasMany('App\kbm');
+        return $this->hasMany('App\KBM');
     }
 }

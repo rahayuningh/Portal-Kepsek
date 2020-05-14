@@ -8,7 +8,7 @@ class Kelas extends Model
 {
     public function kbm()
     {
-        return $this->belongsTo('App\kbm');
+        return $this->hasOne('App\KBM');
     }
     public function siswa()
     {

@@ -38,11 +38,16 @@ Route::middleware(['auth'])->group(function () {
             'subjects' => MataPelajaran::all()
         ]);
     })->name('job.status');
+
     // KBM
-    Route::get('/kbm', function () {
-        return view('pekerjaan/kbm');
-    })->name('kbm');
-    Route::post('/kbm/create', 'KBMController@create');
+    Route::prefix('kbm')->group(function () {
+        Route::get('/', 'KBMController@showAllKBM')->name('kbm');
+        Route::post('/create', 'KBMController@create')->name('kbm.create');
+        // next ...
+        // 1. route buat delete kbm
+        // 2. route buat nyari kbm
+    });
+
     // Mata Pelajaran
     Route::get('/mata-pelajaran', function () {
         return view('pekerjaan/mata_pelajaran');
@@ -90,6 +95,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/bio-siswa', function () {
         return view('siswa/biodata_siswa');
     })->name('student.detail');
+
+
 
     // -----------------------------------------------------
     // INVENTARIS
