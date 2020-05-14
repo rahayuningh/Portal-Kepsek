@@ -43,8 +43,8 @@
 <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     {{-- LOGO --}}
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo" href="index.html">
-            <img src="{{asset('assets/imagesSCB/Logo IMoSy [5]_svg.svg')}}" alt="logo" style="width: 200px" />
+        <a class="navbar-brand brand-logo pt-4" href="{{route('dashboard')}}">
+            <img src="{{asset('assets/imagesSCB/Logo IMoSy_white.svg')}}" alt="logo" style="width: 200px" />
         </a>
         <a class="navbar-brand brand-logo-mini" href="index.html"><img
                 src="{{asset('assets/imagesSCB/Logo-SCB_mini.png')}}" alt="logo" /></a>
