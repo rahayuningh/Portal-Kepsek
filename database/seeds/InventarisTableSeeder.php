@@ -13,7 +13,7 @@ class InventarisTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('inventaris')->delete();
+        DB::table('inventariss')->delete();
         Inventaris::create([
             'id' => '1',
             'jenis_inventaris_id' => 1,
