@@ -65,14 +65,9 @@ class PesanController extends Controller
             ]
         );
 
-        $message = new Pesan([
-            'subject' => $request->subject,
-            'konten' => $request->content
-        ]);
         $teacher = Guru::find($request->receiver);
         $pegawai = $teacher->pegawai;
         $civitas = $pegawai->civitas;
-        $teacher->messages()->save($message);
 
         $email = $pegawai->email;
         $recipient = $civitas->nama;
@@ -92,6 +87,13 @@ class PesanController extends Controller
         if (Mail::failures()) {
             return redirect()->back()->with('fail', 'Pesan gagal terkirim');
         }
+
+        $message = new Pesan([
+            'subject' => $request->subject,
+            'konten' => $request->content
+        ]);
+
+        $teacher->messages()->save($message);
 
         return redirect()->back()->with('success', 'Pesan berhasil terkirim');
     }

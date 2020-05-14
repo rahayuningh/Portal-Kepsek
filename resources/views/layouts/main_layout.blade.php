@@ -24,6 +24,7 @@
     <link rel="stylesheet" href=" {{ asset('assets/css/datatables/dataTables.bootstrap4.css') }}">
     {{-- <link href="{{ asset('') }}../../assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css"
     rel="stylesheet"> --}}
+    <link rel="shortcut icon" href="{{ asset('assets/imagesSCB/Logo-SCB_mini.png') }}" />
 </head>
 
 <body>
