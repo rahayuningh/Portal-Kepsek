@@ -71,13 +71,12 @@
                 </div>
             </li>
 
-
             {{-- PROFILE --}}
             <li class="nav-item nav-profile dropdown">
                 <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                     <div class="nav-profile-img">
                         <img src="{{asset('assets/images/faces/face1.jpg')}}" alt="image">
-                        <span class="availability-status online"></span>
+                        {{-- <span class="availability-status online"></span> --}}
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"

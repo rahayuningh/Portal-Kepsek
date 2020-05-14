@@ -279,7 +279,7 @@
 
 @endsection
 @section('script')
-<script src="{{ asset('assets/js/data/class-data.js') }}"></script>
+<script src="{{ asset('assets/js/data/class-detail-option.js') }}"></script>
 <script>
     $(document).ready( function () {
         $('#job-summary-table').DataTable({

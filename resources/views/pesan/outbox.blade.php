@@ -6,7 +6,7 @@
         <div class="card">
             {{-- HEADER --}}
             <h2 class="text-center" style="background-color: green; color: white">Pesan</h2>
-            <div class="table">
+            <div class="table pb-4 pt-3">
                 <table id="inbox-table" class="table table-bordered table-responsive">
                     <thead>
                         <tr>
