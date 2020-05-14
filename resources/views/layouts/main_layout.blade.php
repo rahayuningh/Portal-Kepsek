@@ -141,7 +141,6 @@
 
     {{-- Table Pagination --}}
     <script src="{{ asset('assets/js/datatables/datatables.min.js') }}"></script>
-    <script src="{{ asset('assets/js/datatables/table.js') }}"></script>
     <script src="{{ asset('assets/js/data/message-data.js') }}"></script>
 
     {{-- Datepicker --}}
