@@ -95,4 +95,19 @@ class KBMController extends Controller
             ->route('kbm') // balik ke halaman KBM
             ->with('success', 'Data KBM berhasil dibuat'); // sertain dengan pesan sukses
     }
+
+    public function update(Request $request,$id)
+    {
+        $kbm = \App\KBM::where('id', $id);
+        $data = $request->except('_token');
+        $kbm->update($data);
+        return redirect('/kbm');
+    }
+
+    public function delete($id)
+    {
+        $kbm = KBM::where('id', $id);
+        $kbm->delete();
+        return redirect('/kbm');
+    }
 }
