@@ -52,7 +52,7 @@
                     {{-- ######################################################################## --}}
                     {{-- PAGE HEADER (OVERVIEW/LINK PATH) --}}
                     {{-- ######################################################################## --}}
-                    <div class="page-header">
+                    <div class="row page-header">
                         {{-- PAGE NAME --}}
                         <h3 class="page-title">
                             <span class="page-title-icon bg-gradient-primary text-white mr-2">
@@ -60,12 +60,12 @@
                             </span> @yield('page-name')
                         </h3>
                         {{--LINK PATH--}}
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
+                        <section aria-label="breadcrumb">
+                            <ol class="breadcrumb p-0">
                                 <li class="breadcrumb-item"><a href="#">@yield('page-name')</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Page Aktif</li>
                             </ol>
-                        </nav>
+                        </section>
                     </div>
 
                     {{-- ######################################################################## --}}

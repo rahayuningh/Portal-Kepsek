@@ -56,7 +56,7 @@
 				</form>
 			</div>
 
-            <h5 class="card-title text-center"> Hasil Pencarian <br> Gedung {A} Ruang {Kelas 1B} </h5>
+			<h5 class="card-title text-center"> Hasil Pencarian <br> Gedung {A} Ruang {Kelas 1B} </h5>
 
 			{{-- TABEL UTAMA --}}
 			<div class="table">
@@ -234,7 +234,14 @@
 					<div class="form-group row">
 						<label for="namaguru" class="col-md-4 col-form-label text-md-right">Tanggal Mulai Pakai</label>
 						<div class="col-md-6">
-							<input type="text" name="" id="" class="form-control" value="11-2-2020">
+							<div class="input-group">
+								<input type="text" name="" id="" class="form-control" value="11-2-2020">
+								<div class="input-group-append">
+									<button class="btn btn-inverse-success btn-sm" type="button">
+										<i class="mdi mdi-calendar"></i>
+									</button>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="form-group row">
