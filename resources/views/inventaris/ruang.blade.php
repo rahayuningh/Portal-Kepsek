@@ -1,8 +1,5 @@
 @extends('layouts.main_layout')
 @section('page-name') Data Ruangan @endsection
-@section('script')
-<script src="{{ asset('assets/js/inventory-data.js') }}"></script>
-@endsection
 @section('content')
 {{-- CONTENT 1--}}
 {{-- TABEL UTAMA--}}
@@ -53,7 +50,7 @@
 
             {{-- TABEL UTAMA --}}
             <div class="table">
-                <table id="summary" class="table table-bordered table-responsive">
+                <table id="room-table" class="table table-bordered table-responsive">
                     <thead>
                         <tr class="text-center">
                             <th>No</th>
@@ -281,4 +278,14 @@
         </div>
     </div>
 </div>
+@endsection
+@section('script')
+<script src="{{ asset('assets/js/inventory-data.js') }}"></script>
+<script>
+    $(document).ready( function () {
+        $('#room-table').DataTable({
+          "searching": false
+      });
+    } );
+</script>
 @endsection

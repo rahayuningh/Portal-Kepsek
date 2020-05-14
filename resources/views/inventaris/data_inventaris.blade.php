@@ -63,7 +63,7 @@
 
 			{{-- TABEL UTAMA --}}
 			<div class="table">
-				<table id="summary" class="table table-bordered table-responsive">
+				<table id="inventory-data-table" class="table table-bordered table-responsive">
 					<thead>
 						<tr class="text-center">
 							<th> Jenis Inventaris </th>
@@ -294,4 +294,11 @@
 @endsection
 @section('script')
 <script src="{{ asset('assets/js/data/inventory-data.js') }}"></script>
+<script>
+    $(document).ready( function () {
+        $('#inventory-data-table').DataTable({
+          "searching": false
+      });
+    } );
+</script>
 @endsection

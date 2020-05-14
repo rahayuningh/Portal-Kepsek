@@ -65,56 +65,51 @@
         <div class="card">
             {{-- HEADER --}}
             <h2 class="text-center" style="background-color: green; color: white">Data Siswa</h2>
-            <div class="card-body">
-                <h5 class="card-title text-center">TABEL {TAHUN AJARAN {2019/2020} SEMESTER {GANJIL}}</h5>
-                <h5 class="card-title text-center">{HASIL PENCARIAN}</h5>
-                <div class="table">
-                    <table id="student-table" class="table table-bordered table-responsive">
-                        <thead>
-                            <tr>
-                                <th> NISN </th>
-                                <th> Nama Siswa </th>
-                                <th> Asal Wilayah </th>
-                            </tr>
-                        </thead>
+            <h5 class="card-title text-center">TABEL {TAHUN AJARAN {2019/2020} SEMESTER {GANJIL}}</h5>
+            <h5 class="card-title text-center">{HASIL PENCARIAN}</h5>
+            <div class="table">
+                <table id="student-table" class="table table-bordered table-responsive">
+                    <thead>
+                        <tr>
+                            <th> NISN </th>
+                            <th> Nama Siswa </th>
+                            <th> Asal Wilayah </th>
+                        </tr>
+                    </thead>
 
-                        <tbody>
-                            <tr>
-                                <td> 9027310723 </td>
-                                <td><a href="{{ route('student.detail') }}">Morgan Mendel</a></td>
-                                <td> Jambi </td>
-                            </tr>
-                            <tr>
-                                <td> 2019/2020 </td>
-                                <td><a href="{{ route('student.detail') }}">Morgan Mendel</a></td>
-                                <td> Jambi </td>
-                            </tr>
-                            <tr>
-                                <td> 2019/2020 </td>
-                                <td><a href="{{ route('student.detail') }}">Morgan Mendel</a></td>
-                                <td> Jambi </td>
-                            </tr>
-                            <tr>
-                                <td> 2019/2020 </td>
-                                <td><a href="{{ route('student.detail') }}">Morgan Mendel</a></td>
-                                <td> Jambi </td>
-                            </tr>
-                            <tr>
-                                <td> 2019/2020 </td>
-                                <td><a href="{{ route('student.detail') }}">Morgan Mendel</a></td>
-                                <td> Jambi </td>
-                            </tr>
-                            <tr>
-                                <td> 2019/2020 </td>
-                                <td><a href="{{ route('student.detail') }}">Morgan Mendel</a></td>
-                                <td> Jambi </td>
-                            </tr>
-                        </tbody>
-
-
-                    </table>
-                </div>
-
+                    <tbody>
+                        <tr>
+                            <td> 9027310723 </td>
+                            <td><a href="{{ route('student.detail') }}">Morgan Mendel</a></td>
+                            <td> Jambi </td>
+                        </tr>
+                        <tr>
+                            <td> 2019/2020 </td>
+                            <td><a href="{{ route('student.detail') }}">Morgan Mendel</a></td>
+                            <td> Jambi </td>
+                        </tr>
+                        <tr>
+                            <td> 2019/2020 </td>
+                            <td><a href="{{ route('student.detail') }}">Morgan Mendel</a></td>
+                            <td> Jambi </td>
+                        </tr>
+                        <tr>
+                            <td> 2019/2020 </td>
+                            <td><a href="{{ route('student.detail') }}">Morgan Mendel</a></td>
+                            <td> Jambi </td>
+                        </tr>
+                        <tr>
+                            <td> 2019/2020 </td>
+                            <td><a href="{{ route('student.detail') }}">Morgan Mendel</a></td>
+                            <td> Jambi </td>
+                        </tr>
+                        <tr>
+                            <td> 2019/2020 </td>
+                            <td><a href="{{ route('student.detail') }}">Morgan Mendel</a></td>
+                            <td> Jambi </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

@@ -1,8 +1,5 @@
 @extends('layouts.main_layout')
 @section('page-name') Data Mata Pelajaran @endsection
-@section('script')
-<script src="{{ asset('assets/js/inventory-data.js') }}"></script>
-@endsection
 @section('content')
 {{-- CONTENT 1--}}
 {{-- TABEL UTAMA--}}
@@ -22,7 +19,7 @@
             </div>
             {{-- TABEL UTAMA --}}
             <div class="table">
-                <table id="summary" class="table table-bordered table-responsive">
+                <table id="course-table" class="table table-bordered table-responsive">
                     <thead>
                         <tr class="text-center">
                             <th>No</th>
@@ -147,3 +144,14 @@
     </div>
 </div>
 @endsection
+@section('script')
+<script src="{{ asset('assets/js/inventory-data.js') }}"></script>
+<script>
+    $(document).ready( function () {
+        $('#course-table').DataTable({
+          "searching": false
+      });
+    } );
+</script>
+@endsection
+
