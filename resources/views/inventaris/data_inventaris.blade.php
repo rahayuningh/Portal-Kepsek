@@ -235,11 +235,9 @@
 						<label for="namaguru" class="col-md-4 col-form-label text-md-right">Tanggal Mulai Pakai</label>
 						<div class="col-md-6">
 							<div class="input-group">
-								<input type="text" name="" id="" class="form-control" value="11-2-2020">
+								<input input type="text" name="" id="" class="form-control mydatepicker" value="11-2-2020">
 								<div class="input-group-append">
-									<button class="btn btn-inverse-success btn-sm" type="button">
-										<i class="mdi mdi-calendar"></i>
-									</button>
+									<span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
 								</div>
 							</div>
 						</div>
