@@ -62,7 +62,7 @@
 
             {{-- TABEL UTAMA --}}
             <div class="table pb-3">
-                <table id="summary" class="table table-bordered table-responsive">
+                <table id="kbm-table" class="table table-bordered table-responsive">
                     <thead>
                         <tr class="text-center">
                             <th>No</th>
@@ -268,4 +268,13 @@
     </div>
 </div>
 
+@endsection
+@section('script')
+<script>
+    $(document).ready( function () {
+        $('#kbm-table').DataTable({
+          "searching": false
+      });
+    } );
+</script>
 @endsection

@@ -9,7 +9,7 @@ const updateClassOption = (classes) => {
 }
 
 const getClass = () => {
-    searchClassElement.innerHTML = "Loading ...";
+    searchClassElement.innerHTML = "<option disabled selected> Loading ... </option>";
 
     const url = "/api/get-classes";
     let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
