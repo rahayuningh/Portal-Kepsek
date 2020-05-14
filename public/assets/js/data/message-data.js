@@ -9,7 +9,6 @@ const updateReceiverOption = (teachers) => {
 }
 
 const getReceiver = () => {
-    console.log('masuk ke get');
     receiverElement.innerHTML = "<option disabled selected>Loading ...</option>";
 
     const url = "/api/get-teachers";
