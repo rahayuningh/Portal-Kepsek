@@ -42,6 +42,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/kbm', function () {
         return view('pekerjaan/kbm');
     })->name('kbm');
+    Route::post('/kbm/create', 'KBMController@create');
     // Mata Pelajaran
     Route::get('/mata-pelajaran', function () {
         return view('pekerjaan/mata_pelajaran');
