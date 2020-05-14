@@ -80,7 +80,7 @@
             {{-- HEADER --}}
             <h2 class="text-center" style="background-color: green; color: white">Ringkasan Pekerjaan Guru</h2>
             <div class="table">
-                <table id="dashboard-job-table" class="table table-hover table-bordered">
+                <table id="dashboard-job-table" class="table table-hover table-bordered table-responsive">
                     <thead>
                         <tr>
                             <th>Kelas</th>
