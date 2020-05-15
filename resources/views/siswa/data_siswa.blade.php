@@ -8,14 +8,15 @@
     <div class="col-lg-12 grid-margin stretch-card">
         {{-- KOLOM PENCARIAN --}}
         <div class="card-body">
-            <form class="form-sample">
+            <form class="form-sample" method="POST" action="{{ route('student.search') }}">
+                @csrf
                 <div class="row">
                     {{-- KOLOM TAHUN AJARAN --}}
                     <div class="col-md-4">
                         <div class="form-group row">
                             <div class="text-center col-sm-12">
                                 <label class="" for="tahun">Tahun Ajaran</label>
-                                <select class="form-control" id="search-year" required>
+                                <select class="form-control" id="search-year" required name="year">
                                     <option disabled selected> --Pilih-- </option>
                                     @foreach ($schoolYears as $year)
                                     <option value="{{ $year->id }}">{{ $year->tahun_ajaran }}</option>
@@ -29,7 +30,7 @@
                         <div class="form-group row">
                             <div class="text-center col-sm-12">
                                 <label class="" for="tahun">Kelas</label>
-                                <select class="form-control" id="search-class" required>
+                                <select class="form-control" id="search-class" required name="class">
                                     <option disabled selected> --Pilih-- </option>
                                 </select>
                             </div>
@@ -40,8 +41,11 @@
                         <div class="form-group row">
                             <div class="text-center col-sm-12">
                                 <label class="" for="tahun">Wilayah</label>
-                                <select class="form-control" id="search-region" required>
+                                <select class="form-control" id="search-region" required name="region">
                                     <option disabled selected> --Pilih-- </option>
+                                    @foreach ($regions as $region)
+                                    <option value="{{ $region->id }}">{{ $region->nama_daerah }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -49,7 +53,7 @@
                 </div>
                 {{-- TOMBOL SEARCH --}}
                 <div class="row justify-content-center">
-                    <button type="search" class="btn btn-gradient-primary mr-2">Cari</button>
+                    <button type="submit" class="btn btn-gradient-primary mr-2">Cari</button>
                 </div>
             </form>
         </div>
@@ -65,12 +69,20 @@
         <div class="card">
             {{-- HEADER --}}
             <h2 class="text-center" style="background-color: green; color: white">Data Siswa</h2>
-            <h5 class="card-title text-center">TABEL {TAHUN AJARAN {2019/2020} SEMESTER {GANJIL}}</h5>
-            <h5 class="card-title text-center">{HASIL PENCARIAN}</h5>
-            <div class="table pb-3">
+            @if (isset($searchParam['year']))
+            <h5 class="card-title text-center mt-3">TAHUN AJARAN {{ $searchParam['year']->tahun_ajaran }}</h5>
+            @endif
+            @if (isset($searchParam['class']))
+            <h5 class="card-title text-center mt-3">KELAS {{ $searchParam['class']->nama_kelas }}</h5>
+            @endif
+            @if (isset($searchParam['region']))
+            <h5 class="card-title text-center mt-3">WILAYAH {{ $searchParam['region']->nama_daerah }}</h5>
+            @endif
+            <div class="table pb-3 pt-3">
                 <table id="student-table" class="table table-bordered table-responsive">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th> NISN </th>
                             <th> Nama Siswa </th>
                             <th> Asal Wilayah </th>
@@ -78,36 +90,20 @@
                     </thead>
 
                     <tbody>
+                        @php
+                        $no=1;
+                        @endphp
+                        @foreach ($students as $student)
                         <tr>
-                            <td> 9027310723 </td>
-                            <td><a href="{{ route('student.detail') }}">Morgan Mendel</a></td>
-                            <td> Jambi </td>
+                            <td>{{ $no }}</td>
+                            <td>{{ $student['nisn'] }}</td>
+                            <td><a href="{{ route('student.detail') }}">{{ $student['name'] }}</a></td>
+                            <td>{{ $student['region'] }}</td>
+                            @php
+                            $no++;
+                            @endphp
                         </tr>
-                        <tr>
-                            <td> 2019/2020 </td>
-                            <td><a href="{{ route('student.detail') }}">Morgan Mendel</a></td>
-                            <td> Jambi </td>
-                        </tr>
-                        <tr>
-                            <td> 2019/2020 </td>
-                            <td><a href="{{ route('student.detail') }}">Morgan Mendel</a></td>
-                            <td> Jambi </td>
-                        </tr>
-                        <tr>
-                            <td> 2019/2020 </td>
-                            <td><a href="{{ route('student.detail') }}">Morgan Mendel</a></td>
-                            <td> Jambi </td>
-                        </tr>
-                        <tr>
-                            <td> 2019/2020 </td>
-                            <td><a href="{{ route('student.detail') }}">Morgan Mendel</a></td>
-                            <td> Jambi </td>
-                        </tr>
-                        <tr>
-                            <td> 2019/2020 </td>
-                            <td><a href="{{ route('student.detail') }}">Morgan Mendel</a></td>
-                            <td> Jambi </td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

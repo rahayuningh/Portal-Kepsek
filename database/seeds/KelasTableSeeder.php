@@ -16,38 +16,38 @@ class KelasTableSeeder extends Seeder
         DB::table('kelas')->delete();
         Kelas::create([
             'id' => 1,
-            'nama_kelas' => 'X1',
-            'kode_kelas' => 'X1',
+            'nama_kelas' => 'VIIA',
+            'kode_kelas' => '7A',
             'tahun_ajaran_id' => 1,
         ]);
         Kelas::create([
             'id' => 2,
-            'nama_kelas' => 'X2',
-            'kode_kelas' => 'X2',
+            'nama_kelas' => 'VIIIA',
+            'kode_kelas' => '8A',
             'tahun_ajaran_id' => 1,
         ]);
         Kelas::create([
             'id' => 3,
-            'nama_kelas' => 'X3',
-            'kode_kelas' => 'X3',
+            'nama_kelas' => 'IXA',
+            'kode_kelas' => '9A',
             'tahun_ajaran_id' => 2,
         ]);
         Kelas::create([
             'id' => 4,
-            'nama_kelas' => 'X4',
-            'kode_kelas' => 'X4',
+            'nama_kelas' => 'VIIB',
+            'kode_kelas' => '7B',
             'tahun_ajaran_id' => 2,
         ]);
         Kelas::create([
             'id' => 5,
-            'nama_kelas' => 'X5',
-            'kode_kelas' => 'X5',
+            'nama_kelas' => 'VIIIB',
+            'kode_kelas' => '8B',
             'tahun_ajaran_id' => 3,
         ]);
         Kelas::create([
             'id' => 6,
-            'nama_kelas' => 'X6',
-            'kode_kelas' => 'X6',
+            'nama_kelas' => 'IXB',
+            'kode_kelas' => '9B',
             'tahun_ajaran_id' => 3,
         ]);
     }

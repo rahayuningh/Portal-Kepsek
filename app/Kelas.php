@@ -10,10 +10,22 @@ class Kelas extends Model
     {
         return $this->hasOne('App\KBM');
     }
-    public function siswa()
+
+    public function siswa1()
     {
-        return $this->belongsTo('App\Siswa');
+        return $this->hasMany('App\Siswa', 'id_kelas_1');
     }
+
+    public function siswa2()
+    {
+        return $this->hasMany('App\Siswa', 'id_kelas_2');
+    }
+
+    public function siswa3()
+    {
+        return $this->hasMany('App\Siswa', 'id_kelas_3');
+    }
+
     public function guru()
     {
         return $this->hasOne('App\Guru');

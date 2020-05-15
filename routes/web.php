@@ -82,9 +82,8 @@ Route::middleware(['auth'])->group(function () {
     // -----------------------------------------------------
     // SISWA
     // TABEL SISWA
-    Route::get('/data-siswa', function () {
-        return view('siswa/data_siswa', ['schoolYears' => TahunAjaran::all()]);
-    })->name('student');
+    Route::get('/data-siswa', 'SiswaController@seeAll')->name('student');
+    Route::post('/data-siswa/cari', 'SiswaController@searchStudent')->name('student.search');
 
     // TabelSiswaPerKelas
     Route::get('/detail-kelas', function () {

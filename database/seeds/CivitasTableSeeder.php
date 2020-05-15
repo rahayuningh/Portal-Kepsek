@@ -65,5 +65,35 @@ class CivitasTableSeeder extends Seeder
             'civitasable_id' => 3,
             'civitasable_type' => 'App\Pegawai'
         ]);
+        Civitas::create([
+            'id' => '6',
+            'nama' => 'Lexus',
+            'jenis_kelamin' => True,
+            'tempat_lahir' => 'Jambi, Bangka Belitung',
+            'tanggal_lahir' => Carbon::today(),
+            'agama' => 1,
+            'civitasable_id' => 3,
+            'civitasable_type' => 'App\Siswa'
+        ]);
+        Civitas::create([
+            'id' => '7',
+            'nama' => 'Nier Automata',
+            'jenis_kelamin' => false,
+            'tempat_lahir' => 'Jambi, Bangka Belitung',
+            'tanggal_lahir' => Carbon::today(),
+            'agama' => 1,
+            'civitasable_id' => 4,
+            'civitasable_type' => 'App\Siswa'
+        ]);
+        Civitas::create([
+            'id' => '8',
+            'nama' => 'Jeremy Teti',
+            'jenis_kelamin' => True,
+            'tempat_lahir' => 'Jambi, Bangka Belitung',
+            'tanggal_lahir' => Carbon::today(),
+            'agama' => 1,
+            'civitasable_id' => 5,
+            'civitasable_type' => 'App\Siswa'
+        ]);
     }
 }
