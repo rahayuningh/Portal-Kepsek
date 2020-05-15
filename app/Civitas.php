@@ -21,6 +21,6 @@ class Civitas extends Model
 
     public function agama()
     {
-        $this->belongsTo('App\Agama');
+        return $this->belongsTo('App\Agama');
     }
 }

@@ -82,18 +82,19 @@ Route::middleware(['auth'])->group(function () {
     // -----------------------------------------------------
     // SISWA
     // TABEL SISWA
-    Route::get('/data-siswa', 'SiswaController@seeAll')->name('student');
-    Route::post('/data-siswa/cari', 'SiswaController@searchStudent')->name('student.search');
+    Route::prefix('siswa')->group(function () {
+
+        Route::get('/data', 'SiswaController@seeAll')->name('student');
+        Route::post('/data/cari', 'SiswaController@searchStudent')->name('student.search');
+
+        // BIODATA SISWA
+        Route::get('/{id}', 'SiswaController@studentBiodata')->name('student.detail');
+    });
 
     // TabelSiswaPerKelas
     Route::get('/detail-kelas', function () {
         return view('siswa/detail_kelas', ['schoolYears' => TahunAjaran::all()]);
     })->name('class');
-
-    // BIODATA SISWA
-    Route::get('/bio-siswa', function () {
-        return view('siswa/biodata_siswa');
-    })->name('student.detail');
 
 
 
@@ -146,10 +147,10 @@ Route::middleware(['auth'])->group(function () {
 
     // Route made by Fakhri
     // If you want to know what is it for, ask Fakhri :)
-    Route::get('/civitas', 'BackendController@createCivitas');
-    Route::get('/siswa/{id}', 'BackendController@seeSiswa');
-    Route::get('/pesan', 'BackendController@seeAllMessage');
-    Route::get('/pesan/receiver', 'BackendController@getMessageReceiver');
+    // Route::get('/civitas', 'BackendController@createCivitas');
+    // Route::get('/siswa/{id}', 'BackendController@seeSiswa');
+    // Route::get('/pesan', 'BackendController@seeAllMessage');
+    // Route::get('/pesan/receiver', 'BackendController@getMessageReceiver');
     // -----------------
 
     // -----------------------------------------------------

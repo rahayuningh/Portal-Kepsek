@@ -1,5 +1,5 @@
 @extends('layouts.main_layout')
-@section('page-name') Biodata Siswa  @endsection
+@section('page-name') Biodata Siswa @endsection
 @section('content')
 
 {{-- CONTENT 1--}}
@@ -15,7 +15,7 @@
                     {{-- FOTO --}}
                     <div class="col-md-3 pb-10">
                         <div class="form-group text-center">
-                            <img src="assets/images/faces/face1.jpg">
+                            <img src="https://via.placeholder.com/150x200" alt="foto siswa">
                         </div>
                     </div>
 
@@ -31,11 +31,11 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>NIS</label>
-                                    <p>1111111111</p>
+                                    <p>0000000</p>
                                 </div>
                                 <div class="form-group">
                                     <label>Nama</label>
-                                    <p>LOREM IPSUM</p>
+                                    <p>{{ $civitas->nama }}</p>
                                 </div>
                                 <div class="form-group">
                                     <label>Nama Panggilan</label>
@@ -43,50 +43,56 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Tempat Lahir</label>
-                                    <p>BOGOR</p>
+                                    <p>{{ $civitas->tempat_lahir }}</p>
                                 </div>
                                 <div class="form-group">
                                     <label>Tanggal Lahir</label>
-                                    <p>1 JANUARI 2000</p>
+                                    <p>{{ $civitas->tanggal_lahir }}</p>
                                 </div>
                                 <div class="form-group">
                                     <label>Jenis Kelamin</label>
-                                    <p>LAKI-LAKI</p>
+                                    <p>
+                                        @if ($civitas->jenis_kelamin)
+                                        Laki-laki
+                                        @else
+                                        Perempuan
+                                        @endif
+                                    </p>
                                 </div>
                                 <div class="form-group">
                                     <label>Agama</label>
-                                    <p>ISLAM</p>
+                                    <p>{{ $religion->nama_agama }}</p>
                                 </div>
                             </div>
                             {{-- KOLOM KANAN --}}
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>NISN</label>
-                                    <p>1111111111</p>
+                                    <p>{{ $student->nisn }}</p>
                                 </div>
                                 <div class="form-group">
                                     <label>Kewarganegaraan</label>
-                                    <p>INDONESIA</p>
+                                    <p>Lorem</p>
                                 </div>
                                 <div class="form-group">
                                     <label>NO KK</label>
-                                    <p>1111111111</p>
+                                    <p>Lorem</p>
                                 </div>
                                 <div class="form-group">
                                     <label>NIK</label>
-                                    <p>1111111111</p>
+                                    <p>Lorem</p>
                                 </div>
                                 <div class="form-group">
                                     <label>No HP/Telepon yang bisa dikontak</label>
-                                    <p>08xxxxxxxxxxx</p>
+                                    <p>Lorem</p>
                                 </div>
                                 <div class="form-group">
                                     <label>Tempat tinggal saat ini</label>
-                                    <p>ASRAMA</p>
+                                    <p>Lorem</p>
                                 </div>
                                 <div class="form-group">
                                     <label>Status</label>
-                                    <p>ANAK YATIM/ PIATU / YATIM PIATU/ TIDAK</p>
+                                    <p>ANAK YATIM/ PIATU / YATIM PIATU/ TIDAK (lorem)</p>
                                 </div>
                             </div>
                         </div>
@@ -101,15 +107,15 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Nama Jalan</label>
-                                    <p>NAMA JALAN</p>
+                                    <p>Lorem</p>
                                 </div>
                                 <div class="form-group">
                                     <label>RT/RW</label>
-                                    <p>001/003</p>
+                                    <p>Lorem</p>
                                 </div>
                                 <div class="form-group">
                                     <label>Nama Kelurahan/Desa</label>
-                                    <p>NAMA DESA</p>
+                                    <p>Lorem</p>
                                 </div>
                             </div>
                             {{-- KOLOM KANAN --}}
@@ -134,10 +140,22 @@
                             <h4>Catatan Prestasi</h4>
                             <hr>
                             <ol>
-                                <li>Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum</li>
-                                <li>Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum</li>
-                                <li>Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum</li>
-                                <li>Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum</li>
+                                <li>Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem
+                                    ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum,
+                                    Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem
+                                    ipsum</li>
+                                <li>Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem
+                                    ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum,
+                                    Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem
+                                    ipsum</li>
+                                <li>Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem
+                                    ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum,
+                                    Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem
+                                    ipsum</li>
+                                <li>Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem
+                                    ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum,
+                                    Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem
+                                    ipsum</li>
                             </ol>
                         </div>
 

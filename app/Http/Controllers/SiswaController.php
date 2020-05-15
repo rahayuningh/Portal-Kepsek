@@ -111,12 +111,16 @@ class SiswaController extends Controller
     public function studentBiodata($id)
     {
         if ($id) {
-            $siswa = Siswa::find($id);
-            $civitas = $siswa->civitas;
-            echo ($siswa);
-            echo ($civitas);
+            $student = Siswa::find($id);
+            $civitas = $student->civitas;
         } else {
-            echo ('Gak ada id nya');
+            return redirect()->back()->with('fail', 'Tidak bisa melihat biodata siswa, tidak ada id yang disertakan');
         }
+        return view('siswa/biodata_siswa', [
+            'student' => $student,
+            'civitas' => $civitas,
+            'region' => $student->region,
+            'religion' => $civitas->agama
+        ]);
     }
 }

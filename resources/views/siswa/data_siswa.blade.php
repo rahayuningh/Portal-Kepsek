@@ -97,7 +97,10 @@
                         <tr>
                             <td>{{ $no }}</td>
                             <td>{{ $student['nisn'] }}</td>
-                            <td><a href="{{ route('student.detail') }}">{{ $student['name'] }}</a></td>
+                            <td><a href="{{ route('student.detail',['id'=>$student['id']]) }}">
+                                    {{ $student['name'] }}
+                                </a>
+                            </td>
                             <td>{{ $student['region'] }}</td>
                             @php
                             $no++;
