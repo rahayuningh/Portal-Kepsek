@@ -42,12 +42,9 @@ Route::middleware(['auth'])->group(function () {
     // KBM
     Route::prefix('kbm')->group(function () {
         Route::get('/', 'KBMController@showAllKBM')->name('kbm');
+        Route::post('/delete', 'KBMController@delete')->name('kbm.delete');
         Route::post('/create', 'KBMController@create')->name('kbm.create');
-        // next ...
-        // 0. route buat edit kbm
-        Route::post('/{id}/update', 'KBMController@update')->name('kbm.update');
-        // 1. route buat delete kbm
-        Route::get('/{id}/delete', 'KBMController@delete')->name('kbm.delete');
+        Route::post('/update', 'KBMController@update')->name('kbm.update');
         // 2. route buat nyari kbm
     });
 

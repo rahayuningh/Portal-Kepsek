@@ -17,7 +17,8 @@ class CreatePekerjaanGurusTable extends Migration
             $table->id();
             $table->unsignedBigInteger('kbm_id');
             $table->unsignedBigInteger('tipe_id');
-            $table->unsignedBigInteger('status_id');
+            // $table->unsignedBigInteger('status_id');
+            $table->tinyInteger('status');
             $table->timestamps();
         });
     }

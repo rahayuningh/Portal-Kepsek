@@ -21,7 +21,7 @@ class KBMController extends Controller
         $data_kbm = array(); // bikin array baru buat nampung data kbm
         $kbms = KBM::all(); // ambil semua data kbm dari DB
         foreach ($kbms as $kbm) {
-            $subject_name = $kbm->mataPelajaran->nama_mapel; // ambil nama mapelnya dari KBM nya
+            $subject = $kbm->mataPelajaran; // ambil nama mapelnya dari KBM nya
             $class = $kbm->kelas; // ambil data kelas dari KBM nya
 
             // proses ambil nama guru dari KBM nya
@@ -33,10 +33,12 @@ class KBMController extends Controller
             // masukin data ke array KBM
             array_push($data_kbm, array(
                 'id' => $kbm->id,
-                'subject' => $subject_name,
+                'subject' => $subject->nama_mapel,
+                'subject_id' => $subject->id,
                 'class' => $class,
                 'teacher_name' => $teacher_name,
-                'teacher_id' => $guru_pengampu->id
+                'teacher_id' => $guru_pengampu->id,
+                'term' => $kbm->semester
             ));
         }
 
@@ -60,7 +62,6 @@ class KBMController extends Controller
 
         // get all kelas
         $classes = Kelas::all();
-
         return view('pekerjaan/kbm', [
             // pass data to view
             'teachers' => $data_teacher,
@@ -96,18 +97,28 @@ class KBMController extends Controller
             ->with('success', 'Data KBM berhasil dibuat'); // sertain dengan pesan sukses
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request)
     {
-        $kbm = \App\KBM::where('id', $id);
+        $request->validate([
+            'id' => 'required|numeric',
+            'mata_pelajaran_id' => 'required|numeric',
+            'kelas_id' => 'required|numeric',
+            'guru_pengajar' => 'required|numeric',
+            'semester' => 'required',
+        ]);
+
+        $kbm = KBM::find($request->id);
         $data = $request->except('_token');
         $kbm->update($data);
-        return redirect('/kbm');
+        return redirect()->back()->with('success', 'KBM berhasil diupdate');
     }
 
-    public function delete($id)
+    public function delete(Request $request)
     {
-        $kbm = KBM::where('id', $id);
+        $request->validate(['id' => 'required|numeric']);
+        $kbm = KBM::find($request->id);
+        //hapus semua pekerjaan yang berhubungan dengan KBM ini
         $kbm->delete();
-        return redirect('/kbm');
+        return redirect()->back()->with('success', 'KBM berhasil dihapus');
     }
 }
