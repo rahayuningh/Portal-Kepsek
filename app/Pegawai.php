@@ -22,4 +22,9 @@ class Pegawai extends Model
     {
         return $this->morphTo();
     }
+
+    public function ruangan()
+    {
+        return $this->hasMany('App\Ruangan', 'penanggung_jawab_id');
+    }
 }
