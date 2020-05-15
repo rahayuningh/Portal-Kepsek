@@ -21,3 +21,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/get-rooms', 'BackendController@getRooms');
 Route::post('/get-classes', 'BackendController@getClass');
 Route::get('/get-teachers', 'BackendController@getTeacher');
+Route::post('/class/detail', 'BackendController@showClass');

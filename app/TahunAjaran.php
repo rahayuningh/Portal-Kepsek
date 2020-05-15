@@ -8,6 +8,6 @@ class TahunAjaran extends Model
 {
     public function classes()
     {
-        return $this->hasMany('App\Kelas');
+        return $this->hasMany('App\Kelas', 'tahun_ajaran_id');
     }
 }

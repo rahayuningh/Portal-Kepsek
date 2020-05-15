@@ -28,11 +28,11 @@ class Kelas extends Model
 
     public function guru()
     {
-        return $this->hasOne('App\Guru');
+        return $this->hasOne('App\Guru', 'kelas_perwalian');
     }
 
     public function tahun()
     {
-        return $this->belongsTo('App\TahunAjaran');
+        return $this->belongsTo('App\TahunAjaran', 'tahun_ajaran_id');
     }
 }

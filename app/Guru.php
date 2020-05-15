@@ -16,6 +16,11 @@ class Guru extends Model
         return $this->hasOne('App\KBM');
     }
 
+    public function kelasPerwalian()
+    {
+        return $this->belongsTo('App\Kelas', 'kelas_perwalian');
+    }
+
     public function pegawai()
     {
         return $this->morphOne('App\Pegawai', 'pegawaiable');

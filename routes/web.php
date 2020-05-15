@@ -57,7 +57,7 @@ Route::middleware(['auth'])->group(function () {
     // PEGAWAI (GURU & TENDIK)
     Route::prefix('pegawai')->group(function () {
         // BIODATA Guru
-        Route::get('/bio-guru/{id}', function () {
+        Route::get('/guru/{id}', function () {
             return view('pegawai/biodata_guru', ['page' => 'Guru']);
         })->name('teacher.detail');
 
@@ -91,11 +91,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/{id}', 'SiswaController@studentBiodata')->name('student.detail');
     });
 
-    // TabelSiswaPerKelas
-    Route::get('/detail-kelas', function () {
-        return view('siswa/detail_kelas', ['schoolYears' => TahunAjaran::all()]);
-    })->name('class');
-
+    // KELAS
+    Route::prefix('kelas')->group(function () {
+        Route::get('/', 'KelasController@seeAll')->name('class');
+    });
 
 
     // -----------------------------------------------------

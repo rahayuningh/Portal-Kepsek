@@ -57,17 +57,31 @@
                                 <tr>
                                     <td> Tahun Ajaran </td>
                                     <td> : </td>
-                                    <td> 2019/2020 </td>
+                                    <td id="year">
+                                        {{-- @if (isset($class))
+                                        {{ $class->tahun->tahun_ajaran }}
+                                        @endif --}}
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td> Kelas </td>
                                     <td> : </td>
-                                    <td> 1A </td>
+                                    <td id="class">
+                                        {{-- @if (isset($class))
+                                        {{ $class->nama_kelas }}
+                                        @endif --}}
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td> Wali Kelas </td>
                                     <td> : </td>
-                                    <td> <a href="{{ route('teacher.detail',['id'=>1]) }}">Lorem Ipsum</a></td>
+                                    <td id="teacher">
+                                        {{-- @if (isset($teacher_id) && isset($teacher_name))
+                                        <a href="{{ route('teacher.detail',['id'=>$teacher_id]) }}">
+                                            {{ $teacher_name }}
+                                        </a>
+                                        @endif --}}
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -77,34 +91,29 @@
                         <table id="class-table" class="table table-bordered table-responsive">
                             <thead>
                                 <th>No</th>
-                                <th width="">Nama</th>
-                                <th>NIS</th>
+                                <th>Nama</th>
+                                <th>NISN</th>
                             </thead>
-                            <tbody>
+                            <tbody id="student-table-body">
+                                {{-- @php
+                                $no=1;
+                                @endphp
+                                @if (isset($students))
+                                @foreach ($students as $student)
                                 <tr>
-                                    <td>1</td>
+                                    <td>{{ $no }}</td>
                                     <td>
-                                        <a href="{{ route('student.detail') }}">Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                                            Lorem Ipsum</a>
+                                        <a href="{{ route('student.detail',['id'=>$student['id']]) }}">
+                                            {{ $student['name'] }}
+                                        </a>
                                     </td>
-                                    <td>000XXXXXXXXXX</td>
+                                    <td>{{ $student['nisn'] }}</td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>
-                                        <a href="{{ route('student.detail') }}">Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                                            Lorem Ipsum>
-                                    </td>
-                                    <td>000XXXXXXXXXX</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>
-                                        <a href="{{ route('student.detail') }}">Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                                            Lorem Ipsum</a>
-                                    </td>
-                                    <td>000XXXXXXXXXX</td>
-                                </tr>
+                                @php
+                                $no++;
+                                @endphp
+                                @endforeach
+                                @endif --}}
                             </tbody>
                         </table>
                     </div>

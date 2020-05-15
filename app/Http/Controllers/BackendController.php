@@ -70,6 +70,54 @@ class BackendController extends Controller
         return response($content, $status);
     }
 
+    public function showClass(Request $request)
+    {
+        if ($request->has('id')) {
+            $class = Kelas::find($request->id);
+            $teacher = $class->guru;
+            $pegawai = $teacher->pegawai;
+
+            $class_code = str_split($class->kode_kelas);
+            if ($class_code[0] == '7') {
+                $students = $class->siswa1;
+            } elseif ($class_code[0] == '8') {
+                $students = $class->siswa2;
+            } elseif ($class_code[0] == '9') {
+                $students = $class->siswa3;
+            }
+
+            $data_student = array();
+            foreach ($students as $student) {
+                $civitas = $student->civitas;
+                array_push($data_student, array(
+                    'id' => $student->id,
+                    'name' => $civitas->nama,
+                    'nisn' => $student->nisn,
+                ));
+            }
+
+            $content = json_encode([
+                'message' => 'Success',
+                'students' => $data_student,
+                'class' => array(
+                    'year' => $class->tahun->tahun_ajaran,
+                    'code' => $class->nama_kelas,
+                    'teacher_id' => $teacher->id,
+                    'teacher_name' => $pegawai->civitas->nama,
+                )
+            ]);
+
+            $status = 200;
+            return response($content, $status);
+        } else {
+            $content = json_encode([
+                'message' => 'Fail, no id specified'
+            ]);
+            $status = 404;
+            return response($content, $status);
+        }
+    }
+
     public function getTeacher()
     {
         $data = array();
