@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Gedung extends Model
 {
-    protected $fillable=[
+    protected $fillable = [
         'nama_gedung',
         'kode_gedung'
     ];
-    public function ruangan(){
+
+    public function ruangan()
+    {
         return $this->hasMany('App\Ruangan');
     }
 }

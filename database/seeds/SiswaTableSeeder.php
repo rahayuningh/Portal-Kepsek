@@ -17,19 +17,46 @@ class SiswaTableSeeder extends Seeder
         Siswa::create([
             'id' => '1',
             'nisn' => '9991234567',
-            'asal_wilayah' => 'Kota Bogor',
-            'id_kelas_1' => 11,
-            'id_kelas_2' => 21,
-            'id_kelas_3' => 31,
+            'wilayah_id' => '11',
+            'id_kelas_1' => 1,
+            'id_kelas_2' => 2,
+            'id_kelas_3' => 3,
             'status_keaktifan' => 1,
         ]);
         Siswa::create([
             'id' => '2',
             'nisn' => '999000000',
-            'asal_wilayah' => 'Kota Jambi',
-            'id_kelas_1' => 12,
-            'id_kelas_2' => 22,
-            'id_kelas_3' => 32,
+            'wilayah_id' => '12',
+            'id_kelas_1' => 1,
+            'id_kelas_2' => 2,
+            'id_kelas_3' => 3,
+            'status_keaktifan' => 1,
+        ]);
+        Siswa::create([
+            'id' => '3',
+            'nisn' => '92183',
+            'wilayah_id' => '13',
+            'id_kelas_1' => 1,
+            'id_kelas_2' => 2,
+            'id_kelas_3' => 3,
+            'status_keaktifan' => 1,
+        ]);
+        Siswa::create([
+            'id' => '4',
+            'nisn' => '1283190',
+            'wilayah_id' => '11',
+            'id_kelas_1' => 4,
+            'id_kelas_2' => 5,
+            'id_kelas_3' => 6,
+            'status_keaktifan' => 1,
+        ]);
+        Siswa::create([
+            'id' => '5',
+            'nisn' => '999000000',
+            'wilayah_id' => '12',
+            'id_kelas_1' => 4,
+            'id_kelas_2' => 5,
+            'id_kelas_3' => 6,
             'status_keaktifan' => 1,
         ]);
     }

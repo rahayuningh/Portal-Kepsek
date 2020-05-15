@@ -49,7 +49,7 @@
             <h5 class="card-title text-center"> Hasil Pencarian <br> Gedung {A} </h5>
 
             {{-- TABEL UTAMA --}}
-            <div class="table">
+            <div class="table pb-3 pt-3">
                 <table id="room-table" class="table table-bordered table-responsive">
                     <thead>
                         <tr class="text-center">

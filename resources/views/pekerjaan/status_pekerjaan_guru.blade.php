@@ -8,7 +8,7 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <h2 class="text-center" style="background-color: green; color: white">TABEL RINGKASAN</h2>
-            <div class="table">
+            <div class="table pb-3 pt-3">
                 <table id="job-summary-table" class="table table-bordered table-responsive">
                     <thead>
                         <tr>
@@ -174,7 +174,7 @@
             {{-- TABEL HASIL PENCARIAN --}}
             <h5 class="card-title text-center">TABEL {TAHUN AJARAN {2019/2020} SEMESTER {GANJIL}}</h5>
             <h5 class="card-title text-center">{HASIL PENCARIAN}</h5>
-            <div class="table">
+            <div class="table pb-3">
                 <table id="job-table" class="table table-bordered table-responsive">
                     <thead>
                         <tr>

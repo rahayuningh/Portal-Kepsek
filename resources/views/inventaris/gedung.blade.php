@@ -18,7 +18,7 @@
                 </div>
             </div>
             {{-- TABEL UTAMA --}}
-            <div class="table">
+            <div class="table pb-3 pt-3">
                 <table id="building-table" class="table table-bordered table-responsive">
                     <thead>
                         <tr class="text-center">

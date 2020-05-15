@@ -14,9 +14,14 @@ class JenisInventarisTableSeeder extends Seeder
     public function run()
     {
         DB::table('jenis_inventariss')->delete();
-        JenisInventaris::create([
-            'id' => '1',
+        DB::table('jenis_inventariss')->insert([
             'nama_jenis_inventaris' => 'Meja'
+        ]);
+        DB::table('jenis_inventariss')->insert([
+            'nama_jenis_inventaris' => 'Kursi'
+        ]);
+        DB::table('jenis_inventariss')->insert([
+            'nama_jenis_inventaris' => 'Komputer'
         ]);
     }
 }

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class KebutuhanBarang extends Model
 {
-    protected $fillable=[
+    protected $fillable = [
         'jenis_inventaris_id',
         'ruangan_id',
         'jml_barang_shrsny',
@@ -14,10 +14,14 @@ class KebutuhanBarang extends Model
         'jml_barang_rsk',
         'jml_barang_dibutuhkan'
     ];
-    public function ruangan(){
+
+    public function ruangan()
+    {
         return $this->belongsTo('App\Ruangan');
     }
-    public function jenis_inventaris(){
+
+    public function jenis_inventaris()
+    {
         return $this->belongsTo('App\JenisInventaris');
     }
 }

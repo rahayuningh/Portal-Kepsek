@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ruangan extends Model
 {
-    protected $fillable=[
+    protected $fillable = [
         'nama_ruangan',
         'jenis_ruangan_id',
         'kode_ruangan',
@@ -14,17 +14,24 @@ class Ruangan extends Model
         'gedung_id',
         'kapasitas_orang'
     ];
-    public function kebutuhan_barang(){
+
+    public function kebutuhan_barang()
+    {
         return $this->hasMany('App\KebutuhanBarang');
     }
-    public function gedung(){
+
+    public function gedung()
+    {
         return $this->belongTo('App\Gedung');
     }
-    public function inventaris(){
-        return $this->hasMany('App\Inventaris');
+
+    public function inventaris()
+    {
+        return $this->hasMany('App\Inventaris', 'ruangan_pemilik_id');
     }
-    public function pegawai(){
-        return $this->hasMany('App\Pegawai');
+
+    public function pegawai()
+    {
+        return $this->belongsTo('App\Pegawai', 'penanggung_jawab_id');
     }
-    
 }

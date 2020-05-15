@@ -88,13 +88,19 @@
                             </td>
                             <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
-                                    align="center" title="Edit" href="#EditData">
+                                    align="center" title="Edit" href="#EditData{{ $kbm['id'] }}">
                                     <i class="mdi mdi-pencil"></i>
                                 </a>
-                                <a href="{{ route('kbm.delete', ['id'=>$kbm['id']]) }}" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
-                                    onclick="return confirm('Yakin hapus data?')">
+                                <a href="#" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
+                                    onclick="event.preventDefault(); confirm('Yakin hapus data?');
+                                    document.getElementById('delete-kbm-form').submit();">
                                     <i class="mdi mdi-delete"></i>
                                 </a>
+                                <form id="delete-kbm-form" action="{{ route('kbm.delete') }}" method="POST"
+                                    style="display: none;">
+                                    @csrf
+                                    <input type="number" value="{{ $kbm['id'] }}" name="id" hidden>
+                                </form>
                             </td>
                         </tr>
                         @php
@@ -187,8 +193,9 @@
     </div>
 </div>
 
+@foreach ($kbms as $kbm)
 {{-- WINDOW EDIT DATA --}}
-<div id="EditData" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+<div id="EditData{{ $kbm['id'] }}" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -198,8 +205,9 @@
                 </button>
             </div>
 
-            <form action="{{ route('kbm.update', ['id'=>$kbm['id']]) }}" method="POST">
+            <form action="{{ route('kbm.update') }}" method="POST">
                 {{ csrf_field() }}
+                <input type="number" value="{{ $kbm['id'] }}" name="id" hidden>
                 {{-- FIELD --}}
                 <div class="modal-body">
                     {{-- MAPEL --}}
@@ -210,7 +218,8 @@
                                 required="required" data-validation-required-message="Pilih Mata Pelajaran.">
                                 <option disabled selected> --Pilih-- </option>
                                 @foreach ($subjects as $subject)
-                                <option value="{{ $subject->id }}">{{ $subject->nama_mapel }}</option>
+                                <option value="{{ $subject->id }}" @if ($subject->id == $kbm['subject_id']) selected
+                                    @endif>{{ $subject->nama_mapel }}</option>
                                 @endforeach
                             </select>
                             <p class="help-block text-danger"></p>
@@ -223,7 +232,9 @@
                                 data-validation-required-message="Pilih kelas.">
                                 <option disabled selected> --Pilih-- </option>
                                 @foreach ($classes as $class)
-                                <option value="{{ $class->id }}">{{ $class->kode_kelas }}</option>
+                                <option value="{{ $class->id }}" @if ($class->id == $kbm['class']->id)
+                                    selected
+                                    @endif>{{ $class->kode_kelas }}</option>
                                 @endforeach
                             </select>
                             <p class="help-block text-danger"></p>
@@ -236,7 +247,8 @@
                                 required="required" data-validation-required-message="Pilih Nama Guru.">
                                 <option disabled selected> --Pilih-- </option>
                                 @foreach ($teachers as $teacher)
-                                <option value="{{ $teacher['id'] }}">{{ $teacher['name'] }}</option>
+                                <option value="{{ $teacher['id'] }}" @if ($teacher['id']==$kbm['teacher_id']) selected
+                                    @endif>{{ $teacher['name'] }}</option>
                                 @endforeach
                             </select>
                             <p class="help-block text-danger"></p>
@@ -248,8 +260,8 @@
                             <select id="semester" type="semester" name="semester" class="form-control"
                                 required="required" data-validation-required-message="Pilih semester.">
                                 <option disabled selected> --Pilih-- </option>
-                                <option value="0">Ganjil</option>
-                                <option value="1">Genap</option>
+                                <option value="0" @if ($kbm['term']==0) selected @endif>Ganjil</option>
+                                <option value="1" @if ($kbm['term']==1) selected @endif>Genap</option>
                             </select>
                             <p class="help-block text-danger"></p>
                         </div>
@@ -265,6 +277,7 @@
         </div>
     </div>
 </div>
+@endforeach
 
 @endsection
 @section('script')
