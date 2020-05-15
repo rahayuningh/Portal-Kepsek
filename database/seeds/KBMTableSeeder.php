@@ -1,6 +1,6 @@
 <?php
 
-use App\kbm;
+use App\KBM;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -14,16 +14,18 @@ class KBMTableSeeder extends Seeder
     public function run()
     {
         DB::table('kbms')->delete();
-        kbm::create(
+        KBM::create(
             [
+                'id' => '1',
                 'mata_pelajaran_id' => '1',
                 'kelas_id' => '1',
                 'guru_pengajar' => '1',
                 'semester' => true
             ]
         );
-        kbm::create(
+        KBM::create(
             [
+                'id' => '2',
                 'mata_pelajaran_id' => '2',
                 'kelas_id' => '2',
                 'guru_pengajar' => '2',

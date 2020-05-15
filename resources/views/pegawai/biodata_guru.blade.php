@@ -3,22 +3,27 @@
 <div class="col-md-6">
     <div class="form-group">
         <label>NIP</label>
-        <p>19870922 6111 45611</p>
+        <p>LOREM NOMOR NIP</p>
     </div>
     <div class="form-group">
         <label>Jabatan</label>
-        <p>GURU (HONORER/TETAP)</p>
+        <p>@if ($pegawai->status_pegawai==1)
+            Honorer
+            @else
+            Tetap
+            @endif</p>
     </div>
     <div class="form-group">
         <label>Wali Kelas</label>
-        <p><a href="/detail-kelas">1A</a></p>
+        <p><a href="{{ route('class.detail', ['id'=>$class->id]) }}">{{ $class->nama_kelas }}</a></p>
 
     </div>
     <div class="form-group">
         <label>Mengajar KBM</label>
         <ol>
-            <li>IPA</li>
-            <li>B.Indonesia</li>
+            @foreach ($kbms as $kbm)
+            <li>{{ $kbm->mataPelajaran->nama_mapel }}</li>
+            @endforeach
         </ol>
     </div>
 </div>

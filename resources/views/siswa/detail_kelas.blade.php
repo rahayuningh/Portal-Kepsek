@@ -58,29 +58,29 @@
                                     <td> Tahun Ajaran </td>
                                     <td> : </td>
                                     <td id="year">
-                                        {{-- @if (isset($class))
+                                        @if (isset($class))
                                         {{ $class->tahun->tahun_ajaran }}
-                                        @endif --}}
+                                        @endif
                                     </td>
                                 </tr>
                                 <tr>
                                     <td> Kelas </td>
                                     <td> : </td>
                                     <td id="class">
-                                        {{-- @if (isset($class))
+                                        @if (isset($class))
                                         {{ $class->nama_kelas }}
-                                        @endif --}}
+                                        @endif
                                     </td>
                                 </tr>
                                 <tr>
                                     <td> Wali Kelas </td>
                                     <td> : </td>
                                     <td id="teacher">
-                                        {{-- @if (isset($teacher_id) && isset($teacher_name))
+                                        @if (isset($teacher_id) && isset($teacher_name))
                                         <a href="{{ route('teacher.detail',['id'=>$teacher_id]) }}">
                                             {{ $teacher_name }}
                                         </a>
-                                        @endif --}}
+                                        @endif
                                     </td>
                                 </tr>
                             </tbody>
@@ -95,7 +95,7 @@
                                 <th>NISN</th>
                             </thead>
                             <tbody id="student-table-body">
-                                {{-- @php
+                                @php
                                 $no=1;
                                 @endphp
                                 @if (isset($students))
@@ -113,7 +113,7 @@
                                 $no++;
                                 @endphp
                                 @endforeach
-                                @endif --}}
+                                @endif
                             </tbody>
                         </table>
                     </div>

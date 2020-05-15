@@ -12,12 +12,12 @@
                     {{-- FOTO --}}
                     <div class="col-md-3 pb-10">
                         <div class="form-group text-center">
-                            <img src="assets/images/faces/face1.jpg">
+                            <img src="https://via.placeholder.com/150x200" alt="foto pegawai">
                         </div>
                     </div>
 
                     {{-- DATA GURU --}}
-                    <div class="col-md-9">
+                    <div class=" col-md-9">
                         {{-- DATA DIRI --}}
                         <div class="form-group">
                             <h4>Data Diri</h4>
@@ -30,29 +30,33 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Nama</label>
-                                    <p>LOREM IPSUM</p>
+                                    <p>{{ $civitas->nama }}</p>
                                 </div>
                                 <div class="form-group">
                                     <label>Tempat Lahir</label>
-                                    <p>BOGOR</p>
+                                    <p>{{ $civitas->tempat_lahir }}</p>
                                 </div>
                                 <div class="form-group">
                                     <label>Tanggal Lahir</label>
-                                    <p>1 JANUARI 2000</p>
+                                    <p>{{ $civitas->tanggal_lahir}}</p>
                                 </div>
                                 <div class="form-group">
                                     <label>Jenis Kelamin</label>
-                                    <p>LAKI-LAKI</p>
+                                    <p>@if ($civitas->jenis_kelamin==1)
+                                        Laki-laki
+                                        @else
+                                        Perempuan
+                                        @endif</p>
                                 </div>
                                 <div class="form-group">
                                     <label>Agama</label>
-                                    <p>ISLAM</p>
+                                    <p>{{ $religion->nama_agama }}</p>
                                 </div>
                                 <div class="form-group">
                                     <label>Kotak Person</label>
                                     <p>
-                                        23456789009876 <br>
-                                        email.email@
+                                        nomor lorem <br>
+                                        lorem@email.com
                                     </p>
                                 </div>
                             </div>

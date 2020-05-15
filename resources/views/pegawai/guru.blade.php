@@ -11,18 +11,24 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th> Nama Guru </th>
-                            <th> NIK </th>
-                            <th> Aksi </th>
+                            <th>Nama Guru</th>
+                            <th>NIK</th>
+                            {{-- <th>Aksi</th> --}}
                         </tr>
                     </thead>
 
                     <tbody>
+                        @php
+                        $no=1;
+                        @endphp
+                        @foreach ($teachers as $teacher)
                         <tr>
-                            <td> 1 </td>
-                            <td><a href="{{ route('teacher.detail',['id'=>1]) }}">Pak Jokowi </a></td>
-                            <td>321238123873913</td>
-                            <td class="p-0 text-center">
+                            <td>{{ $no }}</td>
+                            <td><a
+                                    href="{{ route('teacher.detail',['id'=>$teacher['id']]) }}">{{ $teacher['name'] }}</a>
+                            </td>
+                            <td>{{ $teacher['nik'] }}</td>
+                            {{-- <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
                                     align="center" title="Edit" href="#Edit">
                                     <i class="mdi mdi-pencil"></i>
@@ -31,83 +37,12 @@
                                     onclick="return confirm('Yakin hapus data?')">
                                     <i class="mdi mdi-delete"></i>
                                 </a>
-                            </td>
+                            </td> --}}
                         </tr>
-                        <tr>
-                            <td> 2 </td>
-                            <td><a href="{{ route('teacher.detail',['id'=>1]) }}">Pak Agus </a></td>
-                            <td>1231383712738312</td>
-                            <td class="p-0 text-center">
-                                <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
-                                    align="center" title="Edit" href="#Edit">
-                                    <i class="mdi mdi-pencil"></i>
-                                </a>
-                                <a href="" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
-                                    onclick="return confirm('Yakin hapus data?')">
-                                    <i class="mdi mdi-delete"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 3 </td>
-                            <td><a href="{{ route('teacher.detail',['id'=>1]) }}">Pak Budi </a></td>
-                            <td>1231383712738312</td>
-                            <td class="p-0 text-center">
-                                <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
-                                    align="center" title="Edit" href="#Edit">
-                                    <i class="mdi mdi-pencil"></i>
-                                </a>
-                                <a href="" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
-                                    onclick="return confirm('Yakin hapus data?')">
-                                    <i class="mdi mdi-delete"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 4 </td>
-                            <td><a href="{{ route('teacher.detail',['id'=>1]) }}">Pak Mujih </a></td>
-                            <td>1231383712738312</td>
-                            <td class="p-0 text-center">
-                                <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
-                                    align="center" title="Edit" href="#Edit">
-                                    <i class="mdi mdi-pencil"></i>
-                                </a>
-                                <a href="" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
-                                    onclick="return confirm('Yakin hapus data?')">
-                                    <i class="mdi mdi-delete"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 5 </td>
-                            <td><a href="{{ route('teacher.detail',['id'=>1]) }}">Pak Hinder </a></td>
-                            <td>1231383712738312</td>
-                            <td class="p-0 text-center">
-                                <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
-                                    align="center" title="Edit" href="#Edit">
-                                    <i class="mdi mdi-pencil"></i>
-                                </a>
-                                <a href="" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
-                                    onclick="return confirm('Yakin hapus data?')">
-                                    <i class="mdi mdi-delete"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 6 </td>
-                            <td><a href="{{ route('teacher.detail',['id'=>1]) }}">Pak Denny </a></td>
-                            <td>1231383712738312</td>
-                            <td class="p-0 text-center">
-                                <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
-                                    align="center" title="Edit" href="#Edit">
-                                    <i class="mdi mdi-pencil"></i>
-                                </a>
-                                <a href="" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
-                                    onclick="return confirm('Yakin hapus data?')">
-                                    <i class="mdi mdi-delete"></i>
-                                </a>
-                            </td>
-                        </tr>
+                        @php
+                        $no++;
+                        @endphp
+                        @endforeach
                     </tbody>
                 </table>
             </div>

@@ -56,25 +56,21 @@ Route::middleware(['auth'])->group(function () {
     // -----------------------------------------------------
     // PEGAWAI (GURU & TENDIK)
     Route::prefix('pegawai')->group(function () {
-        // BIODATA Guru
-        Route::get('/guru/{id}', function () {
-            return view('pegawai/biodata_guru', ['page' => 'Guru']);
-        })->name('teacher.detail');
-
-        // BIODATA Tendik
-        Route::get('/bio-tendik', function () {
-            return view('pegawai/biodata_tendik', ['page' => 'Tenaga Pendidik']);
-        })->name('tendik.detail');
-
         // Data Guru
-        Route::get('/guru', function () {
-            return view('pegawai/guru');
-        })->name('teacher');
+        Route::get('/guru', 'GuruController@showAll')->name('teacher');
+
+        // BIODATA Guru
+        Route::get('/guru/{id}', 'GuruController@biodataGuru')->name('teacher.detail');
 
         // Data Tendik
         Route::get('/tendik', function () {
             return view('pegawai/tendik');
         })->name('tendik');
+
+        // BIODATA Tendik
+        Route::get('/bio-tendik', function () {
+            return view('pegawai/biodata_tendik', ['page' => 'Tenaga Pendidik']);
+        })->name('tendik.detail');
     });
 
 
@@ -94,6 +90,7 @@ Route::middleware(['auth'])->group(function () {
     // KELAS
     Route::prefix('kelas')->group(function () {
         Route::get('/', 'KelasController@seeAll')->name('class');
+        Route::get('/{id}', 'KelasController@show')->name('class.detail');
     });
 
 

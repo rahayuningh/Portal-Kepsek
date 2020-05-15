@@ -13,7 +13,7 @@ class Guru extends Model
 
     public function kbm()
     {
-        return $this->hasOne('App\KBM');
+        return $this->hasMany('App\KBM', 'guru_pengajar');
     }
 
     public function kelasPerwalian()
