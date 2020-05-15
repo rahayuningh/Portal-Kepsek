@@ -31,7 +31,7 @@ class GuruController extends Controller
             $teacher = Guru::find($id);
             $pegawai = $teacher->pegawai;
             $civitas = $pegawai->civitas;
-// $teacher->kbm);
+
             return view('pegawai/biodata_guru', [
                 'page' => 'Guru',
                 'civitas' => $civitas,

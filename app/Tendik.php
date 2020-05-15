@@ -23,6 +23,6 @@ class Tendik extends Authenticatable
 
     public function pegawai()
     {
-        return $this->morphMany('App\Pegawai', 'pegawaiable');
+        return $this->morphOne('App\Pegawai', 'pegawaiable');
     }
 }

@@ -30,7 +30,6 @@ Route::middleware(['auth'])->group(function () {
         return view('beranda');
     })->name('dashboard');
 
-    // -----------------------------------------------------
     // STATUS PEKERJAAN GURU
     Route::get('/status-pekerjaan', function () {
         return view('pekerjaan/status_pekerjaan_guru', [
@@ -48,12 +47,11 @@ Route::middleware(['auth'])->group(function () {
         // 2. route buat nyari kbm
     });
 
-    // Mata Pelajaran
+    // MATA PELAJARAN
     Route::get('/mata-pelajaran', function () {
         return view('pekerjaan/mata_pelajaran');
     })->name('subject');
 
-    // -----------------------------------------------------
     // PEGAWAI (GURU & TENDIK)
     Route::prefix('pegawai')->group(function () {
         // Data Guru
@@ -63,21 +61,15 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/guru/{id}', 'GuruController@biodataGuru')->name('teacher.detail');
 
         // Data Tendik
-        Route::get('/tendik', function () {
-            return view('pegawai/tendik');
-        })->name('tendik');
+        Route::get('/tendik', 'TendikController@showAll')->name('tendik');
 
         // BIODATA Tendik
-        Route::get('/bio-tendik', function () {
-            return view('pegawai/biodata_tendik', ['page' => 'Tenaga Pendidik']);
-        })->name('tendik.detail');
+        Route::get('/tendik/{id}', 'TendikController@biodataTendik')->name('tendik.detail');
     });
 
 
 
-    // -----------------------------------------------------
     // SISWA
-    // TABEL SISWA
     Route::prefix('siswa')->group(function () {
 
         Route::get('/data', 'SiswaController@seeAll')->name('student');
