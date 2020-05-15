@@ -21,7 +21,7 @@ class CivitasTableSeeder extends Seeder
             'jenis_kelamin' => False,
             'tempat_lahir' => 'Bogor, Jawa Barat',
             'tanggal_lahir' => Carbon::today(),
-            'agama' => 1,
+            'agama_id' => 1,
             'civitasable_id' => 1,
             'civitasable_type' => 'App\Siswa'
         ]);
@@ -31,7 +31,7 @@ class CivitasTableSeeder extends Seeder
             'jenis_kelamin' => True,
             'tempat_lahir' => 'Malang, Jawa Timur',
             'tanggal_lahir' => Carbon::today(),
-            'agama' => 2,
+            'agama_id' => 2,
             'civitasable_id' => 1,
             'civitasable_type' => 'App\Pegawai'
         ]);
@@ -41,7 +41,7 @@ class CivitasTableSeeder extends Seeder
             'jenis_kelamin' => True,
             'tempat_lahir' => 'Jambi, Bangka Belitung',
             'tanggal_lahir' => Carbon::today(),
-            'agama' => 1,
+            'agama_id' => 1,
             'civitasable_id' => 2,
             'civitasable_type' => 'App\Siswa'
         ]);
@@ -51,7 +51,7 @@ class CivitasTableSeeder extends Seeder
             'jenis_kelamin' => False,
             'tempat_lahir' => 'DKI Jakarta',
             'tanggal_lahir' => Carbon::today(),
-            'agama' => 3,
+            'agama_id' => 3,
             'civitasable_id' => 2,
             'civitasable_type' => 'App\Pegawai'
         ]);
@@ -61,7 +61,7 @@ class CivitasTableSeeder extends Seeder
             'jenis_kelamin' => True,
             'tempat_lahir' => 'Bogor',
             'tanggal_lahir' => Carbon::today(),
-            'agama' => 1,
+            'agama_id' => 1,
             'civitasable_id' => 3,
             'civitasable_type' => 'App\Pegawai'
         ]);
@@ -71,7 +71,7 @@ class CivitasTableSeeder extends Seeder
             'jenis_kelamin' => True,
             'tempat_lahir' => 'Jambi, Bangka Belitung',
             'tanggal_lahir' => Carbon::today(),
-            'agama' => 1,
+            'agama_id' => 1,
             'civitasable_id' => 3,
             'civitasable_type' => 'App\Siswa'
         ]);
@@ -81,7 +81,7 @@ class CivitasTableSeeder extends Seeder
             'jenis_kelamin' => false,
             'tempat_lahir' => 'Jambi, Bangka Belitung',
             'tanggal_lahir' => Carbon::today(),
-            'agama' => 1,
+            'agama_id' => 1,
             'civitasable_id' => 4,
             'civitasable_type' => 'App\Siswa'
         ]);
@@ -91,7 +91,7 @@ class CivitasTableSeeder extends Seeder
             'jenis_kelamin' => True,
             'tempat_lahir' => 'Jambi, Bangka Belitung',
             'tanggal_lahir' => Carbon::today(),
-            'agama' => 1,
+            'agama_id' => 1,
             'civitasable_id' => 5,
             'civitasable_type' => 'App\Siswa'
         ]);

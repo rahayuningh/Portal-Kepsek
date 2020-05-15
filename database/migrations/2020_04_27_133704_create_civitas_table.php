@@ -20,7 +20,7 @@ class CreateCivitasTable extends Migration
             $table->string('tempat_lahir', 50);
             $table->date('tanggal_lahir');
             $table->string('photo')->nullable();
-            $table->tinyInteger('agama');
+            $table->tinyInteger('agama_id');
             $table->integer('civitasable_id');
             $table->string('civitasable_type');
             $table->timestamps();

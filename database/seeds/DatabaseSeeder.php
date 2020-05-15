@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
 
         // Seeder Bagian Data Civitas
+        $this->call(AgamaTableSeeder::class);
         $this->call(WilayahTableSeeder::class);
         $this->call(CivitasTableSeeder::class);
         $this->call(SiswaTableSeeder::class);

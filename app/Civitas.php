@@ -18,4 +18,9 @@ class Civitas extends Model
     {
         return $this->morphTo();
     }
+
+    public function agama()
+    {
+        $this->belongsTo('App\Agama');
+    }
 }
