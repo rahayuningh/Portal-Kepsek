@@ -27,7 +27,7 @@
 <div class="row">
     <div class="col-md-3 stretch-card grid-margin">
         <div class="card bg-gradient-primary card-img-holder text-white">
-            <a href="/data-siswa" class="text-decoration-none text-white">
+            <a href="{{ route('student') }}" class="text-decoration-none text-white">
                 <div class="card-body">
                     <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                     <h4 class="font-weight-normal mb-3">Data Siswa <i
