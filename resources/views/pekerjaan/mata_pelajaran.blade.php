@@ -39,16 +39,16 @@
                             <td>{{ $mapel->kode_mapel }}</td>
                             <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
-                                    align="center" title="Edit" href="#EditData{{ $mapel['id'] }}">
+                                    align="center" title="Edit" href="#Edit{{ $mapel['id'] }}">
                                     <i class="mdi mdi-pencil"></i>
                                 </a>
                                 <a href="#" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
                                     onclick="event.preventDefault(); confirm('Yakin hapus data?');
-                                    document.getElementById('delete-mapel-form').submit();">
+                                    document.getElementById('delete-mapel-form{{ $mapel->id }}').submit();">
                                     <i class="mdi mdi-delete"></i>
                                 </a>
-                                <form id="delete-mapel-form" action="{{ route('subject.delete') }}" method="POST"
-                                    style="display: none;">
+                                <form id="delete-mapel-form{{ $mapel->id }}" action="{{ route('subject.delete') }}"
+                                    method="POST" style="display: none;">
                                     @csrf
                                     <input type="number" value="{{ $mapel['id'] }}" name="id" hidden>
                                 </form>
@@ -105,43 +105,89 @@
     </div>
 </div>
 
-{{-- WINDOW EDIT DATA --}}
-<div id="Edit" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+@foreach ($mata_pelajarans as $mapel)
+{{-- WINDOW DELETE DATA --}}
+<div id="Delet{{ $mapel->id }}" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Ubah Data Gedung</h5>
+                <h5 class="modal-title">Edit Data Mata Pelajaran</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="" method="">
+            <form action="{{ route('subject.update') }}" method="POST">
                 {{ csrf_field() }}
                 {{-- FIELD --}}
+                <input type="number" name="id" value="{{ $mapel->id}}" hidden>
                 <div class="modal-body">
                     <div class="form-group row">
                         <label for="kelas" class="col-md-4 col-form-label text-md-right">Mata Pelajaran</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" value="Matematika">
+                            <input type="text" class="form-control" id="nama_mapel" name="nama_mapel"
+                                value="{{ $mapel->nama_mapel}}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="kelas" class="col-md-4 col-form-label text-md-right">Kode Mata Pelajaran</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" value="MAT">
+                            <input type="text" class="form-control" id="kode_mapel" name="kode_mapel"
+                                value="{{ $mapel->kode_mapel }}">
                         </div>
                     </div>
                 </div>
                 {{-- BUTTON --}}
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                    <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
                 </div>
             </form>
-
         </div>
     </div>
 </div>
+@endforeach
+
+@foreach ($mata_pelajarans as $mapel)
+{{-- WINDOW EDIT DATA --}}
+<div id="Edit{{ $mapel->id }}" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Data Mata Pelajaran</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="{{ route('subject.update') }}" method="POST">
+                {{ csrf_field() }}
+                {{-- FIELD --}}
+                <input type="number" name="id" value="{{ $mapel->id}}" hidden>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <label for="kelas" class="col-md-4 col-form-label text-md-right">Mata Pelajaran</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="nama_mapel" name="nama_mapel"
+                                value="{{ $mapel->nama_mapel}}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="kelas" class="col-md-4 col-form-label text-md-right">Kode Mata Pelajaran</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="kode_mapel" name="kode_mapel"
+                                value="{{ $mapel->kode_mapel }}">
+                        </div>
+                    </div>
+                </div>
+                {{-- BUTTON --}}
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@endforeach
 @endsection
 @section('script')
 <script src="{{ asset('assets/js/inventory-data.js') }}"></script>

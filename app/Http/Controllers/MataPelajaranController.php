@@ -27,19 +27,26 @@ class MataPelajaranController extends Controller
     {
         $request->validate(['id' => 'required|numeric']);
         $mapel = MataPelajaran::find($request->id);
-        dd($mapel);
-        // //hapus semua pekerjaan yang berhubungan dengan KBM ini
-        // $mapel->delete();
-        // return redirect()->back()->with('success', 'Mata pelajaran berhasil dihapus');
+        //hapus KBM yang berhubungan dengan mata pelajaran ini
+        $mapel->delete();
+        return redirect()->back()->with('success', 'Mata pelajaran berhasil dihapus');
     }
 
     public function create(Request $request)
     {
         // validasi dulu inputannya
-        $request->validate([
-            'nama_mapel' => 'required', // harus ada 
-            'kode_mapel' => 'required', // harus ada 
-        ]);
+        $request->validate(
+            [
+                'nama_mapel' => 'required|max:50', // harus ada
+                'kode_mapel' => 'required|max:3', // harus ada
+            ],
+            [
+                'kode_mapel.max' => 'Kode mata pelajaran maksimal 3 karakter',
+                'nama_mapel.max' => 'Nama mata pelajaran maksimal 50 karakter',
+                'kode_mapel.required' => 'Kode mata pelajaran harus dimasukkan',
+                'nama_mapel.required' => 'Nama mata pelajaran harus dimasukkan'
+            ]
+        );
         // klo inputnya gak lolos validasi, bakal redirect ke halaman sebelumnya
         // barengan sama errornya
 
@@ -51,19 +58,25 @@ class MataPelajaranController extends Controller
             ->with('success', 'Mata pelajaran berhasil dibuat'); // sertain dengan pesan sukses
     }
 
-    // public function update(Request $request)
-    // {
-    //     $request->validate([
-    //         'id' => 'required|numeric',
-    //         'mata_pelajaran_id' => 'required|numeric',
-    //         'kelas_id' => 'required|numeric',
-    //         'guru_pengajar' => 'required|numeric',
-    //         'semester' => 'required',
-    //     ]);
+    public function update(Request $request)
+    {
+        $request->validate([
+            'id' => 'required|numeric',
+            'kode_mapel' => 'required|max:3',
+            'nama_mapel' => 'required|max:50',
+        ], [
+            'id.required' => 'ID mata pelajaran harus dimasukkan',
+            'id.numeric' => 'ID mata pelajaran harus berupa angka',
+            'kode_mapel.max' => 'Kode mata pelajaran maksimal 3 karakter',
+            'nama_mapel.max' => 'Nama mata pelajaran maksimal 50 karakter',
+            'kode_mapel.required' => 'Kode mata pelajaran harus dimasukkan',
+            'nama_mapel.required' => 'Nama mata pelajaran harus dimasukkan'
+        ]);
 
-    //     $kbm = KBM::find($request->id);
-    //     $data = $request->except('_token');
-    //     $kbm->update($data);
-    //     return redirect()->back()->with('success', 'KBM berhasil diupdate');
-    // }
+        $subject = MataPelajaran::find($request->id);
+        $data = $request->except('_token');
+        $data = $request->except('id');
+        $subject->update($data);
+        return redirect()->back()->with('success', 'KBM berhasil diupdate');
+    }
 }
