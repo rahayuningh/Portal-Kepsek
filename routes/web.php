@@ -48,9 +48,12 @@ Route::middleware(['auth'])->group(function () {
     });
 
     // MATA PELAJARAN
-    Route::get('/mata-pelajaran', function () {
-        return view('pekerjaan/mata_pelajaran');
-    })->name('subject');
+    Route::prefix('mata-pelajaran')->group(function () {
+        Route::get('/', 'MataPelajaranController@showAllMapel')->name('subject');
+        Route::post('/delete', 'MataPelajaranController@delete')->name('subject.delete');
+        Route::post('/create', 'MataPelajaranController@create')->name('subject.create');
+        Route::post('/update', 'MataPelajaranController@update')->name('subject.update');
+    });
 
     // PEGAWAI (GURU & TENDIK)
     Route::prefix('pegawai')->group(function () {

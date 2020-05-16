@@ -29,35 +29,34 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @php
+                        $no=1;
+                        @endphp
+                        @foreach ($mata_pelajarans as $mapel)
                         <tr>
-                            <td>1</td>
-                            <td>Matematika</td>
-                            <td>MAT</td>
+                            <td>{{ $no }}</td>
+                            <td>{{ $mapel->nama_mapel }}</td>
+                            <td>{{ $mapel->kode_mapel }}</td>
                             <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
-                                    align="center" title="Edit" href="#Edit">
+                                    align="center" title="Edit" href="#EditData{{ $mapel['id'] }}">
                                     <i class="mdi mdi-pencil"></i>
                                 </a>
-                                <a href="" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
-                                    onclick="return confirm('Yakin hapus data?')">
+                                <a href="#" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
+                                    onclick="event.preventDefault(); confirm('Yakin hapus data?');
+                                    document.getElementById('delete-mapel-form').submit();">
                                     <i class="mdi mdi-delete"></i>
                                 </a>
+                                <form id="delete-mapel-form" action="{{ route('subject.delete') }}" method="POST"
+                                    style="display: none;">
+                                    @csrf
+                                    <input type="number" value="{{ $mapel['id'] }}" name="id" hidden>
+                                </form>
                             </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Biologi</td>
-                            <td>BIO</td>
-                            <td class="p-0 text-center">
-                                <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
-                                    align="center" title="Edit" href="#Edit">
-                                    <i class="mdi mdi-pencil"></i>
-                                </a>
-                                <a href="" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
-                                    onclick="return confirm('Yakin hapus data?')">
-                                    <i class="mdi mdi-delete"></i>
-                                </a>
-                            </td>
+                            @php
+                            $no++;
+                            @endphp
+                            @endforeach
                         </tr>
                     </tbody>
                 </table>
@@ -78,20 +77,20 @@
                 </button>
             </div>
 
-            <form action="" method="">
+            <form action="{{ route('subject.create') }}" method="POST">
                 {{ csrf_field() }}
                 {{-- FIELD --}}
                 <div class="modal-body">
                     <div class="form-group row">
                         <label for="kelas" class="col-md-4 col-form-label text-md-right">Mata Pelajaran</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" id="nama_mapel" name="nama_mapel">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="kelas" class="col-md-4 col-form-label text-md-right">Kode Mata Pelajaran</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" id="kode_mapel" name="kode_mapel">
                         </div>
                     </div>
                 </div>
