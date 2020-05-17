@@ -80,10 +80,10 @@
                         {{-- <span class="availability-status online"></span> --}}
                     </div>
                 </a>
-                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list p-3"
                     aria-labelledby="profileDropdown">
-                    <h6 class="text-center p-3 mb-0">{{ Auth::user()->email }}</h6>
-                    <p class="text-center">{{ Auth::user()->jabatan }} {{ Auth::user()->bagian_pekerjaan }}</p>
+                    <h6 class="mb-0">{{ Auth::user()->name }}</h6>
+                    <p>{{ Auth::user()->email }}</p>
 
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();

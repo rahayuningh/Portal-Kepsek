@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'tendik',
+        'passwords' => 'users',
     ],
 
     /*
@@ -38,12 +38,12 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'tendik',
+            'provider' => 'users',
         ],
 
         'api' => [
             'driver' => 'token',
-            'provider' => 'tendik',
+            'provider' => 'users',
             'hash' => false,
         ],
     ],
@@ -71,10 +71,10 @@ return [
             'model' => App\User::class,
         ],
 
-        'tendik' => [
-            'driver' => 'eloquent',
-            'model' => App\Tendik::class,
-        ],
+        // 'tendik' => [
+        //     'driver' => 'eloquent',
+        //     'model' => App\Tendik::class,
+        // ],
 
         // 'users' => [
         //     'driver' => 'database',
