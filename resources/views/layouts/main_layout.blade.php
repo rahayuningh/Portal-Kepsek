@@ -37,6 +37,15 @@
         thead{
             background-color:#eee;
         }
+        td .badge-td{
+            font-weight: bold; 
+            width: 100%; 
+            height: 100%; 
+            font-size: 100%;
+        }
+        td .badge-gray{
+            background-color: #eee;
+        }
     </style>
 
 </head>
@@ -71,7 +80,7 @@
                         {{-- PAGE NAME --}}
                         <h2 class="page-title" style="font-size: 16pt !important;">
                             <span class="page-title-icon bg-gradient-primary text-white mr-2">
-                                <i class="mdi mdi-home"></i>
+                                <i class="mdi @yield('icon')"></i>
                             </span> @yield('page-name')
                         </h2>
                         {{--LINK PATH--}}

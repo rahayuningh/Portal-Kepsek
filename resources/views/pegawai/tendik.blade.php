@@ -1,5 +1,6 @@
 @extends('layouts.main_layout')
 @section('page-name') Data Tenaga Pendidik @endsection
+@section('icon') mdi-account-card-details @endsection
 @section('content')
 
 <div class="row">

@@ -1,5 +1,6 @@
 @extends('layouts.main_layout')
 @section('page-name') Pesan @endsection
+@section('icon') mdi-message-text @endsection
 @section('content')
 {{-- ######################################################################## --}}
 {{-- ANNOUNCEMENT --}}
