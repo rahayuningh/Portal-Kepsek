@@ -16,19 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Semua route jadinya harus login dulu
-
 Auth::routes([
-    // 'register' => false, // matiin register
+    'register' => false, // matiin register
     'verify' => false // matiin verifikasi email
 ]);
 
 Route::middleware(['auth'])->group(function () {
 
     // BERANDA
-    Route::get('/', function () {
-        return view('beranda');
-    })->name('dashboard');
+    Route::get('/', 'HomeController@index')->name('dashboard');
 
     // STATUS PEKERJAAN GURU
     Route::get('/status-pekerjaan', function () {
@@ -70,11 +66,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/tendik/{id}', 'TendikController@biodataTendik')->name('tendik.detail');
     });
 
-
-
     // SISWA
     Route::prefix('siswa')->group(function () {
-
         Route::get('/data', 'SiswaController@seeAll')->name('student');
         Route::post('/data/cari', 'SiswaController@searchStudent')->name('student.search');
 
@@ -89,7 +82,6 @@ Route::middleware(['auth'])->group(function () {
     });
 
 
-    // -----------------------------------------------------
     // INVENTARIS
     Route::prefix('inventaris')->group(function () {
         Route::get('/list', 'InventoryController@seeInventory')->name('inventory');
@@ -115,37 +107,6 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/create', 'PesanController@createMessage')->name('message.create');
         Route::get('/delete/{id}', 'PesanController@deleteMessage')->name('message.delete');
     });
-
-
-
-    // -----------------------------------------------------
-    // AUTH
-    // /login ---> default
-    //custome
-    // Route::get('/verification', function () {
-    //     return view('auth/verify');
-    // });
-    // Route::get('/email-reset', function () {
-    //     return view('auth/passwords/email');
-    // });
-    // Route::get('/reset', function () {
-    //     return view('auth/passwords/reset');
-    // });
-    // Route::get('/confirm-reset', function () {
-    //     return view('auth/passwords/confirm');
-    // });
-
-
-    // Route made by Fakhri
-    // If you want to know what is it for, ask Fakhri :)
-    // Route::get('/civitas', 'BackendController@createCivitas');
-    // Route::get('/siswa/{id}', 'BackendController@seeSiswa');
-    // Route::get('/pesan', 'BackendController@seeAllMessage');
-    // Route::get('/pesan/receiver', 'BackendController@getMessageReceiver');
-    // -----------------
-
-    // -----------------------------------------------------
-    // TESTING
 
     //COBA TEMPLATE
     Route::get('/template', function () {
