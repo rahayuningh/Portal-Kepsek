@@ -16,7 +16,7 @@ class CreateTendiksTable extends Migration
         Schema::create('tendiks', function (Blueprint $table) {
             $table->id();
             $table->string('email')->unique();
-            $table->string('password');
+            $table->string('sso_user_id')->unique()->nullable();
             $table->tinyInteger('level_akses');
             $table->string('jabatan');
             $table->string('bagian_pekerjaan');

@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 // Semua route jadinya harus login dulu
 
 Auth::routes([
-    'register' => false, // matiin register
+    // 'register' => false, // matiin register
     'verify' => false // matiin verifikasi email
 ]);
 

@@ -11,14 +11,10 @@ class Tendik extends Authenticatable
     use Notifiable;
     protected $fillable = [
         'email',
-        'password',
+        'sso_user_id',
         'level_akses',
         'jabatan',
         'bagian_pekerjaan'
-    ];
-
-    protected $hidden = [
-        'password',
     ];
 
     public function pegawai()

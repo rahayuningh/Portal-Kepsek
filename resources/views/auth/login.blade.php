@@ -36,20 +36,12 @@
         <button type="submit" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn"> LOGIN
         </button>
     </div>
-    {{-- REMEMBER ME --}}
-    <div class="my-2 d-flex justify-content-between align-items-center">
-        <div class="form-check">
-            <label class="form-check-label text-muted" for="remember">
-                <input type="checkbox" class="form-check-input" name="remember" id="remember"
-                    {{ old('remember') ? 'checked' : '' }}> Remember me
-            </label>
-        </div>
-        {{-- FORGOT PASSWORD --}}
-        @if (Route::has('password.request'))
-        <a class="auth-link text-black" href="{{ route('password.request') }}">Forgot password?</a>
-        @endif
-
+    @if (Route::has('register'))
+    <div class="my-2 d-flex align-items-center">
+        {{-- REGISTER --}}
+        <p>Dont have account ? <a class="auth-link" href="{{ route('register') }}" target="_blank">Register</a></p>
     </div>
+    @endif
 </form>
 
 @endsection
