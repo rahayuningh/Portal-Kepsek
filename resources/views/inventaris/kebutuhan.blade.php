@@ -7,7 +7,7 @@
 <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
-            <h2 class="text-center" style="background-color: green; color: white">Kebutuhan Barang</h2>
+            <h2 class="text-center header-card">Kebutuhan Barang</h2>
             {{-- ADD RECORD BUTTON --}}
             <div class="row pl-3 pb-2">
                 <div class="col-md-3">

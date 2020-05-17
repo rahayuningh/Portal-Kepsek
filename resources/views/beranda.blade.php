@@ -78,7 +78,7 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             {{-- HEADER --}}
-            <h2 class="text-center" style="background-color: green; color: white">Ringkasan Pekerjaan Guru</h2>
+            <h2 class="text-center header-card">Ringkasan Pekerjaan Guru</h2>
             <div class="table">
                 <table id="dashboard-job-table" class="table table-hover table-bordered table-responsive">
                     <thead>

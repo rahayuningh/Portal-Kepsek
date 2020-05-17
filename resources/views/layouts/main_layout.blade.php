@@ -27,6 +27,18 @@
 
     <link rel="shortcut icon" href="{{ asset('assets/imagesSCB/Logo-SCB_mini.png') }}" />
 
+    <style>
+        .header-card{
+            background: linear-gradient(to bottom, #008c5d, #00593B); 
+            color: white; 
+            border-radius: 0.3125rem 0.3125rem 0rem 0rem;
+            font-size: 18pt;
+        }
+        thead{
+            background-color:#eee;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -57,11 +69,11 @@
                     {{-- ######################################################################## --}}
                     <div class="row page-header">
                         {{-- PAGE NAME --}}
-                        <h3 class="page-title">
+                        <h2 class="page-title" style="font-size: 16pt !important;">
                             <span class="page-title-icon bg-gradient-primary text-white mr-2">
                                 <i class="mdi mdi-home"></i>
                             </span> @yield('page-name')
-                        </h3>
+                        </h2>
                         {{--LINK PATH--}}
                         {{-- <section aria-label="breadcrumb">
                             <ol class="breadcrumb p-0">

@@ -10,7 +10,7 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             {{-- HEADER --}}
-            <h2 class="text-center" style="background-color: green; color: white">Detail Pesan</h2>
+            <h2 class="text-center header-card">Detail Pesan</h2>
             <div class="card-body">
                 {{-- Detail --}}
                 <div class="row">
