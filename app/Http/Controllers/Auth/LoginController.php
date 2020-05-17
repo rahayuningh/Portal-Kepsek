@@ -46,12 +46,13 @@ class LoginController extends Controller
 
     public function getUserData(Request $request)
     {
+        $broker_token = "ecfc4805-3d68-4431-aeb8-a632bcf34b45";
         // get user data from SSO using inputed email
         $client = new Client();
         $res = $client->request('GET', 'https://sso.kato.studio/api/auth', [
             'query' => ['q' => json_encode(array('email' => $request->email))],
             'headers' => [
-                'Authorization' => 'Bearer ecfc4805-3d68-4431-aeb8-a632bcf34b45'
+                'Authorization' => 'Bearer ' . $broker_token
             ]
         ]);
 
@@ -92,22 +93,24 @@ class LoginController extends Controller
             $userData = $this->getUserData($request);
 
             // check user data in DB
-            $tendik = Tendik::firstOrCreate(
+            $user = User::firstOrCreate(
                 ['sso_user_id' => $userData['_id']],
                 [
+                    'name' => $userData['name'],
                     'email' => $userData['email'],
-                    'level_akses' => 1,
-                    'jabatan' => 'Staff',
-                    'bagian_pekerjaan' => 'Kurikulum'
+                    'role' => $userData['role']
                 ]
             );
 
             // login user to IMoSy
-            if (Auth::loginUsingId($tendik->id)) {
+            if (Auth::loginUsingId($user->id)) {
                 // if Authentication passed redirect to dashboard
+                // or previous page the user try to access
                 return redirect()->intended('dashboard');
             } else {
-                dd("gagal");
+                throw ValidationException::withMessages([
+                    $this->username() => [trans('auth.failed')],
+                ]);
             }
         } else { // if not success
             // then check user data in DB

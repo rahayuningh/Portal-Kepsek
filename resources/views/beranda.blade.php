@@ -14,10 +14,10 @@
                 @if (Auth::check())
                 <p>Data User</p>
                 <ul>
+                    <li>Name : {{ Auth::user()->name }}</li>
                     <li>Email : {{ Auth::user()->email }}</li>
-                    <li>Level : {{ Auth::user()->level_akses }}</li>
-                    <li>Jabat : {{ Auth::user()->jabatan }}</li>
-                    <li>Kerja : {{ Auth::user()->bagian_pekerjaan }}</li>
+                    <li>Role : {{ Auth::user()->role }}</li>
+                    <li>SSO ID : {{ Auth::user()->sso_user_id }}</li>
                 </ul>
                 {{-- {{ Auth::user() }} --}}
                 @endif
