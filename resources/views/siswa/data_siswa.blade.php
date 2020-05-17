@@ -68,7 +68,7 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             {{-- HEADER --}}
-            <h2 class="text-center" style="background-color: green; color: white">Data Siswa</h2>
+            <h2 class="text-center header-card">Data Siswa</h2>
             @if (isset($searchParam['year']))
             <h5 class="card-title text-center mt-3">TAHUN AJARAN {{ $searchParam['year']->tahun_ajaran }}</h5>
             @endif

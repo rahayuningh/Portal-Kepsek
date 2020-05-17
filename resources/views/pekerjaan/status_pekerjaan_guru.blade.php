@@ -7,7 +7,7 @@
 <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
-            <h2 class="text-center" style="background-color: green; color: white">TABEL RINGKASAN</h2>
+            <h2 class="text-center header-card">Ringkasan</h2>
             <div class="table pb-3 pt-3">
                 <table id="job-summary-table" class="table table-bordered table-responsive">
                     <thead>
@@ -105,7 +105,7 @@
 <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
-            <h2 class="text-center" style="background-color: green; color: white">TABEL UTAMA</h2>
+            <h2 class="text-center header-card">Status Pekerjaan Guru</h2>
             {{-- KOLOM PENCARIAN --}}
             <div class="card-body">
                 <h4 class="card-title text-center">Pencarian</h4>

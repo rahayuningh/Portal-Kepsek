@@ -8,7 +8,7 @@
     <div class="col-md-4 grid-margin">
         <div class="card pb-3">
             {{-- FILTER --}}
-            <h2 class="text-center" style="background-color: green; color: white">Daftar Kelas</h2>
+            <h2 class="text-center header-card">Daftar Kelas</h2>
             <h4 class="card-title text-center">Pencarian</h4>
             <form class="form-sample">
                 <div class="row">
@@ -48,7 +48,7 @@
     <div class="col-md-8 grid-margin m-0 p-0">
         <div class="col grid-margin">
             <div class="card pb-3">
-                <h2 class="text-center" style="background-color: green; color: white">Detail Kelas</h2>
+                <h2 class="text-center header-card">Detail Kelas</h2>
                 <div id="1A" class="tab-content">
                     {{-- KETERANGAN --}}
                     <div class="pl-2 mb-3">

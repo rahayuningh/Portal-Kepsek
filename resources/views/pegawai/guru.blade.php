@@ -5,7 +5,7 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             {{-- HEADER --}}
-            <h2 class="text-center" style="background-color: green; color: white">Data Guru</h2>
+            <h2 class="text-center header-card">Data Guru</h2>
             <div class="table pb-3 pt-3">
                 <table id="teacher-table" class="table table-bordered table-responsive">
                     <thead>

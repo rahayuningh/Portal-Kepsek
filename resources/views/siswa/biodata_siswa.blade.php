@@ -8,7 +8,7 @@
     <div class="col-12 grid-margin">
         <div class="card">
             {{-- HEADER --}}
-            <h2 class="text-center" style="background-color: green; color: white">Biodata Siswa</h2>
+            <h2 class="text-center header-card">Biodata Siswa</h2>
             <div class="card-body">
                 {{-- CONTENT --}}
                 <div class="row">

@@ -17,9 +17,9 @@
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#pekerjaan" aria-expanded="false"
                         aria-controls="pekerjaan">
-                        <span class="menu-title">Aktivitas/Pekerjaan</span>
+                        <span class="menu-title">Aktivitas</span>
                         <i class="menu-arrow"></i>
-                        <i class="mdi mdi-account-card-details menu-icon"></i>
+                        <i class="mdi mdi-bookmark-check menu-icon"></i>
                     </a>
                     <div class="collapse" id="pekerjaan">
                         <ul class="nav flex-column sub-menu">
@@ -70,7 +70,7 @@
                         aria-controls="inventaris">
                         <span class="menu-title">Inventaris</span>
                         <i class="menu-arrow"></i>
-                        <i class="mdi mdi-account-multiple menu-icon"></i>
+                        <i class="mdi mdi-database menu-icon"></i>
                     </a>
                     <div class="collapse" id="inventaris">
                         <ul class="nav flex-column sub-menu">
