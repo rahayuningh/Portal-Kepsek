@@ -17,4 +17,14 @@ class InventoryController extends Controller
             'buildings' => Gedung::all(),'inventaris'=>$inventaris,'ruangan'=>$ruangan
         ]);
     }
+    public function store(Request $request){
+        $inventaris=$request->all();
+        Siswa::create($inventaris);
+        return redirect('inventory');
+    } 
+    public function update($id,Request $request){
+        $inventaris=Inventaris::findOrFail($id);
+        $siswa->update($request->all());
+        return redirect('inventory');
+    }   
 }

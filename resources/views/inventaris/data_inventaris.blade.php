@@ -98,7 +98,7 @@
                             </tr>
                             @endforeach
                         @else
-                            <h3> Tidak Ada inventaris yang ada di database silahkan tambah data invent</h3>
+                            <option> Tidak Ada inventaris yang ada di database silahkan tambah data invent</option>
                         @endif
                         {{--<tr>
                            <td>Meja Lipat</td>
