@@ -1,5 +1,6 @@
 @extends('layouts.main_layout')
 @section('page-name') Data Mata Pelajaran @endsection
+@section('icon') mdi-library-books @endsection
 @section('content')
 {{-- CONTENT 1--}}
 {{-- TABEL UTAMA--}}

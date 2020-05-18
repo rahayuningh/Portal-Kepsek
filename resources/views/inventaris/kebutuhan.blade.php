@@ -1,5 +1,6 @@
 @extends('layouts.main_layout')
 @section('page-name') Kebutuhan Barang @endsection
+@section('icon') mdi-archive @endsection
 @section('content')
 
 {{-- CONTENT 1--}}

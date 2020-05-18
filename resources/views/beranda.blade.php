@@ -1,5 +1,6 @@
 @extends('layouts.main_layout')
 @section('page-name') Beranda @endsection
+@section('icon') mdi-home @endsection
 @section('content')
 {{-- ######################################################################## --}}
 {{-- ANNOUNCEMENT --}}
@@ -31,7 +32,7 @@
                 <div class="card-body">
                     <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                     <h4 class="font-weight-normal mb-3">Data Siswa <i
-                            class="mdi mdi-account-card-details mdi-24px float-right"></i>
+                            class="mdi mdi-account-multiple mdi-24px float-right"></i>
                     </h4>
                 </div>
             </a>
@@ -86,8 +87,8 @@
                             <th>Kelas</th>
                             <th>Mata Pelajaran</th>
                             <th>Nama Guru</th>
-                            <th>UTS</th>
-                            <th>UAS</th>
+                            <th class="text-center">UTS</th>
+                            <th class="text-center">UAS</th>
                         </tr>
                     </thead>
 
@@ -96,36 +97,43 @@
                             <td><a href="">Kelas 1A</a></td>
                             <td>Matematika</td>
                             <td><a href="">Pak Julio</a></td>
-                            <td style="background-color: #ff0000">Belum</td>
-                            <td style="background-color: #1bcfb4">Sudah</td>
+                            <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
                         </tr>
                         <tr>
                             <td><a href="">Kelas 1A</a></td>
                             <td>Matematika</td>
                             <td><a href="">Pak Julio</a></td>
-                            <td style="background-color: #ff0000">Belum</td>
-                            <td style="background-color: #1bcfb4">Sudah</td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Belum</label></td>
                         </tr>
                         <tr>
                             <td><a href="">Kelas 1A</a></td>
                             <td>Matematika</td>
                             <td><a href="">Pak Julio</a></td>
-                            <td style="background-color: #ff0000">Belum</td>
-                            <td style="background-color: #1bcfb4">Sudah</td>
+                            <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
                         </tr>
                         <tr>
                             <td><a href="">Kelas 1A</a></td>
                             <td>Matematika</td>
                             <td><a href="">Pak Julio</a></td>
-                            <td style="background-color: #ff0000">Belum</td>
-                            <td style="background-color: #1bcfb4">Sudah</td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Belum</label></td>
                         </tr>
                         <tr>
                             <td><a href="">Kelas 1A</a></td>
                             <td>Matematika</td>
                             <td><a href="">Pak Julio</a></td>
-                            <td style="background-color: #ff0000">Belum</td>
-                            <td style="background-color: #1bcfb4">Sudah</td>
+                            <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
+                        </tr>
+                        <tr>
+                            <td><a href="">Kelas 1A</a></td>
+                            <td>Matematika</td>
+                            <td><a href="">Pak Julio</a></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Belum</label></td>
                         </tr>
                     </tbody>
 

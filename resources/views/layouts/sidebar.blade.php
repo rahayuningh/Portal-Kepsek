@@ -70,7 +70,7 @@
                         aria-controls="inventaris">
                         <span class="menu-title">Inventaris</span>
                         <i class="menu-arrow"></i>
-                        <i class="mdi mdi-database menu-icon"></i>
+                        <i class="mdi mdi-archive menu-icon"></i>
                     </a>
                     <div class="collapse" id="inventaris">
                         <ul class="nav flex-column sub-menu">

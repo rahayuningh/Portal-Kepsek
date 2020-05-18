@@ -1,5 +1,6 @@
 @extends('layouts.main_layout')
 @section('page-name') Status Pekerjaan Guru @endsection
+@section('icon') mdi-bookmark-check @endsection
 @section('content')
 
 {{-- CONTENT 1--}}
@@ -16,8 +17,8 @@
                             <th> Kelas </th>
                             <th> Mata Pelajaran </th>
                             <th> Nama Guru </th>
-                            <th> Nilai UTS </th>
-                            <th> Nilai UAS </th>
+                            <th class="text-center"> Nilai UTS </th>
+                            <th class="text-center"> Nilai UAS </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -30,8 +31,8 @@
                             <td>
                                 <a href="">Morgan Mendel</a>
                             </td>
-                            <td class="bg-success">SELESAI</td>
-                            <td class="bg-danger">BELUM</td>
+                            <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
                         </tr>
                         <tr>
                             <td> 2 </td>
@@ -42,8 +43,8 @@
                             <td>
                                 <a href="">Rahayuning</a>
                             </td>
-                            <td class="bg-warning">PROGRESS</td>
-                            <td class="bg-warning">PROGRESS</td>
+                            <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
                         </tr>
                         <tr>
                             <td> 3 </td>
@@ -54,8 +55,9 @@
                             <td>
                                 <a href="">Muhammad Fakhri</a>
                             </td>
-                            <td class="bg-danger">BELUM</td>
-                            <td class="bg-danger">BELUM</td>
+                            <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
+
                         </tr>
                         <tr>
                             <td> 4 </td>
@@ -66,8 +68,8 @@
                             <td>
                                 <a href="">Nabil Ahmad</a>
                             </td>
-                            <td class="bg-success">SELESAI</td>
-                            <td class="bg-success">SELESAI</td>
+                            <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
                         </tr>
                         <tr>
                             <td> 5 </td>
@@ -78,8 +80,8 @@
                             <td>
                                 <a href="">Jovano</a>
                             </td>
-                            <td class="bg-warning">PROGRESS</td>
-                            <td class="bg-warning">PROGRESS</td>
+                            <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
                         </tr>
                         <tr>
                             <td> 6 </td>
@@ -90,8 +92,8 @@
                             <td>
                                 <a href="">Hafizh Haritsa</a>
                             </td>
-                            <td class="bg-danger">BELUM</td>
-                            <td class="bg-danger">BELUM</td>
+                            <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
                         </tr>
                     </tbody>
                 </table>
@@ -182,9 +184,9 @@
                             <th> Kelas </th>
                             <th> Mata Pelajaran </th>
                             <th> Nama Guru </th>
-                            <th> Nilai Harian </th>
-                            <th> Nilai UTS </th>
-                            <th> Nilai UAS </th>
+                            <th class="text-center"> Nilai Harian </th>
+                            <th class="text-center"> Nilai UTS </th>
+                            <th class="text-center"> Nilai UAS </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -197,9 +199,9 @@
                             <td>
                                 <a href="">Morgan Mendel</a>
                             </td>
-                            <td class="bg-success">SELESAI</td>
-                            <td class="bg-success">SELESAI</td>
-                            <td class="bg-success">SELESAI</td>
+                            <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
                         </tr>
                         <tr>
                             <td> 2 </td>
@@ -210,9 +212,9 @@
                             <td>
                                 <a href="">Rahayuning</a>
                             </td>
-                            <td class="bg-info">PROGRESS</td>
-                            <td class="bg-info">PROGRESS</td>
-                            <td class="bg-info">PROGRESS</td>
+                            <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Belum</label></td>
                         </tr>
                         <tr>
                             <td> 3 </td>
@@ -223,9 +225,9 @@
                             <td>
                                 <a href="">Muhammad Fakhri</a>
                             </td>
-                            <td class="bg-danger">BELUM</td>
-                            <td class="bg-danger">BELUM</td>
-                            <td class="bg-danger">BELUM</td>
+                            <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
                         </tr>
                         <tr>
                             <td> 4 </td>
@@ -236,9 +238,9 @@
                             <td>
                                 <a href="">Nabil Ahmad</a>
                             </td>
-                            <td class="bg-success">SELESAI</td>
-                            <td class="bg-success">SELESAI</td>
-                            <td class="bg-success">SELESAI</td>
+                            <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
                         </tr>
                         <tr>
                             <td> 5 </td>
@@ -249,9 +251,9 @@
                             <td>
                                 <a href="">Jovano</a>
                             </td>
-                            <td class="bg-info">PROGRESS</td>
-                            <td class="bg-info">PROGRESS</td>
-                            <td class="bg-info">PROGRESS</td>
+                            <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Belum</label></td>
                         </tr>
                         <tr>
                             <td> 6 </td>
@@ -262,9 +264,9 @@
                             <td>
                                 <a href="">Hafizh Haritsa</a>
                             </td>
-                            <td class="bg-danger">BELUM</td>
-                            <td class="bg-danger">BELUM</td>
-                            <td class="bg-danger">BELUM</td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Belum</label></td>
                         </tr>
                     </tbody>
                 </table>

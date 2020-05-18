@@ -46,7 +46,7 @@
         <a class="navbar-brand brand-logo pt-4" href="{{route('dashboard')}}">
             <img src="{{asset('assets/imagesSCB/Logo IMoSy_white.svg')}}" alt="logo" style="width: 200px" />
         </a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img
+        <a class="navbar-brand brand-logo-mini" href="{{route('dashboard')}}"><img
                 src="{{asset('assets/imagesSCB/Logo-SCB_mini.png')}}" alt="logo" /></a>
     </div>
 

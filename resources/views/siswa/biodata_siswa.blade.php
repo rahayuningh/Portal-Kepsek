@@ -1,5 +1,6 @@
 @extends('layouts.main_layout')
 @section('page-name') Biodata Siswa @endsection
+@section('icon') mdi-account-multiple @endsection
 @section('content')
 
 {{-- CONTENT 1--}}
