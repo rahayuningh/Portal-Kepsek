@@ -7,7 +7,7 @@
         <div class="card">
             {{-- HEADER --}}
             <h2 class="text-center header-card">Data Guru</h2>
-
+            {{-- BUTTON --}}
             <div class="row p-3">
                 <div class="col-md-3">
                     <a type="button" class="btn btn-block btn-inverse-primary btn-icon-text pl-0 p-2"
@@ -237,13 +237,11 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="rt" class="col-md-4 col-form-label text-md-right">RT</label>
+                        <label for="rt_rw" class="col-md-4 col-form-label text-md-right">RT/RW</label>
                         <div class="col-md-3">
-                            <input name="rt" id="rt" type="text" class="form-control">
+                            <input name="rt_rw" id="rt_rw" type="text" class="form-control">
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="rw" class="col-md-4 col-form-label text-md-right">RW</label>
+                        <div class="pt-3">/</div>
                         <div class="col-md-3">
                             <input name="rw" id="rw" type="text" class="form-control">
                         </div>
