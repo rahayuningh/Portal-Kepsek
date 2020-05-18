@@ -239,11 +239,11 @@
                     <div class="form-group row">
                         <label for="rt_rw" class="col-md-4 col-form-label text-md-right">RT/RW</label>
                         <div class="col-md-3">
-                            <input name="rt_rw" id="rt_rw" type="text" class="form-control">
+                            <input placeholder="RT" name="rt_rw" id="rt_rw" type="text" class="form-control">
                         </div>
-                        <div class="pt-3">/</div>
+                        <div></div>
                         <div class="col-md-3">
-                            <input name="rw" id="rw" type="text" class="form-control">
+                            <input placeholder="RW" name="rw" id="rw" type="text" class="form-control">
                         </div>
                     </div>
                 </div>
