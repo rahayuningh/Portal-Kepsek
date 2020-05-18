@@ -86,15 +86,17 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('inventaris')->group(function () {
         Route::get('/list', 'InventoryController@seeInventory')->name('inventory');
 
-        // inventaris/kebutuhan-barang
+        // KEBUTUHAN BARANG
         Route::get('/kebutuhan-barang', function () {
             return view('inventaris/kebutuhan', ['buildings' => Gedung::all()]);
         })->name('inventory.needs');
 
+        // GEDUNG
         Route::get('/gedung', function () {
             return view('inventaris/gedung');
         })->name('inventory.building');
 
+        // RUANGAN
         Route::get('/ruang', function () {
             return view('inventaris/ruang');
         })->name('inventory.room');
