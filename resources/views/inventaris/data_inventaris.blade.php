@@ -76,25 +76,31 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Meja</td>
-                            <td>021A</td>
-                            <td>23/04/2020</td>
-                            <td>Layak</td>
-                            <td>Ruang Kantin</td>
-                            <td class="p-0 text-center">
-                                <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
-                                    align="center" title="Edit" href="#Edit">
-                                    <i class="mdi mdi-pencil"></i>
-                                </a>
-                                <a href="" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
-                                    onclick="return confirm('Yakin hapus data?')">
-                                    <i class="mdi mdi-delete"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Meja Lipat</td>
+                        @if($inventaris>0)
+                            @foreach($inventaris as $invent)
+                            <tr>
+                                <td>{{$invent->jenis_inventaris}}</td>
+                                <td>{{$invent->kode_inventaris}}</td>
+                                <td>{{$invent->tgl_mulai_pakai}}</td>
+                                <td>{{$invent->status_kelayakan}}</td>
+                                <td>{{$invent->jenis_ruangan_id}}</td>
+                                <td class="p-0 text-center">
+                                    <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
+                                        align="center" title="Edit" href="#Edit/{{$inventaris->id}}">
+                                        <i class="mdi mdi-pencil"></i>
+                                    </a>
+                                    <a href="" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
+                                        onclick="return confirm('Yakin hapus data?')">
+                                        <i class="mdi mdi-delete"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        @else
+                            <h3> Tidak Ada inventaris yang ada di database silahkan tambah data invent</h3>
+                        @endif
+                        {{--<tr>
+                           <td>Meja Lipat</td>
                             <td>021B</td>
                             <td>23/04/2020</td>
                             <td>Tidak Layak</td>
@@ -109,7 +115,7 @@
                                     <i class="mdi mdi-delete"></i>
                                 </a>
                             </td>
-                        </tr>
+                        </tr>--}}
                     </tbody>
                 </table>
             </div>
@@ -128,7 +134,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="" method="">
+            <form action="inventaris" method="post">
                 {{ csrf_field() }}
                 {{-- FIELD --}}
                 <div class="modal-body">
@@ -141,26 +147,31 @@
                                 class="form-control" required data-val="true"
                                 data-val-required="Pilih Jenis Inventaris.">
                                 <option disabled selected> --Pilih-- </option>
-                                <option>Meja</option>
-                                <option>Kursi</option>
-                                <option>Papan Tulis</option>
-                                <option>Proyektor</option>
+                                {{--seharusnya diisi dengan nama inventaris yang ada kalo nggak ada bikin baru--}}
+                                @if($jenis_inventaris>0)
+                                    @foreach($jenis_inventaris as $jenis_i)      
+                                        <option>{{$jenis_i->nama_jenis_inventaris}}</option>
+                                    @endforeach
+                                @else
+                                    <h3>tidak ada jenis inventaris yang tersedia silahkan ketik nama inventaris baru maka 
+                                        akan langsung ditambahkan ke database</h3>
+                                @endif
                             </select>
                         </div>
                     </div>
-                    {{-- Kode Inventaris --}}
+                    {{-- Kode Inventaris --}} 
                     <div class="form-group row">
-                        <label for="kelas" class="col-md-4 col-form-label text-md-right">Kode Inventaris</label>
+                        <label for="kode_inventaris" class="col-md-4 col-form-label text-md-right">Kode Inventaris</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control">
+                            <input name="kode_inventaris" id="kode_inventaris" type="text" class="form-control">
                         </div>
                     </div>
                     {{-- Tanggal Mulai Pakai --}}
                     <div class="form-group row">
-                        <label for="namaguru" class="col-md-4 col-form-label text-md-right">Tanggal Mulai Pakai</label>
+                        <label for="tgl_mulai_pakai" class="col-md-4 col-form-label text-md-right">Tanggal Mulai Pakai</label>
                         <div class="col-md-6">
                             <div class="input-group">
-                                <input type="text" name="" id="" class="form-control datepicker"
+                                <input type="date" name="tgl_mulai_pakai" id="tgl_mulai_pakai" class="form-control datepicker"
                                     placeholder="dd/mm/yyyy">
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
@@ -170,37 +181,46 @@
                     </div>
                     {{-- Status Kelayakan --}}
                     <div class="form-group row">
-                        <label for="semester" class="col-md-4 col-form-label text-md-right">Status Kelayakan</label>
+                        <label for="status_kelayakan" class="col-md-4 col-form-label text-md-right">Status Kelayakan</label>
                         <div class="col-md-6">
-                            <select id="semester" type="semester" name="semester" class="form-control"
-                                required="required" data-validation-required-message="Pilih semester.">
+                            <select id="status_kelayakan" type="semester" name="status_kelayakan" class="form-control"
+                                required="required" data-validation-required-message="Silahkan pilih status kelayakan inventaris.">
                                 <option disabled selected> --Pilih-- </option>
-                                <option>Layak</option>
-                                <option>Rusak</option>
+                                {{--nilainya 1--}}    
+                                <option value="1">Layak</option>
+                                <option value="0">Rusak</option>
                             </select>
                         </div>
                     </div>
                     {{-- Gedung --}}
-                    <div class="form-group row">
-                        <label for="semester" class="col-md-4 col-form-label text-md-right">Gedung</label>
+                    {{--<div class="form-group row">
+                        <label for="gedung_id" class="col-md-4 col-form-label text-md-right">Gedung</label>
                         <div class="col-md-6">
-                            <select id="semester" type="semester" name="semester" class="form-control"
-                                required="required" data-validation-required-message="Pilih semester.">
+                            <select id="gedung_id" type="semester" name="gedung_id" class="form-control"
+                                required="required" data-validation-required-message="Pilih gedung tempat inventaris">
                                 <option disabled selected> --Pilih-- </option>
-                                <option>Gedung A</option>
-                                <option>Gedung B</option>
+                                @if($bulidings>0)
+                                    @foreach($buildings as $building)
+                                        <option value="{{$inventaris-">{{$building->nama_gedung}}</option>
                             </select>
                         </div>
                     </div>
+                    --}}
                     {{-- Ruangan --}}
                     <div class="form-group row">
                         <label for="semester" class="col-md-4 col-form-label text-md-right">Ruangan</label>
                         <div class="col-md-6">
-                            <select id="semester" type="semester" name="semester" class="form-control"
+                            <select id="ruangan_pemilik_id" type="semester" name="ruangan_pemilik_id" class="form-control"
                                 required="required" data-validation-required-message="Pilih semester.">
                                 <option disabled selected> --Pilih-- </option>
-                                <option>Ruang A</option>
-                                <option>Ruang B</option>
+                                @if($inventaris>0)
+                                    @foreach($inventaris as $in)
+                                        <option value="{{$inventaris->ruangan_pemilik_id}}">{{$in->ruangan_pemilik_id}}</option>
+                                {{--<option>Ruang B</option>--}}
+                                    @endforeach
+                                @else
+                                    <option>silahkan input ruangan baru untuk inventaris ditaruh.</option>
+                                @endif
                             </select>
                         </div>
                     </div>
@@ -216,8 +236,8 @@
 </div>
 
 {{-- WINDOW EDIT DATA --}}
-<div id="Edit" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<div id="Edit/{inventaris}" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document"> 
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Ubah Data Inventaris</h5>
@@ -225,39 +245,33 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="" method="">
+            <form action="/inventaris/{inventaris}/update" method="post">
+                @method("patch")
                 {{ csrf_field() }}
                 {{-- FIELD --}}
                 <div class="modal-body">
                     {{-- Jenis Inventaris --}}
+                    $inventaris=Inventaris::findOrFail($id)
                     <div class="form-group row">
                         <label for="jenis_inventaris" class="col-md-4 col-form-label text-md-right">Jenis
                             Inventaris</label>
                         <div class="col-md-6">
-                            <select id="jenis_inventaris" type="jenis_inventaris" name="jenis_inventaris"
-                                class="form-control" required data-val="true"
-                                data-val-required="Pilih Jenis Inventaris.">
-                                <option disabled> --Pilih-- </option>
-                                <option selected>Meja</option>
-                                <option>Kursi</option>
-                                <option>Papan Tulis</option>
-                                <option>Proyektor</option>
-                            </select>
+                            <input type="text" name="jenis_inventaris" class="form-control" value="{{$inventaris->jenis_inventaris}}">
                         </div>
                     </div>
                     {{-- Kode Inventaris --}}
                     <div class="form-group row">
-                        <label for="kelas" class="col-md-4 col-form-label text-md-right">Kode Inventaris</label>
+                        <label for="kode_inventaris" class="col-md-4 col-form-label text-md-right">Kode Inventaris</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" value="DAS7D2">
+                            <input type="text" class="form-control" value="{{$inventaris->kode_inventaris}}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="namaguru" class="col-md-4 col-form-label text-md-right">Tanggal Mulai Pakai</label>
+                        <label for="tgl_mulai_pakai" class="col-md-4 col-form-label text-md-right">Tanggal Mulai Pakai</label>
                         <div class="col-md-6">
                             <div class="input-group">
-                                <input type="text" name="" id="" class="form-control datepicker"
-                                    placeholder="dd/mm/yyyy" value="23-04-2020">
+                                <input type="text" name="tgl_mulai_pakai" id="tgl_mulai_pakai" class="form-control datepicker"
+                                    placeholder="dd/mm/yyyy" value="{{$inventaris->tgl_mulai_pakai}}">
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
                                 </div>
@@ -265,17 +279,18 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="semester" class="col-md-4 col-form-label text-md-right">Status Kelayakan</label>
+                        <label for="status_kelayakan" class="col-md-4 col-form-label text-md-right">Status Kelayakan</label>
                         <div class="col-md-6">
-                            <select id="semester" type="semester" name="semester" class="form-control"
-                                required="required" data-validation-required-message="Pilih semester.">
+                            <select id="status_kelayakan"type="semester" name="status_kelayakan" class="form-control"
+                                required="required" data-validation-required-message="status_kelayakan">
                                 <option disabled selected> --Pilih-- </option>
-                                <option selected>Layak</option>
-                                <option>Rusak</option>
+                                <option value="{{$inventaris->status_kelayakan}}">Layak</option>
+                                {{--<option>Rusak</option>
+                                    --}}
                             </select>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    {{--<div class="form-group row">
                         <label for="semester" class="col-md-4 col-form-label text-md-right">Gedung</label>
                         <div class="col-md-6">
                             <select id="semester" type="semester" name="semester" class="form-control"
@@ -285,16 +300,12 @@
                                 <option>Gedung B</option>
                             </select>
                         </div>
-                    </div>
+                    </div>--}}
                     <div class="form-group row">
-                        <label for="semester" class="col-md-4 col-form-label text-md-right">Ruangan</label>
+                        <label for="ruangan_id" class="col-md-4 col-form-label text-md-right">Ruangan</label>
                         <div class="col-md-6">
-                            <select id="semester" type="semester" name="semester" class="form-control"
-                                required="required" data-validation-required-message="Pilih semester.">
-                                <option disabled> --Pilih-- </option>
-                                <option selected>Ruang A</option>
-                                <option>Ruang B</option>
-                            </select>
+                            <input id="ruangan_id" type="text" name="ruangan_id" class="form-control" value="{{$inventaris->ruangan_id}}" required="required">
+                                
                         </div>
                     </div>
                 </div>
