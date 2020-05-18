@@ -3,8 +3,7 @@
 @section('icon') mdi-account-multiple @endsection
 @section('content')
 
-{{-- CONTENT 1--}}
-{{-- KOLOM PENCARIAN --}}
+{{-- CONTENT 1 --}}
 <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
         {{-- KOLOM PENCARIAN --}}
@@ -61,8 +60,17 @@
     </div>
 </div>
 
-
 {{-- CONTENT 2--}}
+<div class="row pb-3">
+    <div class="col-md-4">
+        <a type="" class="btn btn-block btn-primary btn-icon-text pl-0 p-2" href="{{route('student.create')}}">
+            <i class="mdi mdi-plus-circle-outline btn-icon-prepend"></i>
+            Tambah Data Siswa
+        </a>
+    </div>
+</div>
+
+{{-- CONTENT 3--}}
 {{-- DATA SISWA --}}
 {{-- TABEL HASIL PENCARIAN --}}
 <div class="row">
@@ -99,20 +107,20 @@
                             <td>{{ $no }}</td>
                             <td>{{ $student['nisn'] }}</td>
                             <td><a href="{{ route('student.detail',['id'=>$student['id']]) }}">
-                                    {{ $student['name'] }}
-                                </a>
-                            </td>
-                            <td>{{ $student['region'] }}</td>
-                            @php
-                            $no++;
-                            @endphp
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
+                                {{ $student['name'] }}
+                            </a>
+                        </td>
+                        <td>{{ $student['region'] }}</td>
+                        @php
+                        $no++;
+                        @endphp
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
+</div>
 </div>
 @endsection
 @section('script')
