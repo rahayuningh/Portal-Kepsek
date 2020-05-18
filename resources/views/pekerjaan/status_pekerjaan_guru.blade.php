@@ -17,8 +17,8 @@
                             <th> Kelas </th>
                             <th> Mata Pelajaran </th>
                             <th> Nama Guru </th>
-                            <th> Nilai UTS </th>
-                            <th> Nilai UAS </th>
+                            <th class="text-center"> Nilai UTS </th>
+                            <th class="text-center"> Nilai UAS </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -184,9 +184,9 @@
                             <th> Kelas </th>
                             <th> Mata Pelajaran </th>
                             <th> Nama Guru </th>
-                            <th> Nilai Harian </th>
-                            <th> Nilai UTS </th>
-                            <th> Nilai UAS </th>
+                            <th class="text-center"> Nilai Harian </th>
+                            <th class="text-center"> Nilai UTS </th>
+                            <th class="text-center"> Nilai UAS </th>
                         </tr>
                     </thead>
                     <tbody>

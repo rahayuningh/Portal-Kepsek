@@ -87,8 +87,8 @@
                             <th>Kelas</th>
                             <th>Mata Pelajaran</th>
                             <th>Nama Guru</th>
-                            <th>UTS</th>
-                            <th>UAS</th>
+                            <th class="text-center">UTS</th>
+                            <th class="text-center">UAS</th>
                         </tr>
                     </thead>
 
