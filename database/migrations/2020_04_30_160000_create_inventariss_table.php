@@ -16,8 +16,9 @@ class CreateInventarissTable extends Migration
         Schema::create('inventariss', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('jenis_inventaris_id');
-            $table->string('kode_inventaris',10)->unique();
-            $table->date('tgl_mulai_pakai');
+            $table->string('no_seri',20)->unique();
+            $table->string('kode_inventaris',30)->unique();
+            $table->date('tgl_terima');
             $table->boolean('status_kelayakan');
             $table->unsignedBigInteger('ruangan_pemilik_id');
             $table->timestamps();

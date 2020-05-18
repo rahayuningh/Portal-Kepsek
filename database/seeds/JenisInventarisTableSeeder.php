@@ -15,13 +15,28 @@ class JenisInventarisTableSeeder extends Seeder
     {
         DB::table('jenis_inventariss')->delete();
         DB::table('jenis_inventariss')->insert([
-            'nama_jenis_inventaris' => 'Meja'
+            'nama_jenis_inventaris' => 'Meja',
+            'kategori'=>'furniture',
+            'merek'=>'Ace',
+            'harga_satuan'=>'115000',
+            'ukuran'=>'120x50x90',
+            'bahan'=>'kayu'
         ]);
         DB::table('jenis_inventariss')->insert([
-            'nama_jenis_inventaris' => 'Kursi'
+            'nama_jenis_inventaris' => 'komputer',
+            'kategori'=>'elektronik',
+            'merek'=>'Asus',
+            'harga_satuan'=>'2150000',
+            'ukuran'=>'15x15',
+            'bahan'=>'alumunium'
         ]);
         DB::table('jenis_inventariss')->insert([
-            'nama_jenis_inventaris' => 'Komputer'
+            'nama_jenis_inventaris' => 'lampu',
+            'kategori'=>'elektronik',
+            'merek'=>'Maspion',
+            'harga_satuan'=>'15000',
+            'ukuran'=>'12',
+            'bahan'=>'plastik'
         ]);
     }
 }
