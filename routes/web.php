@@ -70,6 +70,9 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('siswa')->group(function () {
         Route::get('/data', 'SiswaController@seeAll')->name('student');
         Route::post('/data/cari', 'SiswaController@searchStudent')->name('student.search');
+        Route::get('/data-create', function () {
+            return view('siswa/create_data_siswa');
+        })->name('student.create');
 
         // BIODATA SISWA
         Route::get('/{id}', 'SiswaController@studentBiodata')->name('student.detail');
@@ -88,15 +91,17 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/list', 'InventoryController@seeInventory')->name('inventory');
         Route::patch('/{inventaris}/update','InventoryController@update');
 
-        // inventaris/kebutuhan-barang
+        // KEBUTUHAN BARANG
         Route::get('/kebutuhan-barang', function () {
             return view('inventaris/kebutuhan', ['buildings' => Gedung::all()]);
         })->name('inventory.needs');
 
+        // GEDUNG
         Route::get('/gedung', function () {
             return view('inventaris/gedung');
         })->name('inventory.building');
 
+        // RUANGAN
         Route::get('/ruang', function () {
             return view('inventaris/ruang');
         })->name('inventory.room');

@@ -1,23 +1,25 @@
 <?php
 
 namespace App\Http\Controllers;
-Use App\Inventaris;
-Use App\JenisInventaris;
-Use App\Ruangan;
+
+use App\Inventaris;
+use App\Ruangan;
 use App\Gedung;
 use Illuminate\Http\Request;
 
 class InventoryController extends Controller
 {
-    function seeInventory()
+    public  function seeInventory()
     {
-        $inventaris=Inventaris::all();
-        $jenis_inventaris=JenisInventaris::all();
-        $ruangan=Ruangan::all();
-        return view('inventaris/data_inventaris', [
-            
-            'buildings' => Gedung::all(),'inventaris'=>$inventaris,'ruangan'=>$ruangan,'jenis_inventaris'=>$jenis_inventaris
-        ]);
+        // $inventaris = Inventaris::all();
+        dd(Inventaris::all());
+        // print_r($inventaris);
+        // $ruangan = Ruangan::all();
+        // return view('inventaris/data_inventaris', [
+        //     'buildings' => Gedung::all(),
+        //     'inventaris' => $inventaris,
+        //     'ruangan' => $ruangan
+        // ]);
     }
     public function store(Request $request){
         $inventaris=$request->all();
