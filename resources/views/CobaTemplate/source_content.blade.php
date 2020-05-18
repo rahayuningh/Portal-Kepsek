@@ -1,3 +1,36 @@
+{{-- INPUT --}}
+                    {{-- Input Text --}}
+                    <div class="form-group row">
+                        <label for="nama_guru" class="col-md-4 col-form-label text-md-right">Nama</label>
+                        <div class="col-md-6">
+                            <input name="nama_guru" id="nama_guru" type="text" class="form-control">
+                        </div>
+                    </div>
+                    {{-- Input Select option --}}
+                    <div class="form-group row">
+                        <label for="status_kelayakan" class="col-md-4 col-form-label text-md-right">Status Kelayakan</label>
+                        <div class="col-md-6">
+                            <select id="status_kelayakan" type="semester" name="status_kelayakan" class="form-control" required="required" data-validation-required-message="Silahkan pilih status kelayakan inventaris.">
+                                <option disabled selected> --Pilih-- </option>
+                                {{--nilainya 1--}}
+                                <option value="1">Layak</option>
+                                <option value="0">Rusak</option>
+                            </select>
+                        </div>
+                    </div>
+                    {{-- Input tanggal --}}
+                    <div class="form-group row">
+                        <label for="tgl_lahir" class="col-md-4 col-form-label text-md-right">Tanggal Lahir</label>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <input type="date" name="tgl_lahir" id="tgl_lahir" class="form-control" placeholder="dd/mm/yyyy" format=dd/mm/yyyy>
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
 {{-- TABLE --}}
 
                     {{-- TABEL HASIL PENCARIAN --}}
