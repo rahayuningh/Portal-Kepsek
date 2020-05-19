@@ -37,11 +37,29 @@
 Berikut merupakan tampilan form login, yang sudah terintegrasi dengan teknologi *Single-sign-on* (SSO), yaitu suatu teknologi dimana semua sistem-sistem yang berbeda dapat terintegrasi dalam satu akun pengguna sehingga dapat memfasilitasi pengguna untuk dapat mengakses beberapa aplikasi dengan menggunakan satu akun saja dalam sekali otentikasi/login. Login pada IMoSy mengharuskan user mengisi email dan password dari akun SSO user.
 ![Login](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/login_page.png)
 
-### 2. Monitoring Aktivitas Pegawai
+Setelah login, user akan diarahkan pada halaman Beranda yang berisi identitas user, beberapa shortcut fitur, serta ringkasan monitoring status pekerjaan guru.
+![Beranda](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/main_page_part1.png)
 
-### 3. Monitoring Inventaris
+### 2. Monitoring Pekerjaan Guru
+![status1](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/status_guru_part1.png)
+![status2](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/status_guru_part2.png)
 
+### 3. Kirim Pesan
+Fitur kirim pesan pada sistem ini digunakan untuk mengirim pesan reminder kepada guru agar segera menyelesaikan pekerjaannya yang belum selesai, seperti input data nilai UTS atau UAS. Melalui fitur ini, pesan akan dikirim ke email guru atau pegawai yang bersangkutan.
+![pesan]()
 
+### 4. View Data Siswa, Guru, dan Tenaga Pendidik
+- Data Siswa
+  ![data_siswa]()
+  ![data_siswa]()
+- Data Guru
+  ![data_guru]()
+  ![bio_guru]()
+- Data Tenaga Pendidik
+  ![data_tendik]()
+  ![bio_tendik]()
+
+### 5. Monitoring Data Inventaris
 
 
 ## E. Konsep OOP
