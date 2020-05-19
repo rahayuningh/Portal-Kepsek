@@ -1,4 +1,4 @@
-#Integrated Monitoring System (IMoSy)
+# Integrated Monitoring System (IMoSy)
 
 [Deskripsi](#deskripsi) | [Ruang Lingkup Pengembangan](#ruang-lingkup-pengembangan) | [Diagram](#diagram) | [Fitur](#fitur) | [Konsep OOP](#konsep-oop) | [Dokumentasi](#dokumentasi) | [Development Team](#development-team)
 :---:|:---:|:---:|:---:|:---:|:---:|:---:
