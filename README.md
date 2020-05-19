@@ -46,7 +46,14 @@ Setelah login, user akan diarahkan pada halaman Beranda yang berisi identitas us
 
 ### 3. Kirim Pesan
 Fitur kirim pesan pada sistem ini digunakan untuk mengirim pesan reminder kepada guru agar segera menyelesaikan pekerjaannya yang belum selesai, seperti input data nilai UTS atau UAS. Melalui fitur ini, pesan akan dikirim ke email guru atau pegawai yang bersangkutan.
-![pesan]()
+
+<img src="https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/tulis_pesan_part1.png">
+
+- Tulis Pesan
+  ![create](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/tulis_pesan_part2.png)
+- Detail Pesan Terkirim
+  ![outbox1](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/outbox.png)
+  ![outbox2](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/outbox_detail.png)
 
 ### 4. View Data Siswa, Guru, dan Tenaga Pendidik
 - Data Siswa
