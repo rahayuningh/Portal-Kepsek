@@ -108,6 +108,11 @@ Pengelolaan inventaris terbagi menjadi beberapa sub menu, antara lain pengelolaa
 | **d. Gedung** | Menu ini digunakan untuk mendata ketersedian gedung yang ada di SCB. | ![gedung](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_gedung.png) |
 | **e. Ruangan** | Menu ini digunakan untuk mendata ketersediaan ruangan yang ada di SCB. | ![ruangan](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_ruangan.png) |
 
+### Beberapa Tampilan Mobile dari Sistem
+| Login | Beranda | Sidebar | Data Inventaris | Status Pekerjaan Guru | Tulis Pesan |
+| ----- | ----- | ----- | ----- | ----- | ----- |
+| ![mobile1](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/mobile1.png) | ![mobile2](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/mobile2.png) | ![mobile3](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/mobile3.png) | ![mobile4](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/mobile4.png) | ![mobile5](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/mobile5.png) | ![mobile6](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/mobile6.png) |
+
 
 ## E. Konsep OOP
 [`^ kembali ke atas ^`](#)
