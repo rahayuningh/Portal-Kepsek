@@ -1917,7 +1917,7 @@ svg {
   vertical-align: middle; }
 
 table {
-  /*border-collapse: collapse;*/
+  border-collapse: collapse;
 }
 
 caption {
@@ -3085,7 +3085,7 @@ pre {
   .table td {
     padding: 0.9375rem;
     vertical-align: top;
-    /*border-top: 1px solid #ebedf2; */
+    border-top: 1px solid #ebedf2; 
   }
   .table thead th {
     vertical-align: bottom;

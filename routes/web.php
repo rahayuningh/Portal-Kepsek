@@ -115,6 +115,13 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/delete/{id}', 'PesanController@deleteMessage')->name('message.delete');
     });
 
+
+
+    //COBA TEMPLATE
+    Route::get('/create-nilai', function () {
+        return view('pekerjaan/create_nilai');
+    });
+
     //COBA TEMPLATE
     Route::get('/template', function () {
         return view('CobaTemplate/coba_template');
