@@ -7,14 +7,14 @@
 
 
 
-## Deskripsi
+## A. Deskripsi
 [`^ kembali ke atas ^`](#)
 
 **__IMoSy__** insert text here
 
 
 
-## Ruang Lingkup Pengembangan
+## B. Ruang Lingkup Pengembangan
 [`^ kembali ke atas ^`](#) 
 - Perangkat 1
 - Perangkat 2
@@ -22,7 +22,7 @@
 
 
 
-## Diagram
+## C. Diagram
 [`^ kembali ke atas ^`](#)
 
 ### Use Case Diagram
@@ -31,17 +31,24 @@
 
 
 
-## Fitur
+## D. Fitur
 [`^ kembali ke atas ^`](#)
 
-insert text here
+#### 1. Login
+Berikut merupakan tampilan form login, yang sudah terintegrasi dengan teknologi *Single-sign-on* (SSO), yaitu suatu teknologi dimana semua sistem-sistem yang berbeda dapat terintegrasi dalam satu akun pengguna sehingga dapat memfasilitasi pengguna untuk dapat mengakses beberapa aplikasi dengan menggunakan satu akun saja dalam sekali otentikasi/login. Login pada IMoSy mengharuskan user mengisi email dan password dari akun SSO user.
+![Login](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/login_page.png)
+
+#### 2. Monitoring Aktivitas Pegawai
+
+#### 3. Monitoring Inventaris
 
 
 
-## Konsep OOP
+
+## E. Konsep OOP
 [`^ kembali ke atas ^`](#)
 
-## Tipe Desain Pengembangan
+## F. Tipe Desain Pengembangan
 ### MVC
 Kami menggunakan design pattern MVC untuk memisahkan seluruh logika bisnis dari user interface yang ada di dalam sistem. MVC dibangun diatas tiga komponen yaitu Model, View, dan Controller. Laravel sudah mengadopsi design pattern MVC.
 
@@ -62,7 +69,7 @@ Pattern yang satu ini, memungkinkan kami untuk mengakses service-service penting
 
 
 
-## Dokumentasi
+## G. Dokumentasi
 [`^ kembali ke atas ^`](#)
 
 |  |  |
