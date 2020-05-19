@@ -40,7 +40,23 @@ insert text here
 [`^ kembali ke atas ^`](#)
 
 ## Tipe Desain Pengembangan
-### Pattern/Anti Pattern
+### MVC
+Kami menggunakan design pattern MVC untuk memisahkan seluruh logika bisnis dari user interface yang ada di dalam sistem. MVC dibangun diatas tiga komponen yaitu Model, View, dan Controller. Laravel sudah mengadopsi design pattern MVC.
+
+Kami memanfaatkan sebuah templating engine bernama Blade yang sudah tersedia di Laravel untuk membangun komponen View. Fitur-fitur di Blade memungkinkan kami untuk menerapkan konsep component dan layouting yang akan mempermudah di saat komponen view dari sistem ini sudah mulai semakin banyak dan semakin kompleks. 
+
+Kami menggunakan sebuah ORM yang bernama Eloquent yang sudah ada pada laravel sebagai komponen Model. Melalui Eloquent, kami dapat merepresentasikan setiap entitas yang ada di database sebagai sebuah “model” yang kemudian model tersebut digunakan sebagai high level interface untuk mengambil data dari database.
+
+Pada komponen Controller, laravel sudah menyediakan sebuah class khusus yaitu class Controller. Pada komponen ini akan diletakkan semua logika bisnis yang berjalan di sistem.
+
+### Factory Pattern
+Factory pattern memungkinkan kami untuk menginstansiasi objek tanpa harus peduli dengan proses logika dibalik instansiasi tersebut. Pada pengembangan sistem ini, kami menggunakan teknik tersebut saat menginstansiasi View di Laravel.
+
+### Builder(Manager) Pattern
+Builder pattern sangat membantu disaat harus menginstansiasi sebuah objek yang kompleks secara bertahap dan juga disaat kita ingin menginstansiasi beberapa objek dari kelas yang berbeda melalui satu buah builder. Design pattern ini digunakan saat kami membuat session untuk login user.
+
+### Provider Pattern
+Pattern yang satu ini, memungkinkan kami untuk mengakses service-service penting melalui satu pintu. Kami juga dapat menambahkan service baru jika diperlukan. Pada laravel, semua service penting di daftarkan menggunakan teknik ini. Kami berencana untuk menambahkan sebuah service baru untuk generate laporan pekerjaan guru dalam format excel atau pdf.
 
 
 
@@ -58,11 +74,11 @@ insert text here
 
 | No | NIM | Nama | Role |
 | ----- | ----- | ----- | ----- |
-| 1. | G64 |  |  |
-| 2. | G64 |  |  |
-| 3. | G64 |  |  |
-| 4. | G64 |  |  |
-| 5. | G64 |  |  |
-| 6. | G64 |  |  |
+| 1. | G64160063 | Jovano Amor | Front-End |
+| 2. | G64170011 | Rahayuning Hardatin | Front-End |
+| 3. | G64170015 | Muhammad Fakhri | Project Manager, Back-End |
+| 4. | G64170045 | Hafizh Haritsa | Back-End |
+| 5. | G64170057 | Nabil Ahmad | Back-End |
+| 6. | G64170069 | Morgan Mendel | Front-End |
 
 
