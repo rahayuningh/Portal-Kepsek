@@ -174,15 +174,6 @@
 
     {{-- for add custom js scripts --}}
     @yield('script')
-    <link href="{{asset('assets/css/datatables/jqueryui-editable.css')}}" rel="stylesheet">
-    <script src="{{asset('assets/js/datatables/jqueryui-editable.js')}}"></script>
-    <script type="">
-        //turn to inline mode
-        $.fn.editable.defaults.mode = 'inline';
-        $(document).ready(function() {
-            $('#username').editable();
-        });
-    </script>
 
 </body>
 
