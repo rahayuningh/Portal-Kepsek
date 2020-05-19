@@ -1,3 +1,5 @@
+<h1 align="center"><img src="https://github.com/rahayuningh/Portal-Kepsek/blob/master/public/assets/imagesSCB/Logo%20IMoSy_black.svg"></h1>
+
 # Integrated Monitoring System (IMoSy)
 
 [Deskripsi](#deskripsi) | [Ruang Lingkup Pengembangan](#ruang-lingkup-pengembangan) | [Diagram](#diagram) | [Fitur](#fitur) | [Konsep OOP](#konsep-oop) | [Dokumentasi](#dokumentasi) | [Development Team](#development-team)
