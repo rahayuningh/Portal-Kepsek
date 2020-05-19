@@ -60,27 +60,48 @@ Setelah login, user akan diarahkan pada halaman Beranda yang berisi identitas us
 ### 3. Kirim Pesan
 Fitur kirim pesan pada sistem ini digunakan untuk mengirim pesan reminder kepada guru agar segera menyelesaikan pekerjaannya yang belum selesai, seperti input data nilai UTS atau UAS. Melalui fitur ini, pesan akan dikirim ke email guru atau pegawai yang bersangkutan.
 
-<img src="https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/tulis_pesan_part1.png">
+- **Tulis Pesan**
 
-- Tulis Pesan
-  ![create](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/tulis_pesan_part2.png)
-- Detail Pesan Terkirim
-  ![outbox1](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/outbox.png)
-  ![outbox2](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/outbox_detail.png)
+| Option | Tulis Pesan |
+| ----- | ----- |
+| <img src="https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/tulis_pesan_part1.png"> | ![create](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/tulis_pesan_part2.png) |
+
+- Pesan Terkirim
+
+| Daftar Pesan Terkirim | Detail Pesan Terkirim |
+| ----- | ----- |
+| ![outbox1](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/outbox.png) | ![outbox2](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/outbox_detail.png) |
 
 ### 4. View Data Siswa, Guru, dan Tenaga Pendidik
-- Data Siswa
+- **Data Siswa**
   ![data_siswa](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_siswa.png)
   ![bio_siswa](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/biodata_siswa_part1.png)
-- Data Guru
-  ![data_guru](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_guru.png)
-  ![bio_guru](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/biodata_guru_part1.png)
-- Data Tenaga Pendidik
-  ![data_tendik](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_tendik.png)
-  ![bio_tendik](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/biodata_tendik_part1.png)
 
-### 5. Monitoring Data Inventaris
+- **Data Guru**
 
+| Data | Biodata |
+| ----- | ----- |
+| ![data_guru](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_guru.png) | ![data_guru](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/biodata_guru_part1.png) |
+
+- **Data Tenaga Pendidik**
+
+| Data | Biodata |
+| ----- | ----- |
+| ![data_tendik](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_tendik.png) | ![data_tendik](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/biodata_tendik_part1.png) |
+
+### 5. Monitoring Data Inventaris 
+Fitur ini memungkinan user memonitor dan mengelola pendataan inventaris. Fitur ini terbagi menjadi beberapa sub, antara lain berdasarkan:
+- **Jenis Inventaris**
+
+  Pada fitur ini user dapat melakukan create, read, update, dan delete (CRUD) pada jenis inventaris.
+  
+| Read | Create |
+| ----- | ----- |
+| ![jenis_inventaris](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/jenis_inventaris.png) | ![jenis_inventaris1](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/jenis_inventaris_input_data.png) |
+- **Kebutuhan Barang**
+- **Data Inventaris**
+- **Gedung**
+- **Ruangan**
 
 ## E. Konsep OOP
 [`^ kembali ke atas ^`](#)
