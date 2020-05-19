@@ -100,8 +100,8 @@
                                     title="Edit" href="{{ route('inventory.update', ['id'=>$invent['id']]) }}">
                                     <i class="mdi mdi-pencil"></i>
                                 </a>
-                                <a href="#" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
-                                    onclick="return confirm('Yakin hapus data?')">
+                                <a href="#deleteForm{{ $invent['id'] }}" type="button"
+                                    class="btn btn-inverse-danger btn-icon p-2" title="Hapus" data-toggle="modal">
                                     <i class="mdi mdi-delete"></i>
                                 </a>
                             </td>
@@ -240,6 +240,36 @@
         </div>
     </div>
 </div>
+
+@foreach ($inventaris as $item)
+{{-- WINDOW DELETE DATA --}}
+<div id="deleteForm{{ $item['id'] }}" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Hapus Data Inventaris</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="{{ route('inventory.delete') }}" method="post">
+                @csrf
+                @method('DELETE')
+                <input type="number" value="{{ $item['id'] }}" name="id" hidden>
+                {{-- FIELD --}}
+                <div class="modal-body">
+                    <h4 class="text-center">Yakin hapus data inventaris {{ $item['kode'] }} ?</h4>
+                </div>
+                {{-- BUTTON --}}
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                    <button type="submit" class="btn btn-primary">Ya</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@endforeach
 
 @endsection
 @section('script')

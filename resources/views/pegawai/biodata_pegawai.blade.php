@@ -52,13 +52,13 @@
                                     <label>Agama</label>
                                     <p>{{ $religion->nama_agama }}</p>
                                 </div>
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <label>Kotak Person</label>
                                     <p>
                                         nomor lorem <br>
                                         lorem@email.com
                                     </p>
-                                </div>
+                                </div> --}}
                             </div>
                             {{-- KOLOM KANAN --}}
                             @yield('right-column')
@@ -67,12 +67,11 @@
 
 
                         {{-- KETERANGAN TEMPAT TINGGAL --}}
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <h4>Keterangan Tempat Tinggal</h4>
                             <hr>
                         </div>
                         <div class="row label-bold">
-                            {{-- KOLOM KIRI --}}
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Nama Jalan</label>
@@ -87,7 +86,6 @@
                                     <p>NAMA DESA</p>
                                 </div>
                             </div>
-                            {{-- KOLOM KANAN --}}
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Kecamatan</label>
@@ -102,7 +100,7 @@
                                     <p>NAMA PROVINSI</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                     </div>
                 </div>

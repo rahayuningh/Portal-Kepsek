@@ -38,6 +38,7 @@ class DatabaseSeeder extends Seeder
         $this->call(JenisInventarisTableSeeder::class);
         $this->call(GedungTableSeeder::class);
         $this->call(RuanganTableSeeder::class);
+        $this->call(KebutuhanBarangTableSeeder::class);
         $this->call(InventarisTableSeeder::class);
     }
 }

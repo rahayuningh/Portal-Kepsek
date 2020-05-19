@@ -10,10 +10,10 @@ class KebutuhanBarang extends Model
         'jenis_inventaris_id',
         'ruangan_id',
         'jumlah',
-        'jml_barang_baik',
-        'jml_barang_krg_baik',
-        'jml_barang_rsk',
-        'jml_barang_dibutuhkan'
+        'baik',
+        'kurang_baik',
+        'rusak',
+        'butuh'
     ];
 
     public function ruangan()
@@ -24,5 +24,10 @@ class KebutuhanBarang extends Model
     public function jenis_inventaris()
     {
         return $this->belongsTo('App\JenisInventaris','jenis_inventaris_id');
+    }
+
+    public function inventaris()
+    {
+        return $this->hasMany('App\Inventaris','kebutuhan_id');
     }
 }

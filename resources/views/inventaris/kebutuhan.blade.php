@@ -22,18 +22,19 @@
 
             <div class="card-body">
                 <h4 class="card-title text-center">Pencarian</h4>
-                <form class="form-sample">
+                <form class="form-sample" action="{{ route('inventory.needs.search') }}" method="POST">
+                    @csrf
                     <div class="row">
                         {{-- KOLOM Gedung --}}
                         <div class="col-md-6">
                             <div class="form-group row">
                                 <div class="text-center col-sm-12">
                                     <label class="" for="tahun">Gedung</label>
-                                    <select class="form-control" id="search-building" required>
+                                    <select class="form-control" id="search-building" name="building_id" required>
                                         <option disabled selected> --Pilih-- </option>
                                         @foreach ($buildings as $building)
-										<option value="{{ $building->id }}">{{ $building->nama_gedung }}</option>
-										@endforeach
+                                        <option value="{{ $building->id }}">{{ $building->nama_gedung }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -43,7 +44,7 @@
                             <div class="form-group row">
                                 <div class="text-center col-sm-12">
                                     <label class="" for="tahun">Ruangan</label>
-                                    <select class="form-control col-sm-12" id="search-room" required>
+                                    <select class="form-control col-sm-12" id="search-room" name="room_id" required>
                                         <option disabled selected> --Pilih-- </option>
                                     </select>
                                 </div>
@@ -52,13 +53,17 @@
                     </div>
 
                     <div class="row justify-content-center">
-                        <button type="search" class="btn btn-gradient-primary mr-2">Cari</button>
+                        <button type="submit" class="btn btn-gradient-primary mr-2">Cari</button>
                     </div>
 
                 </form>
             </div>
 
-            <h5 class="card-title text-center"> Hasil Pencarian <br> Gedung {A} Ruang {Kelas 1B} </h5>
+            @if (isset($room_name)&&isset($building_name))
+            <h5 class="card-title text-center">
+                Hasil Pencarian <br> Gedung {{ $building_name }} <br> Ruang {{ $room_name }}
+            </h5>
+            @endif
 
             {{-- TABEL UTAMA --}}
             <div class="table pb-3 pt-3">
@@ -67,50 +72,36 @@
                         <tr class="text-center">
                             <th>Jenis Inventaris</th>
                             <th>Ruangan</th>
-                            <th> Jml Seharusnya </th>
-                            <th> Jml Beroperasi </th>
-                            <th> Jml Rusak </th>
-                            <th> Jml Dibutuhkan </th>
+                            <th> Jumlah </th>
+                            <th> Baik </th>
+                            <th> Kurang Baik </th>
+                            <th> Rusak </th>
+                            {{-- <th> Dibutuhkan </th> --}}
                             <th> Aksi </th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($needs as $need)
                         <tr>
-                            <td>Meja</td>
-                            <td>Kelas 021A</td>
-                            <td>20</td>
-                            <td>15</td>
-                            <td>5</td>
-                            <td>5</td>
+                            <td>{{ $need->jenis_inventaris->nama_jenis_inventaris }}</td>
+                            <td>{{ $need->ruangan->nama_ruangan }}</td>
+                            <td>{{ $need->jumlah }}</td>
+                            <td>{{ $need->baik }}</td>
+                            <td>{{ $need->kurang_baik }}</td>
+                            <td>{{ $need->rusak }}</td>
+                            {{-- <td>{{ $need->butuh }}</td> --}}
                             <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
-                                    align="center" title="Edit" href="#Edit">
+                                    align="center" title="Edit" href="#Edit{{ $need->id }}">
                                     <i class="mdi mdi-pencil"></i>
                                 </a>
-                                <a href="" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
-                                    onclick="return confirm('Yakin hapus data?')">
+                                <a type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
+                                    data-toggle="modal" href="#delete{{$need->id}}">
                                     <i class="mdi mdi-delete"></i>
                                 </a>
                             </td>
                         </tr>
-                        <tr>
-                            <td>Meja</td>
-                            <td>Kelas 021A</td>
-                            <td>20</td>
-                            <td>15</td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td class="p-0 text-center">
-                                <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
-                                    align="center" title="Edit" href="#Edit">
-                                    <i class="mdi mdi-pencil"></i>
-                                </a>
-                                <a href="" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
-                                    onclick="return confirm('Yakin hapus data?')">
-                                    <i class="mdi mdi-delete"></i>
-                                </a>
-                            </td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -129,30 +120,28 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-
-            <form action="" method="">
+            <form action="{{ route('inventory.needs.store') }}" method="POST">
                 {{ csrf_field() }}
                 {{-- FIELD --}}
                 <div class="modal-body">
                     <div class="form-group row">
-                        <label for="jenis_inventaris" class="col-md-4 col-form-label text-md-right">Gedung</label>
+                        <label for="gedung" class="col-md-4 col-form-label text-md-right">Gedung</label>
                         <div class="col-md-6">
-                            <select id="jenis_inventaris" type="jenis_inventaris" name="jenis_inventaris"
-                                class="form-control" required data-val="true"
-                                data-val-required="Pilih Jenis Inventaris.">
+                            <select id="search-building2" name="building_id" class="form-control" required
+                                data-val="true" data-val-required="Pilih Gedung">
                                 <option disabled selected> --Pilih-- </option>
-                                <option>Gedung A</option>
+                                @foreach ($buildings as $building)
+                                <option value="{{ $building->id }}">{{ $building->nama_gedung }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="semester" class="col-md-4 col-form-label text-md-right">Ruangan</label>
                         <div class="col-md-6">
-                            <select id="semester" type="semester" name="semester" class="form-control"
-                                required="required" data-validation-required-message="Pilih semester.">
+                            <select id="search-room2" name="ruangan_id" class="form-control" required="required"
+                                data-validation-required-message="Pilih Ruangan">
                                 <option disabled selected> --Pilih-- </option>
-                                <option>Ruang A</option>
-                                <option>Ruang B</option>
                             </select>
                         </div>
                     </div>
@@ -161,21 +150,13 @@
                         <label for="jenis_inventaris" class="col-md-4 col-form-label text-md-right">Jenis
                             Inventaris</label>
                         <div class="col-md-6">
-                            <select id="jenis_inventaris" type="jenis_inventaris" name="jenis_inventaris"
-                                class="form-control" required data-val="true"
-                                data-val-required="Pilih Jenis Inventaris.">
+                            <select type="jenis_inventaris" name="jenis_inventaris_id" class="form-control" required
+                                data-val="true" data-val-required="Pilih Jenis Inventaris.">
                                 <option disabled selected> --Pilih-- </option>
-                                <option>Meja</option>
-                                <option>Kursi</option>
-                                <option>Papan Tulis</option>
-                                <option>Proyektor</option>
+                                @foreach ($types as $type)
+                                <option value="{{ $type->id }}">{{ $type->nama_jenis_inventaris }}</option>
+                                @endforeach
                             </select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="namaguru" class="col-md-4 col-form-label text-md-right">Jumlah Seharusnya</label>
-                        <div class="col-md-6">
-                            <input type="text" name="" id="" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -185,44 +166,71 @@
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
             </form>
+        </div>
+    </div>
+</div>
 
+@foreach ($needs as $need)
+{{-- WINDOW DELETE DATA --}}
+<div id="delete{{ $need->id }}" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Hapus Data</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="{{ route('inventory.needs.delete') }}" method="POST">
+                {{ csrf_field() }}
+                @method('DELETE')
+                {{-- FIELD --}}
+                <input type="number" value="{{ $need->id }}" name="id" hidden>
+                <div class="form-group row">
+                    <div class="col-md-12 p-3 text-center" style="color: red;">
+                        <h3>Yakin ingin menghapus kebutuhan barang {{ $need->jenis_inventaris->nama_jenis_inventaris }}
+                            di
+                            Ruangan {{ $need->ruangan->nama_ruangan }} ?</h3>
+                        <h4>Hal ini juga akan menghapus semua data inventaris yang terhubung dengan kebutuhan barang
+                            ini.</h4>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
 
 {{-- WINDOW EDIT DATA --}}
-<div id="Edit" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+<div id="Edit{{ $need->id }}" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Masukkan Data Terbaru</h5>
+                <h5 class="modal-title">Ubah Data</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="" method="">
+            <form action="{{ route('inventory.needs.update') }}" method="POST">
+                <input type="number" name="id" value="{{ $need->id }}" hidden>
                 {{ csrf_field() }}
+                @method('PUT')
                 {{-- FIELD --}}
                 <div class="modal-body">
                     <div class="form-group row">
-                        <label for="jenis_inventaris" class="col-md-4 col-form-label text-md-right">Gedung</label>
-                        <div class="col-md-6">
-                            <select id="jenis_inventaris" type="jenis_inventaris" name="jenis_inventaris"
-                                class="form-control" required data-val="true"
-                                data-val-required="Pilih Jenis Inventaris.">
-                                <option disabled> --Pilih-- </option>
-                                <option selected>Gedung A</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
                         <label for="semester" class="col-md-4 col-form-label text-md-right">Ruangan</label>
                         <div class="col-md-6">
-                            <select id="semester" type="semester" name="semester" class="form-control"
-                                required="required" data-validation-required-message="Pilih semester.">
+                            <select name="ruangan_id" class="form-control" required="required"
+                                data-validation-required-message="Pilih ruangan">
                                 <option disabled> --Pilih-- </option>
-                                <option selected>Ruang A</option>
-                                <option>Ruang B</option>
+                                @foreach ($rooms as $room)
+                                <option value="{{ $room->id }}" @if ($room->id == $need->ruangan_id)
+                                    selected
+                                    @endif>{{ $room->gedung->nama_gedung. '/'.$room->nama_ruangan }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -231,21 +239,15 @@
                         <label for="jenis_inventaris" class="col-md-4 col-form-label text-md-right">Jenis
                             Inventaris</label>
                         <div class="col-md-6">
-                            <select id="jenis_inventaris" type="jenis_inventaris" name="jenis_inventaris"
-                                class="form-control" required data-val="true"
+                            <select name="jenis_inventaris_id" class="form-control" required data-val="true"
                                 data-val-required="Pilih Jenis Inventaris.">
                                 <option disabled> --Pilih-- </option>
-                                <option selected>Meja</option>
-                                <option>Kursi</option>
-                                <option>Papan Tulis</option>
-                                <option>Proyektor</option>
+                                @foreach ($types as $type)
+                                <option value="{{ $type->id }}" @if ($type->id == $need->jenis_inventaris_id)
+                                    selected
+                                    @endif>{{ $type->nama_jenis_inventaris }}</option>
+                                @endforeach
                             </select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="namaguru" class="col-md-4 col-form-label text-md-right">Jumlah Seharusnya</label>
-                        <div class="col-md-6">
-                            <input type="text" name="" id="" class="form-control" value="20">
                         </div>
                     </div>
                 </div>
@@ -255,10 +257,12 @@
                     <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
                 </div>
             </form>
-
         </div>
     </div>
 </div>
+@endforeach
+
+
 @endsection
 @section('script')
 <script src="{{ asset('assets/js/data/inventory-data.js') }}"></script>

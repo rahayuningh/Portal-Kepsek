@@ -14,6 +14,7 @@ class KebutuhanBarangTableSeeder extends Seeder
     public function run()
     {
         DB::table('kebutuhan_barangs')->delete();
+
         KebutuhanBarang::create([
             'id' => '1',
             'jenis_inventaris_id' => 1,
@@ -21,8 +22,10 @@ class KebutuhanBarangTableSeeder extends Seeder
             'jumlah' => 2,
             'baik' => 1,
             'kurang_baik' => 1,
-            'rusak' => 0
+            'rusak' => 0,
+            // 'butuh' => 0
         ]);
+
         KebutuhanBarang::create([
             'id' => '2',
             'jenis_inventaris_id' => 2,
@@ -30,8 +33,10 @@ class KebutuhanBarangTableSeeder extends Seeder
             'jumlah' => 2,
             'baik' => 0,
             'kurang_baik' => 1,
-            'rusak' => 1
+            'rusak' => 1,
+            // 'butuh' => 1
         ]);
+
         KebutuhanBarang::create([
             'id' => '3',
             'jenis_inventaris_id' => 3,
@@ -39,7 +44,8 @@ class KebutuhanBarangTableSeeder extends Seeder
             'jumlah' => 2,
             'baik' => 1,
             'kurang_baik' => 0,
-            'rusak' => 1
+            'rusak' => 1,
+            // 'butuh' => 1
         ]);
     }
 }
