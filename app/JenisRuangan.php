@@ -10,6 +10,6 @@ class JenisRuangan extends Model
 
     public function ruangan()
     {
-        return $this->hasMany('App\Ruangan');
+        return $this->hasMany('App\Ruangan','jenis_ruangan_id');
     }
 }

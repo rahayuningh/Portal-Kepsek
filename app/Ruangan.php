@@ -15,14 +15,16 @@ class Ruangan extends Model
         'kapasitas_orang'
     ];
 
-    public function kebutuhan_barang()
+    public function kebutuhanBarang()
     {
         return $this->hasMany('App\KebutuhanBarang','ruangan_id');
     }
-
+    public function jenisRuangan(){
+        return $this->belongsTo('App\jenisRuangan','jenis_ruangan_id');
+    }
     public function gedung()
     {
-        return $this->belongTo('App\Gedung','gedung_id');
+        return $this->belongsTo('App\Gedung','gedung_id');
     }
 
     public function inventaris()
