@@ -90,18 +90,40 @@ Fitur kirim pesan pada sistem ini digunakan untuk mengirim pesan reminder kepada
 | ![data_tendik](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_tendik.png) | ![data_tendik](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/biodata_tendik_part1.png) |
 
 ### 5. Monitoring Data Inventaris 
-Fitur ini memungkinan user memonitor dan mengelola pendataan inventaris. Fitur ini terbagi menjadi beberapa sub, antara lain berdasarkan:
-- **Jenis Inventaris**
+Fitur ini memungkinan user memonitor dan mengelola pendataan inventaris. Pada fitur ini user dapat melakukan *create*, *read*, *update*, dan *delete* (CRUD). Selain itu sistem dapat melakukan *auto-numbering* pada kode inventaris, sesuai format kode inventaris yang digunakan oleh SCB sebagai berikut:
 
-  Pada fitur ini user dapat melakukan create, read, update, dan delete (CRUD) pada jenis inventaris.
-  
+![format_kode](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/format_kode_inventaris.png) |
+
+Pengelolaan inventaris terbagi menjadi beberapa sub, antara lain pengelolaan berdasarkan:
+
+**a. Jenis Inventaris**
+
 | Read | Create |
 | ----- | ----- |
 | ![jenis_inventaris](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/jenis_inventaris.png) | ![jenis_inventaris1](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/jenis_inventaris_input_data.png) |
-- **Kebutuhan Barang**
-- **Data Inventaris**
-- **Gedung**
-- **Ruangan**
+
+
+**b. Kebutuhan Barang**
+
+  Sub ini digunakan untuk memonitor kondisi inventaris yang dimiliki berdasarkan jumlah baik, kurang baik, dan rusak dari inventaris yang ada. 
+
+  ![kebutuhan_barang](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/kebutuhan_barang.png)
+
+
+**c. Data Inventaris**
+
+  Sub ini berisi detil dari satuan barang inventaris. *Auto-numbering* kode inventaris ditampilkan pada sub ini.
+
+  ![data_inventaris](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_inventaris.png)
+
+
+**d. Gedung**
+  ![gedung](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_gedung.png)
+
+
+**e. Ruangan**
+  ![ruangan](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_ruangan.png)
+
 
 ## E. Konsep OOP
 [`^ kembali ke atas ^`](#)
