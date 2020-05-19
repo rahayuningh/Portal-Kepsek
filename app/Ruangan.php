@@ -17,12 +17,12 @@ class Ruangan extends Model
 
     public function kebutuhan_barang()
     {
-        return $this->hasMany('App\KebutuhanBarang');
+        return $this->hasMany('App\KebutuhanBarang','ruangan_id');
     }
 
     public function gedung()
     {
-        return $this->belongTo('App\Gedung');
+        return $this->belongTo('App\Gedung','gedung_id');
     }
 
     public function inventaris()
