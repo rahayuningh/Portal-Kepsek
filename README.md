@@ -54,8 +54,10 @@ Setelah login, user akan diarahkan pada halaman Beranda yang berisi identitas us
 ![Beranda](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/main_page_part1.png)
 
 ### 2. Monitoring Pekerjaan Guru
-![status1](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/status_guru_part1.png)
-![status2](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/status_guru_part2.png)
+| Ringkasan | Tabel Utama |
+| ----- | ----- |
+| ![status1](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/status_guru_part1.png) | ![status2](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/status_guru_part2.png) |
+
 
 ### 3. Kirim Pesan
 Fitur kirim pesan pada sistem ini digunakan untuk mengirim pesan reminder kepada guru agar segera menyelesaikan pekerjaannya yang belum selesai, seperti input data nilai UTS atau UAS. Melalui fitur ini, pesan akan dikirim ke email guru atau pegawai yang bersangkutan.
@@ -74,8 +76,10 @@ Fitur kirim pesan pada sistem ini digunakan untuk mengirim pesan reminder kepada
 
 ### 4. View Data Siswa, Guru, dan Tenaga Pendidik
 - **Data Siswa**
-  ![data_siswa](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_siswa.png)
-  ![bio_siswa](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/biodata_siswa_part1.png)
+
+| Data | Biodata |
+| ----- | ----- |
+| ![data_siswa](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_siswa.png) | ![data_siswa](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/biodata_siswa_part1.png) |
 
 - **Data Guru**
 
@@ -94,35 +98,14 @@ Fitur ini memungkinan user memonitor dan mengelola pendataan inventaris. Pada fi
 
 ![format_kode](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/format_kode_inventaris.png) |
 
-Pengelolaan inventaris terbagi menjadi beberapa sub, antara lain pengelolaan berdasarkan:
-
-**a. Jenis Inventaris**
-
-| Read | Create |
-| ----- | ----- |
-| ![jenis_inventaris](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/jenis_inventaris.png) | ![jenis_inventaris1](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/jenis_inventaris_input_data.png) |
-
-
-**b. Kebutuhan Barang**
-
-  Sub ini digunakan untuk memonitor kondisi inventaris yang dimiliki berdasarkan jumlah baik, kurang baik, dan rusak dari inventaris yang ada. 
-
-  ![kebutuhan_barang](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/kebutuhan_barang.png)
-
-
-**c. Data Inventaris**
-
-  Sub ini berisi detil dari satuan barang inventaris. *Auto-numbering* kode inventaris ditampilkan pada sub ini.
-
-  ![data_inventaris](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_inventaris.png)
-
-
-**d. Gedung**
-  ![gedung](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_gedung.png)
-
-
-**e. Ruangan**
-  ![ruangan](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_ruangan.png)
+Pengelolaan inventaris terbagi menjadi beberapa sub menu, antara lain pengelolaan berdasarkan:
+| Menu | Penjelasan | View |
+| ----- | ----- | ----- |
+| **a. Jenis Inventaris** | | ![jenis_inventaris](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/jenis_inventaris.png) ![jenis_inventaris1](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/jenis_inventaris_input_data.png) |
+| **b. Kebutuhan Barang** | Menu ini digunakan untuk memonitor kondisi inventaris yang dimiliki berdasarkan jumlah baik, kurang baik, dan rusak dari inventaris yang ada. | ![kebutuhan_barang](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/kebutuhan_barang.png) |
+| **c. Data Inventaris** | Sub ini berisi detil dari satuan barang inventaris. *Auto-numbering* kode inventaris ditampilkan pada sub ini. | ![data_inventaris](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_inventaris.png) |
+| **d. Gedung** |  | ![gedung](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_gedung.png) |
+| **e. Ruangan** |  | ![ruangan](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_ruangan.png) |
 
 
 ## E. Konsep OOP
