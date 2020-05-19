@@ -18,7 +18,7 @@ class RuanganController extends Controller
         $data_kebutuhan_di_setiap_ruangan=array();
         $room=Ruangan::all();
         $kebutuhan_barang=KebutuhanBarang::all();
-        foreach($kebutuhan_barang as $kebutuhan_per_satu_ruangan){
+       /* foreach($kebutuhan_barang as $kebutuhan_per_satu_ruangan){
             //$kebutuhan_thing=$kebutuhan_per_satu_ruangan
             
             $kebutuhan_barang_id=$kebutuhan_per_satu_ruangan->id;
@@ -29,15 +29,15 @@ class RuanganController extends Controller
                 'obj_ruangan'=>$kebutuhan_barang_di_setiap_ruangan,
                 'kapasitas'=>$kapasitas
             ));
-            
-        }
-        foreach($room as $r){
-            $kapasitas=0;//Ruangan::find($r->id)->kebutuhanBarang();
-            foreach($data_kebutuhan_di_setiap_ruangan as $data){
-                if($data['id']==$r->id){
-                    $kapasitas=$data['kapasitas'];
-                }
-            }
+        }    
+        
+        */foreach($room as $r){
+            //Ruangan::find($r->id)->kebutuhanBarang();
+            //foreach($data_kebutuhan_di_setiap_ruangan as $data){
+            //    if($data['id']==$r->id){
+            //        $kapasitas=$data['kapasitas'];
+            //    }
+            //}
             //ambil objek gedung untuk dapat 
             $gedung=$r->gedung;
             $nama_gedung=$gedung->nama_gedung;
@@ -48,6 +48,7 @@ class RuanganController extends Controller
             $jenis_ruangan=$r->jenisRuangan;
             $jenis_ruangan_alias=$jenis_ruangan->nama_jenis_ruangan;
             //ambil objek pegawai
+            $kapasitas=$r->kapasitas_orang;
             $penanggung_jawab=$r->pegawai;
             $civitas=$penanggung_jawab->civitas;
             $nama_penanggung_jawab=$civitas->nama;
@@ -81,5 +82,17 @@ class RuanganController extends Controller
         Ruangan::create($request->all());
         return redirect()->
             route('inventory.room');
+    }
+    public function update(Request $request){
+        $ruangan=Ruangan::findOrFail($request->id);$final=$request->except('_token');
+        $ruangan->update($final);
+            return redirect()->back()->with('success','Ruangan berhasil diupdate');
+    }        
+    public function destroy(Request $request){
+        //$request->validate(['id'=>'required|numeric']);
+        $ruangan=Ruangan::findOrFail($request->id);
+        $ruangan->delete();
+        return redirect()->back()->with('success','Ruangan berhasil didelete');
+
     }
 }

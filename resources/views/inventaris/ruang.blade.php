@@ -84,16 +84,16 @@
                                     align="center" title="Edit" href="#Edit{{$dat['id']}}">
                                     <i class="mdi mdi-pencil"></i>
                                 </a>
-                                <a href="#" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus">
+                                <a href="#" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
+                                    >
                                     <i class="mdi mdi-delete"></i>
                                 </a>
-                                {{--<form id="delete-ruangan-form{{ $dat['id'] }}" action="{{ route('ruangan.delete') }}" method="POST"
+                                <form id="delete-kbm-form{{ $dat['id']}}" action="{{ route('room.destroy')}}" method="POST"
                                     style="display: none;">
-                                    @csrf
-                                    <input type="number" value="{{ $kbm['id'] }}" name="id" hidden>
+                                    
+                                    @csrf                                
+                                <input type="number" value="{{$dat['id']}}" name="id" hidden>
                                 </form>
-                                    --}}
-                                
                             </td>
                         </tr>
                         @php
@@ -215,7 +215,7 @@
 </div>
 
 {{-- WINDOW EDIT DATA --}}
-<div id="Edit" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+<div id="Edit{{$dat['id']}}" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -224,66 +224,82 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="" method="">
+        
+            <form action="{{route('room.update')}}" method="post">
+                @method('patch')
                 {{ csrf_field() }}
                 {{-- FIELD --}}
+                <input type="number" value="{{$dat['id']}}" name="id" hidden>
                 <div class="modal-body">
                     <div class="form-group row">
-                        <label for="jenis_inventaris" class="col-md-4 col-form-label text-md-right">Gedung</label>
+                        <label for="gedung_id" class="col-md-4 col-form-label text-md-right">Gedung</label>
                         <div class="col-md-6">
-                            <select id="jenis_inventaris" type="jenis_inventaris" name="jenis_inventaris"
+                            <select id="gedung_id"type="gedung_id" name="gedung_id"
                                 class="form-control" required data-val="true"
-                                data-val-required="Pilih Jenis Inventaris.">
-                                <option disabled> --Pilih-- </option>
-                                <option selected>Gedung A</option>
-                                <option>Gedung B</option>
+                                data-val-required="Pilih Gedung ">
+                                <option disabled selected>--Pilih--</option>
+                                @foreach($gedung as $ged)
+                                    @if($ged->id==$dat['gedung_id'])
+                                        <option value="{{$ged->id}}" selected>{{$ged->nama_gedung}} </option>
+                                    @else
+                                        <option value="{{$ged->id}}">{{$ged->nama_gedung}} </option>
+                                    @endif
+                                @endforeach
                             </select>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="kelas" class="col-md-4 col-form-label text-md-right">Nama Ruangan</label>
+                        <label for="nama_ruangan" class="col-md-4 col-form-label text-md-right">Nama Ruangan</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" value="Ruangan Serbaguna A">
+                            <input type="text" value="{{$dat['nama_ruangan']}}" class="form-control" name="nama_ruangan">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="kelas" class="col-md-4 col-form-label text-md-right">Kode Ruangan</label>
+                        <label for="kode_ruangan" class="col-md-4 col-form-label text-md-right">Kode Ruangan</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" value="ASDHA721">
+                            <input type="text"  value="{{$dat['kode_ruangan']}}" name="kode_ruangan" class="form-control">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="jenis_inventaris" class="col-md-4 col-form-label text-md-right">Jenis
+                        <label for="jenis_ruangan" class="col-md-4 col-form-label text-md-right">Jenis
                             Ruangan</label>
                         <div class="col-md-6">
-                            <select id="jenis_inventaris" type="jenis_inventaris" name="jenis_inventaris"
+                            <select id="jenis_ruangan" type="jenis_ruangan" name="jenis_ruangan_id"
                                 class="form-control" required data-val="true"
-                                data-val-required="Pilih Jenis Inventaris.">
-                                <option disabled> --Pilih-- </option>
-                                <option>Ruangan Kelas</option>
-                                <option selected>Ruangan Sarpras</option>
-                                <option>Ruangan Tendik</option>
+                                data-val-required="Pilih Jenis Ruangan">
+                                <option disabled selected> --Pilih-- </option>
+                                @foreach($jenis_ruangan as $jenis_)
+                                    @if($jenis_->id==$dat['jenis_ruangan_id'])
+                                        <option value="{{$jenis_->id}}" selected>{{$dat['jenis_ruangan_inisial']}}</option>
+                                    @else
+                                        <option value="{{$jenis_->id}}" >{{$dat['jenis_ruangan_inisial']}}</option>
+                                    @endif
+                                @endforeach
                             </select>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="jenis_inventaris" class="col-md-4 col-form-label text-md-right">Penanggung
+                        <label for="penanggung_jawab" class="col-md-4 col-form-label text-md-right">Penanggung
                             Jawab</label>
                         <div class="col-md-6">
-                            <select id="jenis_inventaris" type="jenis_inventaris" name="jenis_inventaris"
+                            <select id="penanggung_jawab" type="penanggung_jawab" name="penanggung_jawab_id"
                                 class="form-control" required data-val="true"
                                 data-val-required="Pilih Jenis Inventaris.">
                                 <option disabled> --Pilih-- </option>
-                                <option>Pak Heru</option>
-                                <option selected>Pak Agus</option>
-                                <option>Bu Mitha</option>
+                                @foreach($penanggung_jawab as $penanggung)
+                                    @if($penanggung->id==$dat['penanggung_jawab_id'])
+                                    <option value="{{$penanggung->id}}"selected>{{$dat['nama_responsible_person']}}</option>
+                                    @else
+                                    <option value="{{$penanggung->id}}">{{$dat['nama_responsible_person']}}</option>
+                                    @endif
+                                @endforeach
                             </select>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="kelas" class="col-md-4 col-form-label text-md-right">Kapasitas</label>
+                        <label for="kapasitas" class="col-md-4 col-form-label text-md-right">Kapasitas</label>
                         <div class="col-md-6">
-                            <input type="number" class="form-control" value="120">
+                            <input type="number" name='kapasitas_orang' class="form-control" value="{{$dat['kapasitas']}}">
                         </div>
                     </div>
                 </div>

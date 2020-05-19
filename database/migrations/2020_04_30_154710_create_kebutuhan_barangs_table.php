@@ -21,7 +21,7 @@ class CreateKebutuhanBarangsTable extends Migration
             $table->integer('baik');
             $table->integer('kurang_baik');
             $table->integer('rusak');
-            $table->integer('butuh');
+    
             $table->timestamps();
         });
     }

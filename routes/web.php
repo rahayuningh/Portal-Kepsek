@@ -109,7 +109,7 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('inventaris/ruang')->group(function(){
         Route::get('/' ,'RuanganController@showAllRuangan')->name('inventory.room');
         Route::post('/create' ,'RuanganController@create')->name('room.create');
-        Route::post('/update' ,'RuanganController@update')->name('room.update');
+        Route::patch('/update' ,'RuanganController@update')->name('room.update');
         Route::post('/delete','RuanganController@destroy')->name('room.destroy');
     });
     
