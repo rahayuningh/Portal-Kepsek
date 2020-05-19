@@ -27,6 +27,11 @@ class Ruangan extends Model
         return $this->belongsTo('App\Gedung','gedung_id');
     }
 
+    public function jenis_ruangan()
+    {
+        return $this->belongsTo('App\JenisRuangan','jenis_ruangan_id');
+    }
+
     public function inventaris()
     {
         return $this->hasMany('App\Inventaris', 'ruangan_pemilik_id');

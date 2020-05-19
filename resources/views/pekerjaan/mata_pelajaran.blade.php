@@ -44,8 +44,7 @@
                                     <i class="mdi mdi-pencil"></i>
                                 </a>
                                 <a href="#" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
-                                    onclick="event.preventDefault(); confirm('Yakin hapus data?');
-                                    document.getElementById('delete-mapel-form{{ $mapel->id }}').submit();">
+                                    onclick="event.preventDefault(); cek = confirm('Yakin hapus data?'); if (cek == true) {document.getElementById('delete-mapel-form{{ $mapel->id }}').submit();}">
                                     <i class="mdi mdi-delete"></i>
                                 </a>
                                 <form id="delete-mapel-form{{ $mapel->id }}" action="{{ route('subject.delete') }}"

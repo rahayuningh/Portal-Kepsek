@@ -145,4 +145,9 @@ class BackendController extends Controller
         }
         return response($content, $status);
     }
+
+    public function regexTest()
+    {
+        # code...
+    }
 }

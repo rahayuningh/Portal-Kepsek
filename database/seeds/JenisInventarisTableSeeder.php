@@ -14,29 +14,32 @@ class JenisInventarisTableSeeder extends Seeder
     public function run()
     {
         DB::table('jenis_inventariss')->delete();
-        DB::table('jenis_inventariss')->insert([
+        JenisInventaris::create([
+            'id' => 1,
+            'nama_jenis_inventaris' => 'Televisi',
+            'kategori' => 1,
+            'merk' => 'UNICAD',
+            'harga_satuan' => '450000',
+            'ukuran' => '1mx1mx0.5m',
+            'bahan' => 'BESI + PLASTIK',
+        ]);
+        JenisInventaris::create([
+            'id' => 2,
             'nama_jenis_inventaris' => 'Meja',
-            'kategori'=>'furniture',
-            'merek'=>'Ace',
-            'harga_satuan'=>'115000',
-            'ukuran'=>'120x50x90',
-            'bahan'=>'kayu'
+            'kategori' => 2,
+            'merk' => 'SICFAE',
+            'harga_satuan' => '200000',
+            'ukuran' => '1mx1mx0.5m',
+            'bahan' => 'KAYU',
         ]);
-        DB::table('jenis_inventariss')->insert([
-            'nama_jenis_inventaris' => 'komputer',
-            'kategori'=>'elektronik',
-            'merek'=>'Asus',
-            'harga_satuan'=>'2150000',
-            'ukuran'=>'15x15',
-            'bahan'=>'alumunium'
-        ]);
-        DB::table('jenis_inventariss')->insert([
-            'nama_jenis_inventaris' => 'lampu',
-            'kategori'=>'elektronik',
-            'merek'=>'Maspion',
-            'harga_satuan'=>'15000',
-            'ukuran'=>'12',
-            'bahan'=>'plastik'
+        JenisInventaris::create([
+            'id' => 3,
+            'nama_jenis_inventaris' => 'Gitar',
+            'kategori' => 3,
+            'merk' => 'YAMAHA',
+            'harga_satuan' => '3000000',
+            'ukuran' => '1.5mx0.5m',
+            'bahan' => 'PLASTIK',
         ]);
     }
 }

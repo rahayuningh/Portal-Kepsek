@@ -87,9 +87,11 @@ Route::middleware(['auth'])->group(function () {
 
     // INVENTARIS
     Route::prefix('inventaris')->group(function () {
-        Route::post('/','InventoryController@store')->name('inventory.store');
         Route::get('/list', 'InventoryController@seeInventory')->name('inventory');
-        Route::patch('/{inventaris}/update','InventoryController@update');
+        Route::get('/update/{id}', 'InventoryController@showUpdatePage')->name('inventory.update');
+        Route::post('/cari', 'InventoryController@search')->name('inventory.search');
+        Route::post('/store', 'InventoryController@store')->name('inventory.store');
+        Route::put('/update', 'InventoryController@update')->name('inventory.update.submit');
 
         // KEBUTUHAN BARANG
         Route::get('/kebutuhan-barang', function () {
@@ -130,6 +132,13 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/{id}', 'PesanController@detail')->name('message.detail');
         Route::post('/create', 'PesanController@createMessage')->name('message.create');
         Route::get('/delete/{id}', 'PesanController@deleteMessage')->name('message.delete');
+    });
+
+
+
+    //COBA TEMPLATE
+    Route::get('/create-nilai', function () {
+        return view('pekerjaan/create_nilai');
     });
 
     //COBA TEMPLATE

@@ -6,19 +6,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Inventaris extends Model
 {
-    protected $table = ['inventariss'];
+    protected $table = 'inventariss';
     protected $fillable = [
+        'ruangan_pemilik_id',
+        'kode_inventaris',
         'jenis_inventaris_id',
         'no_seri',
-        'kode_inventaris',
         'tgl_terima',
         'status_kelayakan',
-        'ruangan_pemilik_id'
+        'keterangan',
+        'jenis_anggaran'
     ];
 
     public function jenis_inventaris()
     {
-        return $this->belongsTo('App\JenisInventaris');
+        return $this->belongsTo('App\JenisInventaris', 'jenis_inventaris_id');
     }
 
     public function ruangan()
