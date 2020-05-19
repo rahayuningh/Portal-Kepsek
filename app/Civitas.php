@@ -11,7 +11,7 @@ class Civitas extends Model
         'jenis_kelamin',
         'tempat_lahir',
         'tanggal_lahir',
-        'agama',
+        'agama_id',
         // 'civitasable_id',
         // 'civitasable_type'
     ];

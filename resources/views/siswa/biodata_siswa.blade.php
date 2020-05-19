@@ -30,18 +30,18 @@
                         <div class="row label-bold">
                             {{-- KOLOM KIRI --}}
                             <div class="col-md-6">
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <label>NIS</label>
                                     <p>0000000</p>
-                                </div>
+                                </div> --}}
                                 <div class="form-group">
                                     <label>Nama</label>
                                     <p>{{ $civitas->nama }}</p>
                                 </div>
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <label>Nama Panggilan</label>
                                     <p>LOREM</p>
-                                </div>
+                                </div> --}}
                                 <div class="form-group">
                                     <label>Tempat Lahir</label>
                                     <p>{{ $civitas->tempat_lahir }}</p>
@@ -72,6 +72,22 @@
                                     <p>{{ $student->nisn }}</p>
                                 </div>
                                 <div class="form-group">
+                                    <label>Asal Wilayah</label>
+                                    <p>{{ $student->wilayah->nama_daerah }}</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Kelas 1</label>
+                                    <p>{{ $student->kelas1->nama_kelas }}</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Kelas 2</label>
+                                    <p>{{ $student->kelas2->nama_kelas }}</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Kelas 3</label>
+                                    <p>{{ $student->kelas3->nama_kelas }}</p>
+                                </div>
+                                {{-- <div class="form-group">
                                     <label>Kewarganegaraan</label>
                                     <p>Lorem</p>
                                 </div>
@@ -94,18 +110,18 @@
                                 <div class="form-group">
                                     <label>Status</label>
                                     <p>ANAK YATIM/ PIATU / YATIM PIATU/ TIDAK (lorem)</p>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
 
                         {{-- KETERANGAN TEMPAT TINGGAL --}}
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <h4>Keterangan Tempat Tinggal</h4>
                             <hr>
-                        </div>
-                        <div class="row label-bold">
-                            {{-- KOLOM KIRI --}}
-                            <div class="col-md-6">
+                        </div> --}}
+                        {{-- <div class="row label-bold"> --}}
+                        {{-- KOLOM KIRI --}}
+                        {{-- <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Nama Jalan</label>
                                     <p>Lorem</p>
@@ -118,9 +134,9 @@
                                     <label>Nama Kelurahan/Desa</label>
                                     <p>Lorem</p>
                                 </div>
-                            </div>
-                            {{-- KOLOM KANAN --}}
-                            <div class="col-md-6">
+                            </div> --}}
+                        {{-- KOLOM KANAN --}}
+                        {{-- <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Kecamatan</label>
                                     <p>NAMA KECAMATAN</p>
@@ -134,10 +150,10 @@
                                     <p>NAMA PROVINSI</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                         {{-- CATATAN PRESTASI --}}
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <h4>Catatan Prestasi</h4>
                             <hr>
                             <ol>
@@ -158,16 +174,16 @@
                                     Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem
                                     ipsum</li>
                             </ol>
-                        </div>
+                        </div> --}}
 
-                        {{-- IDENTITAS AYAH --}}
+                        {{-- IDENTITAS AYAH
                         <div class="form-group">
                             <h4>Identitas Ayah</h4>
                             <hr>
                         </div>
                         <div class="row label-bold">
                             {{-- KOLOM KIRI --}}
-                            <div class="col-md-6">
+                        {{-- <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Nama</label>
                                     <p>NAMA AYAH</p>
@@ -191,9 +207,9 @@
                                     <p>(PAUD/SD/SMP/SMA)/SEDERAJAT</p>
                                 </div>
 
-                            </div>
-                            {{-- KOLOM KANAN --}}
-                            <div class="col-md-6">
+                            </div> --}}
+                        {{-- KOLOM KANAN --}}
+                        {{-- <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Kontak Person</label>
                                     <p>
@@ -218,15 +234,15 @@
                                     <p>Rp 2000,0000</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         {{-- IDENTITAS IBU --}}
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <h4>Identitas Ibu</h4>
                             <hr>
-                        </div>
-                        <div class="row label-bold">
-                            {{-- KOLOM KIRI --}}
-                            <div class="col-md-6">
+                        </div> --}}
+                        {{-- <div class="row label-bold"> --}}
+                        {{-- KOLOM KIRI --}}
+                        {{-- <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Nama</label>
                                     <p>NAMA IBU</p>
@@ -250,9 +266,9 @@
                                     <p>(PAUD/SD/SMP/SMA)/SEDERAJAT</p>
                                 </div>
 
-                            </div>
-                            {{-- KOLOM KANAN --}}
-                            <div class="col-md-6">
+                            </div> --}}
+                        {{-- KOLOM KANAN --}}
+                        {{-- <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Kontak Person</label>
                                     <p>
@@ -277,15 +293,15 @@
                                     <p>Rp 2000,0000</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         {{-- IDENTITAS WALI --}}
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <h4>Identitas Wali</h4>
                             <hr>
-                        </div>
-                        <div class="row label-bold">
-                            {{-- KOLOM KIRI --}}
-                            <div class="col-md-6">
+                        </div> --}}
+                        {{-- <div class="row label-bold"> --}}
+                        {{-- KOLOM KIRI --}}
+                        {{-- <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Nama</label>
                                     <p>NAMA WALI</p>
@@ -309,9 +325,9 @@
                                     <p>(PAUD/SD/SMP/SMA)/SEDERAJAT</p>
                                 </div>
 
-                            </div>
-                            {{-- KOLOM KANAN --}}
-                            <div class="col-md-6">
+                            </div> --}}
+                        {{-- KOLOM KANAN --}}
+                        {{-- <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Kontak Person</label>
                                     <p>
@@ -336,8 +352,7 @@
                                     <p>Rp 2000,0000</p>
                                 </div>
                             </div>
-                        </div>
-
+                        </div> --}}
                     </div>
                 </div>
             </div>

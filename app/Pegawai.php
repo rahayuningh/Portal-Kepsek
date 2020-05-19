@@ -8,6 +8,7 @@ class Pegawai extends Model
 {
     protected $fillable = [
         'nik',
+        'email',
         'status_pegawai',
         'pegawaiable_id',
         'pegawaiable_type'

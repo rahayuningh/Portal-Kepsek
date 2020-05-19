@@ -53,26 +53,29 @@ Route::middleware(['auth'])->group(function () {
 
     // PEGAWAI (GURU & TENDIK)
     Route::prefix('pegawai')->group(function () {
-        // Data Guru
-        Route::get('/guru', 'GuruController@showAll')->name('teacher');
+        Route::prefix('guru')->group(function () {
+            // Data Guru
+            Route::get('/', 'GuruController@showAll')->name('teacher');
+            // BIODATA Guru
+            Route::get('/{id}/biodata', 'GuruController@biodataGuru')->name('teacher.detail');
+            Route::post('/create', 'GuruController@store')->name('teacher.create');
+        });
 
-        // BIODATA Guru
-        Route::get('/guru/{id}', 'GuruController@biodataGuru')->name('teacher.detail');
-
-        // Data Tendik
-        Route::get('/tendik', 'TendikController@showAll')->name('tendik');
-
-        // BIODATA Tendik
-        Route::get('/tendik/{id}', 'TendikController@biodataTendik')->name('tendik.detail');
+        Route::prefix('tendik')->group(function () {
+            // Data Tendik
+            Route::get('/', 'TendikController@showAll')->name('tendik');
+            // BIODATA Tendik
+            Route::get('/{id}/biodata', 'TendikController@biodataTendik')->name('tendik.detail');
+            Route::post('/create', 'TendikController@store')->name('tendik.create');
+        });
     });
 
     // SISWA
     Route::prefix('siswa')->group(function () {
         Route::get('/data', 'SiswaController@seeAll')->name('student');
+        Route::get('/create', 'SiswaController@showCreatePage')->name('student.create');
         Route::post('/data/cari', 'SiswaController@searchStudent')->name('student.search');
-        Route::get('/data-create', function () {
-            return view('siswa/create_data_siswa');
-        })->name('student.create');
+        Route::post('/create', 'SiswaController@store')->name('student.create.submit');
 
         // BIODATA SISWA
         Route::get('/{id}', 'SiswaController@studentBiodata')->name('student.detail');

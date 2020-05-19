@@ -90,16 +90,8 @@ class JenisInventarisController extends Controller
         foreach ($type->inventaris as $item) {
             $item->delete();
         }
-        // Inventaris::where([
-        //     ['ruangan_pemilik_id', '=', $type->ruangan_id],
-        //     ['jenis_inventaris_id', '=', $type->jenis_inventaris_id]
-        // ])->delete();
 
         // delete semua kebutuhan barang yang berhubungan sama jenis inventaris
-        // KebutuhanBarang::where([
-        //     ['ruangan_pemilik_id', '=', $type->ruangan_id],
-        //     ['jenis_inventaris_id', '=', $type->jenis_inventaris_id]
-        // ])->delete();
         foreach ($type->kebutuhan_barang as $item) {
             $item->delete();
         }

@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Agama;
+use App\Civitas;
 use App\Guru;
+use App\Kelas;
+use App\Pegawai;
 use Illuminate\Http\Request;
 
 class GuruController extends Controller
@@ -22,7 +26,11 @@ class GuruController extends Controller
             ));
         }
 
-        return view('pegawai/guru', ['teachers' => $data_teacher]);
+        return view('pegawai/guru', [
+            'teachers' => $data_teacher,
+            'religions' => Agama::all(),
+            'classes' => Kelas::all()
+        ]);
     }
 
     public function biodataGuru($id)
@@ -44,5 +52,45 @@ class GuruController extends Controller
         } else {
             return redirect()->back()->with('fail', 'Tidak bisa melihat biodata guru, tidak ada id yang disertakan');
         }
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'nik' => 'required|numeric',
+            'email' => 'required|email',
+            'name' => 'required|min:3',
+            'jenis_kelamin' => 'required|numeric',
+            'tempat_lahir' => 'required|min:3',
+            'tanggal_lahir' => 'required|date',
+            'agama' => 'required|numeric',
+            'kelas_perwalian' => 'required|numeric',
+            'status_pegawai' => 'required|numeric',
+        ]);
+
+        $teacher = Guru::create([
+            'kelas_perwalian' => $request->kelas_perwalian,
+        ]);
+
+        $pegawai = new Pegawai();
+        $pegawai->fill([
+            'nik' => $request->nik,
+            'email' => $request->email,
+            'status_pegawai' => $request->status_pegawai,
+        ]);
+
+        $teacher->pegawai()->save($pegawai);
+
+        $civitas = new Civitas();
+        $civitas->fill([
+            'nama' => $request->name,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'tempat_lahir' => $request->tempat_lahir,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'agama_id' => $request->agama,
+        ]);
+
+        $pegawai->civitas()->save($civitas);
+        return redirect()->route('teacher')->with('success', 'Data guru berhasil dibuat');
     }
 }
