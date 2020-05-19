@@ -62,35 +62,6 @@ class InventoryController extends Controller
         return $data_inventaris;
     }
 
-    public function seeInventory()
-    {
-        return view('inventaris/data_inventaris', [
-            'inventaris' => $this->prepareInventoryData(Inventaris::all(), true),
-            'buildings' => Gedung::all(),
-            'inventory_types' => JenisInventaris::all()
-        ]);
-    }
-
-    public function search(Request $request)
-    {
-        $request->validate([
-            'room_id' => 'required|numeric'
-        ], [
-            'room_id.required' => "ID Ruangan diperlukan untuk memfilter inventaris",
-            'room_id.numeric' => "ID Ruangan harus dalam bentuk angka"
-        ]);
-
-        $ruangan = Ruangan::find($request->room_id);
-
-        return view('inventaris/data_inventaris', [
-            'inventaris' => $this->prepareInventoryData($ruangan->inventaris),
-            'buildings' => Gedung::all(),
-            'building_name' => $ruangan->gedung->nama_gedung,
-            'room_name' => $ruangan->nama_ruangan,
-            'inventory_types' => JenisInventaris::all()
-        ]);
-    }
-
     public function generateCode($roomId, $typeId, $anggaran, $year)
     {
         // lokasi peruntukan
@@ -139,6 +110,35 @@ class InventoryController extends Controller
         return $code;
     }
 
+    public function seeInventory()
+    {
+        return view('inventaris/data_inventaris', [
+            'inventaris' => $this->prepareInventoryData(Inventaris::all(), true),
+            'buildings' => Gedung::all(),
+            'inventory_types' => JenisInventaris::all()
+        ]);
+    }
+
+    public function search(Request $request)
+    {
+        $request->validate([
+            'room_id' => 'required|numeric'
+        ], [
+            'room_id.required' => "ID Ruangan diperlukan untuk memfilter inventaris",
+            'room_id.numeric' => "ID Ruangan harus dalam bentuk angka"
+        ]);
+
+        $ruangan = Ruangan::find($request->room_id);
+
+        return view('inventaris/data_inventaris', [
+            'inventaris' => $this->prepareInventoryData($ruangan->inventaris),
+            'buildings' => Gedung::all(),
+            'building_name' => $ruangan->gedung->nama_gedung,
+            'room_name' => $ruangan->nama_ruangan,
+            'inventory_types' => JenisInventaris::all()
+        ]);
+    }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -185,6 +185,36 @@ class InventoryController extends Controller
             'keterangan' => $request->keterangan
         ]);
 
+        // ubah jumlah di kebutuhan barang
+        $kebutuhan = KebutuhanBarang::where([
+            ['jenis_inventaris_id', '=', $request->jenis_inventaris],
+            ['ruangan_id', '=', $request->ruangan_pemilik]
+        ])->first();
+        switch ($request->status) {
+            case 0:
+                $kebutuhan->rusak += 1;
+                $kebutuhan->jumlah += 1;
+                $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
+                $kebutuhan->save();
+                break;
+            case 1:
+                $kebutuhan->kurang_baik += 1;
+                $kebutuhan->jumlah += 1;
+                $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
+                $kebutuhan->save();
+                break;
+            case 2:
+                $kebutuhan->baik += 1;
+                $kebutuhan->jumlah += 1;
+                $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
+                $kebutuhan->save();
+                break;
+
+            default:
+                dd("error saat mengubah data di kebutuhan barang");
+                break;
+        }
+
         return redirect()->back()->with('success', 'Data Inventaris ' . $code . ' berhasil dibuat');
     }
 
@@ -209,16 +239,77 @@ class InventoryController extends Controller
             'anggaran' => 'required',
         ]);
 
-        $temp = Inventaris::find($request->id);
+        $old = Inventaris::find($request->id);
         $inventaris = Inventaris::findOrFail($request->id);
         $request->except('_token');
         $request->except('_method');
         $request->except('id');
         $inventaris->update($request->all());
 
-        if ($inventaris->wasChanged('jenis_inventaris_id')) {
-            // ubah jumlah di kebutuhan barang
+        // update jumlah di kebutuhan barang
+        if (
+            $inventaris->wasChanged('jenis_inventaris_id') ||
+            $inventaris->wasChanged('ruangan_pemilik_id')
+        ) {
+            // ubah jumlah di kebutuhan barang yang lama
+            $kebutuhan = KebutuhanBarang::where([
+                ['jenis_inventaris_id', '=', $old->jenis_inventaris_id],
+                ['ruangan_id', '=', $old->ruangan_pemilik_id]
+            ])->first();
+            switch ($old->status_kelayakan) {
+                case 0:
+                    $kebutuhan->rusak -= 1;
+                    $kebutuhan->jumlah -= 1;
+                    $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
+                    $kebutuhan->save();
+                    break;
+                case 1:
+                    $kebutuhan->kurang_baik -= 1;
+                    $kebutuhan->jumlah -= 1;
+                    $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
+                    $kebutuhan->save();
+                    break;
+                case 2:
+                    $kebutuhan->baik -= 1;
+                    $kebutuhan->jumlah -= 1;
+                    $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
+                    $kebutuhan->save();
+                    break;
 
+                default:
+                    dd("error saat mengubah data di kebutuhan barang");
+                    break;
+            }
+
+            // ubah jumlah di kebutuhan barang yang baru
+            $kebutuhan = KebutuhanBarang::where([
+                ['jenis_inventaris_id', '=', $request->jenis_inventaris_id],
+                ['ruangan_id', '=', $request->ruangan_pemilik_id]
+            ])->first();
+            switch ($request->status_kelayakan) {
+                case 0:
+                    $kebutuhan->rusak += 1;
+                    $kebutuhan->jumlah += 1;
+                    $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
+                    $kebutuhan->save();
+                    break;
+                case 1:
+                    $kebutuhan->kurang_baik += 1;
+                    $kebutuhan->jumlah += 1;
+                    $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
+                    $kebutuhan->save();
+                    break;
+                case 2:
+                    $kebutuhan->baik += 1;
+                    $kebutuhan->jumlah += 1;
+                    $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
+                    $kebutuhan->save();
+                    break;
+
+                default:
+                    dd("error saat mengubah data di kebutuhan barang");
+                    break;
+            }
         }
 
         return redirect()->route('inventory.update', ['id' => $request->id])->with('success', 'Data inventaris berhasil diubah');
@@ -228,9 +319,41 @@ class InventoryController extends Controller
     {
         $request->validate(['id' => 'required|numeric']);
         $inventaris = Inventaris::find($request->id);
-        $temp = $inventaris->kode_inventaris;
-        $inventaris->delete();
+        $kode = $inventaris->kode_inventaris;
+
         // ubah jumlah di kebutuhan barang
-        return redirect()->route('inventory')->with('success', 'Inventaris [' . $temp . '] berhasil dihapus');
+        $kebutuhan = KebutuhanBarang::where([
+            ['jenis_inventaris_id', '=', $inventaris->jenis_inventaris_id],
+            ['ruangan_id', '=', $inventaris->ruangan_pemilik_id]
+        ])->first();
+        switch ($inventaris->status_kelayakan) {
+            case 0:
+                $kebutuhan->rusak -= 1;
+                $kebutuhan->jumlah -= 1;
+                $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
+                $kebutuhan->save();
+                break;
+            case 1:
+                $kebutuhan->kurang_baik -= 1;
+                $kebutuhan->jumlah -= 1;
+                $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
+                $kebutuhan->save();
+                break;
+            case 2:
+                $kebutuhan->baik -= 1;
+                $kebutuhan->jumlah -= 1;
+                $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
+                $kebutuhan->save();
+                break;
+
+            default:
+                dd("error saat mengubah data di kebutuhan barang");
+                break;
+        }
+
+        // hapus data inventaris
+        $inventaris->delete();
+
+        return redirect()->route('inventory')->with('success', 'Inventaris [' . $kode . '] berhasil dihapus');
     }
 }
