@@ -92,36 +92,36 @@ Fitur kirim pesan pada sistem ini digunakan untuk mengirim pesan reminder kepada
 ### 5. Monitoring Data Inventaris 
 Fitur ini memungkinan user memonitor dan mengelola pendataan inventaris. Pada fitur ini user dapat melakukan *create*, *read*, *update*, dan *delete* (CRUD). Selain itu sistem dapat melakukan *auto-numbering* pada kode inventaris, sesuai format kode inventaris yang digunakan oleh SCB sebagai berikut:
 
-![kebutuhan_barang](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/format_kode_inventaris.png) |
+![format_kode](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/format_kode_inventaris.png) |
 
 Pengelolaan inventaris terbagi menjadi beberapa sub, antara lain pengelolaan berdasarkan:
 
-- **Jenis Inventaris**
+**a. Jenis Inventaris**
 
 | Read | Create |
 | ----- | ----- |
 | ![jenis_inventaris](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/jenis_inventaris.png) | ![jenis_inventaris1](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/jenis_inventaris_input_data.png) |
 
 
-- **Kebutuhan Barang**
+**b. Kebutuhan Barang**
 
   Sub ini digunakan untuk memonitor kondisi inventaris yang dimiliki berdasarkan jumlah baik, kurang baik, dan rusak dari inventaris yang ada. 
 
   ![kebutuhan_barang](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/kebutuhan_barang.png)
 
 
-- **Data Inventaris**
+**c. Data Inventaris**
 
   Sub ini berisi detil dari satuan barang inventaris. *Auto-numbering* kode inventaris ditampilkan pada sub ini.
 
   ![data_inventaris](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_inventaris.png)
 
 
-- **Gedung**
+**d. Gedung**
   ![gedung](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_gedung.png)
 
 
-- **Ruangan**
+**e. Ruangan**
   ![ruangan](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_ruangan.png)
 
 
