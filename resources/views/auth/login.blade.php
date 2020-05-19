@@ -9,7 +9,7 @@
     @csrf
     {{-- EMAIL --}}
     <div class="form-group">
-        <input id="email" type="email" placeholder="Email or username"
+        <input id="email" type="email" placeholder="Email"
             class="form-control form-control-lg @error('email') is-invalid @enderror" name="email"
             value="{{ old('email') }}" required autocomplete="email" autofocus>
 
