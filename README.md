@@ -58,11 +58,11 @@ insert text here
 
 | No | NIM | Nama | Role |
 | ----- | ----- | ----- | ----- |
-| 1. | G64 |  |  |
-| 2. | G64 |  |  |
-| 3. | G64 |  |  |
-| 4. | G64 |  |  |
-| 5. | G64 |  |  |
-| 6. | G64 |  |  |
+| 1. | G64160063 | Jovano Amor | Front-End |
+| 2. | G64170011 | Rahayuning Hardatin | Front-End |
+| 3. | G64170015 | Muhammad Fakhri | Project Manager, Back-End |
+| 4. | G64170045 | Hafizh Haritsa | Back-End |
+| 5. | G64170057 | Nabil Ahmad | Back-End |
+| 6. | G64170069 | Morgan Mendel | Front-End |
 
 
