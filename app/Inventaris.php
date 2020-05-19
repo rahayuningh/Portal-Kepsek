@@ -15,7 +15,7 @@ class Inventaris extends Model
         'tgl_terima',
         'status_kelayakan',
         'keterangan',
-        'jenis_anggaran'
+        'anggaran'
     ];
 
     public function jenis_inventaris()

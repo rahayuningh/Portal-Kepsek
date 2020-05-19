@@ -1,5 +1,5 @@
 @extends('layouts.main_layout')
-@section('page-name') Ubah Data Inventaris @endsection
+@section('page-name') Ubah Data Inventaris [{{ $inventaris->kode_inventaris}}]@endsection
 @section('icon') mdi-archive @endsection
 @section('content')
 {{-- CONTENT 1--}}
@@ -42,7 +42,7 @@
                     <div class=" form-group row">
                         <label for="semester" class="col-md-4 col-form-label text-md-right">Ruangan</label>
                         <div class="col-md-4">
-                            <select id="search-room" name="ruangan_pemilik" class="form-control" required="required"
+                            <select id="search-room" name="ruangan_pemilik_id" class="form-control" required="required"
                                 data-validation-required-message="Pilih Ruangan.">
                                 <option disabled selected> --Pilih-- </option>
                                 @foreach ($rooms as $room)
@@ -59,7 +59,7 @@
                         <label for="jenis_inventaris" class="col-md-4 col-form-label text-md-right">Jenis
                             Inventaris</label>
                         <div class="col-md-4">
-                            <select type="jenis_inventaris" name="jenis_inventaris" class="form-control" required
+                            <select type="jenis_inventaris" name="jenis_inventaris_id" class="form-control" required
                                 data-val="true" data-val-required="Pilih Jenis Inventaris.">
                                 <option disabled selected> --Pilih-- </option>
                                 @foreach ($inventory_types as $type)
@@ -97,7 +97,7 @@
                         <label for="status_kelayakan" class="col-md-4 col-form-label text-md-right">Status
                             Kelayakan</label>
                         <div class="col-md-4">
-                            <select name="status" class="form-control" required="required"
+                            <select name="status_kelayakan" class="form-control" required="required"
                                 data-validation-required-message="Silahkan pilih status kelayakan inventaris.">
                                 <option disabled selected> --Pilih-- </option>
                                 <option value="0" @if ($inventaris->status_kelayakan == 0)
@@ -117,7 +117,7 @@
                     <div class="form-group row">
                         <label for="jenis_anggaran" class="col-md-4 col-form-label text-md-right">Jenis Anggaran</label>
                         <div class="col-md-4">
-                            <select name="jenis_anggaran" class="form-control" required="required"
+                            <select name="anggaran" class="form-control" required="required"
                                 data-validation-required-message="Silahkan pilih jenis anggaran inventaris.">
                                 <option disabled selected> --Pilih-- </option>
                                 <option value="OP" @if ($inventaris->anggaran == "OP")
@@ -144,10 +144,14 @@
                         </div>
                     </div>
 
+                    {{-- BUTTON --}}
+                    <div class="form-group row">
+                        <div class="col-md-12 text-md-center">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                        </div>
+                    </div>
                 </div>
-                {{-- BUTTON --}}
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="submit" class="btn btn-primary">Simpan</button>
             </form>
         </div>
     </div>

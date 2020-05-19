@@ -202,15 +202,19 @@ class InventoryController extends Controller
     {
         $request->validate([
             'id' => 'required|numeric',
-            'ruangan_pemilik' => 'required|numeric',
-            'jenis_inventaris' => 'required|numeric',
+            'ruangan_pemilik_id' => 'required|numeric',
+            'jenis_inventaris_id' => 'required|numeric',
             'tgl_terima' => 'required',
-            'status' => 'required|numeric',
-            'jenis_anggaran' => 'required',
+            'status_kelayakan' => 'required|numeric',
+            'anggaran' => 'required',
         ]);
 
-        $inventaris = Inventaris::findOrFail($id);
+        $inventaris = Inventaris::findOrFail($request->id);
+        $request->except('_token');
+        $request->except('_method');
+        $request->except('id');
         $inventaris->update($request->all());
-        return redirect('inventory');
+
+        return redirect()->route('inventory.update', ['id' => $request->id])->with('success', 'Data inventaris berhasil diubah');
     }
 }
