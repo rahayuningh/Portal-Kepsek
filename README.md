@@ -10,8 +10,7 @@
 ## A. Deskripsi
 [`^ kembali ke atas ^`](#)
 
-**__IMoSy__** insert text here
-
+**Integrated Monitoring System** atau disebut dengan **IMoSy** merupakan sistem berbasis Web yang digunakan untuk memonitoring pekerjaan guru misalnya pengisian data nilai siswa dan inventaris.
 
 
 ## B. Ruang Lingkup Pengembangan
@@ -34,13 +33,13 @@
 ## D. Fitur
 [`^ kembali ke atas ^`](#)
 
-#### 1. Login
+### 1. Login
 Berikut merupakan tampilan form login, yang sudah terintegrasi dengan teknologi *Single-sign-on* (SSO), yaitu suatu teknologi dimana semua sistem-sistem yang berbeda dapat terintegrasi dalam satu akun pengguna sehingga dapat memfasilitasi pengguna untuk dapat mengakses beberapa aplikasi dengan menggunakan satu akun saja dalam sekali otentikasi/login. Login pada IMoSy mengharuskan user mengisi email dan password dari akun SSO user.
 ![Login](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/login_page.png)
 
-#### 2. Monitoring Aktivitas Pegawai
+### 2. Monitoring Aktivitas Pegawai
 
-#### 3. Monitoring Inventaris
+### 3. Monitoring Inventaris
 
 
 
