@@ -52,70 +52,67 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row justify-content-center">
+                        <button type="submit" class="btn btn-gradient-primary mr-2">Cari</button>
+                    </div>
+                </form>
             </div>
 
-            <div class="row justify-content-center">
-                <button type="submit" class="btn btn-gradient-primary mr-2">Cari</button>
+            @if (isset($building_name) && isset($room_name))
+            <h5 class="card-title text-center"> Hasil Pencarian <br> Gedung {{ $building_name }} <br> Ruang
+                {{ $room_name }}
+            </h5>
+            @endif
+
+            {{-- TABEL UTAMA --}}
+            <div class="table pb-3 pt-3">
+                <table id="inventory-data-table" class="table table-bordered table-responsive">
+                    <thead>
+                        <tr class="text-center">
+                            <th>Kode Inventaris</th>
+                            <th>Jenis Inventaris</th>
+                            <th>Merk</th>
+                            <th>No Seri</th>
+                            <th>Harga Satuan</th>
+                            <th>Ukuran</th>
+                            <th>Bahan</th>
+                            <th>Tanggal Terima</th>
+                            <th>Status Kelayakan</th>
+                            <th>Keterangan</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($inventaris as $invent)
+                        <tr>
+                            <td>{{ $invent['kode'] }}</td>
+                            <td>{{ $invent['jenis'] }}</td>
+                            <td>{{ $invent['merk'] }}</td>
+                            <td>{{ $invent['no_seri'] }}</td>
+                            <td>{{ $invent['harga_satuan'] }}</td>
+                            <td>{{ $invent['ukuran'] }}</td>
+                            <td>{{ $invent['bahan'] }}</td>
+                            <td>{{ $invent['tanggal_terima'] }}</td>
+                            <td>{{ $invent['status'] }}</td>
+                            <td>{{ $invent['keterangan'] }}</td>
+                            <td class="p-0 text-center">
+                                <a type="button" class="btn btn-inverse-warning btn-icon p-2" align="center"
+                                    title="Edit" href="{{ route('inventory.update', ['id'=>$invent['id']]) }}">
+                                    <i class="mdi mdi-pencil"></i>
+                                </a>
+                                <a href="#" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
+                                    onclick="return confirm('Yakin hapus data?')">
+                                    <i class="mdi mdi-delete"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
 
-            </form>
         </div>
-
-        @if (isset($building_name) && isset($room_name))
-        <h5 class="card-title text-center"> Hasil Pencarian <br> Gedung {{ $building_name }} <br> Ruang
-            {{ $room_name }}
-        </h5>
-        @endif
-
-        {{-- TABEL UTAMA --}}
-        <div class="table pb-3 pt-3">
-            <table id="inventory-data-table" class="table table-bordered table-responsive">
-                <thead>
-                    <tr class="text-center">
-                        <th>Kode Inventaris</th>
-                        <th>Jenis Inventaris</th>
-                        <th>Merk</th>
-                        <th>No Seri</th>
-                        <th>Harga Satuan</th>
-                        <th>Ukuran</th>
-                        <th>Bahan</th>
-                        <th>Tanggal Terima</th>
-                        <th>Status Kelayakan</th>
-                        <th>Keterangan</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($inventaris as $invent)
-                    <tr>
-                        <td>{{ $invent['kode'] }}</td>
-                        <td>{{ $invent['jenis'] }}</td>
-                        <td>{{ $invent['merk'] }}</td>
-                        <td>{{ $invent['no_seri'] }}</td>
-                        <td>{{ $invent['harga_satuan'] }}</td>
-                        <td>{{ $invent['ukuran'] }}</td>
-                        <td>{{ $invent['bahan'] }}</td>
-                        <td>{{ $invent['tanggal_terima'] }}</td>
-                        <td>{{ $invent['status'] }}</td>
-                        <td>{{ $invent['keterangan'] }}</td>
-                        <td class="p-0 text-center">
-                            <a type="button" class="btn btn-inverse-warning btn-icon p-2" align="center" title="Edit"
-                                href="{{ route('inventory.update', ['id'=>$invent['id']]) }}">
-                                <i class="mdi mdi-pencil"></i>
-                            </a>
-                            <a href="#" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
-                                onclick="return confirm('Yakin hapus data?')">
-                                <i class="mdi mdi-delete"></i>
-                            </a>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
-
     </div>
-</div>
 </div>
 
 {{-- WINDOW TAMBAH DATA --}}
