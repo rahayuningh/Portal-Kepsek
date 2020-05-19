@@ -10,14 +10,27 @@
 ## A. Deskripsi
 [`^ kembali ke atas ^`](#)
 
-**Integrated Monitoring System** atau disebut dengan **IMoSy** merupakan sistem berbasis Web yang digunakan untuk memonitoring pekerjaan guru misalnya pengisian data nilai siswa dan inventaris.
+**Integrated Monitoring System** atau disebut dengan **IMoSy** merupakan sistem berbasis Web yang digunakan untuk memonitoring pekerjaan guru misalnya pengisian data nilai siswa, monitoring data siswa, data guru, data tenaga pendidik dan monitoring data inventaris. Selain monitoring dalam sistem ini juga dapat dilakukan pengelolaan data, seperti inventaris. 
 
 
 ## B. Ruang Lingkup Pengembangan
 [`^ kembali ke atas ^`](#) 
+### Software
+- Visual Studio Code
+- Sublime Text
+- PhpMyAdmin
+### Hardware
 - Perangkat 1
+  - Intel Core i3
+  - 4GB RAM
 - Perangkat 2
-- Perangkat 3
+  - Intel Celeron N3050
+  - 2GB RAM
+  
+### Tech Stack
+- Laravel (Back-end)
+- MySQL (DBMS)
+- Apache (Server)
 
 
 
@@ -57,14 +70,14 @@ Fitur kirim pesan pada sistem ini digunakan untuk mengirim pesan reminder kepada
 
 ### 4. View Data Siswa, Guru, dan Tenaga Pendidik
 - Data Siswa
-  ![data_siswa]()
-  ![data_siswa]()
+  ![data_siswa](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_siswa.png)
+  ![bio_siswa](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/biodata_siswa_part1.png)
 - Data Guru
-  ![data_guru]()
-  ![bio_guru]()
+  ![data_guru](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_guru.png)
+  ![bio_guru](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/biodata_guru_part1.png)
 - Data Tenaga Pendidik
-  ![data_tendik]()
-  ![bio_tendik]()
+  ![data_tendik](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_tendik.png)
+  ![bio_tendik](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/biodata_tendik_part1.png)
 
 ### 5. Monitoring Data Inventaris
 
