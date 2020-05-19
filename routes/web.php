@@ -84,9 +84,11 @@ Route::middleware(['auth'])->group(function () {
 
     // INVENTARIS
     Route::prefix('inventaris')->group(function () {
-        Route::post('/','InventoryController@store')->name('inventory.store');
         Route::get('/list', 'InventoryController@seeInventory')->name('inventory');
-        Route::patch('/{inventaris}/update','InventoryController@update');
+        Route::get('/update/{id}', 'InventoryController@showUpdatePage')->name('inventory.update');
+        Route::post('/cari', 'InventoryController@search')->name('inventory.search');
+        Route::post('/store', 'InventoryController@store')->name('inventory.store');
+        Route::put('/update', 'InventoryController@update')->name('inventory.update.submit');
 
         // KEBUTUHAN BARANG
         Route::get('/kebutuhan-barang', function () {

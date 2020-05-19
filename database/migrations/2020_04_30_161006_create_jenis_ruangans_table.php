@@ -15,7 +15,8 @@ class CreateJenisRuangansTable extends Migration
     {
         Schema::create('jenis_ruangans', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_jenis_ruangan',20)->unique();
+            $table->char('kode');
+            $table->string('nama_jenis_ruangan', 20)->unique();
             $table->timestamps();
         });
     }

@@ -15,7 +15,12 @@ class CreateJenisInventarissTable extends Migration
     {
         Schema::create('jenis_inventariss', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_jenis_inventaris',20)->unique();
+            $table->string('nama_jenis_inventaris')->unique();
+            $table->tinyInteger('kategori');
+            $table->string('merk');
+            $table->decimal('harga_satuan', 15, 2);
+            $table->string('ukuran');
+            $table->string('bahan');
             $table->timestamps();
         });
     }

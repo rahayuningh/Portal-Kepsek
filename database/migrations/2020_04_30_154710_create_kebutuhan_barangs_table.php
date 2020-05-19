@@ -17,10 +17,11 @@ class CreateKebutuhanBarangsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('jenis_inventaris_id');
             $table->unsignedBigInteger('ruangan_id');
-            $table->integer('jml_barang_shrsny');
-            $table->integer('jml_barang_opr');
-            $table->integer('jml_barang_rsk');
-            $table->integer('jml_barang_dibutuhkan');
+            $table->integer('jumlah');
+            $table->integer('baik');
+            $table->integer('kurang_baik');
+            $table->integer('rusak');
+            $table->integer('butuh');
             $table->timestamps();
         });
     }

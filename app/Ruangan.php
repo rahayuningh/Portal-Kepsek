@@ -22,7 +22,12 @@ class Ruangan extends Model
 
     public function gedung()
     {
-        return $this->belongTo('App\Gedung');
+        return $this->belongsTo('App\Gedung');
+    }
+
+    public function jenis_ruangan()
+    {
+        return $this->belongsTo('App\JenisRuangan');
     }
 
     public function inventaris()

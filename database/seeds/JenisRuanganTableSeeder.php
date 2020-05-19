@@ -16,15 +16,18 @@ class JenisRuanganTableSeeder extends Seeder
         DB::table('jenis_ruangans')->delete();
         JenisRuangan::create([
             'id' => '1',
-            'nama_jenis_ruangan' => 'ruangan_kelas'
+            'kode'=>'A',
+            'nama_jenis_ruangan' => 'Asrama'
         ]);
         JenisRuangan::create([
             'id' => '2',
-            'nama_jenis_ruangan' => 'ruangan_kantin'
+            'kode'=>'O',
+            'nama_jenis_ruangan' => 'Operasional'
         ]);
         JenisRuangan::create([
             'id' => '3',
-            'nama_jenis_ruangan' => 'ruangan_tendik'
+            'kode'=>'S',
+            'nama_jenis_ruangan' => 'Sekolah'
         ]);
     }
 }

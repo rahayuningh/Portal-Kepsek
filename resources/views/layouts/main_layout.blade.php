@@ -29,8 +29,8 @@
 
     <style>
         .header-card{
-            background: linear-gradient(to bottom, #008c5d, #00593B); 
-            color: white; 
+            background: linear-gradient(to bottom, #008c5d, #00593B);
+            color: white;
             border-radius: 0.3125rem 0.3125rem 0rem 0rem;
             font-size: 18pt;
         }
@@ -38,9 +38,9 @@
             background-color:#eee;
         }
         td .badge-td{
-            font-weight: bold; 
-            width: 100%; 
-            height: 100%; 
+            font-weight: bold;
+            width: 100%;
+            height: 100%;
             font-size: 100%;
         }
         td .badge-gray{

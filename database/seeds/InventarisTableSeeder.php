@@ -1,6 +1,7 @@
 <?php
 
 use App\Inventaris;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -15,25 +16,66 @@ class InventarisTableSeeder extends Seeder
     {
         DB::table('inventariss')->delete();
         DB::table('inventariss')->insert([
+            'ruangan_pemilik_id' => 1,
+            'kode_inventaris' => 'O-1-001-OP-2020',
             'jenis_inventaris_id' => 1,
-            'kode_inventaris' => '003G',
-            'tgl_mulai_pakai' => '2019/03/15',
-            'status_kelayakan' => 1,
-            'ruangan_pemilik_id' => 1
+            'no_seri' => '123456789',
+            'tgl_terima' => Carbon::today(),
+            'anggaran' => 'OP',
+            'status_kelayakan' => 2,
+            'keterangan' => "Barang pertama di tabel inventaris",
         ]);
         DB::table('inventariss')->insert([
+            'ruangan_pemilik_id' => 1,
+            'kode_inventaris' => 'O-1-002-OP-2020',
+            'jenis_inventaris_id' => 1,
+            'no_seri' => '123456789',
+            'tgl_terima' => Carbon::today(),
+            'anggaran' => 'OP',
+            'status_kelayakan' => 1,
+            'keterangan' => "Barang kedua di tabel inventaris",
+        ]);
+
+        DB::table('inventariss')->insert([
+            'ruangan_pemilik_id' => 1,
+            'kode_inventaris' => 'O-2-001-OP-2020',
             'jenis_inventaris_id' => 2,
-            'kode_inventaris' => '003H',
-            'tgl_mulai_pakai' => '2019/03/15',
+            'no_seri' => '123456789',
+            'tgl_terima' => Carbon::today(),
+            'anggaran' => 'OP',
             'status_kelayakan' => 1,
-            'ruangan_pemilik_id' => 1
+            'keterangan' => "Barang ketiga di tabel inventaris",
         ]);
         DB::table('inventariss')->insert([
-            'jenis_inventaris_id' => 3,
-            'kode_inventaris' => '003I',
-            'tgl_mulai_pakai' => '2019/03/15',
+            'ruangan_pemilik_id' => 1,
+            'kode_inventaris' => 'O-2-002-OP-2020',
+            'jenis_inventaris_id' => 2,
+            'no_seri' => '123456789',
+            'tgl_terima' => Carbon::today(),
+            'anggaran' => 'OP',
             'status_kelayakan' => 0,
-            'ruangan_pemilik_id' => 1
+            'keterangan' => "Barang keempat di tabel inventaris",
+        ]);
+
+        DB::table('inventariss')->insert([
+            'ruangan_pemilik_id' => 1,
+            'kode_inventaris' => 'O-3-001-OP-2020',
+            'jenis_inventaris_id' => 3,
+            'no_seri' => '123456789',
+            'tgl_terima' => Carbon::today(),
+            'anggaran' => 'OP',
+            'status_kelayakan' => 2,
+            'keterangan' => "Barang kelima di tabel inventaris",
+        ]);
+        DB::table('inventariss')->insert([
+            'ruangan_pemilik_id' => 1,
+            'kode_inventaris' => 'O-3-002-OP-2020',
+            'jenis_inventaris_id' => 3,
+            'no_seri' => '123456789',
+            'tgl_terima' => Carbon::today(),
+            'anggaran' => 'OP',
+            'status_kelayakan' => 0,
+            'keterangan' => "Barang keenam di tabel inventaris",
         ]);
     }
 }
