@@ -10,7 +10,7 @@
 ## A. Deskripsi
 [`^ kembali ke atas ^`](#)
 
-**Integrated Monitoring System** atau disebut dengan **IMoSy** merupakan sistem berbasis Web yang digunakan untuk memonitoring pekerjaan guru misalnya pengisian data nilai siswa, monitoring data siswa, data guru, data tenaga pendidik dan monitoring data inventaris. Selain monitoring dalam sistem ini juga dapat dilakukan pengelolaan data, seperti inventaris. 
+**Integrated Monitoring System** atau disebut dengan **IMoSy** merupakan sistem berbasis Website yang digunakan untuk memonitoring pekerjaan guru misalnya pengisian data nilai siswa, monitoring data siswa, data guru, data tenaga pendidik dan monitoring data inventaris. Selain monitoring dalam sistem ini juga dapat dilakukan pengelolaan data, seperti inventaris. Sistem ini dikembangkan atas dasar permintaan Kepala Sekolah SMP Cendekia Baznas (SCB) Bogor yang menginginkan adanya sistem terintegrasi untuk melakukan monitoring terutama untuk memantau pekerjaan guru SCB. Kemudian ditambah monitoring lain seperti pada pendataan inventaris.
 
 
 ## B. Ruang Lingkup Pengembangan
@@ -21,11 +21,9 @@
 - PhpMyAdmin
 ### Hardware
 - Perangkat 1
-  - Intel Core i3
-  - 4GB RAM
-- Perangkat 2
   - Intel Celeron N3050
   - 2GB RAM
+- Perangkat 2
   
 ### Tech Stack
 - Laravel (Back-end)
@@ -47,13 +45,16 @@
 [`^ kembali ke atas ^`](#)
 
 ### 1. Login
-Berikut merupakan tampilan form login, yang sudah terintegrasi dengan teknologi *Single-sign-on* (SSO), yaitu suatu teknologi dimana semua sistem-sistem yang berbeda dapat terintegrasi dalam satu akun pengguna sehingga dapat memfasilitasi pengguna untuk dapat mengakses beberapa aplikasi dengan menggunakan satu akun saja dalam sekali otentikasi/login. Login pada IMoSy mengharuskan user mengisi email dan password dari akun SSO user.
-![Login](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/login_page.png)
+Berikut merupakan tampilan form login, yang sudah terintegrasi dengan teknologi *Single-sign-on* (SSO), yaitu suatu teknologi dimana semua sistem-sistem yang berbeda dapat terintegrasi dalam satu akun pengguna sehingga dapat memfasilitasi pengguna untuk dapat mengakses beberapa aplikasi dengan menggunakan satu akun saja dalam sekali otentikasi/login. Login pada IMoSy mengharuskan user mengisi email dan password dari akun SSO user. Setelah login, user akan diarahkan pada halaman Beranda yang berisi identitas user, beberapa shortcut fitur, serta ringkasan monitoring status pekerjaan guru.
 
-Setelah login, user akan diarahkan pada halaman Beranda yang berisi identitas user, beberapa shortcut fitur, serta ringkasan monitoring status pekerjaan guru.
-![Beranda](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/main_page_part1.png)
+| Halaman Login | Beranda |
+| ----- | ----- |
+| ![Login](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/login_page.png) | ![Beranda](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/main_page_part1.png) |
+
 
 ### 2. Monitoring Pekerjaan Guru
+Fitur ini memungkinkan user, Kepala Sekolah, dapat memantau pekerjaan guru seperti pengisian data nilai UTS dan UAS untuk nilai rapor. Apabila guru yang bersangkutan belum juga menyelesaikan tugasnya maka Kepala Sekolah dapat mengirimkan pesan peringatan kepada guru yang bersangkutan.
+
 | Ringkasan | Tabel Utama |
 | ----- | ----- |
 | ![status1](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/status_guru_part1.png) | ![status2](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/status_guru_part2.png) |
@@ -68,7 +69,7 @@ Fitur kirim pesan pada sistem ini digunakan untuk mengirim pesan reminder kepada
 | ----- | ----- |
 | <img src="https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/tulis_pesan_part1.png"> | ![create](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/tulis_pesan_part2.png) |
 
-- Pesan Terkirim
+- **Pesan Terkirim**
 
 | Daftar Pesan Terkirim | Detail Pesan Terkirim |
 | ----- | ----- |
@@ -94,18 +95,18 @@ Fitur kirim pesan pada sistem ini digunakan untuk mengirim pesan reminder kepada
 | ![data_tendik](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_tendik.png) | ![data_tendik](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/biodata_tendik_part1.png) |
 
 ### 5. Monitoring Data Inventaris 
-Fitur ini memungkinan user memonitor dan mengelola pendataan inventaris. Pada fitur ini user dapat melakukan *create*, *read*, *update*, dan *delete* (CRUD). Selain itu sistem dapat melakukan *auto-numbering* pada kode inventaris, sesuai format kode inventaris yang digunakan oleh SCB sebagai berikut:
+Fitur ini memungkinan user memonitor dan mengelola pendataan inventaris. Pengelolaan yang dapat dilakukan adalah *create*, *read*, *update*, dan *delete* (CRUD). Selain itu sistem dapat melakukan *auto-numbering* pada kode inventaris, sesuai format kode inventaris yang digunakan oleh SCB sebagai berikut:
 
-![format_kode](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/format_kode_inventaris.png) |
+![format_kode](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/format_kode_inventaris.png)
 
 Pengelolaan inventaris terbagi menjadi beberapa sub menu, antara lain pengelolaan berdasarkan:
 | Menu | Penjelasan | View |
 | ----- | ----- | ----- |
-| **a. Jenis Inventaris** | | ![jenis_inventaris](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/jenis_inventaris.png) ![jenis_inventaris1](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/jenis_inventaris_input_data.png) |
+| **a. Jenis Inventaris** | Pada menu ini inventaris dikelola berdasarkan jenisnya. | ![jenis_inventaris](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/jenis_inventaris.png) ![jenis_inventaris1](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/jenis_inventaris_input_data.png) |
 | **b. Kebutuhan Barang** | Menu ini digunakan untuk memonitor kondisi inventaris yang dimiliki berdasarkan jumlah baik, kurang baik, dan rusak dari inventaris yang ada. | ![kebutuhan_barang](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/kebutuhan_barang.png) |
 | **c. Data Inventaris** | Sub ini berisi detil dari satuan barang inventaris. *Auto-numbering* kode inventaris ditampilkan pada sub ini. | ![data_inventaris](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_inventaris.png) |
-| **d. Gedung** |  | ![gedung](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_gedung.png) |
-| **e. Ruangan** |  | ![ruangan](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_ruangan.png) |
+| **d. Gedung** | Menu ini digunakan untuk mendata ketersedian gedung yang ada di SCB. | ![gedung](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_gedung.png) |
+| **e. Ruangan** | Menu ini digunakan untuk mendata ketersediaan ruangan yang ada di SCB. | ![ruangan](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/data_ruangan.png) |
 
 
 ## E. Konsep OOP
@@ -135,11 +136,9 @@ Pattern yang satu ini, memungkinkan kami untuk mengakses service-service penting
 ## G. Dokumentasi
 [`^ kembali ke atas ^`](#)
 
-|  |  |
-| ----- | ----- |
-| ![Gambar1](https://github.com/rahayuningh/Portal-Kepsek/gambar.png) | ![Gambar1](https://github.com/rahayuningh/Portal-Kepsek/gambar.png) |
-
-
+1. Link GitHub : https://github.com/rahayuningh/Portal-Kepsek
+2. Link Trello : https://trello.com/b/XFp6mC6z/integrated-monitoring-system
+3. Link drive : bit.ly/Portal-Kepsek
 
 ## Development Team
 [`^ kembali ke atas ^`](#)
