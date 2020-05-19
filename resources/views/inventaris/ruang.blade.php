@@ -21,9 +21,10 @@
 
             <div class="card-body">
                 <h4 class="card-title text-center">Pencarian</h4>
-                <form class="form-sample">
+                <form class="form-sample" method="post" action="#">
+                    @csrf
                     <div class="row">
-                        <div class="col-md-4"></div>
+
                         {{-- KOLOM Gedung --}}
                         <div class="col-md-4">
                             <div class="form-group row">
@@ -31,11 +32,11 @@
                                     <label class="" for="tahun">Gedung</label>
                                     <select class="form-control" required>
                                         <option disabled selected> --Pilih-- </option>
-                                        <option>Gedung A</option>
-                                        <option>Gedung B</option>
-                                        <option>Gedung C</option>
-                                        <option>Gedung D</option>
+                                        @foreach($gedung as $ged)
+                                        <option value="{{$ged->id}}">{{$ged->nama_gedung}}</option>
+                                        @endforeach
                                     </select>
+
                                 </div>
                             </div>
                         </div>
@@ -65,26 +66,41 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @php
+                        $no=1;
+                        @endphp
+                        
+                        @foreach($data_ruangan as $dat)
                         <tr>
-                            <td>1</td>
-                            <td>BUAI212</td>
-                            <td>Ruang Kumpul A</td>
-                            <td>Ruang Sarpras</td>
-                            <td>Pak Jokowi</td>
-                            <td>Gedung A</td>
-                            <td>150</td>
+                            <td>{{$no}}</td>
+                            <td>{{$dat['kode_ruangan']}}</td>
+                            <td>{{$dat['nama_ruangan']}}</td>
+                            <td>{{$dat['jenis_ruangan_inisial']}}</td>
+                            <td>{{$dat['nama_responsible_person']}}</td>
+                            <td>{{$dat['nama_gedung']}}</td>
+                            <td>{{$dat['kapasitas']}}</td>
                             <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
-                                    align="center" title="Edit" href="#Edit">
+                                    align="center" title="Edit" href="#Edit{{$dat['id']}}">
                                     <i class="mdi mdi-pencil"></i>
                                 </a>
-                                <a href="" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
-                                    onclick="return confirm('Yakin hapus data?')">
+                                <a href="#" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus">
                                     <i class="mdi mdi-delete"></i>
                                 </a>
+                                {{--<form id="delete-ruangan-form{{ $dat['id'] }}" action="{{ route('ruangan.delete') }}" method="POST"
+                                    style="display: none;">
+                                    @csrf
+                                    <input type="number" value="{{ $kbm['id'] }}" name="id" hidden>
+                                </form>
+                                    --}}
+                                
                             </td>
                         </tr>
-                        <tr>
+                        @php
+                        $no++;
+                        @endphp
+                        @endforeach
+                        {{--<tr>
                             <td>2</td>
                             <td>BIASD9</td>
                             <td>Ruang Kumpul B</td>
@@ -103,6 +119,7 @@
                                 </a>
                             </td>
                         </tr>
+                    --}}
                     </tbody>
                 </table>
             </div>
@@ -122,66 +139,67 @@
                 </button>
             </div>
 
-            <form action="" method="">
+            <form action="{{route('room.create')}}" method="post">
                 {{ csrf_field() }}
                 {{-- FIELD --}}
                 <div class="modal-body">
                     <div class="form-group row">
-                        <label for="jenis_inventaris" class="col-md-4 col-form-label text-md-right">Gedung</label>
+                        <label for="nama_gedung" class="col-md-4 col-form-label text-md-right">Gedung</label>
                         <div class="col-md-6">
-                            <select id="jenis_inventaris" type="jenis_inventaris" name="jenis_inventaris"
+                            <select id="nama_gedung" type="nama_gedung" name="gedung_id"
                                 class="form-control" required data-val="true"
                                 data-val-required="Pilih Jenis Inventaris.">
                                 <option disabled selected> --Pilih-- </option>
-                                <option>Gedung A</option>
-                                <option>Gedung B</option>
+                                @foreach($gedung as $ged)
+                                <option value="{{$ged->id}}">{{$ged->nama_gedung}} </option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="kelas" class="col-md-4 col-form-label text-md-right">Nama Ruangan</label>
+                        <label for="nama_ruangan" class="col-md-4 col-form-label text-md-right">Nama Ruangan</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="nama_ruangan">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="kelas" class="col-md-4 col-form-label text-md-right">Kode Ruangan</label>
+                        <label for="kode_ruangan" class="col-md-4 col-form-label text-md-right">Kode Ruangan</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control">
+                            <input type="text" name="kode_ruangan" class="form-control">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="jenis_inventaris" class="col-md-4 col-form-label text-md-right">Jenis
+                        <label for="jenis_ruangan" class="col-md-4 col-form-label text-md-right">Jenis
                             Ruangan</label>
                         <div class="col-md-6">
-                            <select id="jenis_inventaris" type="jenis_inventaris" name="jenis_inventaris"
+                            <select id="jenis_ruangan" type="jenis_ruangan" name="jenis_ruangan_id"
                                 class="form-control" required data-val="true"
-                                data-val-required="Pilih Jenis Inventaris.">
+                                data-val-required="Pilih Jenis Ruangan">
                                 <option disabled selected> --Pilih-- </option>
-                                <option>Ruangan Kelas</option>
-                                <option>Ruangan Sarpras</option>
-                                <option>Ruangan Tendik</option>
+                                @foreach($data_ruangan as $data_di)
+                                <option value="{{$data_di['id']}}">{{$data_di['jenis_ruangan_inisial']}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="jenis_inventaris" class="col-md-4 col-form-label text-md-right">Penanggung
+                        <label for="nama_penanggung_jawab" class="col-md-4 col-form-label text-md-right">Penanggung
                             Jawab</label>
                         <div class="col-md-6">
-                            <select id="jenis_inventaris" type="jenis_inventaris" name="jenis_inventaris"
+                            <select id="nama_penanggung_jawab" type="nama_penanggung_jawab" name="penanggung_jawab_id"
                                 class="form-control" required data-val="true"
                                 data-val-required="Pilih Jenis Inventaris.">
                                 <option disabled selected> --Pilih-- </option>
-                                <option>Pak Heru</option>
-                                <option>Pak Agus</option>
-                                <option>Bu Mitha</option>
+                                @foreach($data_ruangan as $data_di)
+                                <option value="{{$data_di['penanggung_jawab_id']}}">{{$data_di['nama_responsible_person']}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="kelas" class="col-md-4 col-form-label text-md-right">Kapasitas</label>
+                        <label for="kapasitas" class="col-md-4 col-form-label text-md-right">Kapasitas</label>
                         <div class="col-md-6">
-                            <input type="number" class="form-control">
+                            <input type="number" class="form-control" name="kapasitas_orang">
                         </div>
                     </div>
                 </div>

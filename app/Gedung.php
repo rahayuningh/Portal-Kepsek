@@ -13,6 +13,6 @@ class Gedung extends Model
 
     public function ruangan()
     {
-        return $this->hasMany('App\Ruangan');
+        return $this->hasMany('App\Ruangan','gedung_id');
     }
 }

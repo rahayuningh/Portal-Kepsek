@@ -9,8 +9,9 @@ class KebutuhanBarang extends Model
     protected $fillable = [
         'jenis_inventaris_id',
         'ruangan_id',
-        'jml_barang_shrsny',
-        'jml_barang_opr',
+        'jumlah',
+        'jml_barang_baik',
+        'jml_barang_krg_baik',
         'jml_barang_rsk',
         'jml_barang_dibutuhkan'
     ];
