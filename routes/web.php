@@ -92,6 +92,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/cari', 'InventoryController@search')->name('inventory.search');
         Route::post('/store', 'InventoryController@store')->name('inventory.store');
         Route::put('/update', 'InventoryController@update')->name('inventory.update.submit');
+        Route::delete('/delete', 'InventoryController@delete')->name('inventory.delete');
 
         // KEBUTUHAN BARANG
         Route::get('/kebutuhan-barang', function () {
@@ -103,22 +104,22 @@ Route::middleware(['auth'])->group(function () {
             return view('inventaris/gedung');
         })->name('inventory.building');
 
-        
+
     });
-    
+
     Route::prefix('inventaris/ruang')->group(function(){
         Route::get('/' ,'RuanganController@showAllRuangan')->name('inventory.room');
         Route::post('/create' ,'RuanganController@create')->name('room.create');
         Route::post('/update' ,'RuanganController@update')->name('room.update');
         Route::post('/delete','RuanganController@destroy')->name('room.destroy');
     });
-    
+
     /*Route::prefix('kebutuhan-barang')->group(function (){
         Route::get('/', 'KebutuhanBarangController@showAll')->name('kebutuhan-barang');
         Route::post('/create' ,'KebutuhanBarangController@create')->name('kebutuhan-barang.create');
         Route::post('/update' ,'KebutuhanBarangController@update')->name('kebutuhan-barang.update');
         Route::post('/delete','KebutuhanBarangController@destroy')->name('kebutuhan-barang.delete');
-    }) ; 
+    }) ;
     Route::prefix('gedung')->group(function(){
         Route::get('/' ,'GedungController@showAllGedung')->name('building');
         Route::post('/create' ,'GedungController@create')->name('building.create');

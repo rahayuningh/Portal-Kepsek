@@ -209,12 +209,28 @@ class InventoryController extends Controller
             'anggaran' => 'required',
         ]);
 
+        $temp = Inventaris::find($request->id);
         $inventaris = Inventaris::findOrFail($request->id);
         $request->except('_token');
         $request->except('_method');
         $request->except('id');
         $inventaris->update($request->all());
 
+        if ($inventaris->wasChanged('jenis_inventaris_id')) {
+            // ubah jumlah di kebutuhan barang
+
+        }
+
         return redirect()->route('inventory.update', ['id' => $request->id])->with('success', 'Data inventaris berhasil diubah');
+    }
+
+    public function delete(Request $request)
+    {
+        $request->validate(['id' => 'required|numeric']);
+        $inventaris = Inventaris::find($request->id);
+        $temp = $inventaris->kode_inventaris;
+        $inventaris->delete();
+        // ubah jumlah di kebutuhan barang
+        return redirect()->route('inventory')->with('success', 'Inventaris [' . $temp . '] berhasil dihapus');
     }
 }
