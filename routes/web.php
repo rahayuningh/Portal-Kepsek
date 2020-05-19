@@ -70,6 +70,9 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('siswa')->group(function () {
         Route::get('/data', 'SiswaController@seeAll')->name('student');
         Route::post('/data/cari', 'SiswaController@searchStudent')->name('student.search');
+        Route::get('/data-create', function () {
+            return view('siswa/create_data_siswa');
+        })->name('student.create');
 
         // BIODATA SISWA
         Route::get('/{id}', 'SiswaController@studentBiodata')->name('student.detail');
@@ -112,6 +115,13 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/{id}', 'PesanController@detail')->name('message.detail');
         Route::post('/create', 'PesanController@createMessage')->name('message.create');
         Route::get('/delete/{id}', 'PesanController@deleteMessage')->name('message.delete');
+    });
+
+
+
+    //COBA TEMPLATE
+    Route::get('/create-nilai', function () {
+        return view('pekerjaan/create_nilai');
     });
 
     //COBA TEMPLATE
