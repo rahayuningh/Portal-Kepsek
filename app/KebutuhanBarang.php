@@ -25,4 +25,9 @@ class KebutuhanBarang extends Model
     {
         return $this->belongsTo('App\JenisInventaris','jenis_inventaris_id');
     }
+
+    public function inventaris()
+    {
+        return $this->hasMany('App\Inventaris','kebutuhan_id');
+    }
 }

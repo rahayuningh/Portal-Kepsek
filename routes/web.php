@@ -87,7 +87,7 @@ Route::middleware(['auth'])->group(function () {
 
     // INVENTARIS
     Route::prefix('inventaris')->group(function () {
-        Route::get('/list', 'InventoryController@seeInventory')->name('inventory');
+        Route::get('/daftar', 'InventoryController@seeInventory')->name('inventory');
         Route::get('/update/{id}', 'InventoryController@showUpdatePage')->name('inventory.update');
         Route::post('/cari', 'InventoryController@search')->name('inventory.search');
         Route::post('/store', 'InventoryController@store')->name('inventory.store');
@@ -95,23 +95,34 @@ Route::middleware(['auth'])->group(function () {
         Route::delete('/delete', 'InventoryController@delete')->name('inventory.delete');
 
         // KEBUTUHAN BARANG
-        Route::get('/kebutuhan-barang', function () {
-            return view('inventaris/kebutuhan', ['buildings' => Gedung::all()]);
-        })->name('inventory.needs');
+        Route::prefix('kebutuhan-barang')->group(function () {
+            Route::get('/', 'KebutuhanBarangController@index')->name('inventory.needs');
+            Route::post('/search', 'KebutuhanBarangController@search')->name('inventory.needs.search');
+            Route::post('/create', 'KebutuhanBarangController@store')->name('inventory.needs.store');
+            Route::delete('/delete', 'KebutuhanBarangController@destroy')->name('inventory.needs.delete');
+            Route::put('/update', 'KebutuhanBarangController@update')->name('inventory.needs.update');
+        });
+
+        // JENIS INVENTARIS
+        Route::prefix('jenis-inventaris')->group(function () {
+            Route::get('/', 'JenisInventarisController@index')->name('inventory.type');
+            Route::post('/search', 'JenisInventarisController@search')->name('inventory.type.search');
+            Route::post('/create', 'JenisInventarisController@store')->name('inventory.type.store');
+            Route::delete('/delete', 'JenisInventarisController@destroy')->name('inventory.type.delete');
+            Route::put('/update', 'JenisInventarisController@update')->name('inventory.type.update');
+        });
 
         // GEDUNG
         Route::get('/gedung', function () {
             return view('inventaris/gedung');
         })->name('inventory.building');
-
-
     });
 
-    Route::prefix('inventaris/ruang')->group(function(){
-        Route::get('/' ,'RuanganController@showAllRuangan')->name('inventory.room');
-        Route::post('/create' ,'RuanganController@create')->name('room.create');
-        Route::post('/update' ,'RuanganController@update')->name('room.update');
-        Route::post('/delete','RuanganController@destroy')->name('room.destroy');
+    Route::prefix('inventaris/ruang')->group(function () {
+        Route::get('/', 'RuanganController@showAllRuangan')->name('inventory.room');
+        Route::post('/create', 'RuanganController@create')->name('room.create');
+        Route::post('/update', 'RuanganController@update')->name('room.update');
+        Route::post('/delete', 'RuanganController@destroy')->name('room.destroy');
     });
 
     /*Route::prefix('kebutuhan-barang')->group(function (){

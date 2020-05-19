@@ -74,6 +74,7 @@
                     </a>
                     <div class="collapse" id="inventaris">
                         <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="{{ route('inventory.type') }}">Jenis Inventaris</a></li>
                             <li class="nav-item"> <a class="nav-link" href="{{ route('inventory.needs') }}">Kebutuhan
                                     Barang</a></li>
                             <li class="nav-item"> <a class="nav-link" href="{{ route('inventory') }}">Data

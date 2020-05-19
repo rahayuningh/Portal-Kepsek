@@ -23,7 +23,7 @@ class KebutuhanBarangTableSeeder extends Seeder
             'baik' => 1,
             'kurang_baik' => 1,
             'rusak' => 0,
-            'butuh' => 0
+            // 'butuh' => 0
         ]);
 
         KebutuhanBarang::create([
@@ -34,7 +34,7 @@ class KebutuhanBarangTableSeeder extends Seeder
             'baik' => 0,
             'kurang_baik' => 1,
             'rusak' => 1,
-            'butuh' => 1
+            // 'butuh' => 1
         ]);
 
         KebutuhanBarang::create([
@@ -45,7 +45,7 @@ class KebutuhanBarangTableSeeder extends Seeder
             'baik' => 1,
             'kurang_baik' => 0,
             'rusak' => 1,
-            'butuh' => 1
+            // 'butuh' => 1
         ]);
     }
 }

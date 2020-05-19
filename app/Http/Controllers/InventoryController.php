@@ -153,8 +153,9 @@ class InventoryController extends Controller
         $need = KebutuhanBarang::where([
             ['jenis_inventaris_id', '=', $request->jenis_inventaris],
             ['ruangan_id', '=', $request->ruangan_pemilik],
-        ])->exists();
-        if (!$need) {
+        ])->first();
+
+        if (!isset($need)) {
             $room_name = Ruangan::find($request->ruangan_pemilik)->nama_ruangan;
             $jenis_name = JenisInventaris::find($request->jenis_inventaris)->nama_jenis_inventaris;
             return redirect()
@@ -177,10 +178,12 @@ class InventoryController extends Controller
 
         Inventaris::create([
             'ruangan_pemilik_id' => $request->ruangan_pemilik,
+            'kebutuhan_id' => $need->id,
             'kode_inventaris' => $code,
             'jenis_inventaris_id' => $request->jenis_inventaris,
             'no_seri' => $request->no_seri,
             'tgl_terima' => $request->tgl_terima,
+            'anggaran' => $request->jenis_anggaran,
             'status_kelayakan' => $request->status,
             'keterangan' => $request->keterangan
         ]);
@@ -194,19 +197,19 @@ class InventoryController extends Controller
             case 0:
                 $kebutuhan->rusak += 1;
                 $kebutuhan->jumlah += 1;
-                $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
+                // $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
                 $kebutuhan->save();
                 break;
             case 1:
                 $kebutuhan->kurang_baik += 1;
                 $kebutuhan->jumlah += 1;
-                $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
+                // $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
                 $kebutuhan->save();
                 break;
             case 2:
                 $kebutuhan->baik += 1;
                 $kebutuhan->jumlah += 1;
-                $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
+                // $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
                 $kebutuhan->save();
                 break;
 
@@ -260,19 +263,19 @@ class InventoryController extends Controller
                 case 0:
                     $kebutuhan->rusak -= 1;
                     $kebutuhan->jumlah -= 1;
-                    $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
+                    // $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
                     $kebutuhan->save();
                     break;
                 case 1:
                     $kebutuhan->kurang_baik -= 1;
                     $kebutuhan->jumlah -= 1;
-                    $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
+                    // $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
                     $kebutuhan->save();
                     break;
                 case 2:
                     $kebutuhan->baik -= 1;
                     $kebutuhan->jumlah -= 1;
-                    $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
+                    // $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
                     $kebutuhan->save();
                     break;
 
@@ -290,19 +293,19 @@ class InventoryController extends Controller
                 case 0:
                     $kebutuhan->rusak += 1;
                     $kebutuhan->jumlah += 1;
-                    $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
+                    // $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
                     $kebutuhan->save();
                     break;
                 case 1:
                     $kebutuhan->kurang_baik += 1;
                     $kebutuhan->jumlah += 1;
-                    $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
+                    // $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
                     $kebutuhan->save();
                     break;
                 case 2:
                     $kebutuhan->baik += 1;
                     $kebutuhan->jumlah += 1;
-                    $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
+                    // $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
                     $kebutuhan->save();
                     break;
 
@@ -330,19 +333,19 @@ class InventoryController extends Controller
             case 0:
                 $kebutuhan->rusak -= 1;
                 $kebutuhan->jumlah -= 1;
-                $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
+                // $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
                 $kebutuhan->save();
                 break;
             case 1:
                 $kebutuhan->kurang_baik -= 1;
                 $kebutuhan->jumlah -= 1;
-                $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
+                // $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
                 $kebutuhan->save();
                 break;
             case 2:
                 $kebutuhan->baik -= 1;
                 $kebutuhan->jumlah -= 1;
-                $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
+                // $kebutuhan->butuh = $kebutuhan->jumlah - $kebutuhan->rusak;
                 $kebutuhan->save();
                 break;
 
