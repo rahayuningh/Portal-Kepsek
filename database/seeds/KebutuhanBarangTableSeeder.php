@@ -23,7 +23,6 @@ class KebutuhanBarangTableSeeder extends Seeder
             'baik' => 1,
             'kurang_baik' => 1,
             'rusak' => 0,
-            // 'butuh' => 0
         ]);
 
         KebutuhanBarang::create([
@@ -34,7 +33,6 @@ class KebutuhanBarangTableSeeder extends Seeder
             'baik' => 0,
             'kurang_baik' => 1,
             'rusak' => 1,
-            // 'butuh' => 1
         ]);
 
         KebutuhanBarang::create([
@@ -45,7 +43,36 @@ class KebutuhanBarangTableSeeder extends Seeder
             'baik' => 1,
             'kurang_baik' => 0,
             'rusak' => 1,
-            // 'butuh' => 1
+        ]);
+
+        KebutuhanBarang::create([
+            'id' => '4',
+            'jenis_inventaris_id' => 1,
+            'ruangan_id' => 2,
+            'jumlah' => 0,
+            'baik' => 0,
+            'kurang_baik' => 0,
+            'rusak' => 0,
+        ]);
+
+        KebutuhanBarang::create([
+            'id' => '5',
+            'jenis_inventaris_id' => 2,
+            'ruangan_id' => 2,
+            'jumlah' => 0,
+            'baik' => 0,
+            'kurang_baik' => 0,
+            'rusak' => 0,
+        ]);
+
+        KebutuhanBarang::create([
+            'id' => '6',
+            'jenis_inventaris_id' => 3,
+            'ruangan_id' => 2,
+            'jumlah' => 0,
+            'baik' => 0,
+            'kurang_baik' => 0,
+            'rusak' => 0,
         ]);
     }
 }

@@ -26,29 +26,21 @@ class GedungController extends Controller
      */
     public function create(Request $request)
     {
+        $request->validate(
+            [
+                'kode_gedung' => 'required|max:10',
+                'nama_gedung' => 'required|max:20'
+            ],
+            [
+                'kode_gedung.max' => 'Kode gedung maksimal 10 karakter',
+                'nama_gedung.max' => 'Nama gedung maksimal 20 karakter',
+                'kode_gedung.unique' => 'Kode gedung sudah dipakai, kode gedung harus unik',
+                'nama_gedung.required' => 'Nama gedung harus dimasukkan',
+                'kode_gedung.required' => 'Kode gedung harus dimasukkan'
+            ]
+        );
         Gedung::create($request->all());
-        return redirect('inventaris.gedung')->with('success', 'Data sudah ditambahkan');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        return redirect()->route('inventory.building')->with('success', 'Data gedung ' . $request->nama_gedung . ' sudah ditambahkan');
     }
 
     /**
@@ -59,35 +51,51 @@ class GedungController extends Controller
      */
     public function update(Request $request)
     {
-        $building = Gedung::find($request->id);
-        $building->nama_gedung = $request->nama_gedung;
-        $building->kode_gedung = $request->kode_gedung;
-        $building->save();
-        return redirect()->route('inventory.building');
-    }
+        $request->validate(
+            [
+                'id' => 'required|numeric',
+                'kode_gedung' => 'required|max:10',
+                'nama_gedung' => 'required|max:20',
+            ],
+            [
+                'kode_gedung.max' => 'Kode gedung maksimal 10 karakter',
+                'nama_gedung.max' => 'Nama gedung maksimal 20 karakter',
+                'kode_gedung.unique' => 'Kode gedung sudah dipakai, kode gedung harus unik',
+                'nama_gedung.required' => 'Nama gedung harus dimasukkan',
+                'kode_gedung.required' => 'Kode gedung harus dimasukkan'
+            ]
+        );
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        $building = Gedung::find($request->id);
+        $building->update($request->all());
+        return redirect()->route('inventory.building')->with('success', 'Data gedung ' . $request->nama_gedung . ' berhasil diubah');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request)
     {
         $building = Gedung::findOrFail($request->id);
+        $building_name = $building->nama_gedung;
+        // dd($building->ruangan);
+
+        // delete semua ruangan
+        foreach ($building->ruangan as $room) {
+            // delete semua kebutuhan barang
+            foreach ($room->kebutuhanBarang as $need) {
+                // delete semua inventaris
+                foreach ($need->inventaris as $inventory) {
+                    $inventory->delete();
+                }
+                $need->delete();
+            }
+            $room->delete();
+        }
+
         $building->delete();
-        return redirect()->back()->with('succes', 'Data sudah dihapus');
+        return redirect()->back()->with('success', 'Data ' . $building_name . ' berhasil dihapus');
     }
 }

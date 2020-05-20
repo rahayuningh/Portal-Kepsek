@@ -17,61 +17,81 @@ class RuanganController extends Controller
 {
     public function showAllRuangan()
     {
-        // $data_ruangan = array();
-        // $rooms = Ruangan::all();
-        // foreach ($rooms as $room) {
-        //     //ambil objek gedung untuk dapat
-        //     $gedung = $room->gedung;
-        //     $nama_gedung = $gedung->nama_gedung;
-        //     //ambil kode, serta name
-        //     $kode_ruangan = $room->kode_ruangan;
-        //     $nama_ruangan = $room->nama_ruangan;
-        //     //ambil objek jenis
-        //     $jenis_ruangan = $room->jenisRuangan;
-        //     $jenis_ruangan_alias = $jenis_ruangan->nama_jenis_ruangan;
-        //     //ambil objek pegawai
-        //     $kapasitas = $room->kapasitas_orang;
-        //     $penanggung_jawab = $room->pegawai;
-        //     $civitas = $penanggung_jawab->civitas;
-        //     $nama_penanggung_jawab = $civitas->nama;
-
-        //     array_push($data_ruangan, array(
-        //         'id' => $room->id,
-        //         'jenis_ruangan' => $room->jenis_ruangan->nama_jenis_ruangan,
-        //         'kode_ruangan' => $kode_ruangan,
-        //         'nama_ruangan' => $nama_ruangan,
-        //         'nama_gedung' => $nama_gedung,
-        //         'gedung_id' => $gedung->id,
-        //         'nama_responsible_person' => $nama_penanggung_jawab,
-        //         'penanggung_jawab_id' => $penanggung_jawab->id,
-        //         'kapasitas' => $kapasitas
-        //     ));
-        // }
         return view('inventaris.ruang', [
-            // 'data_ruangan' => $data_ruangan,
-            'gedung' => Gedung::all(),
-            'jenis_ruangan' => JenisRuangan::all(),
-            'penanggung_jawab' => Guru::all(),
+            'buildings' => Gedung::all(),
+            'types' => JenisRuangan::all(),
             'rooms' => Ruangan::all()
         ]);
     }
+
     public function create(Request $request)
     {
+        $request->validate(
+            [
+                'gedung_id' => 'required|numeric',
+                'nama_ruangan' => 'required|max:50',
+                'kode_ruangan' => 'required|max:10',
+                'jenis_ruangan_id' => 'required|numeric',
+                'kapasitas_orang' => 'required|numeric'
+            ],
+            [
+                'nama_ruangan.max' => 'Nama ruangan maksimal 50 karakter',
+                'nama_ruangan.required' => 'Nama ruangan harus dimasukkan',
+                'kode_ruangan.max' => 'Kode ruangan maksimal 10 karakter',
+                'kode_ruangan.required' => 'Kode ruangan harus dimasukkan',
+                'gedung_id.required' => 'ID Gedung harus dimasukkan',
+                'jenis_ruangan_id.required' => 'ID Jenis Ruangan harus dimasukkan',
+                'kapasitas.required' => 'Kapasitas ruangan harus dimasukkan',
+            ]
+        );
+
         Ruangan::create($request->all());
-        return redirect()->route('inventory.room');
+        return redirect()->back()->with('success', 'Ruangan ' . $request->nama_ruangan . ' berhasil dibuat');
     }
+
     public function update(Request $request)
     {
+        $request->validate(
+            [
+                'gedung_id' => 'required|numeric',
+                'nama_ruangan' => 'required|max:50',
+                'kode_ruangan' => 'required|max:10',
+                'jenis_ruangan_id' => 'required|numeric',
+                'kapasitas_orang' => 'required|numeric'
+            ],
+            [
+                'nama_ruangan.max' => 'Nama ruangan maksimal 50 karakter',
+                'nama_ruangan.required' => 'Nama ruangan harus dimasukkan',
+                'kode_ruangan.max' => 'Kode ruangan maksimal 10 karakter',
+                'kode_ruangan.required' => 'Kode ruangan harus dimasukkan',
+                'gedung_id.required' => 'ID Gedung harus dimasukkan',
+                'jenis_ruangan_id.required' => 'ID Jenis Ruangan harus dimasukkan',
+                'kapasitas.required' => 'Kapasitas ruangan harus dimasukkan',
+            ]
+        );
         $ruangan = Ruangan::findOrFail($request->id);
-        $final = $request->except('_token');
-        $ruangan->update($final);
-        return redirect()->back()->with('success', 'Ruangan berhasil diupdate');
+        $ruangan->update($request->all());
+        return redirect()->back()->with('success', 'Data ' . $request->kode_ruangan . ' | ' . $request->nama_ruangan . ' berhasil diupdate');
     }
+
     public function destroy(Request $request)
     {
-        //$request->validate(['id'=>'required|numeric']);
+        $request->validate(['id' => 'required|numeric', ['id' => 'Hapus ruangan gagal, ID tidak disertakan']]);
         $ruangan = Ruangan::findOrFail($request->id);
+        $name = $ruangan->nama_ruangan;
+        $kode = $ruangan->kode_ruangan;
+
+        // hapus data kebutuhan barang
+        foreach ($ruangan->kebutuhanBarang as $need) {
+            // hapus data inventaris
+            foreach ($need->inventaris as $inventory) {
+                $inventory->delete();
+            }
+            $need->delete();
+        }
+
+        // hapus data ruangan
         $ruangan->delete();
-        return redirect()->back()->with('success', 'Ruangan berhasil didelete');
+        return redirect()->back()->with('success', 'Data ' . $kode . ' | ' . $name . ' berhasil dihapus');
     }
 }

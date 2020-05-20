@@ -140,6 +140,7 @@
         </div>
     </div>
 </div>
+
 {{-- WINDOW DELETE DATA --}}
 <div id="deleteForm{{ $building->id }}" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -151,12 +152,15 @@
                 </button>
             </div>
             <form action="{{ route('building.delete') }}" method="post">
-                @csrf
-                @method('DELETE')
-                <input type="number" value="{{ $building->id}}" name="id" hidden>
-                {{-- FIELD --}}
-                <div class="modal-body">
-                    <h4 class="text-center">Yakin hapus data Ruangan {{ $building->kode_gedung }} ?</h4>
+                <div class="modal-body p-3" style="color: red">
+                    @csrf
+                    @method('DELETE')
+                    <input type="number" value="{{ $building->id}}" name="id" hidden>
+                    {{-- FIELD --}}
+                    <h4 class="text-center">Yakin hapus data Gedung {{ $building->kode_gedung }} /
+                        {{ $building->nama_gedung }} ?</h4>
+                    <h4 class="text-center">Hal ini akan menghapus semua data ruangan, kebutuhan barang, dan inventaris
+                        di gedung {{ $building->nama_gedung }}</h4>
                 </div>
                 {{-- BUTTON --}}
                 <div class="modal-footer">

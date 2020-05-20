@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         // SUSUNAN DIBAWAH INI JANGAN DIUBAH !! NANTI ERROR
 
-        // $this->call(UsersTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
 
         // Seeder Bagian Data Civitas
         $this->call(AgamaTableSeeder::class);

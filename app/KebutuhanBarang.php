@@ -21,7 +21,7 @@ class KebutuhanBarang extends Model
         return $this->belongsTo('App\Ruangan','ruangan_id');
     }
 
-    public function jenis_inventaris()
+    public function jenisInventaris()
     {
         return $this->belongsTo('App\JenisInventaris','jenis_inventaris_id');
     }

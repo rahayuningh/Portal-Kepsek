@@ -16,7 +16,7 @@ class JenisInventaris extends Model
         'bahan'
     ];
 
-    public function kebutuhan_barang()
+    public function kebutuhanBarang()
     {
         return $this->hasMany('App\KebutuhanBarang','jenis_inventaris_id');
     }

@@ -3085,7 +3085,7 @@ pre {
   .table td {
     padding: 0.9375rem;
     vertical-align: top;
-    border-top: 1px solid #ebedf2; 
+    border-top: 1px solid #ebedf2;
   }
   .table thead th {
     vertical-align: bottom;
@@ -12703,7 +12703,7 @@ dl {
   -moz-transition: background 0.25s ease;
   -ms-transition: background 0.25s ease; }
   .navbar .navbar-brand {
-    width: 110px; 
+    width: 110px;
   }
   .navbar .navbar-brand-wrapper {
     transition: width 0.25s ease, background 0.25s ease;
@@ -13174,7 +13174,7 @@ dl {
         background: #014830; }
         .sidebar .nav .nav-item.active > .nav-link .menu-title {
           color: #FDD100;
-          font-family: "Roboto", sans-serif; 
+          font-family: "Roboto", sans-serif;
           font-weight: bold;
         }
         .sidebar .nav .nav-item.active > .nav-link i {
