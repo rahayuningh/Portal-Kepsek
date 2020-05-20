@@ -36,8 +36,11 @@
 [`^ kembali ke atas ^`](#)
 
 ### Use Case Diagram
+![Use case](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/use_case.png)
 ### Activity Diagram
+![Activity diagram](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/activity_diagram.png)
 ### Class Diagram
+![Class diagram](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/class_diagram_old.png)
 
 
 
@@ -116,6 +119,7 @@ Pengelolaan inventaris terbagi menjadi beberapa sub menu, antara lain pengelolaa
 
 ## E. Konsep OOP
 [`^ kembali ke atas ^`](#)
+
 
 ## F. Tipe Desain Pengembangan
 ### MVC
