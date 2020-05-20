@@ -164,6 +164,30 @@ class Siswa extends Model
     . . .
 ...
 ```
+### 3. Abstrak Class
+Abstract class adalah class-class yang memiliki informasi abstrak dan metode-metode dari sekumpulan data. Abstract Class tidak bisa diubah dan berlaku sebagai kerangka dalam penciptaan subclass-subclassnya. Sebuah Abstract Classs memiliki informasi dan metode yang dapat diturunkan ke subclassnya, dan seluruh subclass akan mengikuti apa saja metode yang akan diturunkan oleh Abstract Class. Tetapi abstract class sendiri tidak bisa diinstantiasi atau dibuat objectnya. Pada projek ini digunakan "Trait" yang mirip dengan abstract class.
+
+```text
+...
+class LoginController extends Controller
+{
+   use AuthenticatesUsers;
+   
+   protected $redirectTo = RouteServiceProvider::HOME;
+   . . .
+
+
+trait AuthenticatesUsers
+{
+    use RedirectsUsers, ThrottlesLogins;
+
+    public function showLoginForm()
+    {
+        return view('auth.login');
+    }  
+    . . .  
+...
+```
 
 ## F. Tipe Desain Pengembangan
 [`^ kembali ke atas ^`](#konten-integrated-monitoring-systemimosy)
