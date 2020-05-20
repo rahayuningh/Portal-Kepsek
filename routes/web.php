@@ -35,12 +35,17 @@ Route::middleware(['auth'])->group(function () {
     })->name('job.status');
 
     // KBM
-    Route::prefix('kbm')->group(function () {
+    Route::prefix('KBM')->group(function () {
         Route::get('/', 'KBMController@showAllKBM')->name('kbm');
         Route::post('/delete', 'KBMController@delete')->name('kbm.delete');
         Route::post('/create', 'KBMController@create')->name('kbm.create');
         Route::post('/update', 'KBMController@update')->name('kbm.update');
         // 2. route buat nyari kbm
+
+        // Tambah Nilai
+        Route::get('/create-nilai', function () {
+            return view('pekerjaan/create_nilai');
+        });
     });
 
     // MATA PELAJARAN
@@ -58,6 +63,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/', 'GuruController@showAll')->name('teacher');
             // BIODATA Guru
             Route::get('/{id}/biodata', 'GuruController@biodataGuru')->name('teacher.detail');
+            // CREATE Guru
             Route::post('/create', 'GuruController@store')->name('teacher.create');
         });
 
@@ -66,6 +72,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/', 'TendikController@showAll')->name('tendik');
             // BIODATA Tendik
             Route::get('/{id}/biodata', 'TendikController@biodataTendik')->name('tendik.detail');
+            // CREATE Tendik
             Route::post('/create', 'TendikController@store')->name('tendik.create');
         });
     });
@@ -86,7 +93,6 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/', 'KelasController@seeAll')->name('class');
         Route::get('/{id}', 'KelasController@show')->name('class.detail');
     });
-
 
     // INVENTARIS
     Route::prefix('inventaris')->group(function () {
@@ -134,28 +140,11 @@ Route::middleware(['auth'])->group(function () {
         });
     });
 
-
     // PESAN
     Route::prefix('message')->group(function () {
         Route::get('/sentbox', 'PesanController@sentbox')->name('message.outbox');
         Route::get('/{id}', 'PesanController@detail')->name('message.detail');
         Route::post('/create', 'PesanController@createMessage')->name('message.create');
         Route::get('/delete/{id}', 'PesanController@deleteMessage')->name('message.delete');
-    });
-
-
-
-    //COBA TEMPLATE
-    Route::get('/create-nilai', function () {
-        return view('pekerjaan/create_nilai');
-    });
-
-    //COBA TEMPLATE
-    Route::get('/template', function () {
-        return view('CobaTemplate/coba_template');
-    });
-    // TABEL SISWA TAB MODE
-    Route::get('/tabelsiswa', function () {
-        return view('CobaTemplate/tabel_siswa_tabmode');
     });
 });

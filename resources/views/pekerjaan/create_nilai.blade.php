@@ -148,9 +148,9 @@
                     <div class="col-md-6">
                         <div class="row justify-content-end p-3">
                             <button type="submit" class="btn btn-gradient-primary">Simpan Nilai</button>
-                        </div>                                
-                    </div>                    
-                </div>                
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="table pb-3">
@@ -168,21 +168,21 @@
                             <td>1</td>
                             <td>Lorem Lorem Lorem</td>
                             <td class="pt-0 pb-0">
-                                <input type="text" name="" class="form-control p-1" style="height: 30px; width: 100%"> 
+                                <input type="text" name="" class="form-control p-1" style="height: 30px; width: 100%">
                             </td>
                         </tr>
                         <tr style="border-bottom: 1pt solid #eee !important">
                             <td>1</td>
                             <td>Lorem Lorem Lorem</td>
                             <td class="pt-0 pb-0">
-                                <input type="text" name="" class="form-control p-1" style="height: 30px"> 
+                                <input type="text" name="" class="form-control p-1" style="height: 30px">
                             </td>
                         </tr>
                         <tr style="border-bottom: 1pt solid #eee !important">
                             <td>1000</td>
                             <td>Lorem Lorem Lorem</td>
                             <td class="pt-0 pb-0">
-                                <input type="text" name="" class="form-control p-1" style="height: 30px"> 
+                                <input type="text" name="" class="form-control p-1" style="height: 30px">
                             </td>
                         </tr>
                     </tbody>
@@ -201,7 +201,7 @@
           "paging": false,
           "info": false,
           "ordering":false,
-          "bAutoWidth": false , 
+          "bAutoWidth": false ,
           aoColumns : [
           { "sWidth": "5%"},
           { "sWidth": "60%"},
