@@ -18,11 +18,6 @@ class JenisInventaris extends Model
 
     public function kebutuhanBarang()
     {
-        return $this->hasMany('App\KebutuhanBarang','jenis_inventaris_id');
-    }
-
-    public function inventaris()
-    {
-        return $this->hasMany('App\Inventaris', 'jenis_inventaris_id');
+        return $this->hasMany('App\KebutuhanBarang', 'jenis_inventaris_id');
     }
 }

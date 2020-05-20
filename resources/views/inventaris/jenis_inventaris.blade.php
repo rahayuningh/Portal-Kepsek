@@ -22,7 +22,7 @@
 
             {{-- TABEL UTAMA --}}
             <div class="table pb-3 pt-3">
-                <table id="needs-inventory-table" class="table table-bordered table-responsive">
+                <table id="type-inventory-table" class="table table-bordered table-responsive">
                     <thead>
                         <tr class="text-center">
                             <th>Nama Jenis Inventaris</th>
@@ -87,7 +87,6 @@
                     </tbody>
                 </table>
             </div>
-
         </div>
     </div>
 </div>
@@ -107,13 +106,13 @@
                 {{-- FIELD --}}
                 <div class="modal-body">
                     <div class="form-group row">
-                        <label for="gedung" class="col-md-4 col-form-label text-md-right">Nama Jenis Inventaris</label>
+                        <label class="col-md-4 col-form-label text-md-right">Nama Jenis Inventaris</label>
                         <div class="col-md-6">
                             <input type="text" name="nama_jenis_inventaris" class="form-control" required>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="semester" class="col-md-4 col-form-label text-md-right">Kategori</label>
+                        <label class="col-md-4 col-form-label text-md-right">Kategori</label>
                         <div class="col-md-6">
                             <select name="kategori" class="form-control" required="required"
                                 data-validation-required-message="Pilih kategori">
@@ -168,9 +167,9 @@
     </div>
 </div>
 
-@foreach ($types as $need)
+@foreach ($types as $type)
 {{-- WINDOW DELETE DATA --}}
-<div id="delete{{ $need->id }}" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+<div id="delete{{ $type->id }}" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -183,13 +182,13 @@
                 {{ csrf_field() }}
                 @method('DELETE')
                 {{-- FIELD --}}
-                <input type="number" value="{{ $need->id }}" name="id" hidden>
+                <input type="number" value="{{ $type->id }}" name="id" hidden>
                 <div class="form-group row p-3">
                     <div class="col-md-12 text-center" style="color: red;">
-                        <h3>Yakin ingin menghapus jenis inventaris [{{ $need->nama_jenis_inventaris }}] ?</h3>
-                        <h4>Hal ini juga akan menghapus semua data inventaris dan kebutuhan barang yang terhubung dengan
-                            jenis inventaris
-                            ini.</h4>
+                        <h3>Yakin ingin menghapus jenis inventaris [{{ $type->nama_jenis_inventaris }}] ?</h3>
+                        <h4>Hal ini juga akan menghapus semua data kebutuhan barang yang terhubung dengan
+                            jenis inventaris ini dan menghapus semua data inventaris yang terhubung dengan data
+                            kebutuhan barang tersebut</h4>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -202,7 +201,7 @@
 </div>
 
 {{-- WINDOW EDIT DATA --}}
-<div id="Edit{{ $need->id }}" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+<div id="Edit{{ $type->id }}" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -212,46 +211,46 @@
                 </button>
             </div>
             <form action="{{ route('inventory.type.update') }}" method="POST">
-                <input type="number" name="id" value="{{ $need->id }}" hidden>
+                <input type="number" name="id" value="{{ $type->id }}" hidden>
                 {{ csrf_field() }}
                 @method('PUT')
                 {{-- FIELD --}}
                 <div class="modal-body">
                     <div class="form-group row">
-                        <label for="gedung" class="col-md-4 col-form-label text-md-right">Nama Jenis Inventaris</label>
+                        <label class="col-md-4 col-form-label text-md-right">Nama Jenis Inventaris</label>
                         <div class="col-md-6">
                             <input type="text" name="nama_jenis_inventaris" class="form-control"
-                                value="{{ $need->nama_jenis_inventaris }}" required>
+                                value="{{ $type->nama_jenis_inventaris }}" required>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="semester" class="col-md-4 col-form-label text-md-right">Kategori</label>
+                        <label class="col-md-4 col-form-label text-md-right">Kategori</label>
                         <div class="col-md-6">
-                            <select name="kategori" class="form-control" required="required"
+                            <select name="kategori" class="form-control" required
                                 data-validation-required-message="Pilih kategori">
                                 <option disabled selected> --Pilih-- </option>
-                                <option value="1" @if ($need->kategori==1)
+                                <option value="1" @if ($type->kategori==1)
                                     selected
                                     @endif>Elektronik</option>
-                                <option value="2" @if ($need->kategori==2)
+                                <option value="2" @if ($type->kategori==2)
                                     selected
                                     @endif>Furniture</option>
-                                <option value="3" @if ($need->kategori==3)
+                                <option value="3" @if ($type->kategori==3)
                                     selected
                                     @endif>Alat Musik</option>
-                                <option value="4" @if ($need->kategori==4)
+                                <option value="4" @if ($type->kategori==4)
                                     selected
                                     @endif>Buku</option>
-                                <option value="5" @if ($need->kategori==5)
+                                <option value="5" @if ($type->kategori==5)
                                     selected
                                     @endif>Komputer</option>
-                                <option value="6" @if ($need->kategori==6)
+                                <option value="6" @if ($type->kategori==6)
                                     selected
                                     @endif>Perkakas</option>
-                                <option value="7" @if ($need->kategori==7)
+                                <option value="7" @if ($type->kategori==7)
                                     selected
                                     @endif>Kendaraan</option>
-                                <option value="8" @if ($need->kategori==8)
+                                <option value="8" @if ($type->kategori==8)
                                     selected
                                     @endif>Mesin</option>
                             </select>
@@ -261,7 +260,7 @@
                     <div class="form-group row">
                         <label class="col-md-4 col-form-label text-md-right">Merk</label>
                         <div class="col-md-6">
-                            <input type="text" name="merk" class="form-control" value="{{ $need->merk }}" required>
+                            <input type="text" name="merk" class="form-control" value="{{ $type->merk }}" required>
                         </div>
                     </div>
                     {{-- Harga Satuan --}}
@@ -269,21 +268,21 @@
                         <label class="col-md-4 col-form-label text-md-right">Harga Satuan</label>
                         <div class="col-md-6">
                             <input type="number" name="harga_satuan" class="form-control"
-                                value="{{ $need->harga_satuan }}" required>
+                                value="{{ $type->harga_satuan }}" required>
                         </div>
                     </div>
                     {{-- Ukuran --}}
                     <div class="form-group row">
                         <label class="col-md-4 col-form-label text-md-right">Ukuran</label>
                         <div class="col-md-6">
-                            <input type="text" name="ukuran" class="form-control" value="{{ $need->ukuran }}" required>
+                            <input type="text" name="ukuran" class="form-control" value="{{ $type->ukuran }}" required>
                         </div>
                     </div>
                     {{-- Bahan --}}
                     <div class="form-group row">
                         <label class="col-md-4 col-form-label text-md-right">Bahan</label>
                         <div class="col-md-6">
-                            <input type="text" name="bahan" class="form-control" value="{{ $need->bahan }}" required>
+                            <input type="text" name="bahan" class="form-control" value="{{ $type->bahan }}" required>
                         </div>
                     </div>
                 </div>
@@ -297,14 +296,12 @@
     </div>
 </div>
 @endforeach
-
-
 @endsection
+
 @section('script')
-<script src="{{ asset('assets/js/data/inventory-data.js') }}"></script>
 <script>
     $(document).ready( function () {
-        $('#needs-inventory-table').DataTable({
+        $('#type-inventory-table').DataTable({
           "searching": false
       });
     } );

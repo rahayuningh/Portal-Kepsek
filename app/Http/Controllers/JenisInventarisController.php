@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Inventaris;
 use App\JenisInventaris;
-use App\KebutuhanBarang;
 use Illuminate\Http\Request;
 
 class JenisInventarisController extends Controller
@@ -38,13 +36,12 @@ class JenisInventarisController extends Controller
             'bahan' => 'required'
         ]);
 
-        $request->except('id');
-        $request->except('_token');
-        $request->except('_method');
-
+        // buat data jenis inventaris yang baru
         JenisInventaris::create($request->all());
 
-        return redirect()->route('inventory.type')->with('success', 'Jenis inventaris berhasil dibuat');
+        return redirect()
+            ->route('inventory.type')
+            ->with('success', 'Jenis inventaris ' . $request->nama_jenis_inventaris . ' berhasil dibuat');
     }
 
     /**
@@ -65,14 +62,15 @@ class JenisInventarisController extends Controller
             'bahan' => 'required'
         ]);
 
+        // cari jenis inventaris
         $type = JenisInventaris::find($request->id);
-        $request->except('id');
-        $request->except('_token');
-        $request->except('_method');
 
+        // update jenis inventaris
         $type->update($request->all());
 
-        return redirect()->route('inventory.type')->with('success', 'Jenis Inventaris berhasil diubah');
+        return redirect()
+            ->route('inventory.type')
+            ->with('success', 'Jenis Inventaris [' . $type->nama_jenis_inventaris . '] berhasil diubah');
     }
 
     /**
@@ -83,21 +81,28 @@ class JenisInventarisController extends Controller
      */
     public function destroy(Request $request)
     {
-        $request->validate(['id' => 'required|numeric']);
-        $type = JenisInventaris::find($request->id);
+        $request->validate([
+            'id' => 'required|numeric'
+        ], [
+            'id.required' => 'Penghapusan jenis inventaris gagal, tidak ada ID yang disertakan',
+            'id.numeric' => 'Penghapusan jenis inventaris gagal, ID harus berbentuk angka'
+        ]);
 
-        // delete semua inventaris yang berhubungan sama jenis inventaris
-        foreach ($type->inventaris as $item) {
-            $item->delete();
-        }
+        $type = JenisInventaris::find($request->id);
+        $typeName = $type->nama_jenis_inventaris;
 
         // delete semua kebutuhan barang yang berhubungan sama jenis inventaris
-        foreach ($type->kebutuhan_barang as $item) {
-            $item->delete();
+        foreach ($type->kebutuhanBarang as $need) {
+            // delete semua inventaris yang berhubungan sama jenis inventaris
+            foreach ($need->inventaris as $inventory) {
+                $inventory->delete();
+            }
+            $need->delete();
         }
 
         // delete data kebutuhan barang
         $type->delete();
-        return redirect()->route('inventory.type')->with('success', 'Jenis inventaris berhasil dihapus');
+
+        return redirect()->route('inventory.type')->with('success', 'Jenis inventaris [' . $typeName . '] berhasil dihapus');
     }
 }
