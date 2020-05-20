@@ -229,7 +229,9 @@
                                 @foreach ($rooms as $room)
                                 <option value="{{ $room->id }}" @if ($room->id == $need->ruangan_id)
                                     selected
-                                    @endif>{{ $room->gedung->nama_gedung. '/'.$room->nama_ruangan }}</option>
+                                    @endif>
+                                    {{ $room->gedung->nama_gedung . '/'.$room->nama_ruangan }}
+                                </option>
                                 @endforeach
                             </select>
                         </div>

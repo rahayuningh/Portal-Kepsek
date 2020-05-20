@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Gedung;
+use App\Ruangan;
 use Illuminate\Http\Request;
 
 class GedungController extends Controller
@@ -12,11 +13,10 @@ class GedungController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function showAllGedung()
     {
-        return view('inventaris/gedung', [
-            'buildings' => Gedung::all()
-        ]);
+        $building = Gedung::all();
+        return view('inventaris.gedung', ['buildings' => $building]);
     }
 
     /**
@@ -24,9 +24,10 @@ class GedungController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        Gedung::create($request->all());
+        return redirect('inventaris.gedung')->with('success', 'Data sudah ditambahkan');
     }
 
     /**
@@ -37,10 +38,6 @@ class GedungController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nama_gedung' => 'required',
-            'kode_gedung' => 'required',
-        ]);
     }
 
     /**
@@ -60,9 +57,13 @@ class GedungController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function update(Request $request)
     {
-        //
+        $building = Gedung::find($request->id);
+        $building->nama_gedung = $request->nama_gedung;
+        $building->kode_gedung = $request->kode_gedung;
+        $building->save();
+        return redirect()->route('inventory.building');
     }
 
     /**
@@ -72,7 +73,7 @@ class GedungController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function edit($id)
     {
         //
     }
@@ -83,8 +84,10 @@ class GedungController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $building = Gedung::findOrFail($request->id);
+        $building->delete();
+        return redirect()->back()->with('succes', 'Data sudah dihapus');
     }
 }

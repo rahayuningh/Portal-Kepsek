@@ -114,21 +114,13 @@ Route::middleware(['auth'])->group(function () {
             Route::delete('/delete', 'JenisInventarisController@destroy')->name('inventory.type.delete');
             Route::put('/update', 'JenisInventarisController@update')->name('inventory.type.update');
         });
-
-        // GEDUNG
-        Route::prefix('gedung')->group(function () {
-            Route::get('/', 'GedungController@index')->name('inventory.building');
-            Route::post('/create', 'GedungController@store')->name('inventory.building.create');
-            Route::delete('/delete', 'GedungController@destroy')->name('inventory.building.delete');
-            Route::put('/update', 'GedungController@update')->name('inventory.building.update');
-        });
     });
 
     Route::prefix('inventaris/ruang')->group(function () {
         Route::get('/', 'RuanganController@showAllRuangan')->name('inventory.room');
         Route::post('/create', 'RuanganController@create')->name('room.create');
         Route::patch('/update', 'RuanganController@update')->name('room.update');
-        Route::post('/delete', 'RuanganController@destroy')->name('room.destroy');
+        Route::delete('/delete', 'RuanganController@destroy')->name('room.delete');
     });
 
     /*Route::prefix('kebutuhan-barang')->group(function (){
@@ -136,14 +128,14 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/create' ,'KebutuhanBarangController@create')->name('kebutuhan-barang.create');
         Route::post('/update' ,'KebutuhanBarangController@update')->name('kebutuhan-barang.update');
         Route::post('/delete','KebutuhanBarangController@destroy')->name('kebutuhan-barang.delete');
-    }) ;
-    Route::prefix('gedung')->group(function(){
-        Route::get('/' ,'GedungController@showAllGedung')->name('building');
-        Route::post('/create' ,'GedungController@create')->name('building.create');
-        Route::post('/update' ,'GedungController@update')->name('building.update');
-        Route::post('/delete','GedungController@destroy')->name('building.destroy');
+    }) ;    */
+    Route::prefix('inventaris.gedung')->group(function () {
+        Route::get('/', 'GedungController@showAllGedung')->name('inventory.building');
+        Route::post('/create', 'GedungController@create')->name('building.create');
+        Route::put('/update', 'GedungController@update')->name('building.update');
+        Route::delete('/delete', 'GedungController@destroy')->name('building.delete');
     });
-    */
+
     // PESAN
     Route::prefix('message')->group(function () {
         Route::get('/sentbox', 'PesanController@sentbox')->name('message.outbox');

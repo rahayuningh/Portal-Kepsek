@@ -19,6 +19,7 @@ class KebutuhanBarangController extends Controller
     public function index()
     {
         $needs = KebutuhanBarang::all();
+        // dd()
         return view('inventaris/kebutuhan', [
             'buildings' => Gedung::all(),
             'needs' => $needs->slice(0, 10),
