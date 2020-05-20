@@ -17,12 +17,16 @@
 ### Software
 - Visual Studio Code
 - Sublime Text
-- PhpMyAdmin
+- XAMPP
+- Postman
+- Google Chrome
 ### Hardware
 - Perangkat 1
   - Intel Celeron N3050
   - 2GB RAM
 - Perangkat 2
+  - AMD A9 Radeon
+  - 8GB RAM
   
 ### Tech Stack
 - Laravel (Back-end)
@@ -120,7 +124,46 @@ Pengelolaan inventaris terbagi menjadi beberapa sub menu, antara lain pengelolaa
 
 ## E. Konsep OOP
 [`^ kembali ke atas ^`](#konten-integrated-monitoring-systemimosy)
+### 1. Encapsulation
+Encapsulation adalah membungkus semua atribut dan metode yang ada di dalam class agar tidak dapat di akses secara leluasa oleh class lainnya. Untuk mengaplikasikan hal tersebut terdapat Access Modifier yang terdiri dari : Public, Private, dan Protected.
 
+```text
+...
+class InventoryController extends Controller
+{
+    public function prepareInventoryData($data, $isSlice = false)
+    {
+        if ($isSlice) {
+            $inventarises = $data->slice(0, 20);
+        } else {
+            $inventarises = $data;
+        }
+    . . .
+
+...
+```
+### 2. Inheritance
+Penggunaan inheritance dalam OOP bertujuan agar berbagai object dengan memiliki karakteristik umum yang sama dapat dikelompokan ke dalam satu kelompok. Hal ini akan mempermudah proses pengembangan disaat ada sebuat atribut atau metode umum yang ingin diubah. Pada projek ini, konsep Inheritance diaplikasikan menggunakan Polymorphic Relationships. Digunakannya Polymorphic Relationships karena tidak ada fitur khusus inheritance pada Eloquent ORM milik Laravel.
+```text
+...
+class Civitas extends Model
+{
+    public function civitasable()
+    {
+        return $this->morphTo();
+    }
+    . . .
+
+
+class Siswa extends Model
+{
+    public function civitas()
+    {
+        return $this->morphOne('App\Civitas', 'civitasable');
+    }
+    . . .
+...
+```
 
 ## F. Tipe Desain Pengembangan
 [`^ kembali ke atas ^`](#konten-integrated-monitoring-systemimosy)
