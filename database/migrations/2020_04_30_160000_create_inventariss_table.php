@@ -17,7 +17,6 @@ class CreateInventarissTable extends Migration
             $table->id();
             $table->unsignedBigInteger('kebutuhan_id');
             $table->string('kode_inventaris', 15)->unique();
-            $table->unsignedBigInteger('jenis_inventaris_id');
             $table->string('no_seri')->nullable();
             $table->date('tgl_terima');
             $table->string('anggaran', 2);

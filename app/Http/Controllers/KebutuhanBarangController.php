@@ -37,8 +37,8 @@ class KebutuhanBarangController extends Controller
             'buildings' => Gedung::all(),
             'needs' => KebutuhanBarang::where('ruangan_id', $request->room_id)->get(),
             'types' => JenisInventaris::all(),
-            'room_name' => Ruangan::find($request->room_id)->nama_ruangan,
             'building_name' => Gedung::find($request->building_id)->nama_gedung,
+            'room_name' => Ruangan::find($request->room_id)->nama_ruangan,
             'rooms' => Ruangan::all()->sortBy('gedung_id')
         ]);
     }
@@ -84,17 +84,11 @@ class KebutuhanBarangController extends Controller
         $request->except('_token');
         $request->except('_method');
 
+        // update data kebutuhan barang
         $need->update([
             'jenis_inventaris_id' => $request->jenis_inventaris_id,
             'ruangan_id' => $request->ruangan_id
         ]);
-
-        foreach ($need->inventaris as $inventaris) {
-            $inventaris->update([
-                'ruangan_pemilik_id' => $request->ruangan_id,
-                'jenis_inventaris_id' => $request->jenis_inventaris_id
-            ]);
-        }
 
         return redirect()->route('inventory.needs')->with('success', 'Kebutuhan barang berhasil diubah');
     }
@@ -107,17 +101,26 @@ class KebutuhanBarangController extends Controller
      */
     public function destroy(Request $request)
     {
-        $request->validate(['id' => 'required|numeric']);
-        $need = KebutuhanBarang::find($request->id);
+        $request->validate([
+            'id' => 'required|numeric'
+        ], [
+            'id.required' => 'Hapus data kebutuhan barang gagal, tidak ada ID yang disertakan',
+            'id.numeric' => 'Hapus data kebutuhan barang gagal, ID harus berupa angka'
+        ]);
 
-        // delete semua inventaris yang berhubungan sama kebutuhan barnag
-        Inventaris::where([
-            ['ruangan_pemilik_id', '=', $need->ruangan_id],
-            ['jenis_inventaris_id', '=', $need->jenis_inventaris_id]
-        ])->delete();
+        $need = KebutuhanBarang::find($request->id);
+        $inventoryType = $need->jenisInventaris->nama_jenis_inventaris;
+        $roomName = $need->ruangan->nama_ruangan;
+
+        // delete semua inventaris yang berhubungan sama kebutuhan barang
+        foreach ($need->inventaris as $inventory) {
+            $inventory->delete();
+        }
 
         // delete data kebutuhan barang
         $need->delete();
-        return redirect()->route('inventory.needs')->with('success', 'Kebutuhan barang berhasil dihapus');
+        return redirect()
+            ->route('inventory.needs')
+            ->with('success', 'Kebutuhan barang ' . $inventoryType . ' di ruangan ' . $roomName . ' berhasil dihapus');
     }
 }

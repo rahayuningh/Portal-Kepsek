@@ -117,7 +117,7 @@ Route::middleware(['auth'])->group(function () {
         });
 
         // DATA INVENTARIS
-        Route::get('/daftar', 'InventoryController@seeInventory')->name('inventory');
+        Route::get('/daftar/{needId}', 'InventoryController@seeInventory')->name('inventory');
         Route::get('/update/{id}', 'InventoryController@showUpdatePage')->name('inventory.update');
         Route::post('/cari', 'InventoryController@search')->name('inventory.search');
         Route::post('/store', 'InventoryController@store')->name('inventory.store');

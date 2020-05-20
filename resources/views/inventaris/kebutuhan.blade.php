@@ -89,10 +89,15 @@
                             <td>{{ $need->baik }}</td>
                             <td>{{ $need->kurang_baik }}</td>
                             <td>{{ $need->rusak }}</td>
-                            <td class="p-0 text-center">
+                            <td class="p-1 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
                                     align="center" title="Edit" href="#Edit{{ $need->id }}">
                                     <i class="mdi mdi-pencil"></i>
+                                </a>
+                                <a type="button" class="btn btn-inverse-info btn-icon p-2" data-toggle="modal"
+                                    align="center" title="Lihat Inventaris"
+                                    href="{{ route('inventory', ['needId'=>$need->id]) }}">
+                                    <i class="mdi mdi-eye"></i>
                                 </a>
                                 <a type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
                                     data-toggle="modal" href="#delete{{$need->id}}">
@@ -186,17 +191,17 @@
                 {{-- FIELD --}}
                 <input type="number" value="{{ $need->id }}" name="id" hidden>
                 <div class="form-group row">
-                    <div class="col-md-12 p-3 text-center" style="color: red;">
+                    <div class="col-md-12 p-5 text-center" style="color: red;">
                         <h3>Yakin ingin menghapus kebutuhan barang {{ $need->jenisInventaris->nama_jenis_inventaris }}
                             di
-                            Ruangan {{ $need->ruangan->nama_ruangan }} ?</h3>
+                            Ruangan [{{ $need->ruangan->nama_ruangan }}] ?</h3>
                         <h4>Hal ini juga akan menghapus semua data inventaris yang terhubung dengan kebutuhan barang
                             ini.</h4>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                    <button type="submit" class="btn btn-primary">Ya</button>
                 </div>
             </form>
         </div>

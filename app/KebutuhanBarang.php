@@ -18,16 +18,16 @@ class KebutuhanBarang extends Model
 
     public function ruangan()
     {
-        return $this->belongsTo('App\Ruangan','ruangan_id');
+        return $this->belongsTo('App\Ruangan', 'ruangan_id');
     }
 
     public function jenisInventaris()
     {
-        return $this->belongsTo('App\JenisInventaris','jenis_inventaris_id');
+        return $this->belongsTo('App\JenisInventaris', 'jenis_inventaris_id');
     }
 
     public function inventaris()
     {
-        return $this->hasMany('App\Inventaris','kebutuhan_id');
+        return $this->hasMany('App\Inventaris', 'kebutuhan_id');
     }
 }

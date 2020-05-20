@@ -18,7 +18,6 @@ class InventarisTableSeeder extends Seeder
         DB::table('inventariss')->insert([
             'kebutuhan_id' => 1,
             'kode_inventaris' => 'O-1-001-OP-2020',
-            'jenis_inventaris_id' => 1,
             'no_seri' => '123456789',
             'tgl_terima' => Carbon::today(),
             'anggaran' => 'OP',
@@ -28,7 +27,6 @@ class InventarisTableSeeder extends Seeder
         DB::table('inventariss')->insert([
             'kebutuhan_id' => 1,
             'kode_inventaris' => 'O-1-002-OP-2020',
-            'jenis_inventaris_id' => 1,
             'no_seri' => '123456789',
             'tgl_terima' => Carbon::today(),
             'anggaran' => 'OP',
@@ -39,7 +37,6 @@ class InventarisTableSeeder extends Seeder
         DB::table('inventariss')->insert([
             'kebutuhan_id' => 2,
             'kode_inventaris' => 'O-2-001-OP-2020',
-            'jenis_inventaris_id' => 2,
             'no_seri' => '123456789',
             'tgl_terima' => Carbon::today(),
             'anggaran' => 'OP',
@@ -49,7 +46,6 @@ class InventarisTableSeeder extends Seeder
         DB::table('inventariss')->insert([
             'kebutuhan_id' => 2,
             'kode_inventaris' => 'O-2-002-OP-2020',
-            'jenis_inventaris_id' => 2,
             'no_seri' => '123456789',
             'tgl_terima' => Carbon::today(),
             'anggaran' => 'OP',
@@ -60,7 +56,6 @@ class InventarisTableSeeder extends Seeder
         DB::table('inventariss')->insert([
             'kebutuhan_id' => 3,
             'kode_inventaris' => 'O-3-001-OP-2020',
-            'jenis_inventaris_id' => 3,
             'no_seri' => '123456789',
             'tgl_terima' => Carbon::today(),
             'anggaran' => 'OP',
@@ -70,7 +65,6 @@ class InventarisTableSeeder extends Seeder
         DB::table('inventariss')->insert([
             'kebutuhan_id' => 3,
             'kode_inventaris' => 'O-3-002-OP-2020',
-            'jenis_inventaris_id' => 3,
             'no_seri' => '123456789',
             'tgl_terima' => Carbon::today(),
             'anggaran' => 'OP',

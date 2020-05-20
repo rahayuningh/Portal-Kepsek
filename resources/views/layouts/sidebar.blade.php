@@ -82,8 +82,6 @@
                                     Barang</a></li>
                             <li class="nav-item"> <a class="nav-link" href="{{ route('inventory.type') }}">Jenis
                                     Inventaris</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="{{ route('inventory') }}">Data
-                                    Inventaris</a></li>
                 </li>
             </ul>
     </div>
