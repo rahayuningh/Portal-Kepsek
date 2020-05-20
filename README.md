@@ -7,7 +7,7 @@
 
 
 ## A. Deskripsi
-[`^ kembali ke atas ^`](#konten-integrated-monitoring-system-(imosy))
+[`^ kembali ke atas ^`](#konten-integrated-monitoring-system-imosy)
 
 **Integrated Monitoring System** atau disebut dengan **IMoSy** merupakan sistem berbasis Website yang digunakan untuk memonitoring pekerjaan guru misalnya pengisian data nilai siswa, monitoring data siswa, data guru, data tenaga pendidik dan monitoring data inventaris. Selain monitoring dalam sistem ini juga dapat dilakukan pengelolaan data, seperti inventaris. Sistem ini dikembangkan atas dasar permintaan Kepala Sekolah SMP Cendekia Baznas (SCB) Bogor yang menginginkan adanya sistem terintegrasi untuk melakukan monitoring terutama untuk memantau pekerjaan guru SCB. Kemudian ditambah monitoring lain seperti pada pendataan inventaris.
 
