@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Gedung;
+use App\Ruangan;
 use Illuminate\Http\Request;
 
 class GedungController extends Controller
@@ -11,9 +12,10 @@ class GedungController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function showAllGedung()
     {
-        //
+        $building=Gedung::all();
+        return view('inventaris.gedung',['buildings'=>$building]);
     }
 
     /**
@@ -21,9 +23,10 @@ class GedungController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        Gedung::create($request->all());
+        return redirect('inventaris.gedung')->with('success','Data sudah ditambahkan');
     }
 
     /**
@@ -34,7 +37,7 @@ class GedungController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -54,9 +57,11 @@ class GedungController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function update(Request $request)
     {
-        //
+        $building=Ruangan::findOrFail($request->id);$out=$request->except('_token');
+        $ruangan->update($out);
+        return redirect()->route('inventaris.gedung');
     }
 
     /**
@@ -66,7 +71,7 @@ class GedungController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function edit($id)
     {
         //
     }
@@ -77,8 +82,10 @@ class GedungController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $building=Gedung::findOrFail($request->id);
+        $building->delete();
+        return redirect()->back()->with('succes','Data sudah dihapus');
     }
 }

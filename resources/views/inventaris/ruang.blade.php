@@ -84,16 +84,10 @@
                                     align="center" title="Edit" href="#Edit{{$dat['id']}}">
                                     <i class="mdi mdi-pencil"></i>
                                 </a>
-                                <a href="#" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
-                                    >
+                                <a href="#deleteForm{{ $dat['id'] }}" type="button"
+                                    class="btn btn-inverse-danger btn-icon p-2" title="Hapus" data-toggle="modal">
                                     <i class="mdi mdi-delete"></i>
                                 </a>
-                                <form id="delete-kbm-form{{ $dat['id']}}" action="{{ route('room.destroy')}}" method="POST"
-                                    style="display: none;">
-                                    
-                                    @csrf                                
-                                <input type="number" value="{{$dat['id']}}" name="id" hidden>
-                                </form>
                             </td>
                         </tr>
                         @php
@@ -313,6 +307,37 @@
         </div>
     </div>
 </div>
+
+@foreach ($data_ruangan as $dat)
+{{-- WINDOW DELETE DATA --}}
+<div id="deleteForm{{ $dat['id'] }}" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Hapus Data Ruangan </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="{{ route('room.delete') }}" method="post">
+                @csrf
+                @method('DELETE')
+                <input type="number" value="{{ $dat['id'] }}" name="id" hidden>
+                {{-- FIELD --}}
+                <div class="modal-body">
+                    <h4 class="text-center">Yakin hapus data Ruangan {{ $dat['kode_ruangan'] }} ?</h4>
+                </div>
+                {{-- BUTTON --}}
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                    <button type="submit" class="btn btn-primary">Ya</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@endforeach
+
 @endsection
 @section('script')
 <script src="{{ asset('assets/js/inventory-data.js') }}"></script>

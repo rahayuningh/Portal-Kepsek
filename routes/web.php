@@ -115,17 +115,14 @@ Route::middleware(['auth'])->group(function () {
             Route::put('/update', 'JenisInventarisController@update')->name('inventory.type.update');
         });
 
-        // GEDUNG
-        Route::get('/gedung', function () {
-            return view('inventaris/gedung');
-        })->name('inventory.building');
+
     });
     
     Route::prefix('inventaris/ruang')->group(function(){
         Route::get('/' ,'RuanganController@showAllRuangan')->name('inventory.room');
         Route::post('/create' ,'RuanganController@create')->name('room.create');
         Route::patch('/update' ,'RuanganController@update')->name('room.update');
-        Route::post('/delete','RuanganController@destroy')->name('room.destroy');
+        Route::delete('/delete','RuanganController@destroy')->name('room.delete');
     });
 
     /*Route::prefix('kebutuhan-barang')->group(function (){
@@ -133,14 +130,14 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/create' ,'KebutuhanBarangController@create')->name('kebutuhan-barang.create');
         Route::post('/update' ,'KebutuhanBarangController@update')->name('kebutuhan-barang.update');
         Route::post('/delete','KebutuhanBarangController@destroy')->name('kebutuhan-barang.delete');
-    }) ;
-    Route::prefix('gedung')->group(function(){
-        Route::get('/' ,'GedungController@showAllGedung')->name('building');
+    }) ;    */
+    Route::prefix('inventaris.gedung')->group(function(){
+        Route::get('/' ,'GedungController@showAllGedung')->name('inventory.building');
         Route::post('/create' ,'GedungController@create')->name('building.create');
-        Route::post('/update' ,'GedungController@update')->name('building.update');
-        Route::post('/delete','GedungController@destroy')->name('building.destroy');
+        Route::patch('/update' ,'GedungController@update')->name('building.update');
+        Route::delete('/delete','GedungController@destroy')->name('building.delete');
     });
-    */
+    
     // PESAN
     Route::prefix('message')->group(function () {
         Route::get('/sentbox', 'PesanController@sentbox')->name('message.outbox');
