@@ -29,9 +29,12 @@
   - 8GB RAM
   
 ### Tech Stack
-- Laravel (Back-end)
-- MySQL (DBMS)
+- Laravel (Framework)
+- MySQL/DB Maria (DBMS)
 - Apache (Server)
+- Mailtrap (Email Service)
+- Blade (Templating Engine)
+- Bootstrap (CSS Framework)
 
 
 
