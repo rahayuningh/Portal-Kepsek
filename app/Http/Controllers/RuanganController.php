@@ -46,7 +46,7 @@ class RuanganController extends Controller
         );
 
         Ruangan::create($request->all());
-        return redirect()->back()->with('success', 'Ruangan ' . $request->nama_ruangan . ' berhasil dibuat');
+        return redirect()->route('inventory.room')->with('success', 'Ruangan ' . $request->nama_ruangan . ' berhasil dibuat');
     }
 
     public function search(Request $request)
@@ -62,7 +62,6 @@ class RuanganController extends Controller
         );
 
         $building = Gedung::find($request->gedung_id);
-        // dd($request->all());
         return view('inventaris.ruang', [
             'buildings' => Gedung::all(),
             'types' => JenisRuangan::all(),
@@ -93,7 +92,7 @@ class RuanganController extends Controller
         );
         $ruangan = Ruangan::findOrFail($request->id);
         $ruangan->update($request->all());
-        return redirect()->back()->with('success', 'Data ' . $request->kode_ruangan . ' | ' . $request->nama_ruangan . ' berhasil diupdate');
+        return redirect()->route('inventory.room')->with('success', 'Data ruangan ' . $request->kode_ruangan . ' | ' . $request->nama_ruangan . ' berhasil diupdate');
     }
 
     public function destroy(Request $request)
@@ -114,6 +113,6 @@ class RuanganController extends Controller
 
         // hapus data ruangan
         $ruangan->delete();
-        return redirect()->back()->with('success', 'Data ' . $kode . ' | ' . $name . ' berhasil dihapus');
+        return redirect()->route('inventory.room')->with('success', 'Data ' . $kode . ' | ' . $name . ' berhasil dihapus');
     }
 }
