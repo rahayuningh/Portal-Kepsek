@@ -1,13 +1,13 @@
 <h1 align="center"><img src="https://github.com/rahayuningh/Portal-Kepsek/blob/master/public/assets/imagesSCB/Logo%20IMoSy_black.svg"></h1>
 
-# Konten Integrated Monitoring System(IMoSy)
+<h1 align="center">Konten Integrated Monitoring System(IMoSy)</h1>
 
 [Deskripsi](#a-deskripsi) | [Ruang Lingkup Pengembangan](#b-ruang-lingkup-pengembangan) | [Diagram](#c-diagram) | [Fitur](#d-fitur) | [Konsep OOP](#e-konsep-oop) | [Tipe Desain Pengembangan](#f-tipe-desain-pengembangan) | [Dokumentasi](#g-dokumentasi) | [Development Team](#development-team)
 :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
 
 
 ## A. Deskripsi
-[`^ kembali ke atas ^`](#konten-integrated-monitoring-system-imosy)
+[`^ kembali ke atas ^`](#konten-integrated-monitoring-systemimosy)
 
 **Integrated Monitoring System** atau disebut dengan **IMoSy** merupakan sistem berbasis Website yang digunakan untuk memonitoring pekerjaan guru misalnya pengisian data nilai siswa, monitoring data siswa, data guru, data tenaga pendidik dan monitoring data inventaris. Selain monitoring dalam sistem ini juga dapat dilakukan pengelolaan data, seperti inventaris. Sistem ini dikembangkan atas dasar permintaan Kepala Sekolah SMP Cendekia Baznas (SCB) Bogor yang menginginkan adanya sistem terintegrasi untuk melakukan monitoring terutama untuk memantau pekerjaan guru SCB. Kemudian ditambah monitoring lain seperti pada pendataan inventaris.
 
