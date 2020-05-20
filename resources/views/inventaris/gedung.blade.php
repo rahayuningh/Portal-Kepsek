@@ -30,36 +30,30 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @php
+                        no=1;
+                        @endphp
+                        @foreach ($buildings as $item)
                         <tr>
-                            <td>1</td>
-                            <td>Gedung Utama A</td>
-                            <td>BUAI212</td>
+                            <td>{{ $no }}</td>
+                            <td>{{ $item->nama_gedung }}</td>
+                            <td>{{ $item->kode_gedung  }}</td>
                             <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
-                                    align="center" title="Edit" href="#Edit">
+                                    align="center" title="Edit" href="#Edit{{ $item->id }}">
                                     <i class="mdi mdi-pencil"></i>
                                 </a>
-                                <a href="" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
+                                <a href="#delete{{ $item->id }}" type="button"
+                                    class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
                                     onclick="return confirm('Yakin hapus data?')">
                                     <i class="mdi mdi-delete"></i>
                                 </a>
                             </td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Gedung Kelas A</td>
-                            <td>NXAS92</td>
-                            <td class="p-0 text-center">
-                                <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
-                                    align="center" title="Edit" href="#Edit">
-                                    <i class="mdi mdi-pencil"></i>
-                                </a>
-                                <a href="" type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
-                                    onclick="return confirm('Yakin hapus data?')">
-                                    <i class="mdi mdi-delete"></i>
-                                </a>
-                            </td>
-                        </tr>
+                        @php
+                        $no++;
+                        @endphp
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -79,20 +73,20 @@
                 </button>
             </div>
 
-            <form action="" method="">
+            <form action="{{ route('inventory.building.create') }}" method="post">
                 {{ csrf_field() }}
                 {{-- FIELD --}}
                 <div class="modal-body">
                     <div class="form-group row">
                         <label for="kelas" class="col-md-4 col-form-label text-md-right">Nama Gedung</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="nama_gedung">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="kelas" class="col-md-4 col-form-label text-md-right">Kode Gedung</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="kode_gedung">
                         </div>
                     </div>
                 </div>

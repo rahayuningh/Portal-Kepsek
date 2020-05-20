@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Gedung;
 use Illuminate\Http\Request;
 
 class GedungController extends Controller
@@ -13,7 +14,9 @@ class GedungController extends Controller
      */
     public function index()
     {
-        //
+        return view('inventaris/gedung', [
+            'buildings' => Gedung::all()
+        ]);
     }
 
     /**
@@ -34,7 +37,10 @@ class GedungController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_gedung'=>'required',
+            'kode_gedung'=>'required',
+        ])
     }
 
     /**
