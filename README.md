@@ -39,7 +39,7 @@
 ### Activity Diagram
 ![Activity diagram](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/activity_diagram.png)
 ### Class Diagram
-![Class diagram](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/class_diagram_old.png)
+![Class diagram](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/class_diagram.png)
 ### Entity Relationship Diagram
 ![ERD](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/erd.png)
 
