@@ -11,9 +11,9 @@
             @endif
         </p>
     </div>
-    {{-- <div class="form-group">
-        <label>Level Akses</label>
-        <p>{{ $tendik->level_akses }}</p>
-    </div> --}}
+    <div class="form-group">
+        <label>Email</label>
+        <p>{{ $pegawai->email }}</p>
+    </div>
 </div>
 @endsection

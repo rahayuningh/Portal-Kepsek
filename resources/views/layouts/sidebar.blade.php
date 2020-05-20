@@ -2,13 +2,14 @@
 {{-- SIDEBAR --}}
 {{-- ######################################################################## --}}
 
-<nav class="sidebar sidebar-offcanvas" id="sidebar">
+<nav class="sidebar sidebar-offcanvas pt-2" id="sidebar">
     <div class="left-fixed-sidebar">
+        <hr>
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <ul class="nav">
                 {{-- BERANDA --}}
                 <li class="nav-item">
-                    <a class="nav-link" href="/">
+                    <a class="nav-link" href="{{ route('dashboard') }}">
                         <span class="menu-title">Beranda</span>
                         <i class="mdi mdi-home menu-icon"></i>
                     </a>

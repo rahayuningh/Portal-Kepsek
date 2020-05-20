@@ -26,5 +26,9 @@
             @endforeach
         </ol>
     </div>
+    <div class="form-group">
+        <label>Email</label>
+        <p>{{ $pegawai->email }}</p>
+    </div>
 </div>
 @endsection
