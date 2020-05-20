@@ -186,7 +186,7 @@
     <script>
         $(document).ready( function () {
         $('#tendik-table').DataTable({
-          "searching": false
+        //   "searching": false
       });
     } );
     </script>

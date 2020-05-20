@@ -8,7 +8,7 @@ const studentTableElement = document.getElementById('student-table-body');
 const updateClassDetail = (classDetail, students) => {
     yearElement.innerHTML = classDetail.year;
     classElement.innerHTML = classDetail.code;
-    teacherElement.innerHTML = `<a href="/pegawai/guru/${classDetail.teacher_id}">${classDetail.teacher_name}</a>`;
+    teacherElement.innerHTML = `<a href="/pegawai/guru/${classDetail.teacher_id}/biodata">${classDetail.teacher_name}</a>`;
 
     studentTableElement.innerHTML = "";
     let counter = 1;

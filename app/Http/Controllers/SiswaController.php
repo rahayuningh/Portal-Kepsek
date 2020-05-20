@@ -23,7 +23,7 @@ class SiswaController extends Controller
                 'id' => $student->id,
                 'name' => $civitas->nama,
                 'nisn' => $student->nisn,
-                'region' => 'Jakarta ' . $student->id
+                'region' => $student->wilayah->nama_daerah
             ));
         }
 

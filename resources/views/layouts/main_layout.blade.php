@@ -28,22 +28,25 @@
     <link rel="shortcut icon" href="{{ asset('assets/imagesSCB/Logo-SCB_mini.png') }}" />
 
     <style>
-        .header-card{
+        .header-card {
             background: linear-gradient(to bottom, #008c5d, #00593B);
             color: white;
             border-radius: 0.3125rem 0.3125rem 0rem 0rem;
             font-size: 18pt;
         }
-        thead{
-            background-color:#eee;
+
+        thead {
+            background-color: #eee;
         }
-        td .badge-td{
+
+        td .badge-td {
             font-weight: bold;
             width: 100%;
             height: 100%;
             font-size: 100%;
         }
-        td .badge-gray{
+
+        td .badge-gray {
             background-color: #eee;
         }
     </style>

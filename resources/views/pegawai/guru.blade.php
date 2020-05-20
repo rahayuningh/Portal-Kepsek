@@ -143,7 +143,8 @@
                         </div>
                         {{-- Wali Kelas --}}
                         <div class="form-group row">
-                            <label for="wali_kelas" class="col-md-4 col-form-label text-md-right">Kelas Perwalian</label>
+                            <label for="wali_kelas" class="col-md-4 col-form-label text-md-right">Kelas
+                                Perwalian</label>
                             <div class="col-md-6">
                                 <select id="wali_kelas" type="" name="kelas_perwalian" class="form-control"
                                     required="required">
@@ -184,7 +185,7 @@
     <script>
         $(document).ready( function () {
         $('#teacher-table').DataTable({
-          "searching": false
+        //   "searching": false
       });
     } );
     </script>

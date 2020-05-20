@@ -51,10 +51,10 @@
     </div>
     <div class="col-md-3 stretch-card grid-margin">
         <div class="card bg-gradient-primary card-img-holder text-white">
-            <a href="{{ route('inventory') }}" class="text-decoration-none text-white">
+            <a href="{{ route('inventory.needs') }}" class="text-decoration-none text-white">
                 <div class="card-body">
                     <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                    <h4 class="font-weight-normal mb-3">Inventaris
+                    <h4 class="font-weight-normal mb-3">Kebutuhan Barang
                         <i class="mdi mdi-archive mdi-24px float-right"></i>
                     </h4>
                 </div>

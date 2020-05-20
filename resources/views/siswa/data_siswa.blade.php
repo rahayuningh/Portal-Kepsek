@@ -107,20 +107,20 @@
                             <td>{{ $no }}</td>
                             <td>{{ $student['nisn'] }}</td>
                             <td><a href="{{ route('student.detail',['id'=>$student['id']]) }}">
-                                {{ $student['name'] }}
-                            </a>
-                        </td>
-                        <td>{{ $student['region'] }}</td>
-                        @php
-                        $no++;
-                        @endphp
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                                    {{ $student['name'] }}
+                                </a>
+                            </td>
+                            <td>{{ $student['region'] }}</td>
+                            @php
+                            $no++;
+                            @endphp
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
 </div>
 @endsection
 @section('script')
@@ -128,7 +128,7 @@
 <script>
     $(document).ready( function () {
         $('#student-table').DataTable({
-          "searching": false
+        //   "searching": false
       });
     } );
 </script>
