@@ -20,6 +20,7 @@
                 </div>
             </div>
 
+            {{-- Kolom Pencarian --}}
             <div class="card-body">
                 <h4 class="card-title text-center">Pencarian</h4>
                 <form class="form-sample" action="{{ route('inventory.needs.search') }}" method="POST">
@@ -70,26 +71,24 @@
                 <table id="needs-inventory-table" class="table table-bordered table-responsive">
                     <thead>
                         <tr class="text-center">
-                            <th>Jenis Inventaris</th>
                             <th>Ruangan</th>
-                            <th> Jumlah </th>
-                            <th> Baik </th>
-                            <th> Kurang Baik </th>
-                            <th> Rusak </th>
-                            {{-- <th> Dibutuhkan </th> --}}
-                            <th> Aksi </th>
+                            <th>Jenis Inventaris</th>
+                            <th>Jumlah</th>
+                            <th>Baik</th>
+                            <th>Kurang Baik</th>
+                            <th>Rusak</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($needs as $need)
                         <tr>
-                            <td>{{ $need->jenis_inventaris->nama_jenis_inventaris }}</td>
                             <td>{{ $need->ruangan->nama_ruangan }}</td>
+                            <td>{{ $need->jenisInventaris->nama_jenis_inventaris }}</td>
                             <td>{{ $need->jumlah }}</td>
                             <td>{{ $need->baik }}</td>
                             <td>{{ $need->kurang_baik }}</td>
                             <td>{{ $need->rusak }}</td>
-                            {{-- <td>{{ $need->butuh }}</td> --}}
                             <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" data-toggle="modal"
                                     align="center" title="Edit" href="#Edit{{ $need->id }}">
@@ -188,7 +187,7 @@
                 <input type="number" value="{{ $need->id }}" name="id" hidden>
                 <div class="form-group row">
                     <div class="col-md-12 p-3 text-center" style="color: red;">
-                        <h3>Yakin ingin menghapus kebutuhan barang {{ $need->jenis_inventaris->nama_jenis_inventaris }}
+                        <h3>Yakin ingin menghapus kebutuhan barang {{ $need->jenisInventaris->nama_jenis_inventaris }}
                             di
                             Ruangan {{ $need->ruangan->nama_ruangan }} ?</h3>
                         <h4>Hal ini juga akan menghapus semua data inventaris yang terhubung dengan kebutuhan barang

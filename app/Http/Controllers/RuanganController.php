@@ -49,6 +49,28 @@ class RuanganController extends Controller
         return redirect()->back()->with('success', 'Ruangan ' . $request->nama_ruangan . ' berhasil dibuat');
     }
 
+    public function search(Request $request)
+    {
+        $request->validate(
+            [
+                'gedung_id' => 'required|numeric',
+            ],
+            [
+                'gedung_id.required' => 'Pencarian gagal, ID Gedung harus dimasukkan',
+                'gedung_id.numeric' => 'Pencarian gagal, ID Gedung harus berupa angka'
+            ]
+        );
+
+        $building = Gedung::find($request->gedung_id);
+        // dd($request->all());
+        return view('inventaris.ruang', [
+            'buildings' => Gedung::all(),
+            'types' => JenisRuangan::all(),
+            'rooms' => $building->ruangan,
+            'building_name' => $building->nama_gedung
+        ]);
+    }
+
     public function update(Request $request)
     {
         $request->validate(

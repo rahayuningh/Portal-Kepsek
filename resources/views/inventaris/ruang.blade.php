@@ -31,7 +31,7 @@
                             <div class="form-group row">
                                 <div class="text-center col-sm-12">
                                     <label class="" for="tahun">Gedung</label>
-                                    <select class="form-control" required>
+                                    <select class="form-control" name="gedung_id" required>
                                         <option disabled selected> --Pilih-- </option>
                                         @foreach($buildings as $building)
                                         <option value="{{$building->id}}">{{$building->nama_gedung}}</option>
@@ -48,7 +48,9 @@
                 </form>
             </div>
 
-            {{-- <h5 class="card-title text-center"> Hasil Pencarian <br> Gedung {A} </h5> --}}
+            @if (isset($building_name))
+            <h5 class="card-title text-center"> Hasil Pencarian <br> Gedung [{{ $building_name }}] </h5>
+            @endif
 
             {{-- TABEL UTAMA --}}
             <div class="table pb-3 pt-3">

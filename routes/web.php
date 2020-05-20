@@ -107,14 +107,6 @@ Route::middleware(['auth'])->group(function () {
             Route::delete('/delete', 'RuanganController@destroy')->name('room.delete');
         });
 
-        // DATA INVENTARIS
-        Route::get('/daftar', 'InventoryController@seeInventory')->name('inventory');
-        Route::get('/update/{id}', 'InventoryController@showUpdatePage')->name('inventory.update');
-        Route::post('/cari', 'InventoryController@search')->name('inventory.search');
-        Route::post('/store', 'InventoryController@store')->name('inventory.store');
-        Route::put('/update', 'InventoryController@update')->name('inventory.update.submit');
-        Route::delete('/delete', 'InventoryController@delete')->name('inventory.delete');
-
         // KEBUTUHAN BARANG
         Route::prefix('kebutuhan-barang')->group(function () {
             Route::get('/', 'KebutuhanBarangController@index')->name('inventory.needs');
@@ -123,6 +115,14 @@ Route::middleware(['auth'])->group(function () {
             Route::delete('/delete', 'KebutuhanBarangController@destroy')->name('inventory.needs.delete');
             Route::put('/update', 'KebutuhanBarangController@update')->name('inventory.needs.update');
         });
+
+        // DATA INVENTARIS
+        Route::get('/daftar', 'InventoryController@seeInventory')->name('inventory');
+        Route::get('/update/{id}', 'InventoryController@showUpdatePage')->name('inventory.update');
+        Route::post('/cari', 'InventoryController@search')->name('inventory.search');
+        Route::post('/store', 'InventoryController@store')->name('inventory.store');
+        Route::put('/update', 'InventoryController@update')->name('inventory.update.submit');
+        Route::delete('/delete', 'InventoryController@delete')->name('inventory.delete');
 
         // JENIS INVENTARIS
         Route::prefix('jenis-inventaris')->group(function () {
