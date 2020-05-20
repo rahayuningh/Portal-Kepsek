@@ -44,56 +44,7 @@
                                 <a href="">Rahayuning</a>
                             </td>
                             <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
-                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
-                        </tr>
-                        <tr>
-                            <td> 3 </td>
-                            <td>
-                                <a href="">Kelas 1C</a>
-                            </td>
-                            <td>Fisika</td>
-                            <td>
-                                <a href="">Muhammad Fakhri</a>
-                            </td>
-                            <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
-                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
-
-                        </tr>
-                        <tr>
-                            <td> 4 </td>
-                            <td>
-                                <a href="">Kelas 1A</a>
-                            </td>
-                            <td>Matematika</td>
-                            <td>
-                                <a href="">Nabil Ahmad</a>
-                            </td>
-                            <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
-                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
-                        </tr>
-                        <tr>
-                            <td> 5 </td>
-                            <td>
-                                <a href="">Kelas 1B</a>
-                            </td>
-                            <td>Kimia</td>
-                            <td>
-                                <a href="">Jovano</a>
-                            </td>
-                            <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
-                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
-                        </tr>
-                        <tr>
-                            <td> 6 </td>
-                            <td>
-                                <a href="">Kelas 1C</a>
-                            </td>
-                            <td>Fisika</td>
-                            <td>
-                                <a href="">Hafizh Haritsa</a>
-                            </td>
-                            <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
-                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
+                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Belum</label></td>
                         </tr>
                     </tbody>
                 </table>
@@ -184,7 +135,6 @@
                             <th> Kelas </th>
                             <th> Mata Pelajaran </th>
                             <th> Nama Guru </th>
-                            <th class="text-center"> Nilai Harian </th>
                             <th class="text-center"> Nilai UTS </th>
                             <th class="text-center"> Nilai UAS </th>
                         </tr>
@@ -200,7 +150,6 @@
                                 <a href="">Morgan Mendel</a>
                             </td>
                             <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
-                            <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
                             <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
                         </tr>
                         <tr>
@@ -213,7 +162,6 @@
                                 <a href="">Rahayuning</a>
                             </td>
                             <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
-                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
                             <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Belum</label></td>
                         </tr>
                         <tr>
@@ -227,51 +175,10 @@
                             </td>
                             <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
                             <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
-                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
-                        </tr>
-                        <tr>
-                            <td> 4 </td>
-                            <td>
-                                <a href="">Kelas 1A</a>
-                            </td>
-                            <td>Matematika</td>
-                            <td>
-                                <a href="">Nabil Ahmad</a>
-                            </td>
-                            <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
-                            <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
-                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
-                        </tr>
-                        <tr>
-                            <td> 5 </td>
-                            <td>
-                                <a href="">Kelas 1B</a>
-                            </td>
-                            <td>Kimia</td>
-                            <td>
-                                <a href="">Jovano</a>
-                            </td>
-                            <td class="pt-0 pb-0"><label class="badge badge-success badge-td">Sudah</label></td>
-                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
-                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Belum</label></td>
-                        </tr>
-                        <tr>
-                            <td> 6 </td>
-                            <td>
-                                <a href="">Kelas 1C</a>
-                            </td>
-                            <td>Fisika</td>
-                            <td>
-                                <a href="">Hafizh Haritsa</a>
-                            </td>
-                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
-                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Progress</label></td>
-                            <td class="pt-0 pb-0"><label class="badge badge-gray badge-td">Belum</label></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-
         </div>
     </div>
 </div>
