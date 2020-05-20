@@ -13,6 +13,11 @@
             <div class="row p-2">
                 <div class="col-md-3">
                     <a type="button" class="btn btn-block btn-inverse-primary btn-icon-text pl-0 p-2"
+                        href="{{ route('inventory.needs') }}">
+                        <i class="mdi mdi-arrow-left btn-icon-prepend"></i>
+                        Kembali ke Kebutuhan Barang
+                    </a>
+                    <a type="button" class="btn btn-block btn-inverse-primary btn-icon-text pl-0 p-2"
                         data-toggle="modal" href="#TambahData">
                         <i class="mdi mdi-plus-circle-outline btn-icon-prepend"></i>
                         Tambah Data Inventaris
@@ -21,12 +26,11 @@
             </div>
 
             {{-- search bar --}}
-            <div class="card-body">
+            {{-- <div class="card-body">
                 <h4 class="card-title text-center">Pencarian</h4>
                 <form class="form-sample" action="{{ route('inventory.search') }}" method="POST">
                     @csrf
                     <div class="row">
-                        {{-- KOLOM Gedung --}}
                         <div class="col-md-6">
                             <div class="form-group row">
                                 <div class="text-center col-sm-12">
@@ -40,7 +44,6 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- RUANGAN --}}
                         <div class="col-md-6">
                             <div class="form-group row">
                                 <div class="text-center col-sm-12">
@@ -56,13 +59,20 @@
                         <button type="submit" class="btn btn-gradient-primary mr-2">Cari</button>
                     </div>
                 </form>
-            </div>
+            </div> --}}
 
-            @if (isset($building_name) && isset($room_name))
+            {{-- @if (isset($building_name) && isset($room_name))
             <h5 class="card-title text-center"> Hasil Pencarian <br> Gedung {{ $building_name }} <br> Ruang
                 {{ $room_name }}
             </h5>
-            @endif
+            @endif --}}
+
+            {{-- title bar --}}
+            <h3 class="text-center">
+                Data Inventaris [{{ $need->jenisInventaris->nama_jenis_inventaris }}]
+                <br> di ruangan <br>
+                [{{ $need->ruangan->nama_ruangan }}]
+            </h3>
 
             {{-- TABEL UTAMA --}}
             <div class="table pb-3 pt-3">
@@ -70,37 +80,59 @@
                     <thead>
                         <tr class="text-center">
                             <th>Kode Inventaris</th>
-                            <th>Jenis Inventaris</th>
-                            <th>Merk</th>
                             <th>No Seri</th>
-                            <th>Harga Satuan</th>
-                            <th>Ukuran</th>
-                            <th>Bahan</th>
                             <th>Tanggal Terima</th>
                             <th>Status Kelayakan</th>
+                            <th>Jenis Anggaran</th>
                             <th>Keterangan</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($inventaris as $invent)
+                        @foreach($inventories as $inventory)
                         <tr>
-                            <td>{{ $invent['kode'] }}</td>
-                            <td>{{ $invent['jenis'] }}</td>
-                            <td>{{ $invent['merk'] }}</td>
-                            <td>{{ $invent['no_seri'] }}</td>
-                            <td>{{ $invent['harga_satuan'] }}</td>
-                            <td>{{ $invent['ukuran'] }}</td>
-                            <td>{{ $invent['bahan'] }}</td>
-                            <td>{{ $invent['tanggal_terima'] }}</td>
-                            <td>{{ $invent['status'] }}</td>
-                            <td>{{ $invent['keterangan'] }}</td>
+                            <td>{{ $inventory->kode_inventaris }}</td>
+                            <td>{{ $inventory->no_seri }}</td>
+                            <td>{{ $inventory->tgl_terima }}</td>
+                            <td>
+                                @switch($inventory->anggaran)
+                                @case("OP")
+                                Operasional
+                                @break
+                                @case("HB")
+                                Hibah
+                                @break
+                                @case("IF")
+                                Infak
+                                @break
+                                @case("PP")
+                                Program
+                                @break
+                                @default
+                                Error
+                                @endswitch
+                            </td>
+                            <td>
+                                @switch($inventory->status_kelayakan)
+                                @case(0)
+                                Rusak
+                                @break
+                                @case(1)
+                                Kurang Baik
+                                @break
+                                @case(2)
+                                Baik
+                                @break
+                                @default
+                                Error
+                                @endswitch</td>
+                            <td>{{ $inventory->keterangan }}</td>
                             <td class="p-0 text-center">
                                 <a type="button" class="btn btn-inverse-warning btn-icon p-2" align="center"
-                                    title="Edit" href="{{ route('inventory.update', ['id'=>$invent['id']]) }}">
+                                    title="Edit" href="{{ route('inventory.update', ['id'=>$inventory->id]) }}">
                                     <i class="mdi mdi-pencil"></i>
                                 </a>
-                                <a href="#deleteForm{{ $invent['id'] }}" type="button"
+                                <a href="#deleteForm{{ $inventory->id }}" type="button"
                                     class="btn btn-inverse-danger btn-icon p-2" title="Hapus" data-toggle="modal">
                                     <i class="mdi mdi-delete"></i>
                                 </a>
@@ -110,7 +142,6 @@
                     </tbody>
                 </table>
             </div>
-
         </div>
     </div>
 </div>
@@ -129,46 +160,8 @@
                 @csrf
                 {{-- FIELD --}}
                 <div class="modal-body">
-                    {{-- Gedung --}}
-                    <div class="form-group row">
-                        <label for="gedung_id" class="col-md-4 col-form-label text-md-right">Gedung</label>
-                        <div class="col-md-6">
-                            <select id="search-building2" name="gedung_id" class="form-control" required="required"
-                                data-validation-required-message="Pilih gedung tempat inventaris">
-                                <option disabled selected> --Pilih-- </option>
-                                @foreach ($buildings as $building)
-                                <option value="{{ $building->id }}">{{ $building->nama_gedung }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-
-                    {{-- Ruangan --}}
-                    <div class=" form-group row">
-                        <label for="semester" class="col-md-4 col-form-label text-md-right">Ruangan</label>
-                        <div class="col-md-6">
-                            <select id="search-room2" name="ruangan_pemilik" class="form-control" required="required"
-                                data-validation-required-message="Pilih Ruangan.">
-                                <option disabled selected> --Pilih-- </option>
-                            </select>
-                        </div>
-                    </div>
-
-                    {{-- Jenis Inventaris --}}
-                    <div class="form-group row">
-                        <label for="jenis_inventaris" class="col-md-4 col-form-label text-md-right">Jenis
-                            Inventaris</label>
-                        <div class="col-md-6">
-                            <select type="jenis_inventaris" name="jenis_inventaris" class="form-control" required
-                                data-val="true" data-val-required="Pilih Jenis Inventaris.">
-                                <option disabled selected> --Pilih-- </option>
-                                @foreach ($inventory_types as $type)
-                                <option value="{{ $type->id }}">{{ $type->nama_jenis_inventaris }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-
+                    {{-- Kebutuhan ID --}}
+                    <input type="number" value="{{ $need->id }}" name="kebutuhan_id" hidden>
                     {{-- No Seri --}}
                     <div class="form-group row">
                         <label for="no_seri" class="col-md-4 col-form-label text-md-right">No
@@ -177,27 +170,22 @@
                             <input name="no_seri" type="text" class="form-control">
                         </div>
                     </div>
-
                     {{-- Tanggal Terima --}}
                     <div class="form-group row">
                         <label for="tgl_terima" class="col-md-4 col-form-label text-md-right">Tanggal
                             Terima</label>
                         <div class="col-md-6">
                             <div class="input-group">
-                                <input type="date" name="tgl_terima" class="form-control">
-                                {{-- <div class="input-group-append">
-                                    <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
-                                </div> --}}
+                                <input type="date" name="tgl_terima" class="form-control" required>
                             </div>
                         </div>
                     </div>
-
                     {{-- Status Kelayakan --}}
                     <div class="form-group row">
                         <label for="status_kelayakan" class="col-md-4 col-form-label text-md-right">Status
                             Kelayakan</label>
                         <div class="col-md-6">
-                            <select name="status" class="form-control" required="required"
+                            <select name="status_kelayakan" class="form-control" required
                                 data-validation-required-message="Silahkan pilih status kelayakan inventaris.">
                                 <option disabled selected> --Pilih-- </option>
                                 <option value="0">Rusak</option>
@@ -206,12 +194,11 @@
                             </select>
                         </div>
                     </div>
-
                     {{-- Jenis Anggaran --}}
                     <div class="form-group row">
-                        <label for="jenis_anggaran" class="col-md-4 col-form-label text-md-right">Jenis Anggaran</label>
+                        <label for="anggaran" class="col-md-4 col-form-label text-md-right">Jenis Anggaran</label>
                         <div class="col-md-6">
-                            <select name="jenis_anggaran" class="form-control" required="required"
+                            <select name="anggaran" class="form-control" required
                                 data-validation-required-message="Silahkan pilih jenis anggaran inventaris.">
                                 <option disabled selected> --Pilih-- </option>
                                 <option value="OP">Operasional</option>
@@ -221,15 +208,13 @@
                             </select>
                         </div>
                     </div>
-
                     {{-- Keterangan --}}
                     <div class="form-group row">
-                        <label for="status_kelayakan" class="col-md-4 col-form-label text-md-right">Keterangan</label>
+                        <label for="keterangan" class="col-md-4 col-form-label text-md-right">Keterangan</label>
                         <div class="col-md-6">
                             <textarea name="keterangan" cols="30" rows="10"></textarea>
                         </div>
                     </div>
-
                 </div>
                 {{-- BUTTON --}}
                 <div class="modal-footer">
@@ -241,9 +226,9 @@
     </div>
 </div>
 
-@foreach ($inventaris as $item)
+@foreach ($inventories as $inventory)
 {{-- WINDOW DELETE DATA --}}
-<div id="deleteForm{{ $item['id'] }}" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+<div id="deleteForm{{ $inventory->id }}" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -255,10 +240,11 @@
             <form action="{{ route('inventory.delete') }}" method="post">
                 @csrf
                 @method('DELETE')
-                <input type="number" value="{{ $item['id'] }}" name="id" hidden>
+                <input type="number" value="{{ $inventory->id }}" name="id" hidden>
                 {{-- FIELD --}}
-                <div class="modal-body">
-                    <h4 class="text-center">Yakin hapus data inventaris {{ $item['kode'] }} ?</h4>
+                <div class="modal-body text-center">
+                    <h4>Yakin hapus data inventaris {{ $inventory->kode_inventaris }} ?</h4>
+                    <small>Hal ini juga akan mengubah jumlah di data kebutuhan barang</small>
                 </div>
                 {{-- BUTTON --}}
                 <div class="modal-footer">
@@ -273,11 +259,10 @@
 
 @endsection
 @section('script')
-<script src="{{ asset('assets/js/data/inventory-data.js') }}"></script>
 <script>
     $(document).ready( function () {
         $('#inventory-data-table').DataTable({
-          "searching": false
+        //   "searching": false
       });
     } );
 </script>

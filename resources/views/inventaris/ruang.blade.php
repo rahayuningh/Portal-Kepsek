@@ -289,7 +289,7 @@
 <script>
     $(document).ready( function () {
         $('#room-table').DataTable({
-          "searching": false
+        //   "searching": false
       });
     } );
 </script>

@@ -94,9 +94,8 @@
                                     align="center" title="Edit" href="#Edit{{ $need->id }}">
                                     <i class="mdi mdi-pencil"></i>
                                 </a>
-                                <a type="button" class="btn btn-inverse-info btn-icon p-2" data-toggle="modal"
-                                    align="center" title="Lihat Inventaris"
-                                    href="{{ route('inventory', ['needId'=>$need->id]) }}">
+                                <a type="button" class="btn btn-inverse-info btn-icon p-2" align="center"
+                                    title="Lihat Inventaris" href="{{ route('inventory', ['needId'=>$need->id]) }}">
                                     <i class="mdi mdi-eye"></i>
                                 </a>
                                 <a type="button" class="btn btn-inverse-danger btn-icon p-2" title="Hapus"
@@ -109,7 +108,6 @@
                     </tbody>
                 </table>
             </div>
-
         </div>
     </div>
 </div>

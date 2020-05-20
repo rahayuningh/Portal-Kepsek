@@ -302,7 +302,7 @@
 <script>
     $(document).ready( function () {
         $('#type-inventory-table').DataTable({
-          "searching": false
+        //   "searching": false
       });
     } );
 </script>

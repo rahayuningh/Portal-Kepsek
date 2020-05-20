@@ -174,7 +174,6 @@
 @endforeach
 @endsection
 @section('script')
-<script src="{{ asset('assets/js/inventory-data.js') }}"></script>
 <script>
     $(document).ready( function () {
         $('#building-table').DataTable({
