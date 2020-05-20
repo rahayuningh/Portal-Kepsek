@@ -42,7 +42,7 @@
 [`^ kembali ke atas ^`](#konten-integrated-monitoring-systemimosy)
 
 ### Use Case Diagram
-![Use case](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/use_case.png)
+![Use case](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/use_case_1.png)
 ### Activity Diagram
 ![Activity diagram](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/activity_diagram.png)
 ### Class Diagram
