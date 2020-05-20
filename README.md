@@ -2,9 +2,8 @@
 
 <h1 align="center">Konten Integrated Monitoring System(IMoSy)</h1>
 
-[Deskripsi](#deskripsi) | [Ruang Lingkup Pengembangan](#ruang-lingkup-pengembangan) | [Diagram](#diagram) | [Fitur](#fitur) | [Konsep OOP](#konsep-oop) | [Dokumentasi](#dokumentasi) | [Development Team](#development-team)
-:---:|:---:|:---:|:---:|:---:|:---:|:---:
-
+[Deskripsi](#a-deskripsi) | [Ruang Lingkup Pengembangan](#b-ruang-lingkup-pengembangan) | [Diagram](#c-diagram) | [Fitur](#d-fitur) | [Konsep OOP](#e-konsep-oop) | [Tipe Desain Pengembangan](#f-tipe-desain-pengembangan) | [Dokumentasi](#g-dokumentasi) | [Development Team](#development-team)
+:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
 
 
 ## A. Deskripsi
