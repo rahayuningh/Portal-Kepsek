@@ -38,9 +38,9 @@ class GedungController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_gedung'=>'required',
-            'kode_gedung'=>'required',
-        ])
+            'nama_gedung' => 'required',
+            'kode_gedung' => 'required',
+        ]);
     }
 
     /**
