@@ -13,7 +13,7 @@
 
 
 ## B. Ruang Lingkup Pengembangan
-[`^ kembali ke atas ^`](#konten-integrated-monitoring-system-imosy) 
+[`^ kembali ke atas ^`](#konten-integrated-monitoring-systemimosy) 
 ### Software
 - Visual Studio Code
 - Sublime Text
@@ -32,7 +32,7 @@
 
 
 ## C. Diagram
-[`^ kembali ke atas ^`](#konten-integrated-monitoring-system-imosy)
+[`^ kembali ke atas ^`](#konten-integrated-monitoring-systemimosy)
 
 ### Use Case Diagram
 ![Use case](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/use_case.png)
@@ -44,7 +44,7 @@
 
 
 ## D. Fitur
-[`^ kembali ke atas ^`](#konten-integrated-monitoring-system-imosy)
+[`^ kembali ke atas ^`](#konten-integrated-monitoring-systemimosy)
 
 ### 1. Login
 Berikut merupakan tampilan form login, yang sudah terintegrasi dengan teknologi *Single-sign-on* (SSO), yaitu suatu teknologi dimana semua sistem-sistem yang berbeda dapat terintegrasi dalam satu akun pengguna sehingga dapat memfasilitasi pengguna untuk dapat mengakses beberapa aplikasi dengan menggunakan satu akun saja dalam sekali otentikasi/login. Login pada IMoSy mengharuskan user mengisi email dan password dari akun SSO user. Setelah login, user akan diarahkan pada halaman Beranda yang berisi identitas user, beberapa shortcut fitur, serta ringkasan monitoring status pekerjaan guru.
@@ -117,11 +117,11 @@ Pengelolaan inventaris terbagi menjadi beberapa sub menu, antara lain pengelolaa
 
 
 ## E. Konsep OOP
-[`^ kembali ke atas ^`](#konten-integrated-monitoring-system-imosy)
+[`^ kembali ke atas ^`](#konten-integrated-monitoring-systemimosy)
 
 
 ## F. Tipe Desain Pengembangan
-[`^ kembali ke atas ^`](#konten-integrated-monitoring-system-imosy)
+[`^ kembali ke atas ^`](#konten-integrated-monitoring-systemimosy)
 ### MVC
 Kami menggunakan design pattern MVC untuk memisahkan seluruh logika bisnis dari user interface yang ada di dalam sistem. MVC dibangun diatas tiga komponen yaitu Model, View, dan Controller. Laravel sudah mengadopsi design pattern MVC.
 
@@ -143,14 +143,14 @@ Pattern yang satu ini, memungkinkan kami untuk mengakses service-service penting
 
 
 ## G. Dokumentasi
-[`^ kembali ke atas ^`](#konten-integrated-monitoring-system-imosy)
+[`^ kembali ke atas ^`](#konten-integrated-monitoring-systemimosy)
 
 1. Link GitHub : https://github.com/rahayuningh/Portal-Kepsek
 2. Link Trello : https://trello.com/b/XFp6mC6z/integrated-monitoring-system
 3. Link drive : bit.ly/Portal-Kepsek
 
 ## Development Team
-[`^ kembali ke atas ^`](#konten-integrated-monitoring-system-imosy)
+[`^ kembali ke atas ^`](#konten-integrated-monitoring-systemimosy)
 
 | No | NIM | Nama | Role |
 | ----- | ----- | ----- | ----- |
