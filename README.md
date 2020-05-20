@@ -2,19 +2,18 @@
 
 <h1 align="center">Konten Integrated Monitoring System(IMoSy)</h1>
 
-[Deskripsi](#deskripsi) | [Ruang Lingkup Pengembangan](#ruang-lingkup-pengembangan) | [Diagram](#diagram) | [Fitur](#fitur) | [Konsep OOP](#konsep-oop) | [Dokumentasi](#dokumentasi) | [Development Team](#development-team)
-:---:|:---:|:---:|:---:|:---:|:---:|:---:
-
+[Deskripsi](#a-deskripsi) | [Ruang Lingkup Pengembangan](#b-ruang-lingkup-pengembangan) | [Diagram](#c-diagram) | [Fitur](#d-fitur) | [Konsep OOP](#e-konsep-oop) | [Tipe Desain Pengembangan](#f-tipe-desain-pengembangan) | [Dokumentasi](#g-dokumentasi) | [Development Team](#development-team)
+:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
 
 
 ## A. Deskripsi
-[`^ kembali ke atas ^`](#)
+[`^ kembali ke atas ^`](#konten-integrated-monitoring-systemimosy)
 
 **Integrated Monitoring System** atau disebut dengan **IMoSy** merupakan sistem berbasis Website yang digunakan untuk memonitoring pekerjaan guru misalnya pengisian data nilai siswa, monitoring data siswa, data guru, data tenaga pendidik dan monitoring data inventaris. Selain monitoring dalam sistem ini juga dapat dilakukan pengelolaan data, seperti inventaris. Sistem ini dikembangkan atas dasar permintaan Kepala Sekolah SMP Cendekia Baznas (SCB) Bogor yang menginginkan adanya sistem terintegrasi untuk melakukan monitoring terutama untuk memantau pekerjaan guru SCB. Kemudian ditambah monitoring lain seperti pada pendataan inventaris.
 
 
 ## B. Ruang Lingkup Pengembangan
-[`^ kembali ke atas ^`](#) 
+[`^ kembali ke atas ^`](#konten-integrated-monitoring-systemimosy) 
 ### Software
 - Visual Studio Code
 - Sublime Text
@@ -33,7 +32,7 @@
 
 
 ## C. Diagram
-[`^ kembali ke atas ^`](#)
+[`^ kembali ke atas ^`](#konten-integrated-monitoring-systemimosy)
 
 ### Use Case Diagram
 ![Use case](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/use_case.png)
@@ -41,11 +40,13 @@
 ![Activity diagram](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/activity_diagram.png)
 ### Class Diagram
 ![Class diagram](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/class_diagram_old.png)
+### Entity Relationship Diagram
+![ERD](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/erd.png)
 
 
 
 ## D. Fitur
-[`^ kembali ke atas ^`](#)
+[`^ kembali ke atas ^`](#konten-integrated-monitoring-systemimosy)
 
 ### 1. Login
 Berikut merupakan tampilan form login, yang sudah terintegrasi dengan teknologi *Single-sign-on* (SSO), yaitu suatu teknologi dimana semua sistem-sistem yang berbeda dapat terintegrasi dalam satu akun pengguna sehingga dapat memfasilitasi pengguna untuk dapat mengakses beberapa aplikasi dengan menggunakan satu akun saja dalam sekali otentikasi/login. Login pada IMoSy mengharuskan user mengisi email dan password dari akun SSO user. Setelah login, user akan diarahkan pada halaman Beranda yang berisi identitas user, beberapa shortcut fitur, serta ringkasan monitoring status pekerjaan guru.
@@ -118,10 +119,11 @@ Pengelolaan inventaris terbagi menjadi beberapa sub menu, antara lain pengelolaa
 
 
 ## E. Konsep OOP
-[`^ kembali ke atas ^`](#)
+[`^ kembali ke atas ^`](#konten-integrated-monitoring-systemimosy)
 
 
 ## F. Tipe Desain Pengembangan
+[`^ kembali ke atas ^`](#konten-integrated-monitoring-systemimosy)
 ### MVC
 Kami menggunakan design pattern MVC untuk memisahkan seluruh logika bisnis dari user interface yang ada di dalam sistem. MVC dibangun diatas tiga komponen yaitu Model, View, dan Controller. Laravel sudah mengadopsi design pattern MVC.
 
@@ -143,14 +145,14 @@ Pattern yang satu ini, memungkinkan kami untuk mengakses service-service penting
 
 
 ## G. Dokumentasi
-[`^ kembali ke atas ^`](#)
+[`^ kembali ke atas ^`](#konten-integrated-monitoring-systemimosy)
 
 1. Link GitHub : https://github.com/rahayuningh/Portal-Kepsek
 2. Link Trello : https://trello.com/b/XFp6mC6z/integrated-monitoring-system
 3. Link drive : bit.ly/Portal-Kepsek
 
 ## Development Team
-[`^ kembali ke atas ^`](#)
+[`^ kembali ke atas ^`](#konten-integrated-monitoring-systemimosy)
 
 | No | NIM | Nama | Role |
 | ----- | ----- | ----- | ----- |
