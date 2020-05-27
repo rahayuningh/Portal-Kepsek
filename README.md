@@ -47,7 +47,7 @@
 ### Activity Diagram
 ![Activity diagram](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/activity_diagram_2.png)
 ### Class Diagram
-![Class diagram](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/class_diagram.png)
+![Class diagram](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/Class Diagram Portal Kepsek (4).png)
 ### Entity Relationship Diagram
 ![ERD](https://github.com/rahayuningh/Portal-Kepsek/blob/master/berkas/dokumentasi_IMoSy/erd.png)
 
@@ -200,7 +200,7 @@ Kami menggunakan design pattern MVC untuk memisahkan seluruh logika bisnis dari 
 
 Kami memanfaatkan sebuah templating engine bernama Blade yang sudah tersedia di Laravel untuk membangun komponen View. Fitur-fitur di Blade memungkinkan kami untuk menerapkan konsep component dan layouting yang akan mempermudah di saat komponen view dari sistem ini sudah mulai semakin banyak dan semakin kompleks. 
 
-Kami menggunakan sebuah ORM(Object relational Modeling) yang bernama Eloquent yang sudah ada pada laravel sebagai komponen Model. Melalui Eloquent, kami dapat merepresentasikan setiap entitas yang ada di database sebagai sebuah “model” yang kemudian model tersebut digunakan sebagai high level interface untuk mengambil data dari database.
+Kami menggunakan sebuah ORM(Object relational Modeling) yang bernama Eloquent yang sudah ada pada laravel sebagai komponen Model. Melalui Eloquent, kami dapat merepresentasikan setiap entitas yang ada di database sebagai sebuah “model” yang kemudian model tersebut digunakan sebagai high level interface untuk mengambil data dari database. Jika sebuah model diubah, maka setiap model dari entitas yang memiliki ketergantungan pada model tersebut akan diubah juga. Seperti, apabila kita menghapus obj ruangan maka objek kebutuhan barang dan objek inventaris milik ruangan tersebut akan otomatis terhapus juga.
 
 Pada komponen Controller, laravel sudah menyediakan sebuah class khusus yaitu class Controller. Pada komponen ini akan diletakkan semua logika bisnis yang berjalan di sistem. Setiap proses CRUD juga akan diletakkan pada Controller memungkinkan kita untuk mengganti isi dari model yang sudah dibuat menggunakan operasi CRUD.
 
