@@ -14,12 +14,19 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->delete();
+        // User::create([
+        //     'id' => '1',
+        //     'name' => 'muhammad_fakhri',
+        //     'email' => 'muhammadfakhri301@gmail.com',
+        //     'sso_user_id' => '5ebcd969fe3e233ef0c2f4a1',
+        //     'role' => 'guru'
+        // ]);
+
         User::create([
             'id' => '1',
-            'name' => 'muhammad_fakhri',
-            'email' => 'muhammadfakhri301@gmail.com',
-            'sso_user_id' => '5ebcd969fe3e233ef0c2f4a1',
-            'role' => 'guru'
+            'name' => 'John Doe',
+            'email' => 'johndoe@example.com',
+            'password' => Hash::make('password')
         ]);
     }
 }

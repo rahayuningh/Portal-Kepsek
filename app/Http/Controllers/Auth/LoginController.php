@@ -63,69 +63,69 @@ class LoginController extends Controller
         return $decodedBody['data'][0];
     }
 
-    protected function validateLogin(Request $request)
-    {
-        $request->validate([
-            $this->username() => 'required|string|email',
-        ]);
-    }
+    // protected function validateLogin(Request $request)
+    // {
+    //     $request->validate([
+    //         $this->username() => 'required|string|email',
+    //     ]);
+    // }
 
-    public function login(Request $request)
-    {
-        // validate login data
-        $this->validateLogin($request);
+    // public function login(Request $request)
+    // {
+    //     // validate login data
+    //     $this->validateLogin($request);
 
-        //login user in SSO
-        $client = new Client();
-        $res = $client->request('POST', 'https://sso.kato.studio/sso/login', [
-            'form_params' => [
-                'email' => $request->email,
-                'password' => $request->password
-            ]
-        ]);
+    //     //login user in SSO
+    //     $client = new Client();
+    //     $res = $client->request('POST', 'https://sso.kato.studio/sso/login', [
+    //         'form_params' => [
+    //             'email' => $request->email,
+    //             'password' => $request->password
+    //         ]
+    //     ]);
 
-        $body = $res->getBody()->getContents();
-        $decodedBody = json_decode($body, true);
+    //     $body = $res->getBody()->getContents();
+    //     $decodedBody = json_decode($body, true);
 
-        // if SSO login success
-        if (isset($decodedBody['success'])) {
-            // get user data from SSO
-            $userData = $this->getUserData($request);
+    //     // if SSO login success
+    //     if (isset($decodedBody['success'])) {
+    //         // get user data from SSO
+    //         $userData = $this->getUserData($request);
 
-            // check user data in DB
-            $user = User::firstOrCreate(
-                ['sso_user_id' => $userData['_id']],
-                [
-                    'name' => $userData['name'],
-                    'email' => $userData['email'],
-                    'role' => $userData['role']
-                ]
-            );
+    //         // check user data in DB
+    //         $user = User::firstOrCreate(
+    //             ['sso_user_id' => $userData['_id']],
+    //             [
+    //                 'name' => $userData['name'],
+    //                 'email' => $userData['email'],
+    //                 'role' => $userData['role']
+    //             ]
+    //         );
 
-            // login user to IMoSy
-            if (Auth::loginUsingId($user->id)) {
-                // if Authentication passed redirect to dashboard
-                // or previous page the user try to access
-                return redirect()->intended('dashboard');
-            } else {
-                throw ValidationException::withMessages([
-                    $this->username() => [trans('auth.failed')],
-                ]);
-            }
-        } else { // if not success
-            // then check user data in DB
-            // if data exist in DB then delete it
-            $user = User::where('email', $request->email)->first();
-            if (isset($user)) {
-                if ($user->count() > 0) {
-                    $user->delete();
-                }
-            }
+    //         // login user to IMoSy
+    //         if (Auth::loginUsingId($user->id)) {
+    //             // if Authentication passed redirect to dashboard
+    //             // or previous page the user try to access
+    //             return redirect()->intended('dashboard');
+    //         } else {
+    //             throw ValidationException::withMessages([
+    //                 $this->username() => [trans('auth.failed')],
+    //             ]);
+    //         }
+    //     } else { // if not success
+    //         // then check user data in DB
+    //         // if data exist in DB then delete it
+    //         $user = User::where('email', $request->email)->first();
+    //         if (isset($user)) {
+    //             if ($user->count() > 0) {
+    //                 $user->delete();
+    //             }
+    //         }
 
-            // throw failed login response
-            throw ValidationException::withMessages([
-                $this->username() => [trans('auth.failed')],
-            ]);
-        }
-    }
+    //         // throw failed login response
+    //         throw ValidationException::withMessages([
+    //             $this->username() => [trans('auth.failed')],
+    //         ]);
+    //     }
+    // }
 }
